@@ -1,0 +1,77 @@
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_360 ">
+    <s_find_id>
+        <form id="[##_find_id_form_name_##]" name="[##_find_id_form_name_##]" method="post" action="[##_find_id_form_action_##]" onsubmit="return onsu_Search_ID();">
+            <fieldset>
+                <legend class="blind">아이디 찾기</legend>
+                <div class="col text-center">
+                    <div class="fs_28 fw_700">아이디찾기</div>
+                    <div class="text-left">
+                        <label for="[##_find_id_input_name_##]1" class="fs_16 point_color mt-5">이름</label>
+                        <input id="[##_find_id_input_name_##]1" name="[##_find_id_input_name_##]" type="text" class="form-control" placeholder="이름을 입력해주세요.">
+                        <label for="[##_find_id_input_email_##]1" class="fs_16 point_color mt_12px">이메일</label>
+                        <input id="[##_find_id_input_email_##]1" name="[##_find_id_input_email_##]" type="password" class="form-control" placeholder="이메일을 입력해주세요.">    
+                    </div>
+                </div>
+                    
+                <div class="mt_28px">
+                    <a [##_find_id_btn_submit_##] class="login">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/id_search_btn.png" alt="" class="img-fluid ">
+                    </a>
+                </div>    
+            </fieldset>            
+        </form>
+    </s_find_id>
+
+    <s_find_pw>
+        <form id="[##_find_pw_form_name_##]" name="[##_find_pw_form_name_##]" method="post" action="[##_find_pw_form_action_##]" onsubmit="return onsu_Search_PW();">        
+            <fieldset>
+                <legend class="blind">비밀번호 찾기</legend>
+                <div class="col text-center">
+                    <div class="fs_28 fw_700">비밀번호 찾기</div>
+                    <div class="text-left">
+                        <label for="[##_find_pw_input_name_##]2" class="fs_16 point_color mt-5">이름</label>
+                        <input id="[##_find_pw_input_name_##]2" name="[##_find_pw_input_name_##]" type="text" class="form-control" placeholder="이름을 입력해주세요.">
+                        <label for="[##_find_pw_input_id_##]2" class="fs_16 point_color mt_12px">아이디</label> 
+                        <input id="[##_find_pw_input_id_##]2" name="[##_find_pw_input_email_##]" type="text" class="form-control" placeholder="아이디를 입력해주세요.">
+    
+                            
+                    </div>                    
+                    <div id="tr_[##_find_pw_auth_kind_##]_A" style="display:none;" class="text-left">
+                        <label for="[##_find_pw_input_mobile1_##]" class="fs_16 point_color mt_12px"> 휴대폰</label><br>
+                        <input style="width :85px;" type="text" class="form-control form_phone" id="[##_find_pw_input_mobile1_##]" name="[##_find_pw_input_mobile1_##]" placeholder="010" class="int" maxlength="4" value="">
+                        <input type="text" class="form-control form_phone" id="[##_find_pw_input_mobile2_##]" name="[##_find_pw_input_mobile2_##]" placeholder="" class="int" maxlength="4" value="">
+                        <input type="text" class="form-control form_phone" id="[##_find_pw_input_mobile3_##]" name="[##_find_pw_input_mobile3_##]" placeholder="" class="int" maxlength="4" value="">
+                    </div>
+                    
+                    <div id="tr_[##_find_pw_auth_kind_##]_B" style="display:none;" class="text-left">
+                        <label for="[##_find_pw_input_email_id_##]" class="fs_16 point_color mt_12px"> 이메일</label>
+                        <input  class="form-control" type="email" id="[##_find_pw_input_email_id_##]" name="[##_find_pw_input_email_##]" placeholder="이메일" class="int" maxlength="" value="">
+                    </div>
+                
+                    <!-- 인증방식 start -->
+                    <div class="fs_16 point_color mt_12px text-left">인증방식</div>
+                    <div class="input-box-wrap">
+                        <input type="radio" id="[##_find_pw_auth_kind_##]1" name="[##_find_pw_auth_kind_##]" value="A" selected>
+                        <label for="[##_find_pw_auth_kind_##]1">휴대폰</label>
+                        <input type="radio" id="[##_find_pw_auth_kind_##]2" name="[##_find_pw_auth_kind_##]" value="B">
+                        <label for="[##_find_pw_auth_kind_##]2">이메일</label>
+                    </div>
+                    <!-- 인증방식 end -->    
+                </div>                
+                    
+                <div class="mt_28px">
+                    <a [##_find_pw_btn_submit_##] class="login">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/pw_reset_btn_02.png" alt="" class="img-fluid ">
+                    </a>
+                </div>
+    
+            </fieldset>
+        </form>
+    </s_find_pw>
+
+
+
+
+    </div>
+</div>

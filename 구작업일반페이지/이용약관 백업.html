@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/common.css">
+    <style>
+        .mw_550 {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .pb_12 {
+            padding-bottom: 12px;
+        }
+
+        .mb_12 {
+            margin-bottom: 12px;
+        }
+
+        .pt-25 {
+            padding-top: 2.5rem;
+        }
+
+        .mw_360 {
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .privacy_box {
+            background: rgba(110, 147, 87, 0.04);
+            border: 1.5px solid #6E9357;
+            border-radius: 5px;
+            padding: 24px 24px 72px 24px;
+            line-height: 150%;
+        }
+
+        .fs_13 {
+            font-size: 13px;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        input[type=checkbox]:checked+label {
+            background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_2.png);
+        }
+
+        input[type=checkbox]+label {
+            cursor: pointer;
+            padding-left: 32px;
+            background-repeat: no-repeat;
+            background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-off.png);
+            background-size: 24px;
+            color: #6E9357;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .login img {
+            box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 100px;
+        }
+
+        @media screen and (max-width:576px) {
+            body {
+                word-break: normal;
+            }
+
+            .title1 {
+                padding-top: 2.5rem;
+            }
+
+            .fs_13 {
+                font-size: 11px;
+            }
+
+            .fw_500 {
+                font-weight: 700 !important;
+            }
+
+            .privacy_box {
+                padding: 13px 20px 23px 20px;
+            }
+
+            .col {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            input[type=checkbox]+label {
+                font-size: 14px;
+                padding-left: 27px;
+                background-size: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_550 ">
+        <div class="col">
+            <div class="fs_16 point_color fw_700 pb_12 title1">개인정보처리방침 (필수)</div>
+            <div class="privacy_box point_color fs_13 fw_500 mb_12">
+                (1) 수집하는 개인정보의 항목 및 수집방법<br>
+                - 수집하는 개인정보의 항목 : {이메일 주소, 또는 휴대폰번호}<br>
+                - 개인정보수집방법: 문의 및 상담하려는 이용자가 입력하는 경우에만 수집하게 됩니다.<br>
+                (2) 개인정보 수집 및 이용목적<br>
+                - {회사명}은(는) 수집된 개인정보는 문의 및 상담 요청에 대해 회신을 드리거나 회신을 위한 서비스 이용기록 조희를 위하여 활용합니다.<br>
+                (3) 개인정보의 보유 및 이용기간<br>
+                -수집된 이메일 주소, 휴대폰 번호는 관련 법령에 달리 명시되어 있지 않는 한, 문의 처리 후 {1}년간 보관합니다.
+            </div>
+            <input type="checkbox" name="checker" id="checker1"><label for="checker1">동의함</label>
+
+
+            <div class="fs_16 point_color fw_700 pb_12 pt-25 ">이용약관 (필수)</div>
+            <div class="privacy_box point_color fs_13 fw_500 mb_12">
+                (1) 수집하는 개인정보의 항목 및 수집방법<br>
+                - 수집하는 개인정보의 항목 : {이메일 주소, 또는 휴대폰번호}<br>
+                - 개인정보수집방법: 문의 및 상담하려는 이용자가 입력하는 경우에만 수집하게 됩니다.<br>
+                (2) 개인정보 수집 및 이용목적<br>
+                - {회사명}은(는) 수집된 개인정보는 문의 및 상담 요청에 대해 회신을 드리거나 회신을 위한 서비스 이용기록 조희를 위하여 활용합니다.<br>
+                (3) 개인정보의 보유 및 이용기간<br>
+                -수집된 이메일 주소, 휴대폰 번호는 관련 법령에 달리 명시되어 있지 않는 한, 문의 처리 후 {1}년간 보관합니다.
+            </div>
+            <input type="checkbox" name="checker2" id="checker2"><label for="checker2">동의함</label>
+
+            <div class="pt-5_1 text-center mw_360">
+                <a href="#" class="login text-center">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/join_s_button.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<body>
+</body>
+
+</html>

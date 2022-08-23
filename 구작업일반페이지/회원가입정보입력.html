@@ -1,0 +1,127 @@
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_360 ">
+        <div class="col text-center">            
+            <s_signup_default>
+                <div class="fs_28 fw_700">
+                    회원정보 입력
+                </div>
+                <div class="fs_16 fw_700 point_color text-left">
+                    아이디
+                </div>
+                <div class="input_btn_wrap">
+                    <input id="[##_signup_id_##]" name="[##_signup_id_##]" type="text" class="form-control mt-2" maxlength="12" placeholder="아이디를 입력해주세요.">
+                    <a [##_signup_btn_double_##]>
+                        <button id="overlap_confirm" ype="button" class="btn btn-outline-success input_btn fs_12 fw_700 point_color">
+                            중복확인
+                        </button>    
+                    </a>
+                </div>
+
+                <div class="fs_16 fw_700 point_color pt-4 text-left">
+                    비밀번호
+                </div>
+                <input id="[##_signup_pw_##]" name="[##_signup_pw_##]" type="password" class="form-control mt-2 mb-2" placeholder="비밀번호를 입력해주세요.">
+                <input id="[##_signup_pwd_##]" name="[##_signup_pwd_##]" type="password" class="form-control mt-2 mb-4" placeholder="비밀번호를 한번 더 입력해주세요.">
+
+                <div class="fs_16 fw_700 point_color pt-4 text-left">
+                    이름
+                </div>
+                <input id="[##_signup_name_##]" name="[##_signup_name_##]" type="text" class="form-control mt-2 mb-4" placeholder="이름을 입력해주세요.">
+
+                <!-- s_signup_nick 태그를 이용해, 실제 "닉네임" 를 입력 받을 때에만 노출할 수 있습니다. -->
+                <!-- 
+                    <s_signup_nick>
+                        <tr>
+                            <th>닉네임</th>
+                            <td>
+                                <input type="text" id="[##_signup_nick_##]" name="[##_signup_nick_##]" maxlength="20" class="ips1 ws" />
+                            </td>
+                        </tr>
+                    </s_signup_nick>
+                -->
+                <!-- s_signup_profile 태그를 이용해, 실제 "프로필사진" 를 입력 받을 때에만 노출할 수 있습니다. -->
+                <!--          
+                <s_signup_profile>
+                    <tr>
+                        <th>프로필사진</th>
+                        <td>
+                            [##_signup_profile_##]
+                        </td>
+                    </tr>
+                </s_signup_profile>
+                -->
+
+                <s_signup_email>
+                    <div class="fs_16 fw_700 point_color pt-4 text-left">
+                        이메일
+                    </div>
+                    <input id="[##_signup_email_##]" name="[##_signup_email_##]" type="email" class="form-control mt-2" placeholder="이메일을 입력해주세요.">
+                </s_signup_email>
+
+                <s_signup_mobile>
+                    <div class="fs_16 fw_700 point_color text-left mt_12px">
+                        연락처
+                    </div>
+                    <div class="input_btn_wrap">
+                        <input id="[##_signup_mobile1_##]" name="[##_signup_mobile1_##]" type="text" class="form-control form_phone" maxlength="3" placeholder="010">
+                        <input id="[##_signup_mobile2_##]" name="[##_signup_mobile2_##]" type="text" class="form-control form_phone" maxlength="4" >
+                        <input id="[##_signup_mobile3_##]" name="[##_signup_mobile3_##]" type="text" class="form-control form_phone" maxlength="4" >        
+                    </div>
+                </s_signup_mobile>
+
+                <!-- s_signup_addr 태그를 이용해, 실제 "주소" 를 입력 받을 때에만 노출할 수 있습니다. -->
+                <!--
+                <s_signup_addr>
+                    <tr>
+                        <th>주소</th>
+                        <td>
+                            <input type="text" id="[##_signup_zipcode_##]" name="[##_signup_zipcode_##]" maxlength="7" class="ips1 ws2">
+                            <a [##_btn_signup_zipcode_##] class="btn6">우편번호찾기</a>
+                            <br />
+                            <input type="text" id="[##_signup_addr1_##]" name="[##_signup_addr1_##]" maxlength="50" class="ips1 wl mt5">
+                            <br />
+                            <input type="text" id="[##_signup_addr2_##]" name="[##_signup_addr2_##]" maxlength="50" class="ips1 wl mt5">
+                                            [##_signup_zipcode_box_##]
+                        </td>
+                    </tr>
+                </s_signup_addr>
+                -->
+            </s_signup_default>
+
+            <s_signup_form>
+                <s_signup_form_rep>
+                    <div class="mt-5 [##_form_elements_name_##]">
+                        <!-- <s_signup_form_rep_required> 를 이용하여 필수여부를 표기합니다. -->
+                        <div class="fs_16 fw_700 point_color pt-4">
+                            <s_signup_form_rep_required>*</s_signup_form_rep_required> [##_form_subject_##]
+                        </div>        
+                        <div>
+                            [##_form_elements_##]
+                        </div>
+                    </div> 
+                </s_signup_form_rep>
+            </s_signup_form>
+            <s_sms_agree>
+                SMS수신여부
+                <input id="[##_signup_sms_agree_name_##]" name="[##_signup_sms_agree_name_##]" type="checkbox" value="Y">
+                <label for="[##_signup_sms_agree_name_##]">동의</label>
+            </s_sms_agree>
+            <s_mail_agree>
+                Email수신여부
+                <input id="[##_signup_mail_agree_name_##]" name="[##_signup_mail_agree_name_##]" type="checkbox" value="Y">
+                <label for="[##_signup_mail_agree_name_##]">동의</label>
+            </s_mail_agree>
+
+            <div class="mt-5">
+                <s_signup_apply_button>
+                    <a [##_signup_apply_button_##] class="login text-center">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/join_s_button.png" alt="" class="img-fluid ">
+                    </a>    
+                </s_signup_apply_button>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>

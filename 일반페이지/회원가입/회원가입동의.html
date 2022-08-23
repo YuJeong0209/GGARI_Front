@@ -1,0 +1,90 @@
+<div class="container-fluid d-flex h-100 mobile_top">
+    <div class="row align-items-center align-self-center mw_360 ">
+        <div class="col-12 text-center ">
+            <div class="fs_22 fw_700">
+                약관 동의
+            </div>
+            <div class="pt_10px sub_gray_text fs_14">
+                까리박스를 이용하기 위한 약관입니다.
+                <br>
+                약관에 동의하신 후 다음으로 버튼을 눌러주세요.
+            </div>
+        </div> 
+        
+         <div class="col-12 pt_30px">
+            <div class="fs_18 fw_700">
+                개인정보처리방침 <span class="point_color">(필수)</span>
+            </div>
+            <s_memb_agree_01>
+                <div class="area_box mt_10px pd_20_5px fs_14 point_scroll">
+                    [##_agree_text_##]
+                </div>
+                <div class="check_custom text-right pt_10px">
+                    <input type="checkbox" name="[##_agree_form_name_##]" id="[##_agree_form_name_##]" class="agree_chk">
+                    <label for="[##_agree_form_name_##]" class="fs_16">
+                        동의합니다
+                    </label>
+                </div>        
+            </s_memb_agree_01>            
+        </div>
+        
+        <div class="col-12 pt_10px">
+            <div class="fs_18 fw_700">
+                이용약관 <span class="point_color">(필수)</span>
+            </div>                 
+            <s_memb_agree_02>          
+                <div class="area_box mt_10px pd_20_5px fs_14 point_scroll">
+                    [##_agree_text_##]
+                </div>
+                <div class="check_custom text-right pt_10px">
+                    <input type="checkbox" name="[##_agree_form_name_##]" id="[##_agree_form_name_##]" class="agree_chk">
+                    <label for="[##_agree_form_name_##]" class="fs_16">
+                        동의합니다
+                    </label>
+                </div>                
+            </s_memb_agree_02>
+        </div>
+
+        <s_mt_agree>
+            <div class="col-12 pt_10px">
+                
+            </div>
+                <div class="tit">[##_agree_title_##]</h6>
+            <div class="bx-term">[##_agree_text_##]</div>
+            <div class="check-area">
+                <span class="input-check-box">
+                    <input type="checkbox" id="[##_agree_form_name_##]" name="[##_agree_form_name_##]" value="Y"><label for="[##_agree_form_name_##]">동의함</label>
+                </span>
+            </div>
+        </s_mt_agree>        
+
+        <s_button>
+            <div class="col pt_30px text-center">
+                <a [##_agree_save_btn_##] >
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/check_btn_no.png" alt="" class="img-fluid chk_img">
+                </a>
+            </div>
+        </s_button>
+    </div>
+</div>
+
+<script>
+    $('.agree_chk').click(function () {
+
+        if($(".agree_chk:checked").length === 2) { 
+            $('.chk_img').attr('src','https://ggaribox.s3.ap-northeast-2.amazonaws.com/check_btn_chk.png');
+        }
+        else {            
+            $('.chk_img').attr('src','https://ggaribox.s3.ap-northeast-2.amazonaws.com/check_btn_no.png');
+        }
+    });
+
+    $(()=>{
+        /*
+       var text1 = $('#text1').val().replace(/<br \s*\/?>/mg,"\n");
+       $('#text1').val(text1);
+       var text2 = $('#text2').val().replace(/<br \s*\/?>/mg,"\n");
+       $('#text2').val(text2);
+       */
+    });
+</script>

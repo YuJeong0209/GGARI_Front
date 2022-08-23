@@ -1,0 +1,853 @@
+<style>
+    .q5_question input[type=checkbox]:checked+label {
+        background-image: none;
+    }
+
+    #promo_circle_loading {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #promo_circle_loading path:first-child {
+        stroke: rgba(110, 147, 87, 0.12);
+    }
+
+    #promo_circle_loading path {
+        stroke-linecap: round;
+    }
+
+    .modal-dialog {
+        width: 88%;
+        height: 80%;
+        margin: 0 auto;
+    }
+
+    .modal-content {
+        height: 83%;
+        top: 48px;
+    }
+
+
+
+    .promo_pages .fs_28 {
+        font-size: 24px;
+    }
+
+    .promo_pages .fs_20 {
+        font-size: 16px;
+    }
+
+    .modal_close {
+        padding: 0;
+    }
+
+    .modal_close img {
+        width: 28px;
+    }
+
+    .mpt-4 {
+        padding-top: 0.5rem !important;
+    }
+
+    .promo_pages .fs_12 {
+        font-size: 12px;
+    }
+
+
+    .pop_loading_box {
+        display: inline-block;
+        position: relative;
+        /* margin: 0 -4px -5px -2px; */
+        /* transition: all .2s ease; */
+    }
+
+    .pop_loader:before {
+        content: "";
+        position: absolute;
+        background-color: #6E9357;
+        border-radius: 50px;
+        top: 0px;
+        left: 0px;
+        width: 20px;
+        height: 12px;
+        z-index: 0;
+        opacity: 1;
+        /* -webkit-animation: loader4 20s ease-in-out infinite; */
+        /* animation: loader4 20s ease-in-out infinite; */
+    }
+
+    .pop_loader:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        left: 0;
+        top: 0px;
+    }
+
+    .pop_loader_top {
+        width: 54px;
+        height: 50px;
+        position: absolute;
+        top: -62px;
+        left: 0;
+        /* animation: loader4_top 20s ease-in-out infinite; */
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec6_charactor.png);
+        background-size: 54px;
+    }
+
+    .pop_loader {
+        position: relative;
+        width: 327px;
+        height: 12px;
+        background-color: rgba(110, 147, 87, 0.12);
+        border-radius: 50px;
+    }
+
+    .top2 {
+        left: 92px;
+    }
+
+    .loader2::before {
+        width: 112px;
+    }
+
+    .top3 {
+        left: 163px;
+        /*background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_slide.png);*/
+    }
+
+    .loader3::before {
+        width: 183px;
+    }
+
+    .top4 {
+        left: 235px;
+    }
+
+    .loader4::before {
+        width: 255px;
+    }
+
+    .top5 {
+        left: 290px;
+    }
+
+    .loader5::before {
+        width: 310px;
+    }
+
+    .q1_question input[type=checkbox] {
+        display: none;
+    }
+
+    .q1_question input[type=checkbox]+label {
+        cursor: pointer;
+        padding: 16px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        background: #FFFFFF;
+        border: 2px solid #6E9357;
+        border-radius: 6px;
+        color: #6E9357;
+    }
+
+    .q1_question input[type=checkbox]:checked+label {
+        background-color: #6E9357;
+        color: #fff;
+    }
+
+
+
+    .tip {
+        background: rgba(233, 237, 201, 0.5);
+        border-radius: 5px;
+        padding: 14px 20px 16px 20px;
+    }
+
+    .tip img {
+        width: 32px;
+    }
+
+    .ml_-3 {
+        margin-left: -2.5rem;
+    }
+
+    .line_14 {
+        line-height: 14px;
+    }
+
+    .q2_question input {
+        margin-bottom: -0.5rem;
+    }
+
+    .q2_question input[type=checkbox] {
+        display: none;
+    }
+
+    .q2_question input[type=checkbox]+label {
+        cursor: pointer;
+        padding-left: 32px;
+        background-repeat: no-repeat;
+        background-image: url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-off_16.png");
+        background-size: 16px;
+        background-position-y: 6px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .q2_question input[type=checkbox]:checked+label {
+        background-image: url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_16.png");
+    }
+
+    .q3_question input[type=checkbox],
+    .q4_question input[type=checkbox],
+    .q5_question input[type=checkbox] {
+        display: none;
+    }
+
+    .q3_question input[type=checkbox]+label,
+    .q4_question input[type=checkbox]+label,
+    .q5_question input[type=checkbox]+label {
+        cursor: pointer;
+        padding: 16px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        background: #FFFFFF;
+        border: 2px solid #6E9357;
+        border-radius: 6px;
+        color: #6E9357;
+    }
+
+    .q3_question input[type=checkbox]:checked+label,
+    .q4_question input[type=checkbox]:checked+label,
+    .q5_question input[type=checkbox]:checked+label {
+        background-color: #6E9357;
+        color: #fff;
+    }
+
+
+    #promo_page0 {
+        padding-top: 2rem;
+    }
+
+    #promo_page1 .page_wrap {
+        padding-top: 10rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page2 .page_wrap {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page3 .page_wrap {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page4 .page_wrap {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page5 .page_wrap {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+</style>
+
+<script type="text/javascript">
+
+
+    var promo = {
+        data: {
+            q1: null,
+            q2: [],
+            q3: null,
+            q4: null,
+            q5: null,
+        },
+
+        addAnswer: (q, a) => {
+            if(q == 2){
+                promo.data["q" + q].push(a);
+            }else{
+                promo.data["q" + q] = a;
+            }
+            console.log(promo.data);        
+        },
+
+        checkOnlyOne_q1: (element) => {
+            const checkboxes = document.getElementsByName("q1");
+            checkboxes.forEach((cb) => {
+                cb.checked = false;
+            })
+            element.checked = true;
+            promo.addAnswer(1, element.id.substr(-1));            
+        },
+        checkOnlyOne_q3: (element) => {
+            const checkboxes = document.getElementsByName("q3");
+            checkboxes.forEach((cb) => {
+                cb.checked = false;
+            })
+            element.checked = true;
+            promo.addAnswer(3, element.id.substr(-1));            
+        },
+        checkOnlyOne_q4: (element) => {
+            const checkboxes = document.getElementsByName("q4");
+            checkboxes.forEach((cb) => {
+                cb.checked = false;
+            })
+            element.checked = true;
+            promo.addAnswer(4, element.id.substr(-1));            
+        },
+        checkOnlyOne_q5: (element) => {
+            const checkboxes = document.getElementsByName("q5");
+            checkboxes.forEach((cb) => {
+                cb.checked = false;
+            })
+            element.checked = true;
+            promo.addAnswer(5, element.id.substr(-1));            
+        },
+
+
+        toggleModalPage: (index) => {
+            $('.promo_pages').addClass('d-none');
+            $('#promo_page' + index).removeClass('d-none');
+
+            if (index == 6) {
+                promo.data.q2 = promo.data.q2.join(',');
+                promo.data.id_ollysite = user.id;
+               console.log(promo.data);
+                $.ajax({
+                    url: serverUrl + '/api/surveys/promotion1',
+                    type: 'POST',
+                    data: promo.data,
+                }).done((data) => {
+                    console.log("Promotion Inserted : ", data);
+                }).fail((jqXHR, textStatus, errorThrown) => {
+                    console.log('login Error!' + textStatus + " : " + errorThrown);
+                });
+                promobar.animate(1);
+                setTimeout(() => { location.href = "/page/?M2_IDX=26402" }, 2000);
+            }
+        },
+
+
+
+    }
+</script>
+
+<div class="container-fuild mt-5">
+    <div class="row">
+        <div class="col">
+
+
+            <!--팝업 1페이지 -->
+            <div class="container-fluid promo_pages" id="promo_page0">
+                <div class="row align-items-center h-100 ">
+
+                    <div class="col-12 p_2rem ">
+                        <div class=" fs_28 fw_700">
+                            까리!<br>
+                            우리 반려묘의 건강을 알려줘!
+                        </div>
+                        <div class="fs_20 fw_500 pt-5_1">
+                            몇 가지 설문조사 질문에 답하고<br>우리 주인님에게 필요한 영양 간식을 알아보세요.<br>
+                            최대 3분정도 소요됩니다. 그럼 시작해볼까요?
+                        </div>
+                        <div class="fs_12 fw_500 color_888 pt-4">
+                            *정확한 진단 및 치료방법은 전문적인 의료기관을 이용하세요.
+                        </div>
+                        <div class="text-center pt-7">
+                            <a onclick="promo.toggleModalPage(1)">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_survay_btn.png" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--팝업 2페이지 Q1. -->
+            <div class="container-fluid promo_pages d-none" id="promo_page1">
+                <div class="row align-items-center h-100 ">
+
+                    <div class="col-12 text-center pt-7">
+                        <div class="pop_loading_box">
+                            <div class="pop_loader_top"></div>
+                            <div class="pop_loader"></div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row mw_357">
+                            <div class="col fs_10 fw_700 point_color">기본정보</div>
+                            <div class="col fs_10 fw_700 point_color px-2">질병/증상</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">놀이환경</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">간식주기</div>
+                            <div class="col fs_10 fw_700 point_color text-right">간식비용</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt_2rem border_line "></div>
+
+                    <div class="col-12 pt-3 px-4">
+                        <span class="fs_28 fw_700 point_color">Q1. </span>
+                        <span class="fs_20 fw_500">우리 반려묘는?</span>
+                    </div>
+
+                    <div class="col-12 pt-5 px-4">
+                        <div class="q1_question ">
+                            <input type="checkbox" name="q1" id="q1_1" onclick='promo.checkOnlyOne_q1(this)'>
+                            <label for="q1_1" class="mr-3">
+                                여자
+                            </label>
+                            <input type="checkbox" name="q1" id="q1_2" onclick='promo.checkOnlyOne_q1(this)'>
+                            <label for="q1_2">
+                                남자
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mw_357 page_wrap">
+                    <div class="col ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_prev.png"
+                            class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(0)">
+                    </div>
+                    <div class="col  text-right">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_next.png"
+                            class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(2)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q2. -->
+            <div class="container-fluid promo_pages d-none" id="promo_page2">
+                <div class="row align-items-center h-100 ">
+
+                    <div class="col-12 text-center pt-7">
+                        <div class="pop_loading_box">
+                            <div class="pop_loader_top top2"></div>
+                            <div class="pop_loader loader2"></div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row mw_357">
+                            <div class="col fs_10 fw_700 point_color">기본정보</div>
+                            <div class="col fs_10 fw_700 point_color px-2">질병/증상</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">놀이환경</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">간식주기</div>
+                            <div class="col fs_10 fw_700 point_color text-right">간식비용</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt_2rem border_line "></div>
+
+                    <div class="col-12 pt-3 px-4">
+                        <span class="fs_28 fw_700 point_color">Q2. </span>
+                        <span class="fs_20 fw_500">평소 가지고 있는 질병을 모두 체크하세요</span>
+                    </div>
+                    <div class="col-12 pt-3">
+                        <div class="tip point_color">
+                            <div class="row align-items-center h-100">
+                                <div class="col-2">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="col-2 pl-0 line_14">
+                                    <span class="fs_22 fw_700">
+                                        Tip.<br>&emsp;
+                                    </span>
+                                </div>
+                                <div class="col ml_-3 line_14">
+                                    <span class="fs_22 fw_500"> 질병 증상 완화에 도움이 되는 간식 추천을 위한 질문입니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="q2_question pt_2rem">
+                            <input type="checkbox" name="checker" id="checker3" onclick="promo.addAnswer(2, 1)">
+                            <label for="checker3" class="pb-2">
+                                요로계(요로, 방광, 신장 등) 질환을 앓는 중이거나 앓았던 적이 있다.
+                            </label>
+
+                            <input type="checkbox" name="checker" id="checker4" onclick="promo.addAnswer(2, 2)">
+                            <label for="checker4" class="pb-2">
+                                관절계 질환을 앓는 중이거나 앓았던 적이 있다.
+                            </label>
+
+                            <input type="checkbox" name="checker" id="checker5" onclick="promo.addAnswer(2, 3)">
+                            <label for="checker5" class="pb-2">
+                                소화계(배변, 소변, 장 등)관련 질환을 앓는 중이거나 앓았던 적이 있다.
+                            </label>
+
+                            <input type="checkbox" name="checker" id="checker6" onclick="promo.addAnswer(2, 4)">
+                            <label for="checker6" class="pb-2">
+                                피부(피부염, 털빠짐 등)관련 질환을 앓는 중이거나 앓았던 적이 있다.
+                            </label>
+
+                            <input type="checkbox" name="checker" id="checker7" onclick="promo.addAnswer(2, 5)">
+                            <label for="checker7" class="d-block pb-3">
+                                해당사항이 없다.
+                            </label>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row mw_357 page_wrap">
+                    <div class="col ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_prev.png"
+                            class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(1)">
+                    </div>
+                    <div class="col  text-right">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_next.png"
+                            class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(3)">
+                    </div>
+                </div>
+            </div>
+
+            <!--q3. -->
+            <div class="container-fluid promo_pages d-none" id="promo_page3">
+                <div class="row align-items-center h-100 ">
+
+                    <div class="col-12 text-center pt-7">
+                        <div class="pop_loading_box">
+                            <div class="pop_loader_top top3"></div>
+                            <div class="pop_loader loader3"></div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row mw_357">
+                            <div class="col fs_10 fw_700 point_color">기본정보</div>
+                            <div class="col fs_10 fw_700 point_color px-2">질병/증상</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">놀이환경</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">간식주기</div>
+                            <div class="col fs_10 fw_700 point_color text-right">간식비용</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt_2rem border_line "></div>
+
+                    <div class="col-12 pt-3 px-4">
+                        <span class="fs_28 fw_700 point_color">Q3. </span>
+                        <span class="fs_20 fw_500">하루에 얼마나 놀아주시는지 선택해주세요</span>
+                    </div>
+
+                    <div class="col-12 pt-3">
+                        <div class="tip point_color">
+                            <div class="row align-items-center h-100">
+                                <div class="col-2">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="col-2 pl-0 line_14">
+                                    <span class="fs_22 fw_700">
+                                        Tip.<br>&emsp;
+                                    </span>
+                                </div>
+                                <div class="col ml_-3 line_14">
+                                    <span class="fs_22 fw_500"> 생활 습관을 통해 생길 수 있는 질병 예방에 도움이 되는 간식추천을 위한
+                                        질문입니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 pt_2rem px-4">
+                        <div class="q3_question ">
+                            <input type="checkbox" name="q3" id="q3_1" onclick='promo.checkOnlyOne_q3(this)'>
+                            <label for="q3_1" class="mr-3">
+                                1일 1시간
+                            </label>
+                            <input type="checkbox" name="q3" id="q3_2" onclick='promo.checkOnlyOne_q3(this)'>
+                            <label for="q3_2">
+                                1일에 30분
+                            </label>
+                            <input type="checkbox" name="q3" id="q3_3" onclick='promo.checkOnlyOne_q3(this)'>
+                            <label for="q3_3" class="mt-2 mr-3">
+                                1일 15분
+                            </label>
+                            <input type="checkbox" name="q3" id="q3_4" onclick='promo.checkOnlyOne_q3(this)'>
+                            <label for="q3_4" class="mt-2">
+                                1일에 15분 미만
+                            </label>
+                            <input type="checkbox" name="q3" id="q3_5" onclick='promo.checkOnlyOne_q3(this)'>
+                            <label for="q3_5" class="mt-2">
+                                놀아주지 않음
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mw_357 page_wrap">
+                    <div class="col ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_prev.png"
+                            class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(2)">
+                    </div>
+                    <div class="col  text-right">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_next.png"
+                            class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(4)">
+                    </div>
+                </div>
+            </div>
+
+            <!--q4. -->
+            <div class="container-fluid promo_pages d-none" id="promo_page4">
+                <div class="row align-items-center h-100 ">
+
+                    <div class="col-12 text-center pt-7">
+                        <div class="pop_loading_box">
+                            <div class="pop_loader_top top4"></div>
+                            <div class="pop_loader loader4"></div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row mw_357">
+                            <div class="col fs_10 fw_700 point_color">기본정보</div>
+                            <div class="col fs_10 fw_700 point_color px-2">질병/증상</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">놀이환경</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">간식주기</div>
+                            <div class="col fs_10 fw_700 point_color text-right">간식비용</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt_2rem border_line "></div>
+
+                    <div class="col-12 pt-3 px-4">
+                        <span class="fs_28 fw_700 point_color">Q4. </span>
+                        <span class="fs_20 fw_500">간식을 구입하는 주기를 선택해주세요</span>
+                    </div>
+
+                    <div class="col-12 pt-3">
+                        <div class="tip point_color">
+                            <div class="row align-items-center h-100">
+                                <div class="col-2">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="col-2 pl-0 line_14">
+                                    <span class="fs_22 fw_700">
+                                        Tip.<br>&emsp;
+                                    </span>
+                                </div>
+                                <div class="col ml_-3 line_14">
+                                    <span class="fs_22 fw_500"> 간식 배송 주기를 설정하기 위한 질문입니다.<br><br></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 pt_2rem px-4">
+                        <div class="q4_question ">
+                            <input type="checkbox" name="q4" id="q4_1" onclick='promo.checkOnlyOne_q4(this)'>
+                            <label for="q4_1" class="mr-3">
+                                1주일에 1번
+                            </label>
+                            <input type="checkbox" name="q4" id="q4_2" onclick='promo.checkOnlyOne_q4(this)'>
+                            <label for="q4_2">
+                                2주일에 1번
+                            </label>
+                            <input type="checkbox" name="q4" id="q4_3" onclick='promo.checkOnlyOne_q4(this)'>
+                            <label for="q4_3" class="mt-2 mr-3">
+                                1달에 1번
+                            </label>
+                            <input type="checkbox" name="q4" id="q4_4" onclick='promo.checkOnlyOne_q4(this)'>
+                            <label for="q4_4" class="mt-2">
+                                규칙적이지 않음
+                            </label>
+                            <input type="checkbox" name="q4" id="q4_5" onclick='promo.checkOnlyOne_q4(this)'>
+                            <label for="q4_5" class="mt-2">
+                                구입하지 않음
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mw_357 page_wrap">
+                    <div class="col ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_prev.png"
+                            class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(3)">
+                    </div>
+                    <div class="col  text-right">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_next.png"
+                            class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(5)">
+                    </div>
+                </div>
+            </div>
+
+            <!--q5. -->
+            <div class="container-fluid promo_pages d-none" id="promo_page5">
+                <div class="row align-items-center h-100 ">
+
+                    <div class="col-12 text-center pt-7">
+                        <div class="pop_loading_box">
+                            <div class="pop_loader_top top5"></div>
+                            <div class="pop_loader loader5"></div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row mw_357">
+                            <div class="col fs_10 fw_700 point_color">기본정보</div>
+                            <div class="col fs_10 fw_700 point_color px-2">질병/증상</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">놀이환경</div>
+                            <div class="col fs_10 fw_700 point_color pl-3 pr-0">간식주기</div>
+                            <div class="col fs_10 fw_700 point_color text-right">간식비용</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mt_2rem border_line "></div>
+
+                    <div class="col-12 pt-3 px-4">
+                        <span class="fs_28 fw_700 point_color">Q5. </span>
+                        <span class="fs_20 fw_500">간식을 구입하는 ‘한 달’ 평균 비용을
+                            선택해주세요</span>
+                    </div>
+
+                    <div class="col-12 pt-3">
+                        <div class="tip point_color">
+                            <div class="row align-items-center h-100">
+                                <div class="col-2">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                                <div class="col-2 pl-0 line_14">
+                                    <span class="fs_22 fw_700">
+                                        Tip.<br>&emsp;
+                                    </span>
+                                </div>
+                                <div class="col ml_-3 line_14">
+                                    <span class="fs_22 fw_500"> 생간식 조합, 개수를 추천하기 위한 질문입니다.<br><br></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 pt_2rem px-4">
+                        <div class="q5_question ">
+                            <input type="checkbox" name="q5" id="q5_1" onclick='promo.checkOnlyOne_q5(this)'>
+                            <label for="q5_1" class="mr-3">
+                                1만원 미만
+                            </label>
+                            <input type="checkbox" name="q5" id="q5_2" onclick='promo.checkOnlyOne_q5(this)'>
+                            <label for="q5_2">
+                                1만원 ~ 3만원
+                            </label>
+                            <input type="checkbox" name="q5" id="q5_3" onclick='promo.checkOnlyOne_q5(this)'>
+                            <label for="q5_3" class="mt-2 mr-3">
+                                3만원 ~ 5만원
+                            </label>
+                            <input type="checkbox" name="q5" id="q5_4" onclick='promo.checkOnlyOne_q5(this)'>
+                            <label for="q5_4" class="mt-2">
+                                5만원 ~ 7만원
+                            </label>
+                            <input type="checkbox" name="q5" id="q5_5" onclick='promo.checkOnlyOne_q5(this)'>
+                            <label for="q5_5" class="mt-2">
+                                7만원 이상
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mw_357 page_wrap">
+                    <div class="col ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_prev.png"
+                            class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(4)">
+                    </div>
+                    <div class="col  text-right">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_next.png"
+                            class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(6)">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--팝업 마지막 로딩바 -->
+            <div class="container-fluid promo_pages d-none" id="promo_page6">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt-4 pr-4">
+                        <button type="button" class="btn" data-dismiss="modal"><img
+                                src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid"></button>
+                    </div>
+                    <div class="col-12 text-center fs_28 fw_700 pt-5">
+                        설문 내용을 분석하고 있습니다.
+                    </div>
+
+                    <div class="col pt-6 text-center">
+                        <div id="promo_circle_loading"></div>
+                    </div>
+
+                    <div class="col-12 pt-8 text-center fs_12 fw_500 color_888">
+                        까리는 정략/정성적인 자료들을 근거한 알고리즘을 토대로 간식을 구성해드리고 있습니다.<br>
+                        예방/관리에 도움이 되는 제품들이나 질병 치료를 희망하시는 분은 전문의료기관을 통해 처방받는 것을 권장합니다.
+                    </div>
+                </div>
+
+                <script>
+                    var promobar = new ProgressBar.Circle(promo_circle_loading, {
+                        color: '#6E9357',
+                        strokeWidth: 6,
+                        trailWidth: 6,
+                        easing: 'easeInOut',
+                        duration: 7500,
+                        text: {
+                            autoStyleContainer: false
+                        },
+                        from: { color: '#6E9357', width: 6 },
+                        to: { color: '#6E9357', width: 6 },
+                        step: function (state, circle) {
+                            circle.path.setAttribute('stroke', state.color);
+                            circle.path.setAttribute('stroke-width', state.width);
+
+                            var value = Math.round(circle.value() * 100);
+                            if (value === 0) {
+                                circle.setText('');
+                            } else {
+                                circle.setText(value);
+                            }
+                        }
+                    });
+                    promobar.text.style.fontSize = '20px';
+//    promobar.animate(1.0);
+
+                </script>
+            </div>
+
+
+
+
+            <script type="module">
+                var swiper = new Swiper('.swiper', {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    spaceBetween: 30,
+
+                });
+
+                var swiper2 = new Swiper('.cat_swiper', {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    spaceBetween: 30,
+                });
+            </script>
+
+
+
+        </div>
+    </div>
+
+</div>

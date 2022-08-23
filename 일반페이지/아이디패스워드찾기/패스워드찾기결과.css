@@ -1,0 +1,168 @@
+.mt_80{
+    margin-top : 80px;
+}
+.mw_360 {
+    max-width: 398px;
+    margin: 0 auto;
+}
+
+.mw_957 {
+    max-width: 987px;
+    margin: 0 auto;
+}
+
+.form-control {
+    background: #FFFFFF;
+    border: 1px solid #DBDADA;
+    border-radius: 6px;
+    padding: 14px 20px;
+    font-size: 16px;
+    height: 50px;
+}
+
+
+.form-control::placeholder {
+    color: #BEBCBB;
+}
+
+.form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+    border: 2px solid #6e9357 !important;
+}
+
+.form_2 {
+    background: #F7F7F7;
+    border: 1px solid #BEBCBB;
+    border-radius: 6px;
+}
+
+.shadow1 img {
+    box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 100px;
+}
+
+.py_15 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.log_bg {
+
+    background: url(images/center_line.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.gray_btn {
+    background: #D1D0D0;
+    border-radius: 50px;
+}
+
+.btn {
+    border-radius: 50px;
+}
+
+.h_50px {
+    height: 50px;
+    line-height: 50px;
+}
+
+.hyphen {
+    width: 40px;
+    height: 2px;
+    position: relative;
+    margin: 24px 10px;
+    background-color: #231815;
+}
+
+.h_526 {
+    height: 526px;
+}
+
+
+.p_15box {
+    padding: 14px 5px;
+    width: 98px;
+}
+
+.w98 {
+    width: 98px;
+}
+
+.input_time {
+    width: 35px;
+    right: 116px;
+    position: absolute;
+}
+.gray_btn_point {
+    background: #6E9357;
+    border-radius: 50px;
+}
+
+@media screen and (max-width:576px) {
+
+    .gray_box1 {
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 30px 10px;
+    }
+
+    .mw_360 {
+        max-width: 318px;
+        margin: 0 auto;
+    }
+
+    .fs_28 {
+        font-size: 18px;
+    }
+
+    .fs_16 {
+        font-size: 14px;
+    }
+
+    .fs_12 {
+        font-size: 12px;
+    }
+    .fs_14  {
+        font-size: 12px;
+    }
+
+    .hr-sect {
+        font-size: 12px;
+        margin: 20px 0px 20px 0;
+    }
+
+    .pt_30px {
+        padding-top: 20px;
+    }
+
+    .log .pt_20px {
+        padding-top: 10px;
+    }
+
+    .h_100 {
+        height: 130vh !important;
+    }
+
+    .form-control {
+        font-size: 12px;
+        font-weight: 400;
+        height: 44px;
+        padding: 14px 10px;
+    }
+    .p_15box {
+        width: 76px;
+    }
+    .w98 {
+        width: 76px;
+    }
+    .h_50px {
+        height: 44px;
+        line-height: 44px;
+    }
+    .input_time {
+        right: 85px;
+        font-size: 14px;
+    }
+}

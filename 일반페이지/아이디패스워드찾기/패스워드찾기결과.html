@@ -1,0 +1,55 @@
+
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_360">
+        <div class="col">
+                <div class="fs_22 fw_700 text-center">비밀번호 재설정</div>
+            <s_findPwResult>
+                <div class="fs_14 sub_gray_text pt_10px text-center">
+                    가입 시 등록한 휴대폰 번호로 인증 번호를 전송합니다.<br>
+                    휴대폰 인증 후 새 비밀번호로 변경할 수 있습니다.
+                </div>
+    
+    
+                <div class="pb-2 fs_16 pt_20px ">휴대폰 번호</div>
+                <div class="w-100 d-flex h_50px ">
+                    <!--
+                    <input type="text" class="form-control form_2 mr_10px ">
+                    <input type="text" class="form-control form_2 mr_10px ">
+                    <input type="text" class="form-control form_2 mr_10px ">
+                    <br>
+                    -->
+                    [##_find_user_info_##]
+                    <a id="a_APP_KEY" [##_btn_app_key_##] >
+                        <div class="btn bg_point color_fff fs_16 fw_700 p_15box text-center border_0">인증 전송</div>
+                    </a>
+                </div>
+    
+                <div class="pb-2 fs_16 pt_20px ">인증 번호</div>
+                <div class="w-100 d-flex h_50px ">
+                    <input type="text" class="form-control mr_10px" placeholder="인증 번호를 입력해주세요." id="[##_find_app_key_input_##]" name="[##_find_app_key_input_##]" maxlength="6">
+                    <div class="input_time point_color" style="display:none;">3:29</div>
+    
+
+                    <a href="../log/log.php">
+                        <div class="gray_btn color_fff fs_16 fw_700 text-center" style="width:368px;">인증하기</div>
+                    </a>
+                </div>
+    
+    
+            </s_findPwResult>
+            <s_noResult>
+                <div class="fs_14 sub_gray_text pt_10px text-center">
+                    일치하는 정보가 없습니다.                    
+                </div>
+                <div class="d-flex h_50px mt_40px">
+                    <a href="../memb/memb.search.php">
+                        <div class="gray_btn_point color_fff fs_16 fw_700 text-center"  style="width:368px;">돌아가기</div>
+                    </a>
+                </div>
+    
+            </s_noResult>
+        </div>
+
+
+    </div>
+</div>

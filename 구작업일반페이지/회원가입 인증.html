@@ -1,0 +1,85 @@
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_360 ">
+        <div class="text-center">
+            <s_cert_mobile>
+                <a id="[##_s_cert_mobile_id_##]" [##_s_cert_btn_mobile_##]>
+                    <span class="fs_28 fw_700">휴대폰으로 인증</span><br>
+                </a>
+            </s_cert_mobile>
+            <s_cert_email>
+                <a id="[##_s_cert_email_id_##]" [##_s_cert_btn_email_##]>
+                    <span class="fs_28 point_color fw_700">이메일로 인증</span><br>
+                </a>
+            </s_cert_email>
+
+            <s_cert_mobile_input>
+                <div id="[##_s_sert_mobile_id_##]" class="mt-5">
+                    <div class="fs_16 point_color text-left">연락처</div>
+                    <!-- 감싼 Dom 에 s_cert_mobile_id 값을 정확하게 넣어두면, oncl_M_APP_KIND('A'); 가 호출되었을 때 해당 Dom이 show() 됩니다. 		-->
+                    <div class="input_btn_wrap">
+                        <input id="mobile1" type="text" name="[##_s_cert_mobile_01_##]" id="[##_s_cert_mobile_01_##]" class="form-control form_phone" placeholder="010">
+                        <input type="text" name="[##_s_cert_mobile_02_##]" id="[##_s_cert_mobile_02_##]" class="form-control form_phone">
+                        <input type="text" name="[##_s_cert_mobile_03_##]" id="[##_s_cert_mobile_03_##]" class="form-control form_phone">    
+                        <button id="in_confirm_send_pass1" type="button" [##_s_cert_mobile_btn_##] class="btn btn-outline-success fs_12 fw_700 point_color">인증번호발송</button>
+                    </div>
+                    <div class="input_btn_wrap mt_12px">
+                        <input type="text" name="[##_s_cert_mobile_result_##]" id="[##_s_cert_mobile_result_##]" value="" class="form-control" placeholder="인증번호를 입력하세요.">
+                        <button id="in_confirm_send_pass2" type="button" [##_s_cert_mobile_btn_confirm_##] class="btn btn-outline-success input_btn input_btn02 fs_12 fw_700 point_color" >
+                            인증하기
+                            <span id="[##_span_time_a_##]" style="display:none;">[##_span_time_a_value_##]</span>
+                        </button>    
+                    </div>
+                </div>
+            </s_cert_mobile_input>
+            <s_cert_email_input>
+                <div id="[##_s_cert_email_id_##]">
+                        <!-- 감싼 Dom 에 _s_cert_email_id_ 값을 정확하게 넣어두면, oncl_M_APP_KIND('B'); 가 호출되었을 때 해당 Dom이 show() 됩니다. -->
+                    <p>이메일 인증은 input1개와, 결과를 받을 1개의 input, 버튼 2개가 필요합니다.</p>
+                    <input type="text" name="[##_s_cert_email_##]" id="[##_s_cert_email_##]">
+                    <button type="button" [##_s_cert_email_btn_##] >확인</button>
+                
+                    <div class="res_mv" style="height:5px"></div>
+                    <p class="mb30"></p>
+                    <input type="text" name="[##_s_cert_email_result_##]" id="[##_s_cert_email_result_##]" value="">
+                    <button type="button" [##_s_cert_email_btn_confirm_##] >확인</button>
+                    <span id="[##_span_time_b_##]" style="display:none;">[##_span_time_b_value_##]</span>
+                </div>
+            </s_cert_email_input>
+            <s_cert_email_after>
+                <div id="[##_s_cert_email_id_##]">
+                    <!-- 감싼 Dom 에 _s_cert_email_id_ 값을 정확하게 넣어두면, 
+                             oncl_M_APP_KIND('B'); 가 호출되었을 때 해당 Dom이 show() 됩니다. 
+                    -->
+                <p>가입 후 이메일 인증은 아래 버튼만 누르면 됩니다.</p>
+                <button type="button" [##_s_cert_email_after_btn_##] >가입하기 GoGo</button>
+                </div>
+            </s_cert_email_after>
+            
+        </div>
+    </div>    
+</div>
+
+
+<script>
+    /*
+        선택된 인증 방식에 따라서 입력을 변경합니다.
+    */
+    function oncl_M_APP_KIND(val) {
+        $("#M_APP_KIND").val(val);
+    
+        if(val == "A") {
+            $("#a_M_APP_KIND_A").addClass("aon");
+            $("#a_M_APP_KIND_B").removeClass("aon");
+            $("#div_M_APP_KIND_A").show();
+            $("#div_M_APP_KIND_B").hide();
+            $('#AK_MOBILE1').focus();
+        } else if(val == "B") {
+            $("#a_M_APP_KIND_A").removeClass("aon");
+            $("#a_M_APP_KIND_B").addClass("aon");
+            $("#div_M_APP_KIND_A").hide();
+            $("#div_M_APP_KIND_B").show();
+            $('#AK_EMAIL').focus();
+        }
+    }
+    </script>
+    <!-- 기본적으로 제공되는 Javascript -->

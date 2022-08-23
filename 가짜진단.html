@@ -1,0 +1,802 @@
+<style>
+    .pb_28 {
+        padding-bottom: 28rem;
+    }
+
+    .big_green_box {
+        background: rgba(110, 147, 87, 0.04);
+        border-radius: 5px;
+
+    }
+
+    .re01_box {
+        background: rgba(110, 147, 87, 0.04);
+        border-radius: 5px;
+        padding: 28px 40px;
+    }
+
+    .re01_box img {
+        width: 20px;
+        margin-bottom: 0.6rem;
+    }
+
+    .re01_box2 {
+        background: rgba(110, 147, 87, 0.04);
+        border-radius: 5px;
+        padding: 20px 20px 40px 26px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 18px 0px;
+        width: 840px;
+    }
+
+    .y_circle01 {
+        background: #F8B62D;
+        border-radius: 100px;
+        height: 60px;
+        width: 60px;
+        margin: 0 auto;
+    }
+
+    .mw_27 {
+        max-width: 29%;
+    }
+
+    .mw_38 {
+        max-width: 38%;
+    }
+
+    .y_40_span {
+        top: 0.6rem;
+        left: 0.5rem;
+        position: relative;
+    }
+
+    .blue_box {
+        background: #5BB0FF;
+        border: 1.2px solid #0072DC;
+        border-radius: 3px;
+        padding: 6px 10px;
+    }
+
+    .green_box1 {
+        background: rgba(110, 147, 87, 0.24);
+        opacity: 0.5;
+        border-radius: 3px;
+    }
+
+    .red_box1 {
+        background: rgba(240, 128, 128, 0.24);
+        opacity: 0.5;
+        border-radius: 3px;
+    }
+
+    .red_box2 {
+        background: #F08080;
+        border-radius: 100px;
+        z-index: 2;
+    }
+
+    .green_box2 {
+        background: #CCD5AE;
+        border-radius: 100px;
+        z-index: 2;
+    }
+
+    .pd_6_10 {
+        padding: 8px 12px;
+    }
+
+    .pd_5_10 {
+        padding: 7px 12px;
+    }
+
+
+    #result_02 .bg_fff {
+        top: -12px;
+        border-radius: 5px;
+
+    }
+
+    .green_btn {
+        background: rgba(110, 147, 87, 0.9);
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 700;
+        width: 100%;
+        font-size: 20px;
+        padding: 19px 25px !important;
+    }
+
+
+    .contentBox {
+        height: 250px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 200px;
+        margin: 0 auto;
+        background-color: #F9F9F9;
+    }
+
+    .contentBox2 {
+        background-color: #fff;
+    }
+
+    .contentBox>img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+
+    .select {
+        width: 144px;
+        height: 37px;
+    }
+
+    .select02 {
+        width: 144px;
+        height: 37px;
+    }
+
+    .select03 {
+        width: 144px;
+        height: 37px;
+    }
+
+    .select_expand {
+        height: 37px;
+    }
+
+    .select_expand::after {
+        content: ' ';
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/chevron-down_2.png);
+        background-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+    }
+
+    .select_expandLabel {
+        height: 37px;
+    }
+
+    .select_items {
+        padding-top: 37px;
+        border: 1.2px solid #6E9357;
+    }
+
+    .select_label {
+        line-height: 37px;
+    }
+
+    .select_label-placeholder {
+        height: 37px;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label {
+        height: 37px;
+    }
+
+    .select_input:checked+.select_label {
+        height: 37px;
+        margin-top: -37px;
+    }
+
+    .select_label {
+        font-size: 12px;
+        line-height: 36px;
+        padding-left: 16px;
+    }
+
+
+    .bg_yellow {
+        background: #E9C46A;
+        border-radius: 5px;
+        padding: 6px 16px;
+    }
+
+    .br_none br {
+        display: none;
+    }
+
+    .br_block br {
+        display: block;
+    }
+
+    .t_1rem {
+        top: 1rem;;
+    }
+    @media screen and (max-width:576px) {
+
+        .br_none br {
+            display: block;
+        }
+
+        .br_block br {
+            display: none;
+        }
+
+        .fs_28 {
+            font-size: 24px;
+            line-height: 140%;
+        }
+
+        .re01_box2 {
+            border-radius: 5px;
+            padding: 20px;
+            left: auto;
+            transform: none;
+            margin: 18px 0px;
+            width: 100%;
+        }
+
+        .mw_27 {
+            max-width: 100%;
+        }
+
+        .re01_box2 .col {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            flex-basis: auto;
+        }
+
+        .big_green_box .col {
+            flex-basis: auto;
+        }
+
+        .re01_box2 .mt_2rem {
+            margin-top: 3.75rem;
+        }
+
+        .mp-0xx {
+            padding: 0 15px !important;
+        }
+
+        .fs_26 {
+            font-size: 18px;
+        }
+
+        .m_mt_15 {
+            margin-top: 1.5rem;
+        }
+
+        .m_mt_1 {
+            margin-top: 1rem;
+        }
+
+        .m_mt_125 {
+            margin-top: 1.25rem;
+        }
+
+        .m_pb_15 {
+            padding-bottom: 1.5rem;
+        }
+
+        .m_pt_15 {
+            padding-top: 1.5rem !important;
+        }
+
+        .m_pt_1 {
+            padding-top: 1rem !important;
+        }
+
+        .fs_12 {
+            font-size: 12px;
+        }
+
+        .pt-1 {
+            padding-top: 0 !important;
+        }
+
+        #result_02 .fs_12 {
+            font-size: 9px;
+        }
+
+        #result_02 .bg_fff .fs_12 {
+            font-size: 12px;
+        }
+
+        .p-5_2 {
+            padding: 2rem 1rem 3.75rem 1rem;
+        }
+
+        .m_fs_10 {
+            font-size: 10px;
+        }
+
+        .contentBox {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+
+        .contentBox2 {
+            background-color: #fff;
+        }
+
+        .green_btn {
+            font-size: 14px;
+            margin-bottom: 3.75rem;
+        }
+
+        .last_btn {
+            margin-bottom: -2rem;
+        }
+
+        .mm_6 {
+            margin-top: 6rem !important;
+        }
+
+        #result_03 .text-center {
+            text-align: left !important;
+        }
+
+        .select {
+            width: 193px;
+        }
+
+        .select02 {
+            width: 193px;
+        }
+
+        .select03 {
+            width: 193px;
+        }
+
+        .pb_28 {
+            padding-bottom: 5rem;
+        }
+        .y_40_span {
+top: 1rem;
+left: 0.5rem;
+width: 200px;
+position: relative;
+}
+
+
+    }
+</style>
+
+
+<div class="container-fluid pt-7" id="result_01">
+    <div class="row align-items-center h-100 mw_870">
+        <div class="col-12 fs_28 fw_700 br_none">
+            <span class="point_color">우리 반려묘</span>님의<br> 영양 진단
+        </div>
+
+        <!--
+        <div class="col text-center mt_2rem">
+            <div class="re01_box">
+                <div class="fs_15 fw_700">성별</div>
+                <div class="fs_20 fw_700 point_color pt-3">
+                    여 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="col text-center mt_2rem">
+            <div class="re01_box">
+                <div class="fs_15 fw_700">나이</div>
+                <div class="fs_20 fw_700 point_color pt-3">
+                    6살
+                </div>
+            </div>
+        </div>
+
+        <div class="col text-center mt_2rem">
+            <div class="re01_box">
+                <div class="fs_15 fw_700">몸무게</div>
+                <div class="fs_20 fw_700 point_color pt-3">
+                    4kg
+                </div>
+            </div>
+        </div>
+
+        <div class="col text-center mt_2rem">
+            <div class="re01_box">
+                <div class="fs_15 fw_700">중성화여부</div>
+                <div class="fs_20 fw_700 point_color pt-3">
+                    완료
+                </div>
+            </div>
+        </div>
+
+    -->
+    </div>
+
+
+    <div class="row align-items-center h-100 mw_870 re01_box2 mt-4">
+        <div class="col mt-3 mw_38 pc">
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/result_cat.png" alt="" class="img-fluid">
+        </div>
+
+        <div class="col mt-3">
+            <div class="row">
+                <div class="col fs_26 fw_700 point_color mw_27 ">
+                    까리의
+                    추천 영양!
+                </div>
+                <div class="col fs_12 fw_700 text-center m_mt_1">
+                    <div class="bg_fff py-3 px-2 ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_joint_3.png" alt=""
+                            class="img-fluid mt-2 mb-4 disease_icon_big"><br>
+                            관절 : 관절에 주의가 필요합니다. 칼슘이 함유된 사료, 간식을 급여하세요.<br><br>
+                    </div>
+                </div>
+                <div class="col fs_12 fw_700 text-center p-0 mp-0xx m_mt_1">
+                    <div class="bg_fff py-3 px-2 ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_stress_3.png" alt=""
+                            class="img-fluid mt-2 mb-4 disease_icon_big"><br>
+                            스트레스 : 스트레스는 만병의 근원입니다. 충분한 교감을 통해 스트레스를 해소해 주세요!
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt_2rem">
+                <div class="col fs_26 fw_700 point_color mw_27">
+                    권장 영양
+                </div>
+                <div class="col fs_12 fw_700 pr-0 m_mt_1">
+                    <div class="bg_fff pt-3 px-2">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_pee_2.png" alt=""
+                            class="img-fluid ml-2 disease_icon_normal">
+                        <div class="d-inline-block y_40_span ">
+                            요로 : 반려묘 질병 1위 바로 '요로'!<br>지금도 잘 관리하고 있지만 조심, 또 조심해 주세요!</div>
+                           
+                    </div>
+                    <div class="bg_fff pt-1 pb-4 px-2 ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_ball_2.png" alt=""
+                            class="img-fluid ml-2 disease_icon_normal">
+                        <div class="d-inline-block y_40_span t_1rem br_block">
+                            헤어볼 : 헤어볼은 식이섬유를 통해 <br>빈도를 줄일 수 있어요! <br>식이섬유가 함유된 간식 급여를 해 보세요!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt_2rem">
+                <div class="col fs_26 fw_700 point_color mw_27">
+                    칭찬해요!
+                </div>
+                <div class="col fs_12 fw_700 pr-0 m_mt_1">
+                    <div class="bg_fff pt-2 px-2 ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_intestines_1.png" alt=""
+                            class="img-fluid ml-2 disease_icon_normal">
+                        <div class="d-inline-block y_40_span t_1rem">
+                            소화 : 장이 잘생기고 예쁜 냥이네요.<br>지금처럼 꾸준히 잘 관리해주세요.<br>아주 잘 하고 있습니다.
+                        </div>
+                    </div>
+                    <div class="bg_fff pt-1 pb-4 px-2">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_mouth_1.png" alt=""
+                            class="img-fluid ml-2 disease_icon_normal">
+                        <div class="d-inline-block y_40_span t_1rem br_block">
+                            구강 : 양치하면서 내 손이 물려서 피가 나더라도 <br>우리 냥이 스케일링 하는 건 끔찍히 싫은 집사님! <br>100점 드릴게요 :)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid mt-8" id="result_02">
+    <div class="row mb-4">
+        <div class="col text-center fs_12 fw_500 color_888">간식 사진을 클릭하면 간식에 대한 상세페이지로 이동합니다.</div>
+    </div>
+    <div class="row align-items-center h-100 mw_1030 big_green_box p-5_2">
+        <div class="col">
+            <span class="fs_28 fw_700">
+                스틱
+
+            </span>
+            <span class="float-right red_box1 fs_16 fw_700 color_red pd_6_10 m_fs_10">Premium</span>
+            <span class="float-right green_box1 fs_16 fw_700 point_color pd_6_10 mr-2 m_fs_10">Standard</span>
+            <span class="float-right blue_box fs_16 fw_700 color_fff pd_5_10 mr-2 m_fs_10"> Lite</span>
+        </div>
+    </div>
+
+    <div class="row align-items-center h-100 mw_1030 big_green_box p-5_2 pt-0">
+        <div class="col text-center">
+            <span class="red_box2 color_fff fs_16 fw_700 px-4 py-2">1순위</span>
+            <div class="bg_fff pt-5">
+                <div class="contentBox">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Snack01.png" alt=""
+                        class="img-fluid">
+                </div>
+                <div class="text-left fs_12 fw_700 px_2rem pt-3">
+                    <div class="d-flex">
+                        <span class="mr-3">제품명:<br>
+                            가격:<br>
+                            주성분:<br>
+                            성분:<br>
+                        </span>
+                        <span>
+                            A <br>
+                            300원<br>
+                            북어<br>
+                            오메가 3<br>
+                        </span>
+                    </div>
+                    <div class="pt-3 pb_2rem">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/y_24.png" alt=""
+                            class="img-fluid mr-2">관절
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/y_24.png" alt=""
+                            class="img-fluid ml-3 mr-2">릴렉스
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button type="button" class="btn green_btn">선택하기</button>
+            </div>
+        </div>
+
+        <div class="col text-center">
+            <span class="green_box2 color_fff fs_16 fw_700 px-4 py-2">2순위</span>
+            <div class="bg_fff pt-5">
+                <div class="contentBox">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Snack01_2.png" alt=""
+                        class="img-fluid">
+                </div>
+                <div class="text-left fs_12 fw_700 px_2rem pt-3">
+                    <div class="d-flex">
+                        <span class="mr-3">제품명:<br>
+                            가격:<br>
+                            주성분:<br>
+                            성분:<br>
+                        </span>
+                        <span>
+                            A <br>
+                            300원<br>
+                            북어<br>
+                            오메가 3<br>
+                        </span>
+                    </div>
+                    <div class="pt-3 pb_2rem">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/y_24.png" alt=""
+                            class="img-fluid mr-2">관절
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/y_24.png" alt=""
+                            class="img-fluid ml-3 mr-2">릴렉스
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button type="button" class="btn green_btn">선택하기</button>
+            </div>
+        </div>
+
+        <div class="col text-center">
+            <span class="green_box2 color_fff fs_16 fw_700 px-4 py-2">3순위</span>
+            <div class="bg_fff pt-5">
+                <div class="contentBox">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Snack01_3.png" alt=""
+                        class="img-fluid">
+                </div>
+                <div class="text-left fs_12 fw_700 px_2rem pt-3">
+                    <div class="d-flex">
+                        <span class="mr-3">제품명:<br>
+                            가격:<br>
+                            주성분:<br>
+                            성분:<br>
+                        </span>
+                        <span>
+                            A <br>
+                            300원<br>
+                            북어<br>
+                            오메가 3<br>
+                        </span>
+                    </div>
+                    <div class="pt-3 pb_2rem">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/y_24.png" alt=""
+                            class="img-fluid mr-2">관절
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/y_24.png" alt=""
+                            class="img-fluid ml-3 mr-2">릴렉스
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <button type="button" class="btn green_btn last_btn">선택하기</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="container-fluid mt-8 mm_6" id="result_03">
+    <div class="row mb-4  mw_1030">
+        <div class="col fs_28 fw_700 br_none"><span class="point_color">우리 반려묘</span>님의<br> 간식주기 설정</div>
+    </div>
+
+    <div class="row align-items-center h-100 mw_1030 big_green_box p-5_2 pt-0">
+        <div class="col text-center">
+            <div class="fs_28 fw_700 point_color pt-5">스틱</div>
+            <div class="bg_fff mt-4 pt_2rem pb_2rem">
+                <div class="contentBox contentBox2">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Snack01.png" alt=""
+                        class="img-fluid">
+                </div>
+                <div class="text-left fs_12 fw_700 px_2rem pt-3">
+                    <div class="d-flex">
+                        <span class="mr-3">
+                            제품명:<br>
+                            가격:<br>
+                            주성분:<br><br>
+                            주기:
+                        </span>
+                        <span>
+                            이나바 챠오츄르_참치맛<br>
+                            300원<br>
+                            23kcal<br><br>
+                            <ul class="select">
+                                <li>
+                                    <input class="select_close" type="radio" name="cycle" id="cycle-close"
+                                        value="" />
+                                    <span class="select_label select_label-placeholder">선택하세요.</span>
+                                </li>
+                                <li class="select_items" style="z-index:10;">
+                                    <input class="select_expand" type="radio" name="cycle" id="cycle-opener" />
+                                    <label class="select_closeLabel" for="cycle-close"></label>
+
+                                    <ul class="select_options">
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle" id="cycle01_01" />
+                                            <label class="select_label" for="cycle01_01">1일에 1개</label>
+                                        </li>
+
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle" id="cycle01_02" />
+                                            <label class="select_label" for="cycle01_02">2일에 1개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle" id="cycle01_03" />
+                                            <label class="select_label" for="cycle01_03">3일에 1개</label>
+                                        </li>
+                                    </ul>
+                                    <label class="select_expandLabel" for="cycle-opener"></label>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col text-center">
+            <div class="fs_28 fw_700 point_color pt-5">캔</div>
+            <div class="bg_fff mt-4 pt_2rem pb_2rem">
+                <div class="contentBox contentBox2">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Snack02.png" alt=""
+                        class="img-fluid">
+                </div>
+                <div class="text-left fs_12 fw_700 px_2rem pt-3">
+                    <div class="d-flex">
+                        <span class="mr-3">
+                            제품명:<br>
+                            가격:<br>
+                            주성분:<br><br>
+                            주기:
+                        </span>
+                        <span>
+                            이나바 챠오츄르_참치맛<br>
+                            300원<br>
+                            23kcal<br><br>
+                            <ul class="select02">
+                                <li>
+                                    <input class="select_close" type="radio" name="cycle02" id="cycle02-close"
+                                        value="" />
+                                    <span class="select_label select_label-placeholder">선택하세요,</span>
+                                </li>
+                                <li class="select_items">
+                                    <input class="select_expand" type="radio" name="cycle02" id="cycle02-opener" />
+                                    <label class="select_closeLabel" for="cycle02-close"></label>
+
+                                    <ul class="select_options">
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle02"
+                                                id="cycle02_01" />
+                                            <label class="select_label" for="cycle02_01">1일에 1개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle02"
+                                                id="cycle02_02" />
+                                            <label class="select_label" for="cycle02_02">2일에 1개</label>
+                                        </li>
+                                    </ul>
+                                    <label class="select_expandLabel" for="cycle02-opener"></label>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col text-center">
+            <div class="fs_28 fw_700 point_color pt-5">트릿</div>
+            <div class="bg_fff mt-4 pt_2rem pb_2rem">
+                <div class="contentBox contentBox2">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Snack03.png" alt=""
+                        class="img-fluid">
+                </div>
+                <div class="text-left fs_12 fw_700 px_2rem pt-3">
+                    <div class="d-flex">
+                        <span class="mr-3">
+                            제품명:<br>
+                            가격:<br>
+                            주성분:<br><br>
+                            주기:
+                        </span>
+                        <span>
+                            이나바 챠오츄르_참치맛<br>
+                            300원<br>
+                            23kcal<br><br>
+                            <ul class="select03">
+                                <li>
+                                    <input class="select_close" type="radio" name="cycle03" id="cycle03-close"
+                                        value="" />
+                                    <span class="select_label select_label-placeholder">선택하세요,</span>
+                                </li>
+                                <li class="select_items">
+                                    <input class="select_expand" type="radio" name="cycle03" id="cycle03-opener" />
+                                    <label class="select_closeLabel" for="cycle03-close"></label>
+
+                                    <ul class="select_options">
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle03"
+                                                id="cycle03_01" />
+                                            <label class="select_label" for="cycle03_01">1일에 1개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="cycle03"
+                                                id="cycle03_02" />
+                                            <label class="select_label" for="cycle03_02">2일에 1개</label>
+                                        </li>
+                                    </ul>
+                                    <label class="select_expandLabel" for="cycle03-opener"></label>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="container-fluid mt-8 pb_28">
+    <div class="row align-items-center h-100 mw_870">
+        <div class="col text-center">
+            <div class="fs_28 fw_700">
+                간식을 이렇게 구성하면?
+            </div>
+            <div class="pt-4">
+                <span class="fw_700 fs_15 color_fff bg_yellow">권장 </span>
+                <span class="fw_500 fs_15 pl-2"> 간식 칼로리입니다.</span>
+            </div>
+
+            <div class="mw_460 pt-5_2">
+                <a href="/page/?M2_IDX=26497"><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/go_btn.png" width="100%"></a>
+            </div>
+
+            <div class="fs_10 fw_700 color_888 pt-4" style="text-decoration: underline;">간식 다시 선택하러 가기</div>
+
+        </div>
+    </div>
+</div>
+
+

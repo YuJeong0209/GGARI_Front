@@ -1,0 +1,77 @@
+<div class="container-fluid h_100 log_bg">
+    <div class="row align-items-center h-100 mw_957">
+        <div class="col-lg-6 col-sm-1 mw_360 h_526">
+            <s_find_id>
+                <form id="[##_find_id_form_name_##]" name="[##_find_id_form_name_##]"  method="post" action="[##_find_id_form_action_##]" onsubmit="return onsu_Search_ID();">
+                    <fieldset>
+                        <legend class="blind">아이디 찾기</legend>
+                        <div class="fs_22 fw_700 ">아이디 찾기</div>
+                        <div class="pb-2 fs_16 pt_20px">이름</div>
+                        <input type="text" class="form-control form_1 login_id" placeholder="이름을 입력해주세요." id="[##_find_id_input_name_##]1" name="[##_find_id_input_name_##]">
+                        <div class="pb-2 fs_16 pt_40px ">이메일</div>
+                        <input type="text" class="form-control form_1 login_email" placeholder="이메일을 입력해주세요." id="[##_find_id_input_email_##]1" name="[##_find_id_input_email_##]">
+            
+                        <a [##_find_id_btn_submit_##]>
+                            <div class="gray_btn color_fff fs_14 fw_700 py_15 text-center mt_40px submit_btn">확인</div>
+                        </a>            
+                    </fieldset> 
+                </form>
+            </s_find_id>
+        </div>
+
+        <div class="col-lg-6 col-sm-1 mw_360 ">
+            <s_find_pw>
+                <form id="[##_find_pw_form_name_##]" name="[##_find_pw_form_name_##]" method="post" action="[##_find_pw_form_action_##]" onsubmit="return onsu_Search_PW();">
+                    <fieldset>
+                        <legend class="blind"> 비밀번호 찾기 </legend>
+                        <div class="fs_22 fw_700 ">비밀번호 재설정하기</div>
+                        <div class="pb-2 fs_16 pt_20px ">이름</div>
+                        <input type="text" class="form-control form_2 pw_login_name" placeholder="이름을 입력해주세요." id="[##_find_pw_input_name_##]2" name="[##_find_pw_input_name_##]">
+                        <div class="pb-2 fs_16 pt_40px ">아이디</div>
+                        <input type="text" class="form-control form_2 pw_login_id" placeholder="아이디를 입력해주세요." id="[##_find_pw_input_id_##]" name="[##_find_pw_input_id_##]">
+                        <div class="pb-2 fs_16 pt_20px ">인증 방식</div>
+            
+                        <div class="d-flex">
+                            <div class="radio_custom ml_2rem phone_btn">
+<!--
+                                <input type="radio" id="ex_rd02_1" name="ex_rds02" checked onchange="setDisplay()">
+-->                                
+                                <input type="radio" id="[##_find_pw_auth_kind_##]1" name="[##_find_pw_auth_kind_##]" value="A" checked onchange="setDisplay()">
+                                <label for="[##_find_pw_auth_kind_##]1">휴대폰 번호</label>
+                            </div>
+                            <div class="radio_custom ml-6 email_btn">
+<!--                                
+                                <input type="radio" id="ex_rd02_2" name="ex_rds02" onchange="setDisplay()">
+-->
+                                <input type="radio" id="[##_find_pw_auth_kind_##]2" name="[##_find_pw_auth_kind_##]" value="B" onchange="setDisplay()">
+                                <label for="[##_find_pw_auth_kind_##]2">이메일</label>
+                            </div>
+                        </div>
+            
+                        <div class="phone_toggle ">
+                            <div class="pb-2 fs_16 pt_20px ">휴대폰 번호</div>
+                            <div class="w-100 d-flex h_50px ">
+                                <input type="text" class="form-control form_2 phone_01" id="[##_find_pw_input_mobile1_##]" name="[##_find_pw_input_mobile1_##]" maxlength="3" placeholder="010">
+                                <div class="hyphen"></div>
+                                <input type="text" class="form-control form_2 phone_02" id="[##_find_pw_input_mobile2_##]" name="[##_find_pw_input_mobile2_##]" maxlength="4">
+                                <div class="hyphen"></div>
+                                <input type="text" class="form-control form_2 phone_03" id="[##_find_pw_input_mobile3_##]" name="[##_find_pw_input_mobile3_##]" maxlength="4">
+                            </div>
+                        </div>
+            
+                        <div class="email_toggle d-none">
+                            <div class="pb-2 fs_16 pt_20px ">이메일</div>
+                            <div class="w-100 h_50px ">
+                                <input id="[##_find_pw_input_email_id_##]" type="text" class="form-control form_2_email form2email" placeholder="이메일을 입력해주세요.">
+                            </div>
+                        </div>
+                        <a [##_find_pw_btn_submit_##]>
+                            <div class="gray_btn color_fff fs_14 fw_700 py_15 text-center mt_40px submit_btn2">확인</div>
+                        </a>
+                    </fieldset>
+                </form>
+            </s_find_pw>
+        </div>
+    </div>
+</div>
+

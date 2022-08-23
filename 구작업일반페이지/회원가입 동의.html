@@ -1,0 +1,51 @@
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_550 ">
+        <div class="col">
+            <s_memb_agree_01>
+                <div class="fs_16 point_color fw_700 pb_12 title1 pt-25">개인정보처리방침 (필수)</div>
+                <textarea id="text1" class="privacy_box point_color fs_13 fw_500 mb_12">
+                    [##_agree_text_##]
+                </textarea>
+                <input type="checkbox" name="[##_agree_form_name_##]" id="[##_agree_form_name_##]" value="Y">
+                <label for="[##_agree_form_name_##]">동의함</label>
+            </s_memb_agree_01>
+            <s_memb_agree_02>
+                <div class="fs_16 point_color fw_700 pb_12 pt-25 ">이용약관 (필수)</div>
+                <textarea id="text2" class="privacy_box point_color fs_13 fw_500 mb_12">
+                    [##_agree_text_##]
+                </textarea>
+                <input type="checkbox" name="[##_agree_form_name_##]" id="[##_agree_form_name_##]" value="Y">
+                <label for="[##_agree_form_name_##]">동의함</label>
+            </s_memb_agree_02>
+            <s_mt_agree>
+                <li>
+                    <h6 class="tit">[##_agree_title_##]</h6>
+                    <div class="bx-term">[##_agree_text_##]</div>
+                    <div class="check-area">
+                        <span class="input-check-box">
+                            <input type="checkbox" id="[##_agree_form_name_##]" name="[##_agree_form_name_##]" value="Y"><label for="[##_agree_form_name_##]">동의함</label>
+                        </span>
+                    </div>
+                </li>
+            </s_mt_agree>
+
+            <div class="pt-5_1 text-center mw_360">
+                <s_button>
+                    <a [##_agree_save_btn_##] class="login text-center">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/start_btn.png" alt="" class="img-fluid ">
+                    </a>    
+                </s_button>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height : 400px;"></div>
+
+<script>
+    $(()=>{
+       var text1 = $('#text1').val().replace(/<br \s*\/?>/mg,"\n");
+       $('#text1').val(text1);
+       var text2 = $('#text2').val().replace(/<br \s*\/?>/mg,"\n");
+       $('#text2').val(text2);
+    });
+</script>

@@ -1,0 +1,2544 @@
+<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/fullpage.css" />
+<script type="text/javascript" src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/fullpage.js"></script>
+
+<style>
+    @charset "utf-8";
+    #promo_page2 .form-control{
+        background: rgba(110, 147, 87, 0.12);
+        border-radius: 5px;
+        border: 0;
+        height: 48px;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0.375rem 24px;
+    }
+
+    #promo_page2 .form-control::placeholder {
+        color: rgba(110, 147, 87, 0.5);
+        font-weight: 400;
+    }
+
+    #promo_circle_loading {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #promo_circle_loading path:first-child {
+        stroke: rgba(110, 147, 87, 0.12);
+    }
+    
+    #promo_circle_loading path {
+        stroke-linecap: round;
+    }
+
+
+    /* CSS Document */
+    
+    .section01_bg {
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/main_bg2.png);
+        background-size: cover;
+        /*(height: calc(100vh + 80px);*/
+        background-attachment: fixed;
+        height: 100vh;
+    }
+    
+    .sec04_bg {
+    
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec4_box.png);
+        /*(height: calc(100vh + 80px);*/
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+    
+    #dung {
+        width: 200px;
+        height: 150px;
+        background-color: skyblue;
+        position: absolute;
+        top: 150px;
+        left: 300px;
+        animation: ani 1s infinite alternate;
+    }
+    
+    @keyframes ani {
+        0% {
+            transform: translate(0, 0);
+        }
+    
+        100% {
+            transform: translate(0, 50px);
+        }
+    }
+    
+    .top_bubble {
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/tag.png);
+        background-repeat: no-repeat;
+        height: 76px;
+        width: 176px;
+        padding-left: 30px;
+        padding-top: 18px;
+    }
+    
+    .cat {
+        width: 618px;
+        position: absolute;
+        right: 0;
+        top: -2rem;
+    }
+    
+    
+    .jb-wrap {
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .jb-wrap2 {
+        margin-top: -10rem;
+        margin-left: 17rem;
+    }
+    
+    .jb-wrap3 {
+        margin-top: -1rem;
+        margin-left: 10rem;
+    }
+    
+    .jb-wrap img {
+        width: 70%;
+        vertical-align: middle;
+    }
+    
+    .jb-text {
+        text-align: left;
+        position: absolute;
+        top: 45%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        line-height: 29.7px
+    }
+    
+    .jb-text2 {
+        left: 30%;
+    }
+    
+    .jb-text3 {
+        left: 33%;
+    }
+    
+    
+    #section4 .p-4 {
+        padding: 1.7rem !important;
+    }
+    
+    .sec4_box {
+        border-radius: 24px;
+        background-color: #fff;
+    }
+    
+    .sec5_box {
+        background: #FDF6C5;
+        border-radius: 500px;
+        line-height: 28px;
+    }
+    
+    
+    
+    
+    .loading_box {
+        display: inline-block;
+        position: relative;
+        /*margin:0 -4px -5px -2px;*/
+        transition: all .2s ease;
+    }
+    
+    
+    
+    
+    
+    
+    /* -------------- loader4 -------------- */
+    
+    .loader4 {
+        position: relative;
+        width: 960px;
+        height: 12px;
+        background-color: rgba(110, 147, 87, 0.12);
+        border-radius: 50px;
+    }
+    
+    .loader4:before {
+        content: "";
+        position: absolute;
+        background-color: #6E9357;
+        border-radius: 50px;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 12px;
+        z-index: 0;
+        opacity: 1;
+        -webkit-animation: loader4 20s ease-in-out infinite;
+        animation: loader4 20s ease-in-out infinite;
+    }
+    
+    .loader4:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        left: 0;
+        top: 0px;
+    }
+    
+    @keyframes loader4 {
+        0% {
+            width: 0px;
+        }
+    
+        100% {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+    
+    
+    
+    .loader4_top {
+        width: 97px;
+        height: 90px;
+        position: absolute;
+        top: -100px;
+        left: -50px;
+        animation: loader4_top 20s ease-in-out infinite;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec6_charactor.png);
+    }
+    
+    @keyframes loader4_top {
+        0% {
+            transform: translate(0, 0);
+        }
+    
+        100% {
+            transform: translate(960px, 0);
+        }
+    }
+    
+    
+    
+    .sec7_box {
+        width: 448px;
+        height: 472px;
+    
+        background-color: #E9C46A;
+        box-shadow: 0px 8px 24px rgba(233, 196, 106, 0.24);
+        border-radius: 24px;
+    }
+    
+    
+    .sec8_box1 {
+        height: 500px;
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec8_box1.png);
+        background-repeat: no-repeat;
+        margin-top: -1rem;
+        padding-left: 0;
+    }
+    
+    .sec8_box2 {
+        height: 519px;
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec8_box2.png);
+        background-repeat: no-repeat;
+        margin-top: -2.4rem;
+        color: #fff;
+        padding-left: 0;
+    }
+    
+    .sec8_box3 {
+        height: 624px;
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec8_box3.png);
+        background-repeat: no-repeat;
+        margin-top: -9rem;
+        padding-left: 0;
+    }
+    
+    .sec8_box1_txt {
+        margin-top: 2rem;
+    }
+    
+    .sec8_box2_txt {
+        margin-top: 3.4rem;
+    }
+    
+    .sec8_box3_txt {
+        margin-top: 10rem;
+    }
+    
+    .sec8_box_txt2 {
+        margin-top: 1.8rem;
+        line-height: 54px;
+    }
+    
+    .sec8_btn1 {
+        padding-top: 9rem;
+    }
+    
+    .sec8_btn2 {
+        padding-top: 7.5rem;
+    }
+    
+    .sec8_btn3 {
+        padding-top: 4rem;
+    }
+    
+    .sec8_box_line {
+        line-height: 22px;
+        padding-top: 0.8rem;
+        padding-bottom: 1rem;
+    }
+    
+    .sec9_box {
+        max-width: 320px;
+        height: 472px;
+    }
+    
+    .sec9_box2 {
+        background: #FFFFFF;
+        border: 1px solid rgba(110, 147, 87, 0.2);
+        box-shadow: 0px 8px 24px rgba(110, 147, 87, 0.24);
+        border-radius: 24px;
+        width: 320px;
+        height: 224px;
+    }
+    
+    
+    .sec10_box {
+        border-radius: 24px 24px 0 0;
+        height: 172px;
+    }
+    
+    .sec10_box2 {
+        border-radius: 0 0 24px 24px;
+    }
+    
+    
+    @media screen and (max-width:576px) {
+        #section1 .row {
+            padding-top: 6rem;
+        }
+    
+        #section1 .col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    
+        .top_bubble {
+            height: 65px;
+            margin-left: -10px;
+        }
+    
+        #section1 .mobile {
+            margin-top: -0.4rem;
+        }
+    
+        #section1 .mt-6 {
+            margin-top: 4rem !important;
+        }
+    
+        #section1 .mt-6 img {
+            width: 69%;
+        }
+    
+        .section01_bg {
+            background-image: none;
+            background-color: #6E9357;
+            background-size: cover;
+            /*(height: calc(100vh + 80px);*/
+            background-attachment: fixed;
+            height: 680px;
+        }
+    
+        .m_center {
+            text-align: center;
+        }
+    
+        .cat {
+            top: 6rem !important;
+            top: 50%;
+            left: 34%;
+            transform: translate(-50%, -50%);
+        }
+    
+        .cat img {
+            width: 50%;
+            margin: 0 auto;
+        }
+    
+        .fixed-bottom.mb-5 {
+            margin-bottom: 0 !important;
+        }
+    
+        #section2 {
+            top: 10rem;
+        }
+    
+        #section2 .col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    
+        .jb-text {
+            top: 41%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            line-height: 15px;
+            width: 100%;
+        }
+    
+        .jb-wrap img {
+            width: 100%;
+        }
+    
+        .jb-wrap2 {
+            margin-top: -5rem;
+            margin-left: 2rem;
+        }
+    
+        .jb-wrap3 {
+            margin-top: 0rem;
+            margin-left: 1rem;
+        }
+    
+        .jb-text .pt-3 {
+            padding-top: 0.5rem !important;
+        }
+    
+        #section3,
+        #section3 .fp-tableCell {
+            height: 107px !important;
+            margin-top: 10rem;
+            margin-bottom: 2rem;
+        }
+    
+        .sec04_bg {
+            background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_sec4_box.png);
+            background-size: contain;
+            background-position: center;
+        }
+    
+        #section4 .px-5_2 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+    
+        #section4 .mr-1 {
+            margin-right: 10px !important;
+            margin-left: -4px;
+        }
+    
+        #section4 .ml-1 {
+            margin-left: 11px !important;
+            margin-right: -4px;
+        }
+    
+        #section4 .mobile_t {
+            margin-top: 1rem;
+            margin-left: -0.5rem;
+        }
+    
+        #section4 .mobile_t2 {
+            margin-left: 0.5rem;
+            padding-right: 0rem !important;
+        }
+    
+        #section4 .mobile_t3 {
+            margin-left: 20px;
+            padding-right: 28px !important;
+        }
+    
+        #section4 .pb-4 {
+            padding-bottom: 0rem !important;
+        }
+    
+        #section4 .mobile_t3 .col-1 {
+            -ms-flex: 0 0 15.333333%;
+            flex: 0 0 15.333333%;
+            max-width: 15.333333%;
+        }
+    
+        #section4 .fs_34 {
+            padding-left: 0.5rem;
+        }
+    
+        #section5 {
+            padding-top: 4rem;
+        }
+        
+        #section5 .fs_34 {
+            font-size: 20px;
+        }
+    
+        #section5 .mobile {
+            display: flex;
+        }
+    
+        .sec5_box {
+            line-height: 16.8px;
+            width: 100%;
+            border-radius: 120px;
+            margin: 0 20px;
+        }
+    
+        .sec5_box img {
+            width: 100%;
+        }
+    
+        #section6 {
+            padding-top: 6rem;
+        }
+    
+        #section6 .mobile .fw_700 {
+            font-size: 18px !important;
+            font-weight: 700 !important;
+            line-height: 25px;
+        }
+    
+        #section6 .mobile img {
+            width: 24px;
+            margin-bottom: 0.2rem;
+        }
+    
+        #section6 .fs_20 {
+            font-size: 14px !important;
+        }
+    
+        #section6 .mobile .mt-5 {
+            margin-top: 3.6rem !important;
+        }
+    
+        .loader4 {
+            width: 8px;
+            height: 460px;
+        }
+    
+        .loader4:before {
+            width: 8px;
+            height: 0;
+        }
+    
+        .loader4:after {
+            width: 8px;
+            height: 460px;
+        }
+    
+        @keyframes loader4 {
+            0% {
+                height: 0px;
+            }
+    
+            100% {
+                height: 100%;
+                opacity: 1;
+            }
+        }
+    
+        .w_100 {
+            width: 128px !important;
+        }
+    
+        
+        #section7 {
+            margin-top: 8rem;
+            padding: 0 1rem;
+        }
+    
+        #section7 .mb-6 {
+            margin-bottom: 3rem !important;
+        }
+    
+        #section7 .fs_28 {
+            font-size: 16px;
+        }
+    
+        #section7 .fs_24 br {
+            display: none;
+        }
+    
+        .sec7_box {
+            height: 192px;
+            width: 335px;
+            border-radius: 24px;
+        }
+    
+        #section7 .p-5 {
+            padding: 4rem 2rem !important;
+        }
+    
+        #section7 .pt-5_2 {
+            padding-top: 2rem !important;
+        }
+    
+        #section7 .mr-4 {
+            margin-right: 0 !important;
+        }
+    
+        #section7 .pt-4 {
+            padding-top: 0.5rem !important;
+        }
+    
+        #section7 .pt-5 {
+            padding-top: 2rem !important;
+        }
+    
+    
+        #section8 {
+            margin-top: 8rem;
+        }
+        .sec8_box_txt2 {
+            margin-top: 2.1rem;
+        }
+    
+        #section8 .fs_20 {
+            font-size: 16px;
+        }
+    
+        .fff16 {
+            font-size: 12px !important;
+            ;
+        }
+    
+        .sec8_box1,
+        .sec8_box2,
+        .sec8_box3 {
+            flex: 0 0 100%!important;
+            max-width: 100%!important;
+            background-repeat: no-repeat;
+            background-position: center center;
+            padding-right: 0;
+        }
+        .sec8_box1 .pl-5, .sec8_box2 .pl-5, .sec8_box3 .pl-5{
+            padding-left: 5rem!important;
+        }
+        .sec8_box2 {
+            margin-top: 1.6rem;
+        }
+    
+        .sec8_box3 {
+            margin-top: 2rem;
+        }
+    
+        #section9 {
+            margin-top: 7rem;
+        }
+    
+        .sec9_box {
+            margin: 0 auto;
+            height: 320px;
+        }
+    
+        #section9 .p_2rem {
+            padding: 1rem 2rem 1rem 2rem;
+        }
+    
+        .sec9_box2 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-top: 1.5rem;
+    
+        }
+    
+        #section9 .mt-4 {
+            margin-top: 0!important;
+        }
+    
+        #section10 {
+            margin-top: 8rem;
+        }
+        
+    
+        #section10 .fs_28 {
+            padding-top: 3rem;
+        }
+        .swiper {
+            margin-left: 1rem;
+            padding-bottom: 3rem;
+        }
+    
+        .swiper-slide {
+            width: 265px !important;
+            margin-right: 1rem;
+        }
+    
+    .round_slide {
+        width: 265px!important;
+    }
+    #section11 {
+        margin-top: 13rem;
+        height: 300px;
+    }
+        #section11 .mb-10 {
+            margin-bottom: 3rem !important;
+        }
+        #section11 .py-5_1 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+    
+        #section11 .mt-5_2 {
+            margin-top: 3rem !important;
+        }
+    
+        #section11 .last_row {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        #section11 .last_row .text-right {
+            text-align: left!important;
+        }
+    
+        #section11 .line_22 {
+            line-height: 17px;
+        }
+    }
+
+
+    .q5_question input[type=checkbox]:checked+label {
+        background-image: none;
+    }
+
+    #promo_circle_loading {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #promo_circle_loading path:first-child {
+        stroke: rgba(110, 147, 87, 0.12);
+    }
+
+    #promo_circle_loading path {
+        stroke-linecap: round;
+    }
+
+    .modal-dialog {
+        width: 88%;
+        height: 80%;
+        margin: 0 auto;
+    }
+
+
+
+    .modal_close {
+        padding: 0;
+    }
+
+    .modal_close img {
+        width: 28px;
+    }
+
+    .mpt-4 {
+        padding-top: 0.5rem !important;
+    }
+
+    .promo_pages .fs_12 {
+        font-size: 12px;
+    }
+
+
+    .pop_loading_box {
+        display: inline-block;
+        position: relative;
+        /* margin: 0 -4px -5px -2px; */
+        /* transition: all .2s ease; */
+    }
+
+    .pop_loader:before {
+        content: "";
+        position: absolute;
+        background-color: #6E9357;
+        border-radius: 50px;
+        top: 0px;
+        left: 0px;
+        width: 20px;
+        height: 12px;
+        z-index: 0;
+        opacity: 1;
+        /* -webkit-animation: loader4 20s ease-in-out infinite; */
+        /* animation: loader4 20s ease-in-out infinite; */
+    }
+
+    .pop_loader:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        left: 0;
+        top: 0px;
+    }
+
+    .pop_loader_top {
+        width: 54px;
+        height: 50px;
+        position: absolute;
+        top: -62px;
+        left: 0;
+        /* animation: loader4_top 20s ease-in-out infinite; */
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec6_charactor.png);
+        background-size: 54px;
+    }
+
+    .pop_loader {
+        position: relative;
+        width: 800px;
+        height: 12px;
+        background-color: rgba(110, 147, 87, 0.12);
+        border-radius: 50px;
+    }
+
+    .top2 {
+        left: 186px;
+    }
+
+    .loader2::before {
+        width: 236px;
+    }
+
+    .top3 {
+        left: 373px;
+        /*background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_slide.png);*/
+    }
+
+    .loader3::before {
+        width: 423px;
+    }
+
+    .top4 {
+        left: 562px;
+    }
+
+    .loader4::before {
+        width: 612px;
+        animation: none;
+    }
+
+    .top5 {
+        left: 730px;
+    }
+
+    .loader5::before {
+        width: 780px;
+    }
+
+    .q1_question input[type=checkbox] {
+        display: none;
+    }
+
+    .q1_question input[type=checkbox]+label {
+        cursor: pointer;
+        padding: 16px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        background: #FFFFFF;
+        border: 2px solid #6E9357;
+        border-radius: 6px;
+        color: #6E9357;
+    }
+
+    .q1_question input[type=checkbox]:checked+label {
+        background-color: #6E9357;
+        color: #fff;
+    }
+
+
+
+    .tip {
+        background: rgba(233, 237, 201, 0.5);
+        border-radius: 5px;
+        padding: 14px 20px 16px 20px;
+    }
+
+    .tip img {
+        width: 32px;
+    }
+
+    .ml_-3 {
+        margin-left: -0.5rem;
+    }
+
+    .line_14 {
+        line-height: 14px;
+    }
+
+    .q2_question input {
+        margin-bottom: -0.5rem;
+    }
+
+    .q2_question input[type=checkbox] {
+        display: none;
+    }
+
+    .q2_question input[type=checkbox]+label {
+        cursor: pointer;
+        padding-left: 32px;
+        background-repeat: no-repeat;
+        background-image: url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-off_16.png");
+        background-size: 16px;
+        background-position-y: 6px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .q2_question input[type=checkbox]:checked+label {
+        background-image: url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_16.png");
+    }
+
+    .q3_question input[type=checkbox],
+    .q4_question input[type=checkbox],
+    .q5_question input[type=checkbox] {
+        display: none;
+    }
+
+    .q3_question input[type=checkbox]+label,
+    .q4_question input[type=checkbox]+label,
+    .q5_question input[type=checkbox]+label {
+        cursor: pointer;
+        padding: 16px 28px;
+        font-size: 14px;
+        font-weight: 700;
+        background: #FFFFFF;
+        border: 2px solid #6E9357;
+        border-radius: 6px;
+        color: #6E9357;
+    }
+
+    .q3_question input[type=checkbox]:checked+label,
+    .q4_question input[type=checkbox]:checked+label,
+    .q5_question input[type=checkbox]:checked+label {
+        background-color: #6E9357;
+        color: #fff;
+    }
+
+
+    .f_none {
+        float: none;
+        margin: 0 auto;
+    }
+
+    #promo_page0 {
+        padding-top: 2rem;
+    }
+
+    #promo_page1 .page_wrap {
+        padding-top: 10rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page2 .page_wrap {
+        padding-top: 0rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page3 .page_wrap {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page4 .page_wrap {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+
+    #promo_page5 .page_wrap {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+    }
+</style>
+
+<div class="fixed-bottom text-center mb-5">
+        <a href="#" data-toggle="modal" data-target="#promo_survey" class="pc">
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/main_button1.png" alt="" class="img-fluid">
+        </a>
+
+        <a href="/page/?M2_IDX=26416" class="mobile">
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/m_fixbtn.png" alt=""
+                class="img-fluid  text-center">
+        </a>
+    </div>
+
+
+<div id="fullpage">
+
+
+    <div class="section " id="section1">
+        <div class="container-fluid section01_bg">
+            <div class="row align-items-center h-75 mw_870 ">
+                <div class="col">
+                    <div class="top_bubble point_color fs_14 fw_500">
+                        13,000명이 선택한
+                    </div>
+
+                    <div class="mt-2 fs_36 fw_700 color_fff line_50">
+                        고양이에게 필요한<br>
+                        영양 성분이 궁금하세요?
+                    </div>
+
+                    <div class="mt-4 fs_16 fw_400 color_fff">
+                        <span class="pc">우리집 고양이에게 필요한 맞춤형 간식을 찾아보세요!</span>
+                        <span class="mobile">우리집 고양이에게 필요한 맞춤형<br>간식을 찾아보세요!</span>
+                    </div>
+                    <div class="mt-6 fs_16 fw_400 color_fff" style="z-index:10">
+                            <a href="#" data-toggle="modal" data-target="#promo_survey" class="pc">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/main_button2.png" alt=""
+                                    class="img-fluid"></a>
+                                    <a href="/page/?M2_IDX=26416" class="mobile">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/main_button2.png" alt=""
+                                            class="img-fluid"></a>
+
+                        </div>
+                </div>
+
+                <div class="col m_center">
+                    <div class="cat"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/main_top_cat.png"
+                            class="img-fluid" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section" id="section2">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_870">
+                <div class="col ">
+                    <div class="fs_28 fw_700 mb-5 text-center">그동안 고민 많았죠?</div>
+
+                    <div class="jb-wrap">
+                        <div class="jb-image">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/bubble_white.png" alt="" class="pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_bubble_white.png" alt=""
+                                class="mobile">
+                        </div>
+                        <div class="jb-text">
+                            <p class="fs_22 fw_700">
+                                일 때문에 바빠서 집에 혼자있는 우리 냥이에게<br>
+                                너무 미안해요.. 그래서 간식을 한 가득,<br>
+                                한 번에 주게 되더라구요</p>
+                            <p class="fs_12 fw_700 pt-3">
+                                34세, 야근이 많은 집사님</p>
+                        </div>
+                    </div>
+
+                    <div class="jb-wrap jb-wrap2">
+                        <div class="jb-image"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/bubble_blue.png"
+                                alt="" class="pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_bubble_blue.png" alt=""
+                                class="mobile">
+                        </div>
+                        <div class="jb-text jb-text2">
+                            <p class="fs_22 fw_700">
+                                아침에 분명 간식을 줬는데, 집에 오니<br>
+                                아빠가 또 간식을 주고 있더라구요.<br>
+                                간식을 하루에 얼마나 먹는지 확인이 어려워요
+                            </p>
+                            <p class="fs_12 fw_700 pt-3">
+                                24세, 가족과 함께 거주중인 집사님</p>
+                        </div>
+                    </div>
+
+                    <div class="jb-wrap jb-wrap3">
+                        <div class="jb-image"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/bubble_yellow.png"
+                                alt="" class="pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_bubble_yellow.png" alt=""
+                                class="mobile">
+                        </div>
+                        <div class="jb-text jb-text3">
+                            <p class="fs_22 fw_700">
+                                좋은 간식 먹이고 싶어 열심히 검색해봤습니다.<br>
+                                근데 우리집 고양이들에게 제일 필요한 간식이 뭔지,<br>
+                                어떤 간식을 먹여야 할지 매번 고민이에요
+                            </p>
+                            <p class="fs_12 fw_700 pt-3">
+                                28세, 3마리 고양이를 키우시는 집사님</p>
+                        </div>
+                    </div>
+
+                    <!--
+                            <div class="mobile text-center">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_bubble1.png" class="img-fluid" alt="">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_bubble2.png" class="img-fluid" alt="">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_bubble3.png" class="img-fluid" alt="">
+                                
+                            </div>
+                            -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section" id="section3">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_870">
+                <div class="col">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec3_img.png" alt="" class="img-fluid pc">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/m_sec3_img.png" alt=""
+                        class="img-fluid mobile">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section" id="section4">
+        <div class="container-fluid ">
+            <div class="row align-items-center mw_960 sec04_bg px-5_2 py-6">
+                <div class="col-12 pb-4">
+                    <div class="fs_28 fw_700 mb-5 text-center">이런 분에게 추천해요!</div>
+                </div>
+
+                <div class="col-sm-6 px-2 mobile_t2">
+                    <div class="row align-items-center sec4_box p-4 mr-1">
+                        <dlv class="col-2 fw_700 fs_34 point_color mb-2">
+                            1
+                        </dlv>
+                        <dlv class="col fw_700 fs_18 pl-0">
+                            우리 고양이에게 <span class="point_color">어떤 간식</span>이 필요한지 모르시는 집사님
+                        </dlv>
+                    </div>
+                </div>
+                <div class="col-sm-6 px-2 mobile_t">
+                    <div class="row align-items-center sec4_box p-4 ml-1">
+                        <dlv class="col-2 fw_700 fs_34 point_color mb-2">
+                            2
+                        </dlv>
+                        <dlv class="col fw_700 fs_18 pl-0">
+                            어떤 간식을 <span class="point_color">얼마나 급여</span>해야하는지 모르시는 초보 집사님
+                        </dlv>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 mt-3 px-2 mobile_t2">
+                    <div class="row align-items-center sec4_box p-4 mr-1">
+                        <dlv class="col-2 fw_700 fs_34 point_color mb-2">
+                            3
+                        </dlv>
+                        <dlv class="col fw_700 fs_18 pl-0">
+                            집을 자주 비워 <span class="point_color">혼자 있는 고양이</span>에게
+                            미안해서 <span class="point_color">간식을 많이 주는</span> 집사님
+                        </dlv>
+                    </div>
+                </div>
+                <div class="col-sm-6 mt-3 px-2 mobile_t">
+                    <div class="row align-items-center sec4_box p-4 ml-1">
+                        <dlv class="col-2 fw_700 fs_34 point_color mb-2">
+                            4
+                        </dlv>
+                        <dlv class="col fw_700 fs_18 pl-0">
+                            여러 간식을 쟁여두시느라
+                            집에 <span class="point_color">공간이 부족하신</span> 집사님
+                        </dlv>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 mt-3 px-2 mobile_t3">
+                    <div class="row align-items-center sec4_box p-4">
+                        <dlv class="col-1 fw_700 fs_34 point_color mb-2">
+                            5
+                        </dlv>
+                        <dlv class="col fw_700 fs_18 pl-0">
+                            가족 구성원이 많아 누가, 언제 <span class="point_color">간식을 얼마나 급여했는지</span> 확인이 어려운 집사님
+                        </dlv>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section" id="section5">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_1010">
+                <div class="col-12">
+                    <div class="fs_20 fw_700 text-center">진단은 의사에게, 약은 약사에게</div>
+                    <div class="fs_34 fw_700 mb-5 text-center">간식은 까리에게 맡기세요!</div>
+
+                </div>
+
+                <div class="col sec5_box text-center py-5 mx-3 pc">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec5_ico1.png" alt=""
+                        class="img-fluid mb-5 mt-4"><br>
+                    <div class="fs_20 fw_700 point_color">위생적으로 급여하고<br>보관할 수 있게 작은 용량으로 소분된 패키지</div>
+                </div>
+                <div class="col sec5_box text-center py-5 mx-2 pc">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec5_ico2.png" alt=""
+                        class="img-fluid mb-5 mt-4"><br>
+                    <div class="fs_20 fw_700 point_color">맞춤형 알고리즘을 통한<br>스마트한 제품 추천 및<br>급여 주기 관리</div>
+                </div>
+                <div class="col sec5_box text-center py-5 mx-3 pc">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec5_ico3.png" alt=""
+                        class="img-fluid mb-5 mt-4"><br>
+                    <div class="fs_20 fw_700 point_color">날짜별 개별 포장과<br>한달에 한번 필요한 양 만큼<br>뻐르고 정확한 배송</div>
+                </div>
+
+                <div class="mobile sec5_box align-items-center h-100">
+                    <div class="col-4">
+                        <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec5_ico1.png" alt=""
+                            class="img-fluid my-4 mx-3">
+                    </div>
+                    <div class="col">
+                        <div class="fs_20 fw_700 point_color">위생적으로 급여하고<br>보관할 수 있게 작은 용량으로<br> 소분된 패키지</div>
+                    </div>
+                </div>
+
+                <div class="mobile sec5_box align-items-center h-100 mt-3">
+                    <div class="col-4">
+                        <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec5_ico2.png" alt=""
+                            class="img-fluid my-4 mx-3">
+                    </div>
+                    <div class="col">
+                        <div class="fs_20 fw_700 point_color">맞춤형 알고리즘을 통한<br>스마트한 제품 추천 및<br>급여 주기 관리</div>
+                    </div>
+                </div>
+
+                <div class="mobile sec5_box align-items-center h-100 mt-3">
+                    <div class="col-4">
+                        <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec5_ico3.png" alt=""
+                            class="img-fluid my-4 mx-3">
+                    </div>
+                    <div class="col">
+                        <div class="fs_20 fw_700 point_color">날짜별 개별 포장과<br>한달에 한번 필요한 양 만큼<br>뻐르고 정확한 배송</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section" id="section6">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_960 pc">
+                <div class="col-12 mb-10">
+                    <div class="fs_28 fw_700 text-center line_392">간식단표짜기?<br>
+                        5분이면 충분합니다.
+                    </div>
+                </div>
+                <div class="col-12 mb-5_1 mt-5">
+
+
+                    <div class="loading_box">
+                        <div class="loader4_top loader4_top"></div>
+                        <div class="loader4"></div>
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png" alt=""
+                        class="img-fluid pb-2 mr-1">
+                    <span class="fs_20 fw_700 point_color">
+                        건강설문
+                    </span>
+                    <div class="fs_20 point_color pt-3">
+                        딱 3분! 간단한 설문을 통해 우리 반려묘에 대해 알아보기
+                    </div>
+
+                </div>
+                <div class="col">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png" alt=""
+                        class="img-fluid pb-2 mr-1">
+                    <span class="fs_20 fw_700 point_color">
+                        제품 선택하기
+                    </span>
+                    <div class="fs_20 point_color pt-3">
+                        우리 반려묘에게<br>꼭 필요한 간식 추천받고 원하는 제품 선택하기
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png" alt=""
+                        class="img-fluid pb-2 mr-1">
+                    <span class="fs_20 fw_700 point_color">
+                        주기 설정하기
+                    </span>
+                    <div class="fs_20 point_color pt-3">
+                        반려묘의 나이 또는 활동량 등에 맞게 주기 추천받고 주기 설정하기
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png" alt=""
+                        class="img-fluid pb-2 mr-1">
+                    <span class="fs_20 fw_700 point_color">
+                        구독 신청하기
+                    </span>
+                    <div class="fs_20 point_color pt-3">
+                        간식단표 완성하고, <br>매달 필요한 구독 용품 추가하고, 구독 신청하기
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row align-items-center h-100 mw_960 mobile">
+                <div class="col-12 mb-5">
+                    <div class="fs_28 fw_700 text-center line_392">간식단표짜기?<br>
+                        5분이면 충분합니다.
+                    </div>
+                </div>
+
+                <div class="d-flex ">
+                    <div class="col-1 ml-4">
+
+
+                        <div class="loading_box">
+                            <div class="loader4"></div>
+                        </div>
+                    </div>
+
+                    <div class="col ml-2 mr-5">
+                        <div class="row">
+                            <div class="col-12">
+
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png"
+                                    alt="" class="img-fluid mr-1">
+                                <span class="fs_20 fw_700 point_color">
+                                    건강설문
+                                </span>
+                                <div class="fs_20 point_color ">
+                                    딱 3분! 간단한 설문을 통해 우리 반려묘에 대해 알아보기
+                                </div>
+
+                            </div>
+                            <div class="col-12 mt-5">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png"
+                                    alt="" class="img-fluid mr-1">
+                                <span class="fs_20 fw_700 point_color">
+                                    제품 선택하기
+                                </span>
+                                <div class="fs_20 point_color">
+                                    우리 반려묘에게 꼭 필요한 간식 추천받고 원하는 제품 선택하기
+                                </div>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png"
+                                    alt="" class="img-fluid mr-1">
+                                <span class="fs_20 fw_700 point_color">
+                                    주기 설정하기
+                                </span>
+                                <div class="fs_20 point_color">
+                                    반려묘의 나이 또는 활동량 등에 맞게 주기 추천받고 주기 설정하기
+                                </div>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/akar-icons_circle-check_1.png"
+                                    alt="" class="img-fluid mr-1">
+                                <span class="fs_20 fw_700 point_color">
+                                    구독 신청하기
+                                </span>
+                                <div class="fs_20 point_color ">
+                                    간식단표 완성하고, 매달 필요한 구독 용품 추가하고, 구독 신청하기
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-5 text-center">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec6_charactor_m.png" alt=""
+                                    class="img-fluid w_100">
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="section  " id="section7">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_1010">
+                <div class="col-12">
+                    <div class="fs_20 fw_700 text-center">반려묘 건강도 챙기고 집사님 지갑도 지키고</div>
+                    <div class="fs_34 fw_700 mb-6 text-center">까리구독 특별 혜택</div>
+                </div>
+
+                <div class="col-sm-5 sec7_box p-5 pt-5_2 mr-4 order_last">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/num_1.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/num_1_m.png" alt=""
+                                class="img-fluid mobile">
+                        </div>
+                        <div class="col pl-0">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec7_DISCOUNT COUPON.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec7_DISCOUNT COUPON_m.png" alt=""
+                                class="img-fluid mobile">
+                            <div class="fs_28 fw_700 color_fff pt-4">
+                                까리 할인혜택
+                            </div>
+                            <div class="fs_24 fw_700 color_fff pt-5">
+                                첫 건강설문, 구독 신청, <br>
+                                자기 유지 등 최대 40%<br>
+                                할인 혜택
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 sec7_box p-5 pt-5_2 mr-4 order_last mobile mt-3 bg_point">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/num_1.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/num_2_m.png" alt=""
+                                class="img-fluid mobile">
+                        </div>
+                        <div class="col pl-0">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec7_DISCOUNT COUPON.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/SPECIAL TICKET_m.png" alt=""
+                                class="img-fluid mobile">
+                            <div class="fs_28 fw_700 color_fff pt-4">
+                                매달 까리 블라인드 선물 제공
+                            </div>
+                            <div class="fs_24 fw_700 color_fff pt-5">
+                                까리 굿즈, 이달의 장난감, 이달의 간식 중 랜덤 제공
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5 sec7_box p-5 pt-5_2 mr-4 order_last mobile mt-3 bg_blue">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/num_1.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/num_3_m.png" alt=""
+                                class="img-fluid mobile">
+                        </div>
+                        <div class="col pl-0">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec7_DISCOUNT COUPON.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/FREE SHIPPING_m.png" alt=""
+                                class="img-fluid mobile">
+                            <div class="fs_28 fw_700 color_fff pt-4">
+                                무료 배송 혜택
+                            </div>
+                            <div class="fs_24 fw_700 color_fff pt-5">
+                                다음달에 필요한 제품을 결제하면, 까리박스와 함께 무료 배송
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col order_1">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec7_coupon.png" alt=""
+                        class="img-fluid"><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section " id="section8">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_960">
+                <div class="col-12">
+                    <div class="fs_20 fw_700 text-center fff16">간식 종류는 多多益善, 혜택도 多多益善 </div>
+                    <div class="fs_34 fw_700 mb-6 text-center">까리박스 종류</div>
+                </div>
+
+
+                <div class="col sec8_box1 text-center">
+                    <div class="sec8_box1_txt">
+                        <div class="fs_20 fw_700">
+                            라이트
+                        </div>
+
+                        <div class="fs_16 fw_500 text-left pl-5 sec8_box_txt2">
+                            구성품: 스틱, 츄르, 캔<br>
+                            까리 블라인드 선물 제공<br>
+                            구독 전제품 5% 할인 혜택<br>
+                            까리 굿즈 달력 제공
+                        </div>
+                        <div class="sec8_btn1">
+                            <a href="#" class="fs_20 fw_500">쿠폰 받기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col sec8_box2 text-center">
+                    <div class="sec8_box2_txt">
+                        <div class="fs_20 fw_700">
+                            스탠다드
+                        </div>
+
+                        <div class="fs_16 fw_500 text-left pl-5 sec8_box_txt2">
+                            <div class="sec8_box_line">
+                                구성품: 스틱, 츄르, 캔,<br>
+                                순살, 파우치, 스낵
+                            </div>
+                            까리 블라인드 선물 제공<br>
+                            구독 전제품 7% 할인 혜택<br>
+                            까리 굿즈 달력 제공
+                        </div>
+                        <div class="sec8_btn2">
+                            <a href="#" class="fs_20 fw_500 color_fff">쿠폰 받기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col sec8_box3 text-center">
+                    <div class="sec8_box3_txt">
+                        <div class="fs_20 fw_700">
+                            프리미엄
+                        </div>
+
+                        <div class="fs_16 fw_500 text-left pl-5 sec8_box_txt2">
+                            <div class="sec8_box_line">
+                                구성품: 스틱, 츄르, 캔,<br>
+                                순살, 파우치, 스낵, 껌
+                            </div>
+                            이달의 간식 1개 제공<br>
+                            이달의 장난감 1개 제공<br>
+                            구독 전제품 10% 할인 혜택<br>
+                            까리 굿즈 달력 제공
+                        </div>
+                        <div class="sec8_btn3">
+                            <a href="#" class="fs_20 fw_500">쿠폰 받기</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="section9">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_1010">
+                <div class="col-12">
+                    <div class="fs_20 fw_700 text-center">집사님들이 가장 많이 선택한 바로 그 간식 </div>
+                    <div class="fs_34 fw_700 mb-5 text-center">까리간식 베스트 셀러 </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center h-100 mw_1010">
+                <div class="col bg_point radius_24 sec9_box ">
+                    <div class="fs_28 fw_700 color_fff p_2rem">
+                        까리박스의<br>
+                        추천 상품
+                    </div>
+                    <div class="mt-2 text-center">
+                        <a href="#">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_cat2.png" alt=""
+                                class="img-fluid pc">
+                            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_cat2_m.png" alt=""
+                                class="img-fluid mobile">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col ml-3 pc">
+                    <div class="row">
+                        <div class="col sec9_box2 pt-2 pl-4 mr-2">
+                            <div class="row my-4">
+                                <div class="col">
+                                    <div class="fs_28 fw_700 point_color">
+                                        스틱
+                                    </div>
+                                    <div class="fs_20 fw_500 point_color pt-2">
+                                        불멸의 원탑<br>
+                                        최애 간식
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_img1.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col sec9_box2 pt-2 pl-4 ml-2">
+                            <div class="row my-4">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <div class="fs_28 fw_700 point_color">
+                                                캔
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="fs_20 fw_500 point_color pt-2">
+                                                가장 먼저 떠오르는<br>
+                                                고양이 간식
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col text-right">
+                                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_img2.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 ">
+                        <div class="col sec9_box2 pt-2 pl-4 ">
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <div class="fs_28 fw_700 point_color">
+                                        트릿
+                                    </div>
+                                    <div class="fs_20 fw_500 point_color pt-2">
+                                        동결건조하여 원물 성분<br>
+                                        그대로 급여가능한
+                                    </div>
+                                </div>
+                                <div class="col mr-5 text-right">
+                                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_img3.png" alt=""
+                                        class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile col-12 px-0 text-center">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_m1.png" alt="" class="img-fluid ">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_m2.png" alt="" class="img-fluid mt_2">
+                    <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec9_m3.png" alt="" class="img-fluid mt_2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section  bg_gray" id="section10">
+        <div class="container-fluid ">
+            <div class="row align-items-center h-100">
+                <div class="col-12 mb-5_1">
+                    <div class="fs_28 fw_700 text-center line_392">생생한 후기
+                    </div>
+                </div>
+
+                <div class="col">
+
+                    <!-- Swiper -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img1.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        저는 사실 무엇을 먹어야하는지 알고 있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고
+                                        구독! 패키징이 너무 섬세해서 기분이 일단 좋습니다.
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img2.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        2번째 주문입니당<br>
+                                        이렇게 정기구독하니까 은근히 꾸준히 먹게되서 좋네요. 구독날짜도 바로바로 바꿀 수 있어서 좋구 알림도 매일 오니까 더 안잊어버리고 잘
+                                        먹게돼요
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img3.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        건강설문으로 추천받은 영양제인데 영양제 케이스도 너무 예쁘고 케이스에 커다랗게 복용법 적혀있어서 너무 편했어요. 앱도 너무 유용하고
+                                        좋네요 :)
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img4.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        저는 사실 무엇을 먹어야하는지 알고 있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고
+                                        구독! 패키징이 너무 섬세해서 기분이 일단 좋습니다.
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img1.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        저는 사실 무엇을 먹어야하는지 알고 있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고
+                                        구독! 패키징이 너무 섬세해서 기분이 일단 좋습니다.
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img2.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        2번째 주문입니당<br>
+                                        이렇게 정기구독하니까 은근히 꾸준히 먹게되서 좋네요. 구독날짜도 바로바로 바꿀 수 있어서 좋구 알림도 매일 오니까 더 안잊어버리고 잘
+                                        먹게돼요
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img3.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        건강설문으로 추천받은 영양제인데 영양제 케이스도 너무 예쁘고 케이스에 커다랗게 복용법 적혀있어서 너무 편했어요. 앱도 너무 유용하고
+                                        좋네요 :)
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/sec10_img4.png" alt=""
+                                    class="img-fluid"><br>
+                                <div class="bg_fff sec10_box p_2rem text-left  mt-3">
+                                    <div class="fs_16 fw_500">
+                                        저는 사실 무엇을 먹어야하는지 알고 있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고
+                                        구독! 패키징이 너무 섬세해서 기분이 일단 좋습니다.
+                                    </div>
+                                </div>
+                                <div class="bg_fff sec10_box2 p_2rem text-left">
+                                    <div class="mt-2">
+                                        <div class="fs_12 fw_700">
+                                            경기도 성남시 분당구 이**님, 34세 직장인
+                                        </div>
+                                        <div class="fs_12 fw_700 color_gray">
+                                            2022.06.20
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="section " id="section11">
+        <div class="container-fluid">
+            <div class="row align-items-center h-100 mw_1010 mb-10">
+                <div class="col-12 mb-10">
+                    <div class="fs_20 fw_700 text-center">어쩌구저쩌구</div>
+                    <div class="fs_34 fw_700 mb-5 text-center">바로 시작유도 글귀</div>
+                    <div class="text-center mt-4">
+                            <a href="#" data-toggle="modal" data-target="#promo_survey" class="pc">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec11_btn.png" alt=""
+                                    class="img-fluid"></a>
+                                    <a href="/page/?M2_IDX=26416" class="mobile">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec11_btn.png" alt=""
+                                            class="img-fluid"></a>
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+$(() => {
+    //PC일때만 풀페이지
+    if ($(document).width() > 576) {
+        let myFullpage = new fullpage('#fullpage', {
+            verticalCentered: false,
+            //navigation: true,
+            responsiveWidth: 768,
+        });
+
+    }
+    //메인일 시 푸터를 섹션11뱃속으로 가져옴.
+    let $footer = $('footer').clone();
+    $('footer').remove();
+    $('#section11').append($footer);
+
+    //서브타이틀 제거
+    $('.sub_tit_wrap').remove();
+    //설문조사 켤때의 동작
+    $('#promo_survey').on('shown.bs.modal', () => {
+        //            promo.init();
+    });
+});
+
+var promo = {
+    data: {
+        q1: null,
+        q2: [],
+        q3: null,
+        q4: null,
+        q5: null,
+    },
+
+    addAnswer: (q, a) => {
+        if(q == 2){
+            promo.data["q" + q].push(a);
+        }else{
+            promo.data["q" + q] = a;
+        }
+        console.log(promo.data);
+    },
+
+    checkOnlyOne_q1: (element) => {
+        const checkboxes = document.getElementsByName("q1");
+        checkboxes.forEach((cb) => {
+            cb.checked = false;
+        })
+        element.checked = true;
+        console.log(element.id);
+        promo.addAnswer(1, element.id.substr(-1));
+    },
+    checkOnlyOne_q3: (element) => {
+        const checkboxes = document.getElementsByName("q3");
+        checkboxes.forEach((cb) => {
+            cb.checked = false;
+        })
+        element.checked = true;
+        promo.addAnswer(3, element.id.substr(-1));
+    },
+    checkOnlyOne_q4: (element) => {
+        const checkboxes = document.getElementsByName("q4");
+        checkboxes.forEach((cb) => {
+            cb.checked = false;
+        })
+        element.checked = true;
+        promo.addAnswer(4, element.id.substr(-1));
+    },
+    checkOnlyOne_q5: (element) => {
+        const checkboxes = document.getElementsByName("q5");
+        checkboxes.forEach((cb) => {
+            cb.checked = false;
+        })
+        element.checked = true;
+        promo.addAnswer(5, element.id.substr(-1));
+    },
+
+
+    toggleModalPage: (index) => {
+        $('.promo_pages').addClass('d-none');
+        $('#promo_page' + index).removeClass('d-none');
+
+ 
+        if (index == 6) {
+            promo.data.q2 = promo.data.q2.join(',');
+            promo.data.id_ollysite = user.id;
+            console.log(promo.data);
+            $.ajax({
+                url: serverUrl + '/api/surveys/promotion1',
+                type: 'POST',
+                data: promo.data,
+            }).done((data) => {
+                console.log("Promotion Inserted : ", data);
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('login Error!' + textStatus + " : " + errorThrown);
+            });
+            promobar.animate(1);
+            setTimeout(() => { location.href = "/page/?M2_IDX=26402" }, 2000);
+        }
+    },
+
+
+
+}
+</script>
+
+<!-- The Modal -->
+<div id="promo_survey" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+
+                <!--팝업 1페이지 -->
+                <div class="container-fluid promo_pages" id="promo_page0">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pr-4 ">
+                            <button type="button" class="btn" data-dismiss="modal">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                    class="img-fluid"></button>
+                        </div>
+                        <div class="col-12 px-6 p_2rem ">
+                            <div class=" fs_28 fw_700">
+                                까리!<br>
+                                우리 반려묘의 건강을 알려줘!
+                            </div>
+                            <div class="fs_20 fw_500 pt-5_1">
+                                몇 가지 설문조사 질문에 답하고 우리 주인님에게 필요한 영양 간식을 알아보세요.<br>
+                                최대 3분정도 소요됩니다. 그럼 시작해볼까요?
+                            </div>
+                            <div class="fs_12 fw_500 color_888 pt-4">
+                                *정확한 진단 및 치료방법은 전문적인 의료기관을 이용하세요.
+                            </div>
+                            <div class="text-center pt-5_1">
+                                <a onclick="promo.toggleModalPage(1)">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec11_btn.png" alt=""
+                                        class="img-fluid"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--팝업 2페이지 Q1. -->
+                <div class="container-fluid promo_pages d-none" id="promo_page1">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pr-4 pt_2rem">
+                            <button type="button" class="btn" data-dismiss="modal">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                    class="img-fluid"></button>
+                        </div>
+                        <div class="col-12 text-center pt-4">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top"></div>
+                                <div class="pop_loader"></div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mw_800">
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color ml-0 pr-0">
+                                    기본정보</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    질병/증상</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    놀이환경</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    간식주기</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color mr-0 px-0">
+                                    간식비용</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt_2rem border_line "></div>
+
+                        <div class="col-12 pt-5 px-6">
+                            <span class="fs_28 fw_700 point_color">Q1. </span>
+                            <span class="fs_20 fw_500">우리 반려묘는?</span>
+                        </div>
+
+                        <div class="col-12 pt-5 px-6">
+                            <div class="q1_question ">
+                                <input type="checkbox" name="q1" id="q1_1" onclick='promo.checkOnlyOne_q1(this)'>
+                                <label for="q1_1" class="mr-4">
+                                    여자
+                                </label>
+                                <input type="checkbox" name="q1" id="q1_2" onclick='promo.checkOnlyOne_q1(this)'>
+                                <label for="q1_2">
+                                    남자
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mw_800 page_wrap">
+                        <div class="col ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev.png"
+                                class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(0)">
+                        </div>
+                        <div class="col  text-right">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next.png"
+                                class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(2)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2. -->
+                <div class="container-fluid promo_pages d-none" id="promo_page2">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pr-4 pt_2rem">
+                            <button type="button" class="btn" data-dismiss="modal">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                    class="img-fluid"></button>
+                        </div>
+
+                        <div class="col-12 text-center pt-4">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top2"></div>
+                                <div class="pop_loader loader2"></div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mw_800">
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color ml-0 pr-0">
+                                    기본정보</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    질병/증상</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    놀이환경</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    간식주기</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color mr-0 px-0">
+                                    간식비용</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt_2rem border_line "></div>
+
+                        <div class="col-12 pt-5 px-6">
+                            <span class="fs_28 fw_700 point_color">Q2. </span>
+                            <span class="fs_20 fw_500">평소 가지고 있는 질병을 모두 체크하세요</span>
+                        </div>
+                        <div class="col-12 pt-3 px-6">
+                            <div class="tip point_color">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-1">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col pl-0 ml_-3">
+                                        <span class="fs_15 fw_700">
+                                            Tip.
+                                        </span>
+                                        <span class="fs_15 fw_500"> 질병 증상 완화에 도움이 되는 간식 추천을 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="q2_question pt_2rem px-5_2">
+                                <input type="checkbox" name="checker" id="checker3" onclick="promo.addAnswer(2, 1)">
+                                <label for="checker3" class="pb-2 d-block">
+                                    요로계(요로, 방광, 신장 등) 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker4" onclick="promo.addAnswer(2, 2)">
+                                <label for="checker4" class="pb-2 d-block">
+                                    관절계 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker5" onclick="promo.addAnswer(2, 3)">
+                                <label for="checker5" class="pb-2 d-block">
+                                    소화계(배변, 소변, 장 등)관련 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker6" onclick="promo.addAnswer(2, 4)">
+                                <label for="checker6" class="pb-2 d-block">
+                                    피부(피부염, 털빠짐 등)관련 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker7" onclick="promo.addAnswer(2, 5)">
+                                <label for="checker7" class="d-block pb-3">
+                                    해당사항이 없다.
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row mw_800 page_wrap">
+                        <div class="col ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev.png"
+                                class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(1)">
+                        </div>
+                        <div class="col  text-right">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next.png"
+                                class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(3)">
+                        </div>
+                    </div>
+                </div>
+
+                <!--q3. -->
+                <div class="container-fluid promo_pages d-none" id="promo_page3">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pr-4 pt_2rem">
+                            <button type="button" class="btn" data-dismiss="modal">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                    class="img-fluid"></button>
+                        </div>
+
+                        <div class="col-12 text-center pt-4">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top3"></div>
+                                <div class="pop_loader loader3"></div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mw_800">
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color ml-0 pr-0">
+                                    기본정보</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    질병/증상</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    놀이환경</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    간식주기</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color mr-0 px-0">
+                                    간식비용</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt_2rem border_line "></div>
+
+                        <div class="col-12 pt-5 px-6">
+                            <span class="fs_28 fw_700 point_color">Q3. </span>
+                            <span class="fs_20 fw_500">하루에 얼마나 놀아주시는지 선택해주세요</span>
+                        </div>
+
+                        <div class="col-12 pt-3 px-6">
+                            <div class="tip point_color">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-1">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col pl-0 ml_-3">
+                                        <span class="fs_15 fw_700">
+                                            Tip.
+                                        </span>
+                                        <span class="fs_15 fw_500"> 생활 습관을 통해 생길 수 있는 질병 예방에 도움이 되는 간식추천을 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-12 pt_2rem px-6">
+                            <div class="q3_question ">
+                                <input type="checkbox" name="q3" id="q3_1" onclick='promo.checkOnlyOne_q3(this)'>
+                                <label for="q3_1" class="mr-4">
+                                    1일 1시간
+                                </label>
+                                <input type="checkbox" name="q3" id="q3_2" onclick='promo.checkOnlyOne_q3(this)'>
+                                <label for="q3_2" class="mr-4">
+                                    1일에 30분
+                                </label>
+                                <input type="checkbox" name="q3" id="q3_3" onclick='promo.checkOnlyOne_q3(this)'>
+                                <label for="q3_3" class="mr-4">
+                                    1일 15분
+                                </label>
+                                <input type="checkbox" name="q3" id="q3_4" onclick='promo.checkOnlyOne_q3(this)'>
+                                <label for="q3_4" class="mr-4">
+                                    1일에 15분 미만
+                                </label>
+                                <input type="checkbox" name="q3" id="q3_5" onclick='promo.checkOnlyOne_q3(this)'>
+                                <label for="q3_5">
+                                    놀아주지 않음
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mw_800 page_wrap">
+                        <div class="col ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev.png"
+                                class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(2)">
+                        </div>
+                        <div class="col  text-right">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next.png"
+                                class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(4)">
+                        </div>
+                    </div>
+                </div>
+
+                <!--q4. -->
+                <div class="container-fluid promo_pages d-none" id="promo_page4">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pr-4 pt_2rem">
+                            <button type="button" class="btn" data-dismiss="modal">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt="" class="img-fluid"></button>
+                        </div>
+
+                        <div class="col-12 text-center pt-4">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top4"></div>
+                                <div class="pop_loader loader4"></div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mw_800">
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color ml-0 pr-0">
+                                    기본정보</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    질병/증상</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    놀이환경</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    간식주기</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color mr-0 px-0">
+                                    간식비용</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt_2rem border_line "></div>
+
+                        <div class="col-12 pt-5 px-6">
+                            <span class="fs_28 fw_700 point_color">Q4. </span>
+                            <span class="fs_20 fw_500">간식을 구입하는 주기를 선택해주세요</span>
+                        </div>
+
+                        <div class="col-12 pt-3 px-6">
+                            <div class="tip point_color">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-1">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col pl-0 ml_-3">
+                                        <span class="fs_15 fw_700">
+                                            Tip.
+                                        </span>
+                                        <span class="fs_15 fw_500"> 간식 배송 주기를 설정하기 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt_2rem px-6">
+                            <div class="q4_question ">
+                                <input type="checkbox" name="q4" id="q4_1" onclick='promo.checkOnlyOne_q4(this)'>
+                                <label for="q4_1" class="mr-4">
+                                    1주일에 1번
+                                </label>
+                                <input type="checkbox" name="q4" id="q4_2" onclick='promo.checkOnlyOne_q4(this)'>
+                                <label for="q4_2" class="mr-4">
+                                    2주일에 1번
+                                </label>
+                                <input type="checkbox" name="q4" id="q4_3" onclick='promo.checkOnlyOne_q4(this)'>
+                                <label for="q4_3" class="mr-4">
+                                    1달에 1번
+                                </label>
+                                <input type="checkbox" name="q4" id="q4_4" onclick='promo.checkOnlyOne_q4(this)'>
+                                <label for="q4_4" class="mr-4">
+                                    규칙적이지 않음
+                                </label>
+                                <input type="checkbox" name="q4" id="q4_5" onclick='promo.checkOnlyOne_q4(this)'>
+                                <label for="q4_5">
+                                    구입하지 않음
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mw_800 page_wrap">
+                        <div class="col ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev.png"
+                                class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(3)">
+                        </div>
+                        <div class="col  text-right">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next.png"
+                                class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(5)">
+                        </div>
+                    </div>
+                </div>
+
+                <!--q5. -->
+                <div class="container-fluid promo_pages d-none" id="promo_page5">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pr-4 pt_2rem">
+                            <button type="button" class="btn" data-dismiss="modal">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                    class="img-fluid"></button>
+                        </div>
+
+                        <div class="col-12 text-center pt-4">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top5"></div>
+                                <div class="pop_loader loader5"></div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row mw_800">
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color ml-0 pr-0">
+                                    기본정보</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    질병/증상</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    놀이환경</div>
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color px-0">
+                                    간식주기</div>
+                                <div
+                                    class="col-lg-1 col-md-1 col-sm-1 col-xs-1 f_none fs_12 fw_700 point_color mr-0 px-0">
+                                    간식비용</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt_2rem border_line "></div>
+
+                        <div class="col-12 pt-5 px-6">
+                            <span class="fs_28 fw_700 point_color">Q5. </span>
+                            <span class="fs_20 fw_500">간식을 구입하는 ‘한 달’ 평균 비용을
+                                선택해주세요</span>
+                        </div>
+
+
+                        <div class="col-12 pt-3 px-6">
+                            <div class="tip point_color">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-1">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png"
+                                            alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col pl-0 ml_-3">
+                                        <span class="fs_15 fw_700">
+                                            Tip.
+                                        </span>
+                                        <span class="fs_15 fw_500"> 생간식 조합, 개수를 추천하기 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt_2rem px-6">
+                            <div class="q5_question ">
+                                <input type="checkbox" name="q5" id="q5_1" onclick='promo.checkOnlyOne_q5(this)'>
+                                <label for="q5_1" class="mr-4">
+                                    1만원 미만
+                                </label>
+                                <input type="checkbox" name="q5" id="q5_2" onclick='promo.checkOnlyOne_q5(this)'>
+                                <label for="q5_2" class="mr-4">
+                                    1만원 ~ 3만원
+                                </label>
+                                <input type="checkbox" name="q5" id="q5_3" onclick='promo.checkOnlyOne_q5(this)'>
+                                <label for="q5_3" class="mr-4">
+                                    3만원 ~ 5만원
+                                </label>
+                                <input type="checkbox" name="q5" id="q5_4" onclick='promo.checkOnlyOne_q5(this)'>
+                                <label for="q5_4" class="mr-4">
+                                    5만원 ~ 7만원
+                                </label>
+                                <input type="checkbox" name="q5" id="q5_5" onclick='promo.checkOnlyOne_q5(this)'>
+                                <label for="q5_5">
+                                    7만원 이상
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mw_800 page_wrap">
+                        <div class="col ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev.png"
+                                class="prev img-fluid cursor" alt="" onclick="promo.toggleModalPage(4)">
+                        </div>
+                        <div class="col  text-right">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next.png"
+                                class="prev img-fluid cursor next_shadow" alt="" onclick="promo.toggleModalPage(6)">
+                        </div>
+                    </div>
+                </div>
+
+                <!--팝업 마지막 로딩바 -->
+                <div class="container-fluid promo_pages d-none" id="promo_page6">
+                    <div class="row align-items-center h-100 ">
+                        <div class="col-12 text-right pt-4 pr-4">
+                            <button type="button" class="btn" data-dismiss="modal"><img
+                                    src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                    class="img-fluid"></button>
+                        </div>
+                        <div class="col-12 text-center fs_28 fw_700 pt-5">
+                            설문 내용을 분석하고 있습니다.
+                        </div>
+
+                        <div class="col pt-6 text-center">
+                            <div id="promo_circle_loading"></div>
+                        </div>
+
+                        <div class="col-12 pt-8 text-center fs_12 fw_500 color_888">
+                            까리는 정략/정성적인 자료들을 근거한 알고리즘을 토대로 간식을 구성해드리고 있습니다.<br>
+                            예방/관리에 도움이 되는 제품들이나 질병 치료를 희망하시는 분은 전문의료기관을 통해 처방받는 것을 권장합니다.
+                        </div>
+                    </div>
+
+                    <script>
+                        var promobar = new ProgressBar.Circle(promo_circle_loading, {
+                            color: '#6E9357',
+                            strokeWidth: 6,
+                            trailWidth: 6,
+                            easing: 'easeInOut',
+                            duration: 7500,
+                            text: {
+                                autoStyleContainer: false
+                            },
+                            from: { color: '#6E9357', width: 6 },
+                            to: { color: '#6E9357', width: 6 },
+                            step: function (state, circle) {
+                                circle.path.setAttribute('stroke', state.color);
+                                circle.path.setAttribute('stroke-width', state.width);
+
+                                var value = Math.round(circle.value() * 100);
+                                if (value === 0) {
+                                    circle.setText('');
+                                } else {
+                                    circle.setText(value);
+                                }
+                            }
+                        });
+                        promobar.text.style.fontSize = '20px';
+                //    promobar.animate(1.0);
+
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+ <script type="module">
+        var swiper = new Swiper('.swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+
+        });
+
+        var swiper2 = new Swiper('.cat_swiper', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 30,
+        });
+    </script>

@@ -1,0 +1,43 @@
+.mw_360 {
+    max-width: 398px;
+    margin: 0 auto;
+}
+
+.mobile_top{
+    padding-top : 80px;
+}
+.area_box {
+    max-height: 220px;
+    height: 220px;
+    overflow-y: scroll;
+    border: 1px solid #BEBCBB;
+    border-radius: 6px;
+}
+
+
+
+
+
+@media screen and (max-width:576px) {
+    .mw_360 {
+        max-width: 318px;
+        margin: 0 auto;
+    }
+    .h-100 {
+        height: auto !important;
+    }
+    .mobile_top {
+        padding-top: 60px;
+    }
+    .fs_14 {
+        font-size: 12px;
+    }
+    .area_box.fs_14 {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .area_box {
+        height: 160px;
+    }
+    
+}

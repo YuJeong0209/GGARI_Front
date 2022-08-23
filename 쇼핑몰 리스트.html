@@ -1,0 +1,31 @@
+
+<div id="datas">
+
+</div>
+
+<script>
+
+$(()=>{
+    $.ajax({
+        url : '/api/shop.all.list.nx',
+        type : "POST",
+        data : {
+            KEY : apikey,
+            SESS_ID : util.getSessionId(),
+            menu2_id : "26044",
+            mode : 'ALL', 
+        },
+//                    jsonp : "callback",
+        async : false,
+    }).done((data)=> {
+        console.log(data);
+        $.each(data.items, (i, item)=>{
+            $col = $('<div>').html(item)
+            $('#datas').append(data);
+        });
+    }).fail((jqXHR, textStatus, errorThrown) => {console.log(errorThrown)});
+
+
+});
+
+</script>
