@@ -1,0 +1,235 @@
+<div class="container-fluid banner_bg" id="section1">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="cat_wrap">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_top_cat.png" alt=""
+                    class="img-fluid top_cat">
+                <div class="img_wrap_txt">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sub_tag.png" alt=""
+                        class="img-fluid sub_tag">
+                    <div class="fs_36 color_fff">까리박스
+                        <span class="fw_700">첫 구독배송 쿠폰 증정</span>
+                    </div>
+                    <div class="fs_16 color_fff pc_br_none pt_10px">저렴한 가격으로<br> 맞춤형 간식을 구독하세요!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="nx-prefix sub-content">
+    <!-- 서브 콘텐츠 내용 start -->
+    <div class="content-container">
+        <div style="background-color:#fff;height: 118px;" class="mobile">
+        </div>
+        <div class="inner-static">
+
+            <!-- 쇼핑몰 카테고리 start -->
+            <nav class="shop-category">
+
+                <!-- 1차카테고리 start -->
+                <s_category_01>
+                    <ul class="category-d1">
+                        <s_category_rep_01>
+                            <li>
+                                <a href="javascript: void(0);" onclick=" shop.cate(1, '[##_cate1_value_##]') "
+                                    class="[##_cate1_selected_##]">
+                                    <s_category_rep_01_icon>
+                                        <span class="ico">
+                                            <img src="[##_cate1_icon_hover_##]" alt="[##_cate1_name_##]" class="on">
+                                            <img src="[##_cate1_icon_##]" alt="[##_cate1_name_##]" class="off">
+                                        </span>
+                                    </s_category_rep_01_icon>
+                                    <strong class="tit">[##_cate1_name_##]</strong>
+                                </a>
+                            </li>
+                        </s_category_rep_01>
+                    </ul>
+
+                </s_category_01>
+                <!-- 1차카테고리 end -->
+
+                <!-- 2차카테고리 start -->
+                <s_category_02>
+                    <div class="wrap-category-d2">
+                        <ul class="category-d2">
+                            <s_category_rep_02>
+
+                                <li>
+                                    <a href="javascript: void(0);" onclick=" shop.cate(2, '[##_cate2_value_##]') "
+                                        class="[##_cate2_selected_##]">
+                                        <strong>[##_cate2_name_##]</strong>
+                                    </a>
+                                </li>
+                            </s_category_rep_02>
+                        </ul>
+                    </div>
+                </s_category_02>
+                <!-- 2차카테고리 end -->
+
+            </nav>
+            <!-- 쇼핑몰 카테고리 end -->
+
+            <!-- 모바일 쇼핑몰 카테고리 start -->
+            <nav class="md-shop-category">
+                <s_category_01m>
+                    <ul class="lst-shop-category">
+                        <s_category_01m_rep_01>
+                            <li class="[##_cate1_selected_##]">
+                                <a href="javascript: void(0);" onclick=" shop.cate(1, '[##_cate1_value_##]') ">
+                                    <s_category_01m_rep_01_icon>
+                                        <span class="ico">
+                                            <img src="[##_cate1_icon_hover_##]" alt="[##_cate1_name_##]" class="on">
+                                            <img src="[##_cate1_icon_##]" alt="[##_cate1_name_##]" class="off">
+                                        </span>
+                                    </s_category_01m_rep_01_icon>
+                                    <strong class="tit">[##_cate1_name_##]</strong>
+                                </a>
+                                <ul class="ins-lst-d2">
+                                    <s_category_01m_rep_01_02_rep>
+                                        <li>
+                                            <a href="javascript: void(0);"
+                                                onclick=" shop.cate(2, '[##_cate2_value_##]') "
+                                                class="[##_cate2_selected_##]">[##_cate2_name_##]</a>
+                                        </li>
+                                    </s_category_01m_rep_01_02_rep>
+                                </ul>
+                            </li>
+                        </s_category_01m_rep_01>
+                    </ul>
+                </s_category_01m>
+            </nav>
+            <!-- 모바일 쇼핑몰 카테고리 end -->
+
+            <!-- 쇼핑몰 리스트 영역 start -->
+            <div class="shop-list-area">
+
+                <!-- 리스트 필터/정렬 start -->
+                <div class="list-filter">
+                    <div class="float-left fs_20 fw_700">총 <span class="point_color">500개</span> 상품</div>
+                    <div class="select-sort">
+                        <s_order>
+                            <div class="select-box">
+                                <a href="javascript: void(0);"
+                                    onclick="$(this).parent().find('.lst-dropdown2').toggleClass('active');"
+                                    class="select-label2">정렬순</a>
+                                <ul class="lst-dropdown2">
+                                    <s_order_rep>
+                                        <li>
+                                            <a [##_btn_order_##] class="[##_order_active_##]">[##_order_name_##]</a>
+                                        </li>
+                                    </s_order_rep>
+                                </ul>
+                            </div>
+                        </s_order>
+                    </div>
+
+                    <div class="float-right fs_16 m_pt">
+                        <div class="check_custom mr-3 mt_10px">
+                            <input type="checkbox" name="agree_chk1" id="agree_chk_1" class="agree_chk">
+                            <label for="agree_chk_1" class="fs_16">
+                                구독 상품만 표시
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 리스트 필터/정렬 end -->
+
+                <!-- 리스트 내용 start -->
+                <div class="shop-list">
+                    <s_list>
+                        <ul class="lst-image-card">
+                            <s_list_rep>
+                                <li>
+                                    <a href="[##_item_href_##]">
+                                        <div class="thumb">
+                                            [##_item_image_##]
+                                        </div>
+                                        <div class="cnt">
+                                            <s_list_category>
+                                                <span class="category d-none">[##_item_cate_##]</span>
+                                            </s_list_category>
+                                            <dl class="desc">
+                                                <s_list_name>
+                                                    <dt class="tit">
+                                                        <p class="[##_item_title_line_clamp_##]">[##_item_title_##]
+                                                        </p>
+                                                    </dt>
+                                                    <div class="sw_snack_ico mt_20px">
+                                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_01.png"
+                                                            alt="" class="img-fluid snack_ico01">
+                                                        <span class="snack_ico_text">관절</span>
+                                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_02.png"
+                                                            alt="" class="img-fluid snack_ico01">
+                                                        <span class="snack_ico_text">스트레스</span>
+                                                    </div>
+                                                </s_list_name>
+
+                                                <div class="pt_10px">별점자리</div>
+                                                <s_list_explain>
+                                                    <dd class="dsc">
+                                                        <p>[##_item_explain_##]</p>
+                                                    </dd>
+                                                </s_list_explain>
+                                                <dd>
+                                                    <ul class="prd-info">
+                                                        <li class="prd-price">
+                                                            <div class="wrap-price">
+                                                                <s_list_price1>
+                                                                    <span class="price-regular">
+                                                                        <span class="value_txt">일반가격</span>
+                                                                        <span
+                                                                            class="value">[##_item_price1_##]</span>
+                                                                    </span>
+                                                                </s_list_price1>
+                                                                <s_list_price2>
+                                                                    <strong class="price">
+                                                                        <span class="value_txt pc">50% 구독가 </span>
+                                                                        <span class="value_txt mobile">구독가 </span>
+                                                                        <span
+                                                                            class="value">[##_item_price2_##]</span>
+                                                                    </strong>
+                                                                </s_list_price2>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </a>
+                                </li>
+                            </s_list_rep>
+                        </ul>
+                    </s_list>
+                </div>
+                <!-- 리스트 내용 end -->
+
+                <!-- 리스트 하단 페이징 start -->
+                <s_paging>
+                    <div class="pagenate pb_140px">
+                        <!-- <a href="" class="btn-first">첫 페이지로 이동</a> -->
+                        <a [##_link_prev_##] class="btn-prev [##_no_more_prev_##]">이전 페이지로 이동</a>
+                        <div class="inner-wrap">
+                            <s_paging_rep>
+                                <a [##_paging_rep_link_##] class="[##_paging_rep_link_num_active_##]"
+                                    style="cursor: pointer;">[##_paging_rep_link_num_##]</a>
+                            </s_paging_rep>
+                        </div>
+                        <a [##_link_next_##] class="btn-next [##_no_more_next_##]">다음 페이지로 이동</a>
+                        <!-- <a href="" class="btn-last">마지막 페이지로 이동</a> -->
+                    </div>
+                </s_paging>
+                <!-- 리스트 하단 페이징 end -->
+
+            </div>
+            <!-- 쇼핑몰 리스트 영역 end -->
+
+        </div>
+    </div>
+    <!-- 서브 콘텐츠 내용 end -->
+
+</div>
+<!-- 서브 콘텐츠 : 쇼핑몰 end -->

@@ -1,0 +1,7 @@
+{
+    "prettier.disableLanguages": ["html"],
+    "[html]": { 
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "vscode.html-language-features" 
+    },
+  }

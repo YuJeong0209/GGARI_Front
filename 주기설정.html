@@ -1,0 +1,651 @@
+<style>
+    .lite_box {
+        background-color: #5BB0FF;
+        padding: 6px 14px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    .standard_box {
+        background-color: #6E9357;
+        padding: 6px 14px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    .primium_box {
+        background-color: #F08080;
+        padding: 6px 14px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    .cycle_box {
+        background: #FFFFFF;
+        border: 1px solid #DBDADA;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 30px 40px;
+    }
+    
+
+    .cycle_item {
+        border: 1px solid #DBDADA;
+        border-radius: 10px;
+    }
+
+    .cycle_box_not {
+        background: #F7F7F7;
+        border: 1px solid #DBDADA;
+        border-radius: 10px;
+        padding: 30px 40px;
+        height: 310px;
+    }
+
+    .c_item_name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 298px;
+        overflow: hidden;
+    }
+
+    .product_img_box{
+        width : 148px;
+        height : 198px;
+        line-height : 198px;
+    }
+
+    .product_img_box > img{
+        width : 100%;
+        height : 100%;        
+    }    
+
+    .select {
+        width: 298px;
+        height: 52px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: 0 2px 0 white;
+        border-radius: 2px;
+    }
+
+    .select_expand {
+        width: 0;
+        height: 52px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .select_expandLabel {
+        display: block;
+        width: 100%;
+        height: 52px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .select_close {
+        display: none
+    }
+
+    .select_closeLabel {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .select_items {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        padding-top: 52px;
+        z-index: 2;
+        border: 2px solid #DBDADA;
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/arrow_down_20.png);
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: 94% center;
+    }
+
+    .select_input {
+        display: none
+    }
+
+    .select_label {
+        transition: all .2s ease;
+        display: block;
+        height: 0;
+        line-height: 52px;
+        overflow: hidden;
+        color: #231815;
+        background-color: #fff;
+        cursor: pointer;
+        padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .select_label-placeholder {
+        height: 52px;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*opacity: .6;*/
+        color: #BEBCBB;
+        background-color: transparent;
+        font-weight: 400;
+    }
+
+    .select_expand:checked+.select_closeLabel {
+        display: block;
+    }
+
+    .z_10 {
+        z-index: 10;
+    }
+
+    .select .select_expand:checked+.select_closeLabel+.select_options {
+        height: 180px;
+        overflow-y: scroll;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .select_options::-webkit-scrollbar {
+        width: 10px;
+        height: 0;
+    }
+
+    .select_options::-webkit-scrollbar-button:start:decrement,
+    .select_options::-webkit-scrollbar-button:end:increment {
+        display: block;
+        height: 0;
+    }
+
+    .select_options::-webkit-scrollbar-track {
+        /*  background:rgba(0,0,0,.05);*/
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    .select_options::-webkit-scrollbar-thumb {
+        height: 50px;
+        width: 50px;
+        background: #6E9357;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label {
+        height: 52px;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label:hover {
+        background-color: #e9efe6;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options+.select_expandLabel {
+        display: none;
+    }
+
+    .select_input:checked+.select_label {
+        height: 52px;
+        margin-top: -52px;
+    }
+
+    .bg_cat {
+        background-repeat: no-repeat;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_gray_bg.png);
+        background-size: 1152px 191px;
+        height: 191px;
+        background-position-x: center;
+        /* background-position-y: -21px; */
+        top: -20px;
+    }
+
+    .bg_cat .col {
+        top: 94%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .c_result_box_lack {
+        background: #F8B62D;
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+
+    .c_result_box_danger {
+        background: #FE4A05;
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+
+    .c_result_box_over {
+        background: #FF8358;
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+
+    .top2 {
+        top: 100% !important;
+    }
+
+    @media screen and (max-width:576px) {
+        .pt_150px {
+            padding-top: 140px;
+        }
+
+        .lite_box,
+        .standard_box,
+        .primium_box {
+            font-size: 10px;
+            padding: 4px 14px;
+            top: -2px;
+        }
+
+        .mw_1152 {
+            max-width: 288px;
+            margin: 0 auto;
+        }
+
+        .col-12 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .col-sm-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .pl_30px {
+            padding-left: 0;
+        }
+
+        .select {
+            width: 240px;
+        }
+
+        .cycle_box,
+        .cycle_box_not {
+            padding: 24px 22px;
+        }
+
+        .cycle_box .d-inline-block {
+            display: block !important;
+        }
+
+        .align-top {
+            float: left;
+        }
+
+        .cycle_item {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .c_item_name {
+            max-width: 120px;
+            padding-top: 10px;
+        }
+
+        .m_cycle_pt {
+            padding-top: 20px;
+        }
+
+        .select {
+            height: 44px;
+        }
+
+        .select_expand {
+            height: 44px;
+        }
+
+        .select_expandLabel {
+            height: 44px;
+        }
+
+        .select_items {
+            padding-top: 44px;
+            background-size: 18px 18px;
+            background-position: 94% center;
+        }
+
+        .select_label {
+            line-height: 44px;
+        }
+
+        .select_label-placeholder {
+            height: 44px;
+        }
+
+        .select_expand:checked+.select_closeLabel+.select_options .select_label {
+            height: 44px;
+        }
+
+        .select_input:checked+.select_label {
+            height: 44px;
+            margin-top: -44px;
+        }
+
+        .cat_run {
+            max-width: 100px;
+            top: -12px;
+            left: 20px;
+        }
+
+        #section2 .pc_br_none {
+            float: left;
+        }
+
+        .bg_cat {
+            height: 90px;
+            background: #F7F7F7;
+            border-radius: 10px;
+            background-position-x: center;
+            /* background-position-y: -21px; */
+            top: 0;
+        }
+
+        .bg_cat .col {
+            top: 88%;
+        }
+
+        .c_result_box_lack {
+            padding: 3px 10px;
+            margin-right: 8px;
+        }
+
+        .top2 {
+            top: 80% !important;
+        }
+
+        .btn-outline-success,
+        .btn-secondary {
+            width: 100%;
+            font-size: 12px;
+            padding: 13px 22px;
+        }
+
+        .mr-3 {
+            margin-right: 0 !important;
+        }
+
+        .result_btn_wrap .col {
+            display: contents;
+        }
+
+        .order_last {
+            margin-top: 14px;
+        }
+    }
+</style>
+
+
+<div class="container-fluid pt_150px" id="section1">
+    <div id="snack_boxs" class="row mw_1152">
+        <div class="col-12 ">
+            <div class="fs_28">
+                <span class="point_color cat_name"></span>님은
+                <span class="lite_box fs_20 rank_name"></span> 추천 간식을 선택하셨습니다.
+            </div>
+            <div class="fs_28 fw_700 pt_10px">
+                간식 주기를 설정해주세요.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid pt_80px" id="section2">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="fs_28 fw_700 pc_br_none">
+                간식을 <br>이렇게 구성하면?
+            </div>
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cycle_cat_run.png" alt=""
+                class="mobile img-fluid cat_run">
+        </div>
+    </div>
+
+    <!--간식선택안했을때-->
+    <div class="row mw_1152 bg_cat">
+        <div class="col sub_gray_text">
+            <div class="fs_20 fw_700">
+                간식 주기를 설정해주세요.
+            </div>
+            <div class="fs_16 pc">
+                주기 선택이 완료되면 칼로리 적정도가 측정됩니다.
+            </div>
+        </div>
+    </div>
+
+    <!--간식선택 했을때 : 부족 칼로리 c_result_box_lack / 위험 칼로리 c_result_box_danger / 초과 칼로리 c_result_box_over -->
+    <div class="row mw_1152 bg_cat d-none">
+        <div class="col top2">
+            <span class="fs_20 fw_700 c_result_box_lack">
+                부족</span>
+            <span class="pl_30px fw_700 fs_24">간식 칼로리입니다.</span>
+        </div>
+    </div>
+
+    <div class="row mw_1152 pt_100px pb_80px result_btn_wrap">
+        <div class="col text-center">
+            <button type="button" class="btn btn-outline-success fw_700 mr-3 order_last">
+                간식 다시 선택하기
+            </button>
+            <button type="button" class="btn btn-secondary fw_700 order_1">
+                간식단표 보러가기
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(() => {
+        calory.init();
+
+    });
+
+    var calory = {
+        cat: null,
+        rank: null,
+        productIds: [],
+        itemlist: [],
+        rankStr: [null, 'Lite', 'Standard', 'Premium'],
+        categoryStr : [ null, '스틱형', '캔형', '동결/건조형', '통살형', '스낵형', '파우치형', '덴탈 간식'],
+        cycleStr : { "30" : '1일에 1개', "15" : '2일에 1개', "10" : '3일에 1개', "7" : '1주일에 1개', "2" : '보름에 1개', "1" : "1달에 1개"},
+
+        init: () => {
+            let search = location.search.substring(1);
+            let query = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+            calory.productIds = JSON.parse(query.items);
+            calory.rank = query.rank;
+            calory.getItems();
+        },
+
+        changeKcalCounter: () => {
+
+        },
+
+        getCatById: () => {
+            var pr = $.ajax(util.getAjaxSetting(serverUrl + "/api/cat/" + util.getIdFromUrl())).done((data) => {
+                console.log(data);
+                if (util.isEmpty(data)) {
+                    alert('잘못된 접근입니다.');
+                    location.href = '/';
+                    return false;
+                }
+                calory.cat = data;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('CAT ERROR!!' + textStatus + " : " + errorThrown);
+                alert('고양이 정보 열람에 실패했습니다!');
+            });
+
+            return pr;
+        },
+
+        getItems: () => {
+            let ids = JSON.stringify(Object.values(calory.productIds[calory.rank]));
+            let shop;
+            var pr0 = calory.getCatById();
+            var pr1 = $.ajax(util.getAjaxSetting(serverUrl+"/api/product/ids/", {id_str : ids})).done((data) => {
+                console.log(data);
+                if (util.isEmpty(data)) {
+                    alert('잘못된 접근입니다.');
+                    location.href = '/';
+                    return false;
+                }
+                calory.itemlist = data;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('PRODUCT ERROR!!' + textStatus + " : " + errorThrown);
+                alert('상품정보 열람에 실패했습니다!');
+            });
+
+            var pr2 = $.ajax({
+                url: '/api/shop.all.list.nx',
+                type: "POST",
+                data: {
+                    "KEY": apikey,
+                    menu2_id: "26044",
+                    mode: 'ALL'
+                },
+            }).done((data) => {
+                shop = data.items;
+                console.log(shop);
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log(errorThrown)
+            });
+
+            $.when(pr0, pr1, pr2).done(()=>{
+                $.each(calory.itemlist, (i, item)=>{
+                    //선가공
+                    if (item.id_olly_product != null) {
+                        Object.assign(item, shop.find(e => e.product_code == item.id_olly_product));
+                    } else { }
+                });
+                calory.drawItems();
+            })
+        },
+
+        postSubscribe: () => {
+
+
+        },
+
+
+        drawItems: () => {
+            $('.cat_name').html(calory.cat.name);
+            $('.rank_name').html(calory.rankStr[calory.rank]);
+            let loop;
+            switch(parseInt(calory.rank)){
+                case 1 : loop = 4; break;
+                case 2 : loop = 6; break;
+                case 3 : loop = 8; break;
+            }
+            let $boxs = $('#snack_boxs');
+            for(i = 1; i < loop+1; i++){
+                if(calory.productIds[calory.rank]["s"+i] != null){
+                    let item = calory.itemlist.find(e=> e.id == calory.productIds[calory.rank]["s"+i]);
+                    let $box = $('#origin_box').removeClass('d-none').clone();
+                    $box.find('.item_name').html(item.product_name);
+                    $box.find('.price').html("￦ "+ item.product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                    let categoryName = i == loop ? "기타" : calory.categoryStr[i];
+                    $box.find('.category_name').html(categoryName);
+                    $box.find('img').attr('src', item.img);
+                    $box.find('.kcal').html(item.kcal);
+                    let feeds = item.feedcycle.replace(/\[|\]|\'|\"|\ /g, '').split(',');
+                    for(feed of feeds){
+                        console.log(feed);
+                        let $li = $('<li>').addClass('select_option')
+                        let $input = $('<input>').addClass('select_expand').attr({type:'radio', name : "feed_"+item.id, id : "feed_"+item.id+"_"+feed});                        
+                        let $label = $('<label>').addClass('select_closeLabel').attr({for: "feed_"+item.id+"_"+feed}).html(calory.cycleStr[feed]);
+                        $li.append($input, $label);
+                        $box.find('.select_options').append($li);                            
+                    }
+
+
+                    $boxs.append($box);
+                }else{
+                    let $box = $('#origin_box_not').removeClass('d-none').clone();
+                    let categoryName = i == loop ? "기타" : calory.categoryStr[i];
+                    $box.find('.category_name').html(categoryName);
+                    $boxs.append($box);
+                }
+            }
+            $('#origin_box_not', '#origin_box').remove();
+        },
+
+
+    }
+</script>
+
+
+<div id="origin_box_not" class="col-sm-6 mt_30px pr_12px d-none">
+    <div class="cycle_box_not">
+        <div class="fs_22 fw_700 sub_black_30 category_name"></div>
+        <div class="text-center pt_60px">
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bang_ico.svg" class="img-fluid" alt="">
+            <div class="fs_20 fw_700 sub_black_30 pt_10px">간식을 선택하지 않았습니다.</div>
+        </div>
+    </div>
+</div>
+
+
+<div id="origin_box" class="col-sm-6 mt_30px pl_12px d-none">
+    <div class="cycle_box">
+        <div class="fs_22 fw_700 point_color category_name"></div>
+        <div class="pt_16px">
+            <div class="d-inline-block align-top product_img_box">
+                <img src="" alt="" class="img-fluid cycle_item">
+            </div>
+            <div class="d-inline-block pl_30px">
+                <div class="fs_20 fw_700 c_item_name item_name"></div>
+                <div class="fs_18 fw_700 point_color price"></div>
+                <div class="d-flex pt_20px">
+                    <div class="fs_16 fw_700">열량</div>
+                    <div class="fs_16 sub_gray_text pl_15px"><span class="kcal"></span>kcal/개</div>
+                </div>
+                <div class="fs_16 fw_700 pt_10px m_cycle_pt">주기</div>
+
+                <div class="wrap mt_10px">
+                    <ul class="select">
+                        <li>
+                            <input class="select_close" type="radio" name="option2" id="option2-close" value="" />
+                            <span class="select_label select_label-placeholder">주기를 선택해주세요.</span>
+                        </li>
+                        <li class="select_items">
+                            <input class="select_expand" type="radio" name="option2" id="option2-opener" />
+                            <label class="select_closeLabel" for="option2-close"></label>
+
+                            <ul class="select_options">
+                            </ul>
+                            <label class="select_expandLabel" for="option2-opener"></label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
