@@ -1,0 +1,72 @@
+<s_login>
+    <fieldset class="login-form">
+        <input type="hidden" name="[##_LOGIN_AFTER_NAME_##]" id="[##_LOGIN_AFTER_NAME_##]"
+            value="[##_LOGIN_AFTER_VALUE_##]">
+        <legend class="blind">로그인</legend>
+
+        <div class="container-fluid d-flex h_100 ">
+            <div class="row align-items-center align-self-center mw_360 ">
+                <div class="col ">
+                    <div class="fs_28 fw_700 text-center">로그인</div>
+
+                    <div class="pb-2 fs_16 pt_30px">아이디</div>
+                    <input type="text" class="form-control" placeholder="아이디를 입력해주세요." id="[##_LOGIN_NAME_##]"
+                        name="[##_LOGIN_NAME_##]">
+
+                    <div class="pb-2 fs_16 pt_20px">비밀번호</div>
+                    <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요." id="[##_LOGIN_PASSWORD_##]"
+                        name="[##_LOGIN_PASSWORD_##]">
+
+                    <div class="pt_20px fs_16 sub_gray_text text-center fs_12">
+                        <a href="../memb/memb.search.php">아이디, 비밀번호를 잊어버리셨나요?</a>&emsp;|&emsp;
+                        <a href="../memb/memb.biz.php" class="fw_700 text-right">회원가입</a>
+                    </div>
+
+                    <div class="mt_28px">
+                        <button type="submit" class="login">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/login_button.png" alt="" class="img-fluid ">
+                        </button>
+                    </div>
+
+                    <s_login_social>
+
+                        <div class="mt_40px sub_black_30 hr-sect">
+                            &emsp;&emsp;또는&emsp;&emsp;
+                        </div>
+
+                        <div class="log">
+                            <s_login_social_kakao>
+                                <div>
+                                    <a [##_login_href_##]>
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/kk_login.png" alt=""
+                                            class="img-fluid ">
+                                    </a>
+                                </div>
+                            </s_login_social_kakao>
+                            <s_login_cocial_facebook>
+                                <div class="pt_20px">
+                                    <a [##_login_href_##]>
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/fb_login.png" alt=""
+                                            class="img-fluid ">
+                                    </a>
+                                </div>
+                            </s_login_cocial_facebook>
+                            <s_login_social_naver>
+                                <div class="pt_20px">
+                                    <a [##_login_href_##]>
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/nb_login.png" alt=""
+                                            class="img-fluid ">
+                                    </a>
+                                </div>
+                        </div>
+                        </s_login_social_naver>
+
+
+                    </s_login_social>
+
+                </div>
+            </div>
+        </div>
+
+    </fieldset>
+</s_login>

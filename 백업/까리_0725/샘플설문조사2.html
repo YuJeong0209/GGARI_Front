@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>ggari</title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/survay.css">
+
+
+</head>
+<!-- 
+    <div class="container-fluid">
+        <div class="row align-items-center h-100">
+            <div class="col">
+                sdf
+            </div>
+        </div>
+    </div>
+
+-->
+
+
+<div class="container-fluid">
+    <div class="row align-items-center h_100 bg_point">
+        <div class="col">
+
+
+            <!--1 -->
+            <div class="container-fluid mw_1200 survay_pages d-none" id="survay_page0">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid"></button>
+                    </div>
+                    <div class="col-12 px_100 pt_180 ">
+                        <div class="fs_40 line_50">
+                            까리!<br>
+                            <span class="fw_700 pc">우리 반려묘의 건강을 알려줘!</span>
+                            <span class="fw_700 mobile">우리 반려묘의<br>건강을 알려줘!</span>
+                        </div>
+                        <div class="fs_28 pt-5">
+                            몇 가지 설문조사 질문에 답하고 우리 주인님에게 필요한 영양 간식을 알아보세요.<br>
+                            <div class="m_pt_10">최대 3분정도 소요됩니다. <span class="fw_700">그럼 시작해볼까요?</span></div>
+                        </div>
+                        <div class="fs_16 color_888 pt-4">
+                            *정확한 진단 및 치료방법은 전문적인 의료기관을 이용하세요.
+                        </div>
+                        <div class="text-center pt-9 pb-7">
+                            <a href="">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/start_button.png" alt=""
+                                    class="img-fluid next_shadow"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--2 -->
+            <div class="container-fluid mw_1200 survay_pages" id="survay_page1">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid"></button>
+                    </div>
+                    <div class="col-12 text-center pt-5 progress_mobile">
+                        <span class="fs_18 color_fff bg_point progress_bar"><span class="fw_700">설문조사</span>를 시작하기
+                            전에...</span>
+                    </div>
+                    <div class="col-12 px_100 pt-5_1">
+                        <div class="text-center">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top"></div>
+                                <div class="pop_loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mw_1000 px-0 pt-3">
+                        <div class="row  text-center">
+                            <div class="col fs_16 fw_700 point_color text-center">
+                                기본정보</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                질병/증상</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                생활습관</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                기타</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">
+
+                    </div>
+
+
+                    <div class="col-12 px-6 pt_40px">
+                        <div class=" fs_24 fw_700">
+                            어떤 반려묘를 조사해볼까요?
+                        </div>
+                    </div>
+
+                    <div class="swiper2_wrap pt_40px">
+                        <!-- Swiper -->
+                        <div class="swiper catname_swiper ">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide slide2">
+                                    <div class="pop_box_open pop_w">
+                                        <div class=" pop_box1 cursor">
+                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/plus.png" alt=""
+                                                class="img-fluid plusbox">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide slide2">
+                                    <div class="pop_w">
+                                        <div class=" pop_box2">
+                                            <div class="fs_24 fw_700">가로
+                                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                            <div class="fs_18 pt-1">코리안숏헤어, 6kg</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide slide2">
+                                    <div class="pop_w">
+                                        <div class=" pop_box2">
+                                            <div class="fs_24 fw_700">가로
+                                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                            <div class="fs_18 pt-1">코리안숏헤어, 6kg</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide slide2">
+                                    <div class="pop_w">
+                                        <div class=" pop_box2">
+                                            <div class="fs_24 fw_700">가로
+                                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                            <div class="fs_18 pt-1">코리안숏헤어, 6kg</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide slide2">
+                                    <div class="pop_w">
+                                        <div class=" pop_box2">
+                                            <div class="fs_24 fw_700">가로
+                                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                            <div class="fs_18 pt-1">코리안숏헤어, 6kg</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide slide2">
+                                    <div class="pop_w">
+                                        <div class=" pop_box2">
+                                            <div class="fs_24 fw_700">가로
+                                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png"
+                                                    alt="" class="img-fluid">
+                                            </div>
+                                            <div class="fs_18 pt-1">코리안숏헤어, 6kg</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                    <div class="col-6 px-6 pt-5_1 pb-6">
+                        <a href="#">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png"
+                                class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png"
+                                class="img-fluid cursor mobile" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 pr-6 pt-5_1 pb-6 text-right next_btn">
+                            <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png"
+                                class="img-fluid cursor next_shadow pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png"
+                                class="img-fluid cursor next_shadow mobile" alt="">-->
+                    </div>
+                </div>
+            </div>
+            <!--3-->
+            <div class="container-fluid mw_1200 survay_pages d-none" id="survay_page2">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt="" class="img-fluid">
+                        </button>
+                    </div>
+
+
+                    <div class="col-12 px-6 pt_120px pb_30px">
+                        <div class=" fs_40 fw_700">
+                            새로운 반려묘 등록하기
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-6 ">
+                        <div class="row pb_30px m_col_100">
+                            <div class="col-6 pl-0">
+                                <div class="fs_18 pb-3">이름</div>
+                                <input type="text" class="form-control" placeholder="이름을 입력해 주세요.">
+                            </div>
+                            <div class="col-6 pr-0">
+                                <div class="fs_18 pb-3 m_pt_20">몸무게</div>
+                                <input type="text" class="form-control" placeholder="몸무게를 입력해 주세요.">
+
+                            </div>
+                        </div>
+                        <div class="row pb_30px m_col_100">
+                            <div class="col-6 pl-0">
+
+                                <div class="fs_18 pb-3">성별</div>
+                                <ul class="select">
+                                    <li>
+                                        <input class="select_close" type="radio" name="option1" id="option1-close"
+                                            value="" />
+                                        <span class="select_label select_label-placeholder">성별을 입력해 주세요.</span>
+                                    </li>
+                                    <li class="select_items z_10">
+                                        <input class="select_expand" type="radio" name="option1" id="option1-opener" />
+                                        <label class="select_closeLabel" for="option1-close"></label>
+
+                                        <ul class="select_options">
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="option1" id="여" />
+                                                <label class="select_label" for="여">여</label>
+                                            </li>
+
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="option1" id="남" />
+                                                <label class="select_label" for="남">남</label>
+                                            </li>
+                                        </ul>
+                                        <label class="select_expandLabel" for="option1-opener"></label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 pr-0">
+                                <div class="fs_18 pb-3 m_pt_20">나이</div>
+                                <ul class="select02">
+                                    <li>
+                                        <input class="select_close" type="radio" name="cat_age" id="cat_age-close"
+                                            value="" />
+                                        <span class="select_label select_label-placeholder">나이를 선택해주세요.</span>
+                                    </li>
+                                    <li class="select_items z_10 z_10_m">
+                                        <input class="select_expand" type="radio" name="cat_age" id="cat_age-opener" />
+                                        <label class="select_closeLabel" for="cat_age-close"></label>
+
+                                        <ul class="select_options">
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_age" id="모름" />
+                                                <label class="select_label" for="모름">모름</label>
+                                            </li>
+
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_age" id="1살 미만" />
+                                                <label class="select_label" for="1살 미만">1살 미만</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_age" id="1살" />
+                                                <label class="select_label" for="1살">1살</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_age" id="2살" />
+                                                <label class="select_label" for="2살">2살</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_age" id="3살" />
+                                                <label class="select_label" for="3살">3살</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_age" id="4살" />
+                                                <label class="select_label" for="4살">4살</label>
+                                            </li>
+
+                                        </ul>
+                                        <label class="select_expandLabel" for="cat_age-opener"></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row m_col_100">
+                            <div class="col-6 pl-0">
+                                <div class="fs_18 pb-3">품종</div>
+                                <ul class="select02">
+                                    <li>
+                                        <input class="select_close" type="radio" name="cat_breed" id="cat_breed-close"
+                                            value="" />
+                                        <span class="select_label select_label-placeholder">품종을 선택해 주세요</span>
+                                    </li>
+                                    <li class="select_items z_10_m2">
+                                        <input class="select_expand" type="radio" name="cat_breed"
+                                            id="cat_breed-opener" />
+                                        <label class="select_closeLabel" for="cat_breed-close"></label>
+
+                                        <ul class="select_options">
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_breed" id="코리안숏헤어" />
+                                                <label class="select_label" for="코리안숏헤어">코리안숏헤어</label>
+                                            </li>
+
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_breed"
+                                                    id="브리티쉬숏헤어" />
+                                                <label class="select_label" for="브리티쉬숏헤어">브리티쉬숏헤어</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_breed" id="페르시안" />
+                                                <label class="select_label" for="페르시안">페르시안</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_breed" id="페르시안" />
+                                                <label class="select_label" for="페르시안">페르시안</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_breed" id="페르시안" />
+                                                <label class="select_label" for="페르시안">페르시안</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_breed" id="페르시안" />
+                                                <label class="select_label" for="페르시안">페르시안</label>
+                                            </li>
+
+                                        </ul>
+                                        <label class="select_expandLabel" for="cat_breed-opener"></label>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                            <div class="col-6 pr-0">
+                                <div class="fs_18 pb-3 m_pt_20">중성화 여부</div>
+                                <ul class="select03">
+                                    <li>
+                                        <input class="select_close" type="radio" name="cat_neuter" id="cat_neuter-close"
+                                            value="" />
+                                        <span class="select_label select_label-placeholder">중성화 여부를 선택해주세요.</span>
+                                    </li>
+                                    <li class="select_items z_13">
+                                        <input class="select_expand" type="radio" name="cat_neuter"
+                                            id="cat_neuter-opener" />
+                                        <label class="select_closeLabel" for="cat_neuter-close"></label>
+
+                                        <ul class="select_options">
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_neuter" id="모름" />
+                                                <label class="select_label" for="모름">모름</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_neuter" id="완료" />
+                                                <label class="select_label" for="완료">완료</label>
+                                            </li>
+                                            <li class="select_option">
+                                                <input class="select_input" type="radio" name="cat_neuter" id="미완료" />
+                                                <label class="select_label" for="미완료">미완료</label>
+                                            </li>
+
+                                        </ul>
+                                        <label class="select_expandLabel" for="cat_neuter-opener"></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-6 px-6 pt-5_1 pb-6">
+                        <a href="#">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png"
+                                class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png"
+                                class="img-fluid cursor mobile" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 pr-6 pt-5_1 pb-6 text-right next_btn">
+                        <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png"
+                            class="img-fluid cursor next_shadow pc" alt="">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png"
+                            class="img-fluid cursor next_shadow mobile" alt="">-->
+                </div>
+                </div>
+            </div>
+            <!--q5-->
+            <div class="container-fluid mw_1200 survay_pages d-none" id="survay_page3">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt="" class="img-fluid">
+                        </button>
+                    </div>
+                    <div class="col-12 text-center pt-5 progress_mobile">
+                        <span class="fs_18 color_fff bg_point progress_bar"><span class="fw_700">가로</span>의 설문조사 진행중
+                            ...</span>
+                    </div>
+                    <div class="col-12 px_100 pt-5_2">
+                        <div class="text-center">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top2"></div>
+                                <div class="pop_loader loader2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mw_1000 px-0 pt-3">
+                        <div class="row  text-center">
+                            <div class="col fs_16 fw_700 point_color text-center">
+                                기본정보</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                질병/증상</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                생활습관</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                기타</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">
+
+                    </div>
+
+
+                    <div class="col-12 px-6">
+
+                        <div class="pt_40px">
+                            <span class="fs_24 fw_700 point_color">Q5. </span>
+                            <span class="fs_24 fw_700 pc">평소 가지고 있는 질병을 모두 체크하세요</span>
+                            <span class="fs_24 fw_700 mobile">평소 가지고 있는</span>
+                            <span class="fs_24 fw_700 mobile pl_2rem">질병을 모두 체크하세요</span>
+                        </div>
+                        <div class="pt-4">
+                            <div class="q5_tip point_color pc">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                    class="img-fluid">
+                                <span class="fs_16 fw_700 pl-2">
+                                    Tip.
+                                </span>
+                                <span class="fs_16"> 질병 증상 완화에 도움이 되는 간식 추천을 위한 질문입니다.</span>
+                            </div>
+
+                            <div class="q5_tip_mobile point_color mobile">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-2 px-0">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt="" class="img-fluid">
+                                    </div>
+                                    <div class="col-2 pl-1 line_14">
+                                        <span class="fs_16 fw_700">
+                                            Tip.<br>&emsp;
+                                        </span>
+                                    </div>
+                                    <div class="col ml_-3 line_14">
+                                        <span class="fs_16"> 질병 증상 완화에 도움이 되는 간식 추천을 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="q5_question pt_2rem">
+                                <input type="checkbox" name="checker" id="checker3">
+                                <label for="checker3" class="pb-4">
+                                    요로계(요로, 방광, 신장 등) 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker4">
+                                <label for="checker4" class="pb-4">
+                                    관절계 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker5">
+                                <label for="checker5" class="pb-4">
+                                    소화계(배변, 소변, 장 등)관련 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker6">
+                                <label for="checker6" class="pb-4">
+                                    피부(피부염, 털빠짐 등)관련 질환을 앓는 중이거나 앓았던 적이 있다.
+                                </label>
+
+                                <input type="checkbox" name="checker" id="checker7">
+                                <label for="checker7">
+                                    해당사항이 없다.
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-6 px-6 pt-3 pb-5_1">
+                        <a href="#">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png"
+                                class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png"
+                                class="img-fluid cursor mobile" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 pr-6 pt-3 pb-5_1 text-right next_btn">
+                        <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png"
+                            class="img-fluid cursor next_shadow pc" alt="">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png"
+                            class="img-fluid cursor next_shadow mobile" alt="">-->
+                </div>
+                </div>
+            </div>
+            <!--q5_2-->
+            <div class="container-fluid mw_1200 survay_pages d-none" id="survay_page4">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid"></button>
+                    </div>
+                    <div class="col-12 text-center pt-5 progress_mobile">
+                        <span class="fs_18 color_fff bg_point progress_bar"><span class="fw_700">가로</span>의 설문조사 진행중
+                            ...</span>
+                    </div>
+                    <div class="col-12 px_100 pt-5_2">
+                        <div class="text-center">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top3"></div>
+                                <div class="pop_loader loader3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mw_1000 px-0 pt-3">
+                        <div class="row  text-center">
+                            <div class="col fs_16 fw_700 point_color text-center">
+                                기본정보</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                질병/증상</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                생활습관</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                기타</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">
+                    </div>
+
+
+                    <div class="col-12 px-6">
+
+                        <div class="pt_40px">
+                            <span class="fs_24 fw_700 point_color">Q5. </span>
+                            <span class="fs_24 fw_700 pc">하루에 얼마나 놀아주시는지 선택해주세요.</span>
+
+                            <span class="fs_24 fw_700 mobile">하루에 얼마나</span>
+                            <span class="fs_24 fw_700 mobile pl_2rem">놀아주시는지 선택해주세요.</span>
+                        </div>
+                        <div class="pt-4">
+                            <div class="q5_tip point_color pc">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                    class="img-fluid">
+                                <span class="fs_16 fw_700 pl-2">
+                                    Tip.
+                                </span>
+                                <span class="fs_16">생활 습관을 통해 생길 수 있는 질병 예방에 도움이 되는 간식추천을 위한 질문입니다.</span>
+                            </div>
+
+                            <div class="q5_tip_mobile point_color mobile">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-2 px-0">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                            class="img-fluid">
+                                    </div>
+                                    <div class="col-2 pl-1 line_14">
+                                        <span class="fs_16 fw_700">
+                                            Tip.<br>&emsp;<br>&emsp;
+                                        </span>
+                                    </div>
+                                    <div class="col ml_-3 line_14">
+                                        <span class="fs_16"> 생활 습관을 통해 생길 수 있는 질병 예방에 도움이 되는 간식추천을 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="q8_question pt-5 m_pt_5">
+                                <input type="checkbox" name="q8" id="q8_1" onclick='checkOnlyOne(this)'>
+                                <label for="q8_1" class="mr-3 mr_3_m2">
+                                    1일 1시간
+                                </label>
+
+                                <input type="checkbox" name="q8" id="q8_2" onclick='checkOnlyOne(this)'>
+                                <label for="q8_2" class="mr-3 mr_3_m">
+                                    1일에 30분
+                                </label>
+
+                                <input type="checkbox" name="q8" id="q8_3" onclick='checkOnlyOne(this)'>
+                                <label for="q8_3" class="mr-3 mr_3_m2">
+                                    1일 15분
+                                </label>
+
+                                <input type="checkbox" name="q8" id="q8_4" onclick='checkOnlyOne(this)'>
+                                <label for="q8_4" class="mr-3 mr_3_m">
+                                    <span class="pc">1일에 15분 미만</span>
+                                    <span class="mobile letter00">1일 15분 미만</span>
+                                </label>
+
+                                <input type="checkbox" name="q8" id="q8_5" onclick='checkOnlyOne(this)'>
+                                <label for="q8_5">
+                                    놀아주지 않음
+                                </label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-6 px-6 pt-6 pb-6">
+                        <a href="#">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png"
+                                class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png"
+                                class="img-fluid cursor mobile" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 pr-6 pt-6 pb-6 text-right next_btn">
+                        <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png"
+                            class="img-fluid cursor next_shadow pc" alt="">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png"
+                            class="img-fluid cursor next_shadow mobile" alt="">-->
+                </div>
+                </div>
+            </div>
+            <!--q10-->
+            <div class="container-fluid mw_1200 survay_pages d-none" id="survay_page5">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid"></button>
+                    </div>
+                    <div class="col-12 text-center pt-5 progress_mobile">
+                        <span class="fs_18 color_fff bg_point progress_bar"><span class="fw_700">가로</span>의 설문조사 진행중
+                            ...</span>
+                    </div>
+                    <div class="col-12 px_100 pt-5_2">
+                        <div class="text-center">
+                            <div class="pop_loading_box">
+                                <div class="pop_loader_top top_last"></div>
+                                <div class="pop_loader loader_last"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center mw_1000 px-0 pt-3">
+                        <div class="row  text-center">
+                            <div class="col fs_16 fw_700 point_color text-center">
+                                기본정보</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                질병/증상</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                생활습관</div>
+                            <div class="col fs_16 fw_700 color_subgray text-center">
+                                기타</div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">
+
+                    </div>
+
+
+                    <div class="col-12 px-6">
+
+
+                        <div class="pt_40px">
+                            <span class="fs_24 fw_700 point_color">Q10. </span>
+                            <span class="fs_24 fw_700 pc">까리 서비스를 알게 된 경로를 알려주세요 <span
+                                    class="color_subgray">(선택)</span></span>
+
+                            <span class="fs_24 fw_700 mobile">까리 서비스를 </span>
+                            <span class="fs_24 fw_700 mobile pl-5">알게 된 경로를 알려주세요 <span
+                                    class="color_subgray">(선택)</span></span>
+                        </div>
+
+
+
+
+
+                        <div class="pt-4">
+                            <div class="q5_tip point_color pc">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                    class="img-fluid">
+                                <span class="fs_16 fw_700 pl-2">
+                                    Tip.
+                                </span>
+                                <span class="fs_16">까리 서비스가 필요하신
+                                    분들에게 좀 더 빠르게 서비스를
+                                    알리기 위한 질문입니다.</span>
+                            </div>
+
+                            <div class="q5_tip_mobile point_color mobile">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-2 px-0">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
+                                            class="img-fluid">
+                                    </div>
+                                    <div class="col-2 pl-1 line_14">
+                                        <span class="fs_16 fw_700">
+                                            Tip.<br>&emsp;<br>&emsp;
+                                        </span>
+                                    </div>
+                                    <div class="col ml_-3 line_14 pr-0">
+                                        <span class="fs_16"> 까리 서비스가 필요하신
+                                            분들에게 좀 더 빠르게 서비스를
+                                            알리기 위한 질문입니다.</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <textarea class="form-control q10_input mt_2rem" rows="3" id="comment"
+                                placeholder="직접 입력하기"></textarea>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-6 px-6 pt-5_2 pb-5_2">
+                        <a href="#">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png"
+                                class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png"
+                                class="img-fluid cursor mobile" alt="">
+                        </a>
+                    </div>
+                    <div class="col-6 pr-6pt-5_2 pb-5_2 text-right next_btn">
+                        <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png"
+                            class="img-fluid cursor next_shadow pc" alt="">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png"
+                            class="img-fluid cursor next_shadow mobile" alt="">-->
+                </div>
+                </div>
+            </div>
+
+            <!--팝업 마지막 로딩바 -->
+            <div class="container-fluid mw_1200 survay_pages d-none" id="survay_page6">
+                <div class="row align-items-center h-100 ">
+                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
+                        <button type="button" class="btn ">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid"></button>
+                    </div>
+                    <div class="col-12 text-center fs_40 fw_700 pt-10">
+                        <span class="point_color">가로</span>의 설문 내용을 분석하고 있습니다.
+                    </div>
+
+                    <div class="col">
+                        <div id="circle_loading"></div>
+                    </div>
+
+                    <div class="col-12 pt-0 pb-10 text-center fs_16 color_888">
+                        <div class="fw_700 pb-1">까리는 정략/정성적인 자료들을 근거한 알고리즘을 토대로 간식을 구성해드리고 있습니다.</div>
+                        예방/관리에 도움이 되는 제품들이나 질병 치료를 희망하시는 분은 전문의료기관을 통해 처방받는 것을 권장합니다.
+                    </div>
+                </div>
+
+                <script>
+                    var bar = new ProgressBar.Circle(circle_loading, {
+                        color: '#6E9357',
+                        strokeWidth: 6,
+                        trailWidth: 6,
+                        easing: 'easeInOut',
+                        duration: 7500,
+                        text: {
+                            autoStyleContainer: false
+                        },
+                        from: { color: '#6E9357', width: 6 },
+                        to: { color: '#6E9357', width: 6 },
+                        step: function (state, circle) {
+                            circle.path.setAttribute('stroke', state.color);
+                            circle.path.setAttribute('stroke-width', state.width);
+
+                            var value = Math.round(circle.value() * 100);
+                            if (value === 0) {
+                                circle.setText('');
+                            } else {
+                                circle.setText(value);
+                            }
+                        }
+                    });
+                    bar.animate(1.0);
+                </script>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="module">
+
+    var swiper2 = new Swiper('.catname_swiper', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 24,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+
+</script>
+
+<script>
+
+    $('.pop_box2').click(function () {
+        this.classList.toggle("toggle");
+        $('.next_btn').addClass("toggle2")
+        var arrowImage = $(this).children("div").children("img");
+        arrowImage.attr("src", function (index, attr) {
+            if (attr.match('up')) {
+                return attr.replace("up", "down");
+            }
+            else {
+                $('.next_btn').removeClass("toggle2")
+                return attr.replace("down", "up");
+            }
+        });
+    });
+
+    /* $(function(){
+         $(".form-control").on('input',function(){
+               if($(".form-control").val()=='')
+              $(this).css("border","2px solid #DBDADA");
+               else
+              $(this).css("border","2px solid #BEBCBB");
+         });
+     })*/
+
+    function checkOnlyOne(element) {
+        const checkboxes
+            = document.getElementsByName("q8");
+        checkboxes.forEach((cb) => {
+            cb.checked = false;
+        })
+        element.checked = true;
+    }
+
+</script>
+
+
+</html>

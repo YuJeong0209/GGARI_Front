@@ -219,28 +219,26 @@
         text-align: center;
     }
 
-    .c_result_box_lack {
+    .c_result_box{
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+    .c_result_box.lack {
         background: #F8B62D;
-        border-radius: 10px;
-        text-align: center;
-        padding: 14px 25px;
-        color: #fff;
     }
 
-    .c_result_box_danger {
-        background: #FE4A05;
-        border-radius: 10px;
-        text-align: center;
-        padding: 14px 25px;
-        color: #fff;
+    .c_result_box.good {
+        background: #5DC85B;
     }
 
-    .c_result_box_over {
+    .c_result_box.over {
         background: #FF8358;
-        border-radius: 10px;
-        text-align: center;
-        padding: 14px 25px;
-        color: #fff;
+    }
+
+    .c_result_box.danger {
+        background: #FE4A05;
     }
 
     .top2 {
@@ -429,7 +427,7 @@
     </div>
 
     <!--간식선택안했을때-->
-    <div class="row mw_1152 bg_cat">
+    <div id="calory_box_0" class="row mw_1152 bg_cat">
         <div class="col sub_gray_text">
             <div class="fs_20 fw_700">
                 간식 주기를 설정해주세요.
@@ -441,20 +439,19 @@
     </div>
 
     <!--간식선택 했을때 : 부족 칼로리 c_result_box_lack / 위험 칼로리 c_result_box_danger / 초과 칼로리 c_result_box_over -->
-    <div class="row mw_1152 bg_cat d-none">
+    <div id="calory_box_1" class="row mw_1152 bg_cat d-none">
         <div class="col top2">
-            <span class="fs_20 fw_700 c_result_box_lack">
-                부족</span>
+            <span id="kcal_text" class=""></span>
             <span class="pl_30px fw_700 fs_24">간식 칼로리입니다.</span>
         </div>
     </div>
 
     <div class="row mw_1152 pt_100px pb_80px result_btn_wrap">
         <div class="col text-center">
-            <button type="button" class="btn btn-outline-success fw_700 mr-3 order_last">
+            <button type="button" class="btn btn-outline-success fw_700 mr-3 order_last" onclick="location.href='/page/?M2_IDX=26046&id='+calory.cat.id">
                 간식 다시 선택하기
             </button>
-            <button type="button" class="btn btn-secondary fw_700 order_1">
+            <button type="button" class="btn btn-secondary fw_700 order_1" onclick="calory.goToCalander()">
                 간식단표 보러가기
             </button>
         </div>
@@ -475,7 +472,8 @@
         itemlist: [],
         rankStr: [null, 'Lite', 'Standard', 'Premium'],
         categoryStr : [ null, '스틱형', '캔형', '동결/건조형', '통살형', '스낵형', '파우치형', '덴탈 간식'],
-        cycleStr : { "30" : '1일에 1개', "15" : '2일에 1개', "10" : '3일에 1개', "7" : '1주일에 1개', "2" : '보름에 1개', "1" : "1달에 1개"},
+        cycleStr : { "90": '1일에 3개', "60" : '1일에 2개', "30" : '1일에 1개', "15" : '2일에 1개', "10" : '3일에 1개', "7" : '1주일에 1개', "2" : '보름에 1개', "1" : "1달에 1개"},
+        selected : {},
 
         init: () => {
             let search = location.search.substring(1);
@@ -483,10 +481,6 @@
             calory.productIds = JSON.parse(query.items);
             calory.rank = query.rank;
             calory.getItems();
-        },
-
-        changeKcalCounter: () => {
-
         },
 
         getCatById: () => {
@@ -549,11 +543,44 @@
             })
         },
 
-        postSubscribe: () => {
-
-
+        selectCycle : (id, cycle) =>{
+            calory.selected[id] = cycle;
+            console.log(calory.selected);
+            calory.DrawKcalCounter();
         },
 
+        goToCalander : ()=>{
+            if(JSON.stringify(calory.selected).length == 2){
+                alert = "주기를 선택해주세요.";
+                return false;
+            }
+            let url = '/page/?M2_IDX=26057&id='+calory.cat.id+"&items="+JSON.stringify(calory.selected);
+            location.href=url;
+        },
+
+
+        DrawKcalCounter: () => {
+            let kcal=0;
+            for(key in calory.selected){
+                kcal += (calory.itemlist.find(e => e.id == key).kcal * calory.selected[key]);
+            }
+
+            console.log(kcal);
+            calory.kcal = kcal;
+            $('#kcal_text').removeClass();
+            $('#kcal_text').addClass('fs_20 fw_700 c_result_box');
+            if(calory.cat.rer * 0.2 < calory.kcal ){
+                $('#kcal_text').addClass('over').html('위험');
+            }else if(calory.cat.rer * 0.15 < calory.kcal){
+                $('#kcal_text').addClass('danger').html('초과');
+            }else if(calory.cat.rer * 0.1 < calory.kcal ){
+                $('#kcal_text').addClass('good').html('권장');
+            }else{
+                $('#kcal_text').addClass('lack').html('부족');
+            }
+            $("#calory_box_0").addClass('d-none');
+            $("#calory_box_1").removeClass('d-none');
+        },
 
         drawItems: () => {
             $('.cat_name').html(calory.cat.name);
@@ -568,7 +595,7 @@
             for(i = 1; i < loop+1; i++){
                 if(calory.productIds[calory.rank]["s"+i] != null){
                     let item = calory.itemlist.find(e=> e.id == calory.productIds[calory.rank]["s"+i]);
-                    let $box = $('#origin_box').removeClass('d-none').clone();
+                    let $box = $('#origin_box').clone().attr('id', 'snack_boxs'+i).removeClass('d-none');
                     $box.find('.item_name').html(item.product_name);
                     $box.find('.price').html("￦ "+ item.product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
                     let categoryName = i == loop ? "기타" : calory.categoryStr[i];
@@ -576,19 +603,21 @@
                     $box.find('img').attr('src', item.img);
                     $box.find('.kcal').html(item.kcal);
                     let feeds = item.feedcycle.replace(/\[|\]|\'|\"|\ /g, '').split(',');
-                    for(feed of feeds){
+                    $.each(feeds, (i, feed)=>{
                         console.log(feed);
                         let $li = $('<li>').addClass('select_option')
-                        let $input = $('<input>').addClass('select_expand').attr({type:'radio', name : "feed_"+item.id, id : "feed_"+item.id+"_"+feed});                        
-                        let $label = $('<label>').addClass('select_closeLabel').attr({for: "feed_"+item.id+"_"+feed}).html(calory.cycleStr[feed]);
+                        let $input = $('<input>').addClass('select_input').attr({type:'radio', name : "feed_"+item.id, id : "feed_"+item.id+"_"+feed});                        
+                        let $label = $('<label>').addClass('select_label').attr({for: "feed_"+item.id+"_"+feed}).html(calory.cycleStr[feed]).click(()=>{calory.selectCycle(item.id, feed)});
                         $li.append($input, $label);
                         $box.find('.select_options').append($li);                            
-                    }
-
-
+                    })
+                    $box.find('.select_close').attr({name:"feed_"+item.id, id : "feed_"+item.id+"-close"});
+                    $box.find('.select_expand').attr({name:"feed_"+item.id, id : "feed_"+item.id+"-opener"});
+                    $box.find('.select_closeLabel').attr({for:"feed_"+item.id+"-close"});
+                    $box.find('.select_expandLabel').attr({for: "feed_"+item.id+"-opener"});
                     $boxs.append($box);
                 }else{
-                    let $box = $('#origin_box_not').removeClass('d-none').clone();
+                    let $box = $('#origin_box_not').clone().removeClass('d-none');
                     let categoryName = i == loop ? "기타" : calory.categoryStr[i];
                     $box.find('.category_name').html(categoryName);
                     $boxs.append($box);
@@ -596,8 +625,6 @@
             }
             $('#origin_box_not', '#origin_box').remove();
         },
-
-
     }
 </script>
 

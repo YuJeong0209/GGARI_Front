@@ -1,0 +1,394 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .mw_360 {
+            max-width: 398px;
+            margin: 0 auto;
+        }
+
+        .mw_957 {
+            max-width: 987px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DBDADA;
+            border-radius: 6px !important;
+            padding: 14px 20px;
+            font-size: 16px;
+            height: 50px;
+        }
+
+        .form-control::placeholder {
+            color: #BEBCBB;
+        }
+
+        .form-control:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+            border: 2px solid #6e9357 !important;
+        }
+
+        .shadow1 img {
+            box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 100px;
+        }
+
+        .py_15 {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .log_bg {
+
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/center_line.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .gray_btn {
+            background: #D1D0D0;
+            border-radius: 50px;
+        }
+
+        .point_btn {
+            background: #6E9357;
+            border-radius: 50px;
+            max-width: 136px;
+            margin: 0 auto;
+        }
+
+        .h_50px {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .hyphen {
+            width: 40px;
+            height: 2px;
+            position: relative;
+            margin: 24px 10px;
+            background-color: #231815;
+        }
+
+        .h_526 {
+            height: 526px;
+        }
+
+        .gray_btn_point {
+            background: #6E9357;
+            border-radius: 50px;
+        }
+
+
+
+        @media screen and (max-width:576px) {
+
+            .gray_box1 {
+                background: #F7F7F7;
+                border-radius: 10px;
+                padding: 30px 10px;
+            }
+
+            .mw_360 {
+                max-width: 318px;
+                margin: 0 auto;
+            }
+
+            .fs_28 {
+                font-size: 18px;
+            }
+
+            .fs_22 {
+                font-size: 18px;
+            }
+
+            .fs_16 {
+                font-size: 14px;
+            }
+
+            .fs_14 {
+                font-size: 14px;
+            }
+
+            .fs_12 {
+                font-size: 12px;
+            }
+
+            .hr-sect {
+                font-size: 12px;
+                margin: 20px 0px 20px 0;
+            }
+
+            .pt_30px {
+                padding-top: 20px;
+            }
+
+            .log .pt_20px {
+                padding-top: 10px;
+            }
+
+            .h_100 {
+                height: 100%;
+            }
+
+            .form-control {
+                font-size: 12px;
+                font-weight: 400;
+                height: 44px;
+                padding: 14px 10px;
+            }
+
+            .log_bg {
+                background: none;
+                padding-top: 60px;
+            }
+
+            .h_526 {
+                height: 380px;
+            }
+            .ml-6 {
+                margin-left: 3rem !important;
+            }
+
+        }
+    </style>
+</head>
+
+<div class="container-fluid h_100 log_bg">
+    <div class="row align-items-center h-100 mw_957">
+        <div class="col-lg-6 col-sm-1 mw_360 h_526">
+            <div class="fs_22 fw_700 ">아이디 찾기</div>
+            <div class="pb-2 fs_16 pt_40px">이름</div>
+            <input type="text" class="form-control form_1 login_id" placeholder="이름을 입력해주세요." id="">
+            <div class="pb-2 fs_16 pt_20px ">이메일</div>
+            <input type="text" class="form-control form_1 login_email" placeholder="이메일을 입력해주세요." id="">
+
+            <a href="#">
+                <div class="gray_btn color_fff fs_14 fw_700 py_15 text-center mt_40px submit_btn">확인</div>
+            </a>
+        </div>
+
+        <div class="col-lg-6 col-sm-1 mw_360 ">
+            <div class="fs_22 fw_700 ">비밀번호 재설정하기</div>
+            <div class="pb-2 fs_16 pt_40px ">아이디</div>
+            <input type="text" class="form-control form_2 pw_login_id" placeholder="아이디를 입력해주세요." id="">
+            <div class="pb-2 fs_16 pt_20px ">이름</div>
+            <input type="text" class="form-control form_2 pw_login_name" placeholder="이름을 입력해주세요." id="">
+            <div class="pb-2 fs_16 pt_20px ">인증 방식</div>
+
+            <div class="d-flex">
+                <div class="radio_custom ml_2rem phone_btn">
+                    <input type="radio" id="ex_rd02_1" name="ex_rds02" checked onchange="setDisplay()">
+                    <label for="ex_rd02_1">휴대폰 번호</label>
+                </div>
+                <div class="radio_custom ml-6 email_btn">
+                    <input type="radio" id="ex_rd02_2" name="ex_rds02" onchange="setDisplay()">
+                    <label for="ex_rd02_2">이메일</label>
+                </div>
+            </div>
+
+            <div class="phone_toggle ">
+                <div class="pb-2 fs_16 pt_20px ">휴대폰 번호</div>
+                <div class="w-100 d-flex h_50px ">
+                    <input type="text" class="form-control form_2 phone_01" id="">
+                    <div class="hyphen"></div>
+                    <input type="text" class="form-control form_2 phone_02" id="">
+                    <div class="hyphen"></div>
+                    <input type="text" class="form-control form_2 phone_03" id="">
+                </div>
+            </div>
+
+            <div class="email_toggle d-none">
+                <div class="pb-2 fs_16 pt_20px ">이메일</div>
+                <div class="w-100 h_50px ">
+                    <input type="text" class="form-control form_2_email form2email" placeholder="이메일을 입력해주세요.">
+                </div>
+            </div>
+
+            <a href="#">
+                <div class="gray_btn color_fff fs_14 fw_700 py_15 text-center mt_40px submit_btn2">확인</div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="container-fluid h-100 mobile">
+    <div class="row align-items-center h-100 mw_360 text-center">
+        <div class="col default_wrap">
+            <div class="gray_box1">
+                <div class="fs_28 fw_700 ">아이디 찾기</div>
+                <div class=" fs_14 sub_gray_text pt_20px">이름과 이메일을 입력하여<br>
+                    아이디를 찾을 수 있습니다.
+                </div>
+                <div class="point_btn color_fff fw_700 py_15 text-center mt_30px fs_12 id_btn">선택</div>
+            </div>
+
+            <div class="gray_box1 mt_40px">
+                <div class="fs_28 fw_700 ">비밀번호 재설정</div>
+                <div class=" fs_14 sub_gray_text pt_20px">본인인증을 하신 후<br>
+                    비밀번호를 재설정할 수 있습니다.
+                </div>
+                <div class="point_btn color_fff fw_700 py_15 text-center mt_30px fs_12 pass_btn">선택</div>
+            </div>
+        </div>
+
+        <div class="col mw_360 pass_wrap d-none">
+            <div class="fs_22 fw_700 ">비밀번호 재설정하기</div>
+            <div class="pb-2 fs_16 pt_20px text-left">아이디</div>
+            <input type="text" class="form-control m_form_2 m_pw_login_id" placeholder="아이디를 입력해주세요.">
+            <div class="pb-2 fs_16 pt_20px text-left">이름</div>
+            <input type="text" class="form-control m_form_2 m_pw_login_name" placeholder="이름을 입력해주세요.">
+            <div class="pb-2 fs_16 pt_20px text-left">인증 방식</div>
+
+            <div class="d-flex">
+                <div class="radio_custom ml_2rem phone_btn fs_12">
+                    <input type="radio" id="ex_rd02_3" name="ex_rds03" checked onchange="setDisplay_mobile()">
+                    <label for="ex_rd02_3">휴대폰 번호</label>
+                </div>
+                <div class="radio_custom ml-5_1 email_btn fs_12">
+                    <input type="radio" id="ex_rd02_4" name="ex_rds03" onchange="setDisplay_mobile()">
+                    <label for="ex_rd02_4">이메일</label>
+                </div>
+            </div>
+
+            <div class="phone_toggle_mobile ">
+                <div class="pb-2 fs_16 pt_20px text-left">휴대폰 번호</div>
+                <div class="w-100 d-flex h_50px ">
+                    <input type="text" class="form-control m_form_2 m_phone_01">
+                    <div class="hyphen"></div>
+                    <input type="text" class="form-control m_form_2 m_phone_02">
+                    <div class="hyphen"></div>
+                    <input type="text" class="form-control m_form_2 m_phone_03">
+                </div>
+            </div>
+
+            <div class="email_toggle_mobile d-none">
+                <div class="pb-2 fs_16 pt_20px text-left">이메일</div>
+                <div class="w-100 h_50px ">
+                    <input type="text" class="form-control m_form_2_email m_form2email" placeholder="이메일을 입력해주세요.">
+                </div>
+            </div>
+
+            <a href="#">
+                <div class="gray_btn color_fff fs_14 fw_700 py_15 text-center mt_40px m_submit_btn2">확인</div>
+            </a>
+
+        </div>
+
+        <div class="col mw_360 id_wrap d-none">
+            <div class="fs_22 fw_700 ">아이디 찾기</div>
+            <div class="pb-2 fs_16 pt_40px text-left">아이디</div>
+            <input type="text" class="form-control m_form_1 m_login_id" placeholder="아이디를 입력해주세요.">
+            <div class="pb-2 fs_16 pt_20px text-left">이메일</div>
+            <input type="text" class="form-control m_form_1 m_login_email" placeholder="이메일을 입력해주세요.">
+
+            <a href="#">
+                <div class="gray_btn color_fff fs_14 fw_700 py_15 text-center mt_40px m_submit_btn">확인</div>
+            </a>
+        </div>
+    </div>
+</div>
+-->
+<script>
+
+
+    $(function () {
+        var input_bg = $(".form-control").css("border");  // #input1 은 input 의 id 값 - 기존 배경색 저장
+        $("input").blur(function () {
+            if ($(this).val()) $(this).css("border", "1px solid #BEBCBB"); /* 값이 입력되면 #EEF6E2 로 변경한다 */
+            else $(this).css("border", input_bg);  /* 입력값이 지워지면 기본배경색으로 */
+        });
+    });
+
+
+    /*pc 이메일 휴대폰 토글*/
+    function setDisplay() {
+        if ($('input:radio[id=AK_KIND1]').is(':checked')) {
+            document.querySelector(".phone_toggle").classList.remove("d-none");
+            document.querySelector(".email_toggle").classList.add("d-none");
+        }
+        else {
+            document.querySelector(".email_toggle").classList.remove("d-none");
+            document.querySelector(".phone_toggle").classList.add("d-none");
+        }
+    }
+
+    $(".pass_btn").on("click", function (e) {
+        $(".pass_wrap").removeClass('d-none');
+        $(".default_wrap").addClass('d-none');
+        $(".id_wrap").addClass('d-none');
+    });
+
+    $(".id_btn").on("click", function (e) {
+        $(".id_wrap").removeClass('d-none');
+        $(".default_wrap").addClass('d-none');
+        $(".pass_wrap").addClass('d-none');
+    });
+
+
+
+
+
+    //아이디찾기 버튼 변경
+    $(".form_1").on("propertychange change paste input", function () {
+        if ($(".login_id").val() != 0 && $(".login_email").val() != 0) {
+
+            $(".submit_btn").addClass("gray_btn_point")
+        }
+        else {
+            $(".submit_btn").removeClass("gray_btn_point")
+        }
+    });
+    
+
+
+
+    //비밀번호로찾기 (휴대폰) 버튼 변경
+    $(".form_2").on("propertychange change paste input", function () {
+        if ($(".pw_login_id").val() != 0 && $(".pw_login_name").val() != 0 && $(".phone_01").val() != 0 && $(".phone_02").val() != 0 && $(".phone_03").val() != 0) {
+
+            $(".submit_btn2").addClass("gray_btn_point")
+        }
+        else {
+            $(".submit_btn2").removeClass("gray_btn_point")
+        }
+    });
+    //비밀번호로찾기(이메일)  버튼 변경
+    $(".form_2_email").on("propertychange change paste input", function () {
+        if ($(".form2email").val() != 0) {
+
+            $(".submit_btn2").addClass("gray_btn_point")
+        }
+        else {
+            $(".submit_btn2").removeClass("gray_btn_point")
+        }
+    });
+   
+
+</script>
+
+
+
+<body>
+</body>
+
+</html>

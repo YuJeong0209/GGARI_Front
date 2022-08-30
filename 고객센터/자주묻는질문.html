@@ -1,0 +1,260 @@
+<style>
+    #cs_menu_01 a {
+        color: #6E9357;
+    }
+
+    #section1 {
+        left: 147px;
+        max-width: 858px;
+        padding-top: 135px;
+    }
+
+    .search_box {
+        background: #F7F7F7;
+        border-radius: 6px;
+        padding: 40px 48px;
+    }
+
+
+    .form-control {
+        background: #FFFFFF;
+        border: 1px solid #DBDADA;
+        border-radius: 6px;
+        padding: 14px 20px;
+        font-size: 16px;
+        height: 52px;
+    }
+
+    .green_btn {
+        background-color: #6E9357;
+        padding: 14px;
+        width: 152px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    * {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border-color: inherit;
+    }
+
+    .aco_dt,
+    .aco_dd {
+        padding: 30px 20px;
+    }
+
+    .aco_dt {
+        font-weight: 400;
+        border-bottom: 2px solid #EDF2EA;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/acc_arrow_down_green.png);
+        background-size: 24px;
+        background-position-y: 50%;
+        background-position-x: calc(100% - 20px);
+        background-repeat: no-repeat;
+    }
+
+    .aco_dt.on {
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/acc_arrow_up_green.png);
+    }
+
+    .aco_dd {
+        background: #F7F7F7;
+        display: none;
+    }
+
+
+    .aco_dt:nth-child(1) {
+        border-top: 2px solid #6E9357;
+    }
+
+    .aco_dt:last-of-type {
+        border-bottom: 2px solid #6E9357;
+    }
+
+    .q {
+        font-weight: 700;
+    }
+
+    @media screen and (max-width:576px) {
+        #section1 {
+            left: 0;
+            padding: 0 22px;
+            padding-top: 220px;
+        }
+
+        .green_btn {
+            width: 44px;
+            height: 44px;
+            padding: 11px;
+        }
+
+        .form-control {
+            height: 44px;
+            font-size: 12px;
+        }
+
+        .form-control.mr_30px {
+            margin-right: 10px;
+        }
+
+        .search_box {
+            padding: 20px;
+        }
+
+        .d-flex.pt_20px {
+            padding-top: 10px;
+        }
+
+        .aco_dt,
+        .aco_dd {
+            padding: 20px 20px;
+        }
+
+        .aco_dt {
+            background-size: 20px;
+        }
+
+    }
+</style>
+
+
+<div class="container-fluid pb_100px" id="section1">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="fs_28 fw_700 pc">자주 묻는 질문</div>
+
+            <div id="search_box" class="search_box mt_40px">
+                <div class="fw_700">
+                    검색하기
+                </div>
+                <div class="d-flex pt_20px">
+                    <input type="text" class="form-control mr_30px" placeholder="궁금한 내용을 검색해보세요." id="search_input">
+                    <a href="#">
+                        <div class="green_btn fs_16 fw_700 text-center">
+                            <span class="pc">중복 확인</span>
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/vector_ico111.png" alt="" class="img-fluid mobile">
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="pt_30px fs_20 fw_700">총 <span class="point_color">50</span>건</div>
+            <dl class="aco_dl pt_20px">
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+                <dt class="aco_dt">
+                    <span class="q pr-2">Q.</span>주문 방법을 알고싶어요.
+                </dt>
+                <dd class="aco_dd">
+                    <div class="d-flex">
+                        <div class="q pr-2">A.</div>
+                        <div>
+                            정기 배송 품목을 교체하고 싶으시다면 새로 설문조사를 진행하시거나
+                            마이페이지 > 배송/결제 변경 페이지에서 변경하실 수 있습니다.</div>
+                    </div>
+                </dd>
+            </dl>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    var acodian = {
+
+        click: function (target) {
+            var _self = this,
+                $target = $(target);
+            $target.on('click', function () {
+                var $this = $(this);
+                if ($this.next($(".aco_dd")).css('display') == 'none') {
+                    $(".aco_dd").slideUp();
+                    _self.onremove($target);
+
+                    $this.addClass('on');
+                    $this.next().slideDown();
+                } else {
+                    $(".aco_dd").slideUp();
+                    _self.onremove($target);
+
+                }
+            });
+        },
+        onremove: function ($target) {
+            $target.removeClass('on');
+        }
+
+    };
+    acodian.click('dt');
+</script>

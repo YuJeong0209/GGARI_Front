@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .mw_360 {
+            max-width: 398px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DBDADA;
+            border-radius: 6px;
+            padding: 14px 20px;
+            font-size: 16px;
+            height: 50px;
+        }
+
+
+        .form-control::placeholder {
+            color: #BEBCBB;
+        }
+
+        .form-control:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+            border: 2px solid #6e9357 !important;
+        }
+
+        .form_2 {
+            background: #fff;
+            border: 1px solid #DBDADA;
+            border-radius: 6px;
+        }
+
+
+        .gray_btn {
+            background: #D1D0D0;
+            border-radius: 50px;
+        }
+
+        .gray_btn_point {
+            background: #6E9357;
+            border-radius: 50px;
+        }
+
+        .w98 {
+            width: 98px;
+        }
+
+        .h_50px {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .hyphen {
+            width: 40px;
+            height: 2px;
+            position: relative;
+            margin: 24px 10px;
+            background-color: #231815;
+        }
+
+        .shadow1 {
+            box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 100px;
+        }
+
+        @media screen and (max-width:576px) {
+            .mw_360 {
+                max-width: 318px;
+                margin: 0 auto;
+            }
+
+            .h_50px {
+                height: 44px;
+                line-height: 44px;
+            }
+
+            .form-control {
+                font-size: 12px;
+                font-weight: 400;
+                height: 44px;
+                padding: 14px 10px;
+            }
+
+            .fs_14 {
+                font-size: 12px;
+            }
+
+            .h-100 {
+                height: auto !important;
+            }
+
+            .mobile_top {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+
+<div class="container-fluid h-100 mobile_top">
+    <div class="row align-items-center h-100 mw_360 ">
+        <div class="col ">
+            <div class="fs_22 fw_700 text-center">회원가입</div>
+            <div class="fs_14 sub_gray_text pt_10px text-center">
+                까리박스 회원 등록을 위한 정보를 입력해주세요.
+            </div>
+            <div class="text-right fs_12 sub_gray_text"><span class="point_color fs_16 fw_700">* </span>는 필수 입력 정보입니다.
+            </div>
+
+
+            <div class="pb-2 fs_16 pt_10px ">아이디 <span class="point_color fs_16 fw_700">*</span></div>
+            <div class="w-100 d-flex h_50px ">
+                <input type="text" class="form-control mr_10px form_2 form_1" placeholder="아이디를 입력해주세요." id="id_color">
+                <a href="#">
+                    <div class="gray_btn w98 color_fff fs_16 fw_700 text-center gray_btn1">중복 확인</div>
+                </a>
+            </div>
+
+            <div class="pb-2 fs_16 pt_20px ">이름 <span class="point_color fs_16 fw_700">*</span></div>
+            <div class="w-100 h_50px ">
+                <input type="text" class="form-control form_1" placeholder="이름을 입력해주세요." id="ggari_id">
+            </div>
+
+            <div class="pb-2 fs_16 pt_20px ">비밀번호 <span class="point_color fs_16 fw_700">*</span></div>
+            <div class="w-100 h_50px ">
+                <input type="password" class="form-control form_1" placeholder="비밀번호를 입력해주세요." id="ggari_pw">
+            </div>
+            <div class="w-100 h_50px ">
+                <input type="password" class="form-control mt_10px form_1" placeholder="비밀번호를 한 번 더 입력해주세요."
+                    id="ggari_pw2">
+            </div>
+
+
+            <div class="pb-2 fs_16 pt_20px ">이메일<span class="point_color fs_16 fw_700">*</span></div>
+            <div class="w-100 h_50px ">
+                <input type="text" class="form-control form_1" placeholder="이메일을 입력해주세요." id="ggari_email">
+            </div>
+
+            <div class="pb-2 fs_16 pt_20px ">휴대폰 번호</div>
+            <div class="w-100 d-flex h_50px ">
+                <input type="text" class="form-control">
+                <div class="hyphen"></div>
+                <input type="text" class="form-control">
+                <div class="hyphen"></div>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="w-100 d-flex pt_20px">
+
+                <div class="check_custom mr-5 ml-3">
+                    <input type="checkbox" name="agree_chk1" id="agree_chk_1" class="agree_chk">
+                    <label for="agree_chk_1" class="fs_16">
+                        이메일 수신 동의
+                    </label>
+                </div>
+
+                <div class="check_custom">
+                    <input type="checkbox" name="agree_chk2" id="agree_chk_2" class="agree_chk">
+                    <label for="agree_chk_2" class="fs_16">
+                        SMS 수신 동의
+                    </label>
+                </div>
+
+
+            </div>
+
+
+            <div class="pt_40px">
+                <a href="#">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/join_s_button.png" alt=""
+                        class="img-fluid submit_btn">
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<body>
+    <script>
+
+        $(function () {
+            var input_bg = $(".form-control").css("border");  // #input1 은 input 의 id 값 - 기존 배경색 저장
+            $("input").blur(function () {
+                if ($(this).val()) $(this).css("border", "1px solid #BEBCBB"); /* 값이 입력되면 #EEF6E2 로 변경한다 */
+                else $(this).css("border", input_bg);  /* 입력값이 지워지면 기본배경색으로 */
+            });
+        });
+
+
+
+        $(".form_2").on("propertychange change paste input", function () {
+            if ($("#id_color").val() != 0) {
+                $(".gray_btn1").addClass("gray_btn_point")
+            }
+            else {
+                $(".gray_btn1").removeClass("gray_btn_point")
+            }
+        });
+
+
+        $(".form_1").on("propertychange change paste input", function () {
+            if ($("#id_color").val() != 0 && $("#ggari_id").val() != 0 && $("#ggari_pw").val() != 0 && $("#ggari_pw2").val() != 0 && $("#ggari_email").val() != 0) {
+                $('.submit_btn').attr('src', 'https://ggaribox.s3.ap-northeast-2.amazonaws.com/join_s_button_chk.png');
+                $('.submit_btn').addClass("shadow1")
+            }
+            else {
+                $('.submit_btn').attr('src', 'https://ggaribox.s3.ap-northeast-2.amazonaws.com/join_s_button.png');
+                $('.submit_btn').removeClass("shadow1")
+            }
+        });
+    </script>
+</body>
+
+</html>

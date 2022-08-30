@@ -1,7 +1,7 @@
 <footer class="container-fluid footer-bottom py-5_1">
-    <div class="row align-items-center h-100 mw_870">
-        <div class="col">
-            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/logo.png" alt="" class="img-fluid">
+    <div class="row align-items-center h-100 mw_1152">
+        <div class="col logo">
+            <img src="https://ggari.s3.ap-northeast-2.amazonaws.com/logo.png" alt="" class="img-fluid ">
         </div>
         <div class="col text-right">
             <a href="#"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/kk.png" alt=""
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div class="row mw_870 mt-4">
+    <div class="row mw_1152 mt-4">
         <div class="col fs_12 letter0 line_22 fw_400">
             서울시 송파구 충민로 52, 가든파이브 웍스 A-201동<br>
             사업자등록번호: 000-00-00000  통신판매업신고: 000-00-00000<br>
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="row mw_870 mt-5_2 last_row">
+    <div class="row mw_1152 mt-5_2 last_row">
         <div class="col fs_12 fw_700">
             Copyright©2022 까리박스 All rights reserved.
         </div>
@@ -35,10 +35,17 @@
 
 
 <script type="text/javascript">
-$(()=>{
-});
+    $(() => {
+        if ($(window).width() > 768) {
+            if (location.href.includes('page') ||
+                location.href.includes('coun') ||
+                location.href.includes('board') ||
+                location.href.includes('shop') ) 
+            {
+                $('.content_wrap1').css('padding-top', '100px')
+            }
+        }
+    });
 
 
 </script>
-
-

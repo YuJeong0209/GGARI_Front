@@ -1,0 +1,582 @@
+<style>
+    #section1 {
+        left: 147px;
+        max-width: 858px;
+        padding-top: 135px;
+        padding-bottom: 700px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .tab_btn {
+        overflow: hidden;
+    }
+
+    .tab_btn li {
+        float: left;
+        cursor: pointer;
+        width: 196px;
+        padding: 14px 10px;
+        text-align: center;
+    }
+
+
+    .tab_btn li a {
+        font-weight: bold;
+        vertical-align: middle;
+        color: #BEBCBB !important;
+    }
+
+    .tab_btn li.active {
+        border-bottom: 2px solid #6E9357;
+    }
+
+    .tab_btn li.active a {
+        color: #6E9357 !important;
+    }
+
+    .tab_btn li a:hover {
+        color: #6E9357 !important;
+    }
+
+    .tab_text {
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 30px 40px;
+        min-height: 118px;
+    }
+
+    .tab_text_null {
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 30px 40px;
+        height: 328px;
+    }
+
+    .ggaribox_info {
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 23px 30px;
+    }
+
+    .btn_survey_result {
+        background: #FFFFFF;
+        border: 2px solid #6E9357;
+        border-radius: 6px;
+        width: 196px;
+        padding: 10px;
+        text-align: center;
+        top: 6px;
+        z-index: 10;
+    }
+
+    .btn_survey {
+        min-width: 270px;
+    }
+
+
+
+
+    .small_btn {
+        padding: 10px 22px;
+    }
+
+    .cart_wrap {
+        padding: 0;
+        border-top: 2px solid #6E9357;
+        margin-left: 0;
+        margin-right: 0;
+        border-bottom: 2px solid #EDEDED;
+    }
+
+    .cart_box {
+        padding: 30px 0 30px 40px;
+    }
+
+    .cart_wrap:nth-child(n+3) {
+        border-top: 0;
+
+    }
+
+    .cart_wrap:nth-last-child(1) {
+        border-bottom: 2px solid #6E9357;
+    }
+
+    .cart_box img {
+        max-width: 90px;
+        width: 90px;
+    }
+
+    .price {
+        line-height: 85px;
+    }
+
+    .price2 {
+        line-height: 85px;
+    }
+
+    .cart_round_box img {
+        /*border: 1px solid #DBDADA;*/
+        border-radius: 10px;
+    }
+
+    .cart_quantity {
+        background: #F7F7F7;
+        border-radius: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        max-width: 70px;
+        width: 70px;
+        text-align: center;
+        float: left;
+    }
+
+    .small_btn2 {
+        padding: 5.5px 8px;
+        border-radius: 6px;
+        float: left;
+    }
+
+    .btn_plus_img img,
+    .btn_minus_img img {
+        max-width: 20px;
+        position: relative;
+        top: -1.5px;
+    }
+
+    .cart_wrap2 {
+        padding: 40px 94px;
+    }
+
+    .check_custom input[type=checkbox]+label {
+        background-size: 24px;
+        background-position-y: 0;
+    }
+
+
+
+    @media screen and (max-width:576px) {
+        #section1 {
+            left: 0;
+            padding: 0 22px;
+            padding-top: 140px;
+            padding-bottom: 600px;
+        }
+
+        .tab_btn li {
+            width: 141px;
+        }
+
+        #tab-cont {
+            padding: 0;
+            min-height: 376px;
+        }
+
+        .tab_btn.pt_40px {
+            padding-top: 20px;
+        }
+
+
+
+        .btn {
+            font-size: 12px;
+        }
+
+        .btn_plus_img img,
+        .btn_minus_img img {
+            max-width: 18px;
+        }
+
+        .col-12 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .col {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .mw_1152 {
+            max-width: 288px;
+            margin: 0 auto;
+        }
+
+        .cart_wrap {
+            padding: 0 25px;
+        }
+
+        .check_custom input[type=checkbox]+label {
+            background-size: 18px;
+            background-position-y: 0;
+        }
+
+
+        .cart_box .d-inline-block {
+            float: left;
+        }
+
+        .cart_box .pr_15px {
+            padding-right: 0;
+        }
+
+        .small_btn {
+            padding: 4px 14px;
+        }
+
+        .cart_box .mt_12px {
+            margin-top: 10px;
+        }
+
+        .cart_box {
+            padding: 20px 0;
+        }
+
+        .price {
+            line-height: 1.5;
+            padding: 35px 0 24px 0;
+        }
+
+        .price2 {
+            line-height: 1.5;
+            padding: 35px 0 24px 0;
+            margin-top: 21px;
+        }
+
+        .itemmm_name {
+            display: block;
+            padding-left: 0;
+        }
+
+        .cart_quantity {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            max-width: 48px;
+            width: 48px;
+            margin-left: 0;
+        }
+
+        .small_btn2 {
+            padding: 3px 5px;
+        }
+
+        .ml_10px {
+            margin-left: 0;
+        }
+
+        .cart_wrap2 {
+            padding: 30px 25px;
+        }
+
+        .tab_text .float-right {
+            float: none !important;
+        }
+
+        .tab_text {
+            padding: 30px 30px;
+        }
+
+        .btn_survey_result {
+            width: 228px;
+        }
+
+        .btn1_1 {
+            width: 208px;
+        }
+
+        .btn_mobile .btn_minus_img.mr_30px {
+            margin-right: 0;
+        }
+
+        .m_btn_100 {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn_mypagetab {
+            width: 8px;
+            margin-right: 12px;
+            top: -1px;
+        }
+
+    }
+</style>
+
+
+
+<div class="container-fluid" id="section1">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="fs_28 fw_700 "><span class="point_color">가로</span> 반려묘 정보</div>
+
+            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt=""
+                    class="img-fluid btn_mypagetab">돌아가기
+            </div>
+            <div class="tab_btn pt_40px">
+                <ul>
+                    <li class="active fs_18 fw_700">
+                        <a>설문조사 기록</a>
+                    </li>
+                    <li class="fs_18 fw_700">
+                        <a>까리박스 구성 정보</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div id="tab-cont" class="mt_20px">
+                <!--값 있을때
+                -->
+                <div>
+                    <div class="tab_text">
+                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
+                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
+                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
+
+                        <button class="float-right btn_survey_result fs_14 point_color fw_700">설문조사 결과보기</button>
+                        <div class="pt_10px sub_gray_text">2022-08-08</div>
+                    </div>
+
+                    <div class="tab_text mt_20px">
+                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
+                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
+                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
+                        <button class="float-right btn_survey_result fs_14 point_color fw_700">설문조사 결과보기</button>
+                        <div class="pt_10px sub_gray_text">2022-08-08</div>
+                    </div>
+
+                    <div class="mt_40px float-right">
+                        <button class="btn btn-success fw_700 btn_survey"
+                            onclick="location.href='/page/?M2_IDX=26434';">설문조사 다시하기</button>
+                    </div>
+                </div>
+
+                <!--값 없을때
+                <div class="tab_text_null">
+                    <div class="row align-items-center h-100 text-center">
+                        <div class="col">
+                            <div class="fs_18 fw_700 point_color">설문조사 기록이 없습니다</div>
+                            <div class="pt_10px fs_14 sub_gray_text">질문을 통해 내 반려묘에게 꼭 필요한 영양 간식을 알아보세요.</div>
+
+                            <button class="btn btn-success fw_700 btn_survey mt_40px" onclick="location.href='/page/?M2_IDX=26434';">설문조사 하러가기</button>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <div>
+
+                    <!--값 있을때 -->
+                    <div class="tab_text2">
+                        <div class="ggaribox_info fw_700">
+                            해당 리스트는 <span class="point_color">매달 정기배송될 제품들</span>입니다. <span class="point_color">당월
+                                1회만 구입하고 싶은 제품은 장바구니</span>에서 추가하세요.
+                        </div>
+
+
+                        <div class="row cart_wrap mt_20px">
+                            <div class="col">
+                                <div class="cart_box">
+                                    <div class="d-inline-block align-middle pr_15px">
+                                        <div class="check_custom">
+                                            <input type="checkbox" name="select_chk01" id="select_chk01">
+                                            <label for="select_chk01">&nbsp;</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block align-middle pr_30px cart_round_box">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png" alt=""
+                                            class="img-fluid list_img">
+                                    </div>
+
+                                    <div class="d-inline-block align-middle">
+                                        <div class="fs_18 fw_700 mb_12px">
+                                            스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키
+                                                연어캔</span>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img"
+                                            onclick="count2('plus')" value="+">
+                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png"
+                                                alt="" class="img-fluid">
+                                        </button>
+                                        <div class="cart_quantity ml_10px" id="result2">1</div>
+                                        <button type="button"
+                                            class="btn btn-outline-success small_btn2 ml_10px btn_minus_img"
+                                            onclick="count2('minus')" value="-">
+                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png"
+                                                alt="" class="img-fluid">
+                                        </button>
+                                    </div>
+                                    <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
+                                        <div class="fs_20 fw_700 point_color">￦1,000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row cart_wrap ">
+                            <div class="col">
+                                <div class="cart_box">
+                                    <div class="d-inline-block align-middle pr_15px">
+                                        <div class="check_custom">
+                                            <input type="checkbox" name="select_chk02" id="select_chk02">
+                                            <label for="select_chk02">&nbsp;</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-inline-block align-middle pr_30px cart_round_box">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png" alt=""
+                                            class="img-fluid list_img">
+                                    </div>
+
+                                    <div class="d-inline-block align-middle">
+                                        <div class="fs_18 fw_700 mb_12px">
+                                            스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키
+                                                연어캔</span>
+                                        </div>
+                                        <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img"
+                                            onclick="count('plus')" value="+">
+                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png"
+                                                alt="" class="img-fluid">
+                                        </button>
+                                        <div class="cart_quantity ml_10px" id="result">1</div>
+                                        <button type="button"
+                                            class="btn btn-outline-success small_btn2 ml_10px btn_minus_img"
+                                            onclick="count('minus')" value="-">
+                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png"
+                                                alt="" class="img-fluid">
+                                        </button>
+                                    </div>
+                                    <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
+                                        <div class="fs_20 fw_700 point_color">￦1,000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mw_1152 btn_mobile">
+                            <div class="col-12 pt_30px px-0">
+                                <button type="button" class="btn btn-outline-success fw_700 btn1_1">
+                                    추천 제품 다시 선택
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt mr_30px mobile">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png" alt=""
+                                        class="img-fluid">
+                                    <span>선택 삭제</span>
+                                </button>
+                                <button type="button" class="btn btn-success fw_700 float-right px-5 m_btn_100">
+                                    <span>변경 완료</span>
+                                </button>
+                                <button type="button"
+                                    class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt mr_30px pc">
+                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png" alt=""
+                                        class="img-fluid">
+                                    <span>선택 삭제</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--값 없을때 
+                    <div class="tab_text_null">
+                        <div class="row align-items-center h-100 text-center">
+                            <div class="col">
+                                <div class="fs_18 fw_700 point_color">까리박스 구성 정보가 없습니다</div>
+                                <div class="pt_10px fs_14 sub_gray_text">지금 까리박스를 구독하시면 배송비 무료, 구독 할인 등 많은 혜택을 받을 수
+                                    있습니다.</div>
+
+                                <button class="btn btn-success fw_700 btn_survey mt_40px"
+                                    onclick="location.href='/page/?M2_IDX=26434';">설문조사 하러가기</button>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // 컨텐츠 내용을 숨겨주세요!
+    var tabBtn = $(".tab_btn > ul > li"); //각각의 버튼을 변수에 저장
+    var tabCont = $("#tab-cont > div");  //각각의 컨텐츠를 변수에 저장
+
+    tabCont.hide().eq(0).show();
+
+    tabBtn.click(function () {
+        var target = $(this);        //버튼의 타켓(순서)을 변수에 저장
+        var index = target.index();  //버튼의 순서를 변수에 저장
+        // alert(index);
+        tabBtn.removeClass("active");   //버튼의 클래스를 삭제
+        target.addClass("active");   //타켓의 클래스를 추가
+        tabCont.css("display", "none");
+        tabCont.eq(index).css("display", "block");
+    });
+
+
+    function count(type) {
+        const resultElement = document.getElementById('result');
+        let number = resultElement.innerText;
+        if (type === 'plus') {
+            number = parseInt(number) + 1;
+        } else if (type === 'minus') {
+            number = parseInt(number) - 1;
+        }
+        resultElement.innerText = number;
+    }
+    function count2(type) {
+        const resultElement = document.getElementById('result2');
+        let number = resultElement.innerText;
+        if (type === 'plus') {
+            number = parseInt(number) + 1;
+        } else if (type === 'minus') {
+            number = parseInt(number) - 1;
+        }
+        resultElement.innerText = number;
+    }
+
+    $(window).resize(function () {
+        if (window.innerWidth > 480) {  // 다바이스 크기가 480이상일때 
+            $(document).ready(function () {
+                changeIMG();
+            });
+            function changeIMG() {
+                $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png");
+                $(".btn_minus_txt span").text("제품 삭제하기");
+                $(".btn_minus_txt img").addClass("mr-2");
+                $(".btn_minus_txt").css("padding", "14px 22px");
+                $(".list_img").removeClass("d-none");
+                $(".cart_order_btn img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_order_btn.png");
+            }
+        } else {
+            $(document).ready(function () {
+                changeIMG();
+            });
+            function changeIMG() {
+                $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png");
+                $(".btn_minus_txt span").text("");
+                $(".btn_minus_txt img").removeClass("mr-2");
+                $(".btn_minus_txt").css("padding", "14px 16px");
+                $(".list_img").addClass("d-none");
+                $(".cart_order_btn img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_order_btn_m.png");
+            }
+        }
+    }).resize();
+
+
+
+    $('.mycat_namebox').click(function () {
+        $('#sidebar6').css('left', '-9999px');
+    });
+
+    $('.btn_mypage').click(function () {
+        $('#sidebar6').css('left', '0');
+    });
+</script>

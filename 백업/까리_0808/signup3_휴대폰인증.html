@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .mw_360 {
+            max-width: 398px;
+            margin: 0 auto;
+        }
+
+        .mw_368 {
+            max-width: 406px;
+            margin: 0 auto;
+
+        }
+
+        .mw_957 {
+            max-width: 987px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DBDADA;
+            border-radius: 6px;
+            padding: 14px 20px;
+            font-size: 16px;
+            height: 50px;
+        }
+
+
+        .form-control::placeholder {
+            color: #BEBCBB;
+        }
+
+        .form-control:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+            border: 2px solid #6e9357 !important;
+        }
+
+        .form_2 {
+            background: #fff;
+            border: 1px solid #DBDADA;
+            border-radius: 6px;
+        }
+
+        .shadow1 img {
+            box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 100px;
+        }
+
+        .py_15 {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        .log_bg {
+
+            background: url(images/center_line.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .gray_btn {
+            background: #D1D0D0;
+            border-radius: 50px;
+        }
+
+        .gray_btn_point {
+            background: #6E9357;
+            border-radius: 50px;
+        }
+
+        .btn {
+            border-radius: 50px;
+        }
+
+        .h_50px {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .hyphen {
+            width: 40px;
+            height: 2px;
+            position: relative;
+            margin: 24px 10px;
+            background-color: #231815;
+        }
+
+        .h_526 {
+            height: 526px;
+        }
+
+
+        .p_15box {
+            padding: 14px 5px;
+            width: 98px;
+        }
+
+        .w98 {
+            width: 98px;
+        }
+
+        .input_time {
+            width: 35px;
+            right: 116px;
+            position: absolute;
+        }
+
+        @media screen and (max-width:576px) {
+
+            .gray_box1 {
+                background: #F7F7F7;
+                border-radius: 10px;
+                padding: 30px 10px;
+            }
+
+            .mw_360 {
+                max-width: 318px;
+                margin: 0 auto;
+            }
+
+            .mw_368 {
+                max-width: 318px;
+                margin: 0 auto;
+            }
+
+
+            .hr-sect {
+                font-size: 12px;
+                margin: 20px 0px 20px 0;
+            }
+
+            .pt_30px {
+                padding-top: 20px;
+            }
+
+            .log .pt_20px {
+                padding-top: 10px;
+            }
+
+            .h_100 {
+                height: 130vh !important;
+            }
+            .fs_14 {
+                font-size: 12px;
+            }
+            .pb-2.fs_16 {
+                font-size:14px;
+            }
+            .form-control {
+                font-size: 12px;
+                font-weight: 400;
+                height: 44px;
+                padding: 14px 10px;
+            }
+
+            .p_15box {
+                width: 76px;
+            }
+
+            .w98 {
+                width: 76px;
+            }
+
+            .h_50px {
+                height: 44px;
+                line-height: 44px;
+            }
+
+            .input_time {
+                right: 85px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<div class="container-fluid h-100 ">
+    <div class="row align-items-center h-100 mw_368">
+        <div class="col">
+            <div class="fs_22 fw_700 text-center">휴대폰으로 인증</div>
+            <div class="fs_14 sub_gray_text pt_10px text-center">
+                휴대폰으로 본인 인증을 할 수 있습니다.<br>
+                번호 입력 후 인증이 완료되면 회원 가입 페이지로 이동합니다.
+            </div>
+
+
+            <div class="pb-2 fs_16 pt_20px ">휴대폰 번호</div>
+            <div class="w-100 d-flex h_50px">
+                <input type="text" class="form-control form_1 mr_10px phone1" id="">
+                <input type="text" class="form-control form_1 mr_10px phone2" id="">
+                <input type="text" class="form-control form_1 mr_10px phone3" id="">
+
+                <a href="#">
+                    <div class="gray_btn w98 color_fff fs_16 fw_700 text-center submit_btn">인증 전송</div>
+                </a>
+            </div>
+
+            <div class="pb-2 fs_16 pt_20px ">인증 번호</div>
+            <div class="w-100 d-flex h_50px ">
+                <input type="text" class="form-control mr_10px form_2 num" placeholder="인증 번호를 입력해주세요." id="">
+                <div class="input_time point_color d-none">3:29</div>
+
+
+                <a href="#">
+                    <div class="gray_btn w98 color_fff fs_16 fw_700 text-center gray_btn1">인증하기</div>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+    $(".form_1").on("propertychange change paste input", function () {
+        if ($(".phone1").val() != 0 && $(".phone2").val() != 0 && $(".phone3").val() != 0) {
+            $(".submit_btn").addClass("gray_btn_point")
+            $('.gray_btn').click(function () {
+                $(".input_time").removeClass("d-none")
+            });
+        }
+        else {
+            $(".submit_btn").removeClass("gray_btn_point")
+        }
+    });
+
+    $(".form_2").on("propertychange change paste input", function () {
+        if ($(".num").val() != 0) {            
+            $(".gray_btn1").addClass("gray_btn_point")
+        }
+        else {
+            $(".gray_btn1").removeClass("gray_btn_point")
+        }
+    });
+
+
+
+</script>
+
+
+
+<body>
+</body>
+
+</html>

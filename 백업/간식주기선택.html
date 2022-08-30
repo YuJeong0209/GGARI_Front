@@ -1,0 +1,634 @@
+<style>
+    .lite_box {
+        background-color: #5BB0FF;
+        padding: 6px 14px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    .standard_box {
+        background-color: #6E9357;
+        padding: 6px 14px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    .primium_box {
+        background-color: #F08080;
+        padding: 6px 14px;
+        color: #fff;
+        border-radius: 50px;
+    }
+
+    .cycle_box {
+        background: #FFFFFF;
+        border: 1px solid #DBDADA;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 30px 40px;
+    }
+
+    .cycle_item {
+        border: 1px solid #DBDADA;
+        border-radius: 10px;
+    }
+
+
+    .cycle_box_not {
+        background: #F7F7F7;
+        border: 1px solid #DBDADA;
+        border-radius: 10px;
+        padding: 30px 40px;
+        height: 310px;
+
+    }
+
+    .c_item_name {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 298px;
+        overflow: hidden;
+    }
+
+
+    .select {
+        width: 298px;
+        height: 52px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: 0 2px 0 white;
+        border-radius: 2px;
+    }
+
+    .select_expand {
+        width: 0;
+        height: 52px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .select_expandLabel {
+        display: block;
+        width: 100%;
+        height: 52px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .select_close {
+        display: none
+    }
+
+    .select_closeLabel {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .select_items {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 10px;
+        padding-top: 52px;
+        z-index: 2;
+        border: 2px solid #DBDADA;
+
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/arrow_down_20.png);
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: 94% center;
+    }
+
+
+    .select_input {
+        display: none
+    }
+
+    .select_label {
+        transition: all .2s ease;
+        display: block;
+        height: 0;
+        line-height: 52px;
+        overflow: hidden;
+        color: #231815;
+        background-color: #fff;
+        cursor: pointer;
+        padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .select_label-placeholder {
+        height: 52px;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*opacity: .6;*/
+        color: #BEBCBB;
+        background-color: transparent;
+        font-weight: 400;
+    }
+
+    .select_expand:checked+.select_closeLabel {
+        display: block;
+
+    }
+
+    .z_10 {
+        z-index: 10;
+    }
+
+    .select .select_expand:checked+.select_closeLabel+.select_options {
+        height: 180px;
+        overflow-y: scroll;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .select_options::-webkit-scrollbar {
+        width: 10px;
+        height: 0;
+    }
+
+    .select_options::-webkit-scrollbar-button:start:decrement,
+    .select_options::-webkit-scrollbar-button:end:increment {
+        display: block;
+        height: 0;
+    }
+
+    .select_options::-webkit-scrollbar-track {
+        /*  background:rgba(0,0,0,.05);*/
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    .select_options::-webkit-scrollbar-thumb {
+        height: 50px;
+        width: 50px;
+        background: #6E9357;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label {
+        height: 52px;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label:hover {
+        background-color: #e9efe6;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options+.select_expandLabel {
+        display: none;
+    }
+
+    .select_input:checked+.select_label {
+        height: 52px;
+        margin-top: -52px;
+    }
+
+
+    .bg_cat {
+        background-repeat: no-repeat;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_gray_bg.png);
+        background-size: 1152px 191px;
+        height: 191px;
+        background-position-x: center;
+        /* background-position-y: -21px; */
+        top: -20px;
+
+    }
+
+    .bg_cat .col {
+        top: 94%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .c_result_box_lack {
+        background: #F8B62D;
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+
+    .c_result_box_danger {
+        background: #FE4A05;
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+
+    .c_result_box_over {
+        background: #FF8358;
+        border-radius: 10px;
+        text-align: center;
+        padding: 14px 25px;
+        color: #fff;
+    }
+
+    .top2 {
+
+        top: 100% !important;
+    }
+
+    @media screen and (max-width:576px) {
+        .pt_150px {
+            padding-top: 140px;
+        }
+
+        .lite_box,
+        .standard_box,
+        .primium_box {
+            font-size: 10px;
+            padding: 4px 14px;
+            top: -2px;
+        }
+
+        .mw_1152 {
+            max-width: 288px;
+            margin: 0 auto;
+        }
+
+        .col-12 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .col-sm-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .pl_30px {
+            padding-left: 0;
+        }
+
+        .select {
+            width: 240px;
+        }
+
+        .cycle_box,
+        .cycle_box_not {
+            padding: 24px 22px;
+        }
+
+        .cycle_box .d-inline-block {
+            display: block !important;
+        }
+
+        .align-top {
+            float: left;
+        }
+
+        .cycle_item {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .c_item_name {
+            max-width: 120px;
+            padding-top: 10px;
+        }
+
+        .m_cycle_pt {
+            padding-top: 20px;
+        }
+
+        .select {
+            height: 44px;
+        }
+
+        .select_expand {
+            height: 44px;
+        }
+
+        .select_expandLabel {
+            height: 44px;
+        }
+
+
+        .select_items {
+            padding-top: 44px;
+            background-size: 18px 18px;
+            background-position: 94% center;
+        }
+
+        .select_label {
+            line-height: 44px;
+        }
+
+        .select_label-placeholder {
+            height: 44px;
+        }
+
+        .select_expand:checked+.select_closeLabel+.select_options .select_label {
+            height: 44px;
+        }
+
+        .select_input:checked+.select_label {
+            height: 44px;
+            margin-top: -44px;
+        }
+
+
+        .cat_run {
+            max-width: 100px;
+            top: -12px;
+            left: 20px;
+        }
+
+        #section2 .pc_br_none {
+            float: left;
+        }
+
+        .bg_cat {
+            height: 90px;
+            background: #F7F7F7;
+            border-radius: 10px;
+            background-position-x: center;
+            /* background-position-y: -21px; */
+            top: 0;
+
+        }
+
+        .bg_cat .col {
+            top: 88%;
+        }
+        .c_result_box_lack {
+            padding: 3px 10px;
+            margin-right: 8px;
+        }
+
+        .top2 {
+            top: 80% !important;
+        }
+
+        .btn-outline-success,
+        .btn-secondary {
+            width: 100%;
+            font-size: 12px;
+            padding: 13px 22px;
+        }
+
+        .mr-3 {
+            margin-right: 0 !important;
+        }
+
+        .result_btn_wrap .col {
+            display: contents;
+        }
+
+        .order_last {
+            margin-top: 14px;
+        }
+
+    }
+</style>
+
+
+
+
+<div class="container-fluid pt_150px" id="section1">
+    <div class="row mw_1152">
+        <div class="col-12 ">
+            <div class="fs_28">
+                <span class="point_color">가로</span>님은
+                <span class="lite_box fs_20">Lite</span>
+                추천 간식을 선택하셨습니다.
+            </div>
+            <div class="fs_28 fw_700 pt_10px">
+                간식 주기를 설정해주세요.
+            </div>
+        </div>
+
+        <div class="col-sm-6 mt_30px pr_12px">
+            <div class="cycle_box ">
+                <div class="fs_22 fw_700 point_color">스틱형</div>
+                <div class="pt_16px">
+                    <div class="d-inline-block align-top ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cycle_item_img01.png" alt="" class="img-fluid cycle_item">
+                    </div>
+                    <div class="d-inline-block pl_30px">
+                        <div class="fs_20 fw_700 c_item_name">
+                            이나바 챠오 츄르(5p)
+                        </div>
+                        <div class="fs_18 fw_700 point_color">
+                            ￦ 4,000
+                        </div>
+                        <div class="d-flex pt_20px">
+                            <div class="fs_16 fw_700">열량</div>
+                            <div class="fs_16 sub_gray_text pl_15px">23kcal/개</div>
+                        </div>
+                        <div class="fs_16 fw_700 pt_10px m_cycle_pt">주기</div>
+
+                        <div class="wrap mt_10px">
+                            <ul class="select">
+                                <li>
+                                    <input class="select_close" type="radio" name="option1" id="option1-close"
+                                        value="" />
+                                    <span class="select_label select_label-placeholder">주기를 선택해주세요.</span>
+                                </li>
+                                <li class="select_items">
+                                    <input class="select_expand" type="radio" name="option1" id="option1-opener" />
+                                    <label class="select_closeLabel" for="option1-close"></label>
+
+                                    <ul class="select_options">
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option1"
+                                                id="option1_1" />
+                                            <label class="select_label" for="option1_1">1일에 1개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option1"
+                                                id="option1_2" />
+                                            <label class="select_label" for="option1_2">1일에 2개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option1"
+                                                id="option1_3" />
+                                            <label class="select_label" for="option1_3">1일에 3개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option1"
+                                                id="option1_4" />
+                                            <label class="select_label" for="option1_4">1일에 4개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option1"
+                                                id="option1_5" />
+                                            <label class="select_label" for="option1_5">1일에 5개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option1"
+                                                id="option1_6" />
+                                            <label class="select_label" for="option1_6">1일에 6개</label>
+                                        </li>
+                                    </ul>
+                                    <label class="select_expandLabel" for="option1-opener"></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt_30px pl_12px">
+            <div class="cycle_box">
+                <div class="fs_22 fw_700 point_color">캔형</div>
+                <div class="pt_16px">
+                    <div class="d-inline-block align-top ">
+                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cycle_item_img02.png" alt="" class="img-fluid cycle_item">
+                    </div>
+                    <div class="d-inline-block pl_30px">
+                        <div class="fs_20 fw_700 c_item_name">
+                            아임베키 연어캔(6입)
+                        </div>
+                        <div class="fs_18 fw_700 point_color">
+                            ￦ 4,000
+                        </div>
+                        <div class="d-flex pt_20px">
+                            <div class="fs_16 fw_700">열량</div>
+                            <div class="fs_16 sub_gray_text pl_15px">23kcal/개</div>
+                        </div>
+                        <div class="fs_16 fw_700 pt_10px m_cycle_pt">주기</div>
+
+                        <div class="wrap mt_10px">
+                            <ul class="select">
+                                <li>
+                                    <input class="select_close" type="radio" name="option2" id="option2-close"
+                                        value="" />
+                                    <span class="select_label select_label-placeholder">주기를 선택해주세요.</span>
+                                </li>
+                                <li class="select_items">
+                                    <input class="select_expand" type="radio" name="option2" id="option2-opener" />
+                                    <label class="select_closeLabel" for="option2-close"></label>
+
+                                    <ul class="select_options">
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option2"
+                                                id="option2_1" />
+                                            <label class="select_label" for="option2_1">1일에 1개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option2"
+                                                id="option2_2" />
+                                            <label class="select_label" for="option2_2">1일에 2개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option2"
+                                                id="option2_3" />
+                                            <label class="select_label" for="option2_3">1일에 3개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option2"
+                                                id="option2_4" />
+                                            <label class="select_label" for="option2_4">1일에 4개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option2"
+                                                id="option2_5" />
+                                            <label class="select_label" for="option2_5">1일에 5개</label>
+                                        </li>
+                                        <li class="select_option">
+                                            <input class="select_input" type="radio" name="option2"
+                                                id="option2_6" />
+                                            <label class="select_label" for="option2_6">1일에 6개</label>
+                                        </li>
+                                    </ul>
+                                    <label class="select_expandLabel" for="option2-opener"></label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt_30px pr_12px">
+            <div class="cycle_box_not">
+                <div class="fs_22 fw_700 sub_black_30">동결/건조형</div>
+
+                <div class="text-center pt_60px">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bang_ico.svg" class="img-fluid" alt="">
+                    <div class="fs_20 fw_700 sub_black_30 pt_10px">간식을 선택하지 않았습니다.</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-6 mt_30px pr_12px">
+            <div class="cycle_box_not">
+                <div class="fs_22 fw_700 sub_black_30">기타</div>
+
+                <div class="text-center pt_60px">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bang_ico.svg" class="img-fluid" alt="">
+                    <div class="fs_20 fw_700 sub_black_30 pt_10px">간식을 선택하지 않았습니다.</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<div class="container-fluid pt_80px" id="section2">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="fs_28 fw_700 pc_br_none">
+                간식을 <br>이렇게 구성하면?
+            </div>
+            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cycle_cat_run.png" alt="" class="mobile img-fluid cat_run">
+        </div>
+    </div>
+
+    <!--간식선택안했을때--->
+    <div class="row mw_1152 bg_cat">
+        <div class="col sub_gray_text">
+            <div class="fs_20 fw_700">
+                간식 주기를 설정해주세요.
+            </div>
+            <div class="fs_16 pc">
+                주기 선택이 완료되면 칼로리 적정도가 측정됩니다.
+            </div>
+        </div>
+    </div>
+
+    <!--간식선택 했을때 : 부족 칼로리 c_result_box_lack / 위험 칼로리 c_result_box_danger / 초과 칼로리 c_result_box_over --->
+    <div class="row mw_1152 bg_cat d-none">
+        <div class="col top2">
+            <span id="kcal_text" class="fs_20 fw_700 c_result_box_lack">
+                부족</span>
+            <span class="pl_30px fw_700 fs_24">간식 칼로리입니다.</span>
+        </div>
+    </div>
+
+    <div class="row mw_1152 pt_100px pb_80px result_btn_wrap">
+        <div class="col text-center">
+            <button type="button" class="btn btn-outline-success fw_700 mr-3 order_last">
+                간식 다시 선택하기
+            </button>
+            <button type="button" class="btn btn-secondary fw_700 order_1">
+                간식단표 보러가기
+            </button>
+        </div>
+    </div>
+</div>
+

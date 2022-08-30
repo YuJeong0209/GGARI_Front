@@ -1,0 +1,451 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+
+        .content_wrap2 {
+            max-width: 100% !important;
+        }
+
+        .sub_content {
+            padding: 0 !important;
+        }
+
+        .content {
+            padding: 0 !important;
+        }
+
+        .cls_meditor_bg_A {
+            background: #fff !important;
+        }
+
+        .n3iz3h.pp {
+            display: none;
+        }
+
+        .n3iz3h.sub-content-head .page-tit {
+            display: none;
+        }
+
+        .n3iz3h.sub-content-head {
+            display: none;
+        }
+
+        html,
+        body {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Noto Sans KR', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overscroll-behavior: contain;
+        }
+
+        body {
+            font-size: 1rem;
+            font-weight: 400;
+            word-break: keep-all;
+            letter-spacing: -0.02em;
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            color: #231815;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a {
+            color: #231815;
+        }
+
+        .fw_100 {
+            font-weight: 100 !important;
+        }
+
+        .fw_300 {
+            font-weight: 300 !important;
+        }
+
+        .fw_400 {
+            font-weight: 400 !important;
+        }
+
+        .fw_500 {
+            font-weight: 500 !important;
+        }
+
+        .fw_700 {
+            font-weight: 700 !important;
+        }
+
+        .fw_900 {
+            font-weight: 900 !important;
+        }
+
+
+        .mw_360 {
+            max-width: 390px;
+            margin: 0 auto;
+        }
+
+
+
+        .mw_870 {
+            max-width: 870px;
+            margin: 0 auto;
+        }
+
+        .mw_960 {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .mw_1010 {
+            max-width: 1010px;
+            margin: 0 auto;
+        }
+
+
+
+
+        /****************font size******************/
+        .fs_40 {
+            font-size: 40px;
+        }
+
+        .fs_36 {
+            font-size: 36px;
+        }
+
+        .fs_34 {
+            font-size: 34px;
+        }
+
+        .fs_28 {
+            font-size: 28px;
+        }
+
+        .fs_24 {
+            font-size: 24px;
+        }
+
+        .fs_22 {
+            font-size: 22px;
+        }
+
+        .fs_20 {
+            font-size: 20px;
+        }
+
+        .fs_18 {
+            font-size: 18px;
+        }
+
+        .fs_16 {
+            font-size: 16px;
+        }
+
+        .fs_14 {
+            font-size: 14px;
+        }
+
+        .fs_12 {
+            font-size: 12px;
+        }
+
+        .fs_11 {
+            font-size: 11px;
+        }
+
+        button:focus {
+            outline: 0;
+        }
+
+        .color_fff {
+
+            color: #fff;
+        }
+
+        .bg_fff {
+            background-color: #fff;
+        }
+
+        .color_888 {
+            color: #888888;
+        }
+
+        .color_gray {
+            color: #C0C0C0;
+        }
+
+        .point_color {
+            color: #6E9357;
+        }
+
+        .point_color a {
+            color: #6E9357;
+
+        }
+
+        .bg_point {
+            background-color: #6E9357 !important;
+        }
+
+        .bg_blue {
+            background-color: #8DB6FF !important;
+        }
+
+        .bg_gray {
+            background-color: #F5F5F5;
+        }
+
+
+        .h_100 {
+            height: 100vh;
+        }
+
+        .mobile {
+            display: none;
+        }
+
+
+        .radius_0 {
+            border-radius: 0;
+        }
+
+        .radius_24 {
+            border-radius: 24px;
+        }
+
+        .radius_100 {
+            border-radius: 100px;
+        }
+
+        .d-content {
+            display: contents !important;
+        }
+
+
+
+
+        .cursor {
+            cursor: pointer;
+        }
+
+
+        .form-control {
+            background: rgba(110, 147, 87, 0.12);
+            border-radius: 5px;
+            border: 2px solid #6E9357;
+            height: 56px;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 0.375rem 24px;
+        }
+
+        .form-control::placeholder {
+            color: rgba(110, 147, 87, 0.5);
+            font-weight: 700;
+        }
+
+        .login img {
+            box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 100px;
+        }
+
+
+        .mt_12px {
+            margin-top: 12px;
+        }
+
+        .mt_28px {
+            margin-top: 28px;
+        }
+
+        .mt_40px {
+            margin-top: 40px;
+        }
+
+        .hr-sect {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            font-size: 12px;
+            margin: 40px 0px 0 0;
+        }
+
+        .hr-sect::before,
+        .hr-sect::after {
+            content: "";
+            flex-grow: 1;
+            background: #6E9357;
+            height: 1px;
+            font-size: 0px;
+            line-height: 0px;
+            margin: 0px;
+        }
+
+
+        @media screen and (max-width:576px) {
+
+
+            .h_100 {
+                height: 106vh !important;
+            }
+
+            .form-control {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+
+            .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .order_last {
+                order: 2;
+            }
+
+            .order_1 {
+                order: 1;
+            }
+
+            .mobile {
+                display: inline-block;
+            }
+
+            .pc {
+                display: none;
+            }
+
+            .fs_40 {
+                font-size: 40px;
+            }
+
+            .fs_36 {
+                font-size: 28px;
+            }
+
+            .fs_34 {
+                font-size: 20px;
+            }
+
+            .fs_28 {
+                font-size: 20px;
+            }
+
+            .fs_24 {
+                font-size: 12px;
+            }
+
+            .fs_22 {
+                font-size: 12px;
+            }
+
+            .fs_20 {
+                font-size: 12px;
+                font-weight: 500 !important;
+            }
+
+            .fs_18 {
+                font-size: 14px;
+            }
+
+            .fs_16 {
+                font-size: 13px;
+            }
+
+            .fs_14 {
+                font-size: 14px;
+            }
+
+            .fs_12 {
+                font-size: 9px;
+            }
+
+            .line_50 {
+                line-height: 39.2px;
+            }
+
+        }
+    </style>
+</head>
+
+
+
+
+<div class="container-fluid h_100">
+    <div class="row align-items-center h-100 mw_360 ">
+        <div class="col text-center">
+            <div class="fs_20 fw_700">회원가입 후<br>
+                더 다양한 서비스를 즐겨보세요</div>
+
+
+            <div class="mt_28px">
+                <a href="#" class="login">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/join_button.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+
+
+
+            <div class="mt-5 fs_11 fw_500 point_color hr-sect">
+                &emsp;간편 회원가입&emsp;
+            </div>
+
+            <div class="mt-4">
+                <a href="#">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/kk_join.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+            <div class="mt_12px">
+                <a href="#">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/fb_join.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+            <div class="mt_12px">
+                <a href="#">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/nb_join.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,1012 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .cat_top {
+            right: 60px;
+            position: absolute;
+            top: 0;
+        }
+
+        .cat_top img {
+            max-width: 255px;
+        }
+
+        .user-wrap {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .user-wrap img {
+            vertical-align: middle;
+        }
+
+        .user-text {
+            position: absolute;
+            top: 49%;
+            left: 56%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            /* text-align: center; */
+        }
+
+        .user-text .col-2 {
+            padding-left: 30px;
+        }
+
+        .bookmark_bg {
+            padding-left: 10px;
+        }
+
+        .grid_1 {
+            -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+            max-width: 33%;
+        }
+
+        .grid_1 img {
+            max-width: 74px;
+        }
+
+        .info_wrap {
+            max-width: 800px;
+            /* margin: 0 auto; */
+            padding-left: 60px;
+        }
+
+        .info_wrap .col {
+            padding: 20px 15px;
+            width: 200px;
+            max-width: 200px;
+        }
+
+        .gender img {
+            max-width: 24px;
+            margin-left: 3px;
+        }
+
+        .cat_box_top {
+            position: relative;
+            margin-top: -30px;
+        }
+
+
+        .share img {
+            max-width: 24px;
+        }
+
+        .cat_run {
+            max-width: 124px;
+        }
+
+        .circle {
+            width: 14px;
+            height: 14px;
+            z-index: 3;
+        }
+
+        .back_line {
+            border-top: 2px solid #EDF2EA;
+            width: 100%;
+            position: absolute;
+            margin-top: -178px;
+            z-index: 1;
+        }
+
+
+        li {
+            list-style: none;
+        }
+
+        #tab-menu {
+            width: calc(100% - 30px);
+            position: absolute;
+            left: 50%;
+            transform: translatex(-50%);
+        }
+
+        #tab-btn {
+            overflow: hidden;
+        }
+
+        #tab-btn li {
+            float: left;
+            cursor: pointer;
+            margin-right: 24px;
+        }
+
+        #tab-btn li:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        #tab-btn li a {
+            font-weight: bold;
+            height: 100px;
+            /*display: flex;
+            align-items: center;*/
+            padding-left: 30px;
+            display: table-cell;
+            vertical-align: middle;
+            width: 368px;
+        }
+
+        #tab-btn li.active a {
+            background: #DFF3FF;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        #tab-btn li.active a.green_btn {
+            background: #EDF2EA;
+        }
+
+        #tab-btn li.active a .round_title {
+            background: #5BB0FF;
+            color: #fff;
+        }
+
+        #tab-btn li.active a.green_btn .round_title {
+            background: #6E9357;
+        }
+
+        #tab-btn li.active a .sub_gray_text {
+            color: #231815;
+        }
+
+        #tab-btn li.active a .sub_black_30 {
+            color: #5BB0FF;
+        }
+
+        #tab-btn li.active a.green_btn .sub_black_30 {
+            color: #6E9357;
+        }
+
+
+        #tab-cont {
+            width: 100%;
+            box-sizing: border-box;
+            z-index: -2;
+        }
+
+
+        .round_title {
+            background: #F7F7F7;
+            border-radius: 50px;
+            padding: 5px 20px;
+            color: #BEBCBB;
+        }
+
+
+
+        .dd_snack {
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .dt_snack {
+            padding: 10px 0 0 44px;
+        }
+
+        .dt_snack {
+            height: 104px;
+            /* display: flex;*/
+            line-height: 80px;
+            align-items: center;
+            background-repeat: no-repeat;
+            background-image: url(images/acc_arrow_down.png);
+            background-size: 30px;
+            background-position-y: 50%;
+            background-position-x: calc(100% - 50px);
+        }
+
+        .dd_snack {
+            background-color: #F3FBFF;
+            display: none;
+        }
+
+        .dt_snack.on {
+            background-image: url(images/acc_arrow_up.png);
+        }
+
+        .dl_snack01 {
+            border-top: 2px solid #5BB0FF;
+        }
+
+        .dl_snack02 {
+            border-top: 2px solid #6E9357;
+        }
+
+        .dl_snack03 {
+            border-top: 2px solid #F08080;
+        }
+
+
+        .swiper {
+            width: 956px;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            background: #fff;
+            border: 1px solid #DBDADA;
+            border-radius: 10px;
+            padding: 32px 30px;
+            /* Center slide text vertically 
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;*/
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 23px;
+            font-weight: 700;
+            color: #5BB0FF;
+        }
+
+        .swiper-button-prev,
+        .swiper-rtl .swiper-button-next {
+            left: 45px;
+        }
+
+        .swiper-button-next,
+        .swiper-rtl .swiper-button-prev {
+            right: 45px;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sw_num {
+            color: #5BB0FF;
+            background-color: #DFF3FF;
+            border-radius: 300px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        
+
+        .sw_img {
+            /*border: 1px solid #DBDADA;*/
+            border-radius: 10px;
+        }
+
+        .sw_snack_ico {
+            display: flex;
+        }
+
+        .sw_snack_ico img {
+            max-width: 24px;
+            margin-right: 10px;
+        }
+
+        .sw_snack_ico img:nth-last-child(1) {
+            margin-left: 20px;
+        }
+
+        .mw_info {
+            width: 78px;
+            max-width: 78px;
+        }
+
+        .sw_select_btn {
+            background: #FFFFFF;
+            border: 2px solid #5BB0FF;
+            color: #5BB0FF;
+            border-radius: 50px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .sw_select_btn.active {
+            color: #fff;
+            background: #5BB0FF;
+        }
+
+        .swiper-slide.active {            
+            border: 4px solid #5BB0FF;
+            padding: 29px 27px;
+        }
+
+        .sw_num.active {
+            background-color:#5BB0FF;
+            color: #fff;
+        }
+
+        @media screen and (max-width:576px) {}
+    </style>
+</head>
+
+<!--
+    <div class="container-fluid d-flex h-100 ">
+    <div class="row align-items-center align-self-center mw_1152 ">
+       <div class="col">
+       </div>
+    </div>
+</div>
+-->
+<div class="container-fluid pt_120px" id="section1">
+    <div class="row mw_1152 ">
+        <div class="col pt_80px">
+            <div class="fs_28 fw_700">
+                <span class="point_color">가로</span>님의 영양 진단이 완료되었습니다.
+            </div>
+
+            <div class="bg_sub_gray_etc radius_10 mt_30px">
+                <div class="row info_wrap fw_700">
+                    <div class="col gender">
+                        성별&emsp;
+                        <span class="point_color">여</span> <img
+                            src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx.png">
+                    </div>
+                    <div class="col">
+                        나이&emsp;
+                        <span class="point_color">6살</span>
+                    </div>
+                    <div class="col">
+                        몸무게&emsp;
+                        <span class="point_color">4kg</span>
+                    </div>
+                    <div class="col">
+                        중성화여부&emsp;
+                        <span class="point_color">완료</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--고양이 떠있게-->
+        <div class="col-12 text-right cat_top">
+            <img src="images/cat_top3.png" alt="" class="img-fluid">
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container-fluid" id="section2">
+    <div class="row mw_1200 ">
+        <div class="col-12 pt_10px pr-0">
+            <div class="user-wrap">
+                <div class="user-image">
+                    <img src="images/bookmark_03.png" alt="" class="img-fluid bookmark_bg" />
+                </div>
+                <div class="user-text">
+                    <div class="row">
+                        <div class="col-2 pt-1">
+                            <div class="fs_18 fw_700 point_color">
+                                진단 1.
+                            </div>
+                            <div class="fs_20 fw_700">
+                                까리의 추천 영양!
+                            </div>
+                        </div>
+                        <div class="col grid_1 ml-5_1">
+                            <div class="d-table-cell">
+                                <img src="images/ico_nutri_01.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="d-table-cell align-middle pl-3">
+                                관절에 주의가 필요합니다. <br>
+                                칼슘이 함유된 사료, 간식을 급여하세요.
+                            </div>
+                        </div>
+                        <div class="col grid_1">
+                            <div class="d-table-cell">
+                                <img src="images/ico_nutri_02.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="d-table-cell align-middle pl-3">
+                                스트레스는 만병의 근원입니다. <br>
+                                충분한 교감을 통해 스트레스를<br>
+                                해소해 주세요!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 pr-0 cat_box_top">
+            <div class="user-wrap">
+                <div class="user-image">
+                    <img src="images/bookmark_03.png" alt="" class="img-fluid bookmark_bg" />
+                </div>
+                <div class="user-text">
+                    <div class="row">
+                        <div class="col-2 pt-1">
+                            <div class="fs_18 fw_700 point_color">
+                                진단 2.
+                            </div>
+                            <div class="fs_20 fw_700">
+                                권장 영양
+                            </div>
+                        </div>
+                        <div class="col grid_1 ml-5_1">
+                            <div class="d-table-cell">
+                                <img src="images/ico_nutri_03.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="d-table-cell align-middle pl-3">
+                                관절에 주의가 필요합니다. <br>
+                                칼슘이 함유된 사료, 간식을 급여하세요.
+                            </div>
+                        </div>
+                        <div class="col grid_1">
+                            <div class="d-table-cell">
+                                <img src="images/ico_nutri_04.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="d-table-cell align-middle pl-3">
+                                스트레스는 만병의 근원입니다. <br>
+                                충분한 교감을 통해 스트레스를<br>
+                                해소해 주세요!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 pr-0 cat_box_top">
+            <div class="user-wrap">
+                <div class="user-image">
+                    <img src="images/bookmark_03.png" alt="" class="img-fluid bookmark_bg" />
+                </div>
+                <div class="user-text">
+                    <div class="row">
+                        <div class="col-2 pt-1">
+                            <div class="fs_18 fw_700 point_color">
+                                진단 3.
+                            </div>
+                            <div class="fs_20 fw_700">
+                                칭찬해요!
+                            </div>
+                        </div>
+                        <div class="col grid_1 ml-5_1">
+                            <div class="d-table-cell">
+                                <img src="images/ico_nutri_05.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="d-table-cell align-middle pl-3">
+                                관절에 주의가 필요합니다. <br>
+                                칼슘이 함유된 사료, 간식을 급여하세요.
+                            </div>
+                        </div>
+                        <div class="col grid_1">
+                            <div class="d-table-cell">
+                                <img src="images/ico_nutri_06.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="d-table-cell align-middle pl-3">
+                                스트레스는 만병의 근원입니다.
+                                충분한 교감을 통해 스트레스를
+                                해소해 주세요!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid " id="section_share">
+    <div class="row mw_1152">
+        <div class="col text-right share">
+            <a href="">
+                <img src="images/ico_share.png" class="img-fluid" alt="">
+                영양진단 공유하기
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid pt_70px" id="section_3">
+    <div class="row mw_1152">
+        <div class="col fs_28">
+            <div class="d-table-cell">
+                진단 결과를 바탕으로<br>
+                <span class="fw_700"><span class="point_color">가로</span>님에게 필요한 영양 간식을 추천할게요.</span>
+            </div>
+            <div class="d-table-cell">
+                <img src="images/cat_run.png" class="cat_run">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mw_1152 pt_60px">
+        <div class="col">
+            <div class="fs_20 fw_700 point_color">
+                STEP.1
+            </div>
+            <div class="mt_24px bg_point radius_100 circle">
+            </div>
+            <div class="mt_24px fs_20 fw_700">
+                가격대 선택하기
+            </div>
+            <div class="pt_20px color_black2">
+                세 가지 가격대 중<br>
+                <span class="fw_700">원하는 타입을 선택</span>하세요. <br>
+                (Lite, Standard, Primium)
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="fs_20 fw_700 point_color">
+                STEP.1
+            </div>
+            <div class="mt_24px bg_point radius_100 circle">
+            </div>
+            <div class="mt_24px fs_20 fw_700">
+                sdfsdf
+            </div>
+            <div class="pt_20px color_black2">
+                다른 간식을 보고 싶다면 <span class="fw_700">화살표를 <br>
+                    클릭</span>하거나 <span class="fw_700">좌/우로 슬라이드</span>하세요. <br>
+                <span class="fw_700">사진을 누르면 상세 정보</span>를 <br>
+                볼 수 있습니다.
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="fs_20 fw_700 point_color">
+                STEP.1
+            </div>
+            <div class="mt_24px bg_point radius_100 circle">
+            </div>
+            <div class="mt_24px fs_20 fw_700">
+                sdfsdf
+            </div>
+            <div class="pt_20px color_black2">
+                다른 간식을 보고 싶다면 <span class="fw_700">화살표를 <br>
+                    클릭</span>하거나 <span class="fw_700">좌/우로 슬라이드</span>하세요. <br>
+                <span class="fw_700">사진을 누르면 상세 정보</span>를 <br>
+                볼 수 있습니다.
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="fs_20 fw_700 point_color">
+                STEP.1
+            </div>
+            <div class="mt_24px bg_point radius_100 circle">
+            </div>
+            <div class="mt_24px fs_20 fw_700">
+                sdfsdf
+            </div>
+            <div class="pt_20px color_black2">
+                다른 간식을 보고 싶다면 <span class="fw_700">화살표를 <br>
+                    클릭</span>하거나 <span class="fw_700">좌/우로 슬라이드</span>하세요. <br>
+                <span class="fw_700">사진을 누르면 상세 정보</span>를 <br>
+                볼 수 있습니다.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="back_line">
+</div>
+
+
+<div class="container-fluid pt_100px" id="section_4" style="padding-bottom: 100rem;">
+    <div class="row mw_1152">
+        <div class="col">
+
+            <div id="tab-menu">
+                <div id="tab-tit">
+                    <div id="tab-btn">
+                        <ul>
+                            <li class="active fs_20 fw_700">
+                                <a>
+                                    <div class="d-table-cell align-middle">
+                                        <p class="round_title fs_18">Lite</p>
+                                    </div>
+                                    <div class="d-table-cell align-middle pl-3 sub_gray_text">
+                                        가성비 좋은 간식<br>
+                                        <span class="sub_black_30">3종 추천</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="fs_20 fw_700">
+                                <a class="green_btn">
+                                    <div class="d-table-cell align-middle">
+                                        <p class="round_title fs_18">Standard</p>
+                                    </div>
+                                    <div class="d-table-cell align-middle pl-3 sub_gray_text">
+                                        인기많은 간식<br>
+                                        <span class="sub_black_30">5종 추천</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="fs_20 fw_700">
+                                <a>
+                                    <div class="d-table-cell align-middle">
+                                        <p class="round_title fs_18">Premium</p>
+                                    </div>
+                                    <div class="d-table-cell align-middle pl-3 sub_gray_text">
+                                        고품질 간식<br>
+                                        <span class="sub_black_30">7종 추천</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="tab-cont">
+                    <div>
+                        <dl class="dl_snack dl_snack01">
+                            <dt class="dt_snack fs_22 fw_700">
+                                text
+                                <div class="float-right pr_120px fs_20 fw_400 text-right">이나바 챠오 츄르</div>
+                            </dt>
+                            <dd class="dd_snack">
+                                <div class="swiper snack_swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="sw_title">
+                                                <div class="d-table-cell align-middle">
+                                                    <p class="fs_18 fw_700 sw_num">2nd</p>
+                                                </div>
+                                                <div class="d-table-cell align-middle pl_10px fs_20 fw_700">
+                                                    하루n스틱(관절건강)<br>
+                                                    <span class="color_sub_blue fs_18 fw_700">￦ 10,800</span>
+                                                </div>
+                                            </div>
+                                            <div class="sw_img mt_20px">
+                                                <img src="images/shop_snack_01.png" alt="" class="img-fluid">
+                                            </div>
+
+                                            <div class="sw_snack_ico mt_20px">
+                                                <img src="images/sw_snack_ico1.png" alt="" class="img-fluid">
+                                                관절
+                                                <img src="images/sw_snack_ico2.png" alt="" class="img-fluid">
+                                                스트레스
+                                            </div>
+
+                                            <div class="sw_snack_info pt_20px pb_30px">
+                                                <div class="d-flex">
+                                                    <div class="fw_700 mw_info">주성분</div>
+                                                    <div class="sub_gray_text">치킨, 닭고기, 칠면조</div>
+                                                </div>
+                                                <div class="d-flex pt_10px">
+                                                    <div class="fw_700 mw_info">기타성분</div>
+                                                    <div class="sub_gray_text">글루코사민</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sw_select_btn fw_700">
+                                                선택하기
+                                            </div>
+                                        </div>
+
+
+                                        <div class="swiper-slide">
+                                            <div class="sw_title">
+                                                <div class="d-table-cell align-middle">
+                                                    <p class="fs_18 fw_700 sw_num">2nd</p>
+                                                </div>
+                                                <div class="d-table-cell align-middle pl_10px fs_20 fw_700">
+                                                    하루n스틱(관절건강)<br>
+                                                    <span class="color_sub_blue fs_18 fw_700">￦ 10,800</span>
+                                                </div>
+                                            </div>
+                                            <div class="sw_img mt_20px">
+                                                <img src="images/shop_snack_01.png" alt="" class="img-fluid">
+                                            </div>
+
+                                            <div class="sw_snack_ico mt_20px">
+                                                <img src="images/sw_snack_ico1.png" alt="" class="img-fluid">
+                                                관절
+                                                <img src="images/sw_snack_ico2.png" alt="" class="img-fluid">
+                                                스트레스
+                                            </div>
+
+                                            <div class="sw_snack_info pt_20px pb_30px">
+                                                <div class="d-flex">
+                                                    <div class="fw_700 mw_info">주성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                                <div class="d-flex pt_10px">
+                                                    <div class="fw_700 mw_info">기타성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sw_select_btn fw_700">
+                                                선택하기
+                                            </div>
+                                        </div>
+
+
+                                        <div class="swiper-slide">
+                                            <div class="sw_title">
+                                                <div class="d-table-cell align-middle">
+                                                    <p class="fs_18 fw_700 sw_num">2nd</p>
+                                                </div>
+                                                <div class="d-table-cell align-middle pl_10px fs_20 fw_700">
+                                                    하루n스틱(관절건강)<br>
+                                                    <span class="color_sub_blue fs_18 fw_700">￦ 10,800</span>
+                                                </div>
+                                            </div>
+                                            <div class="sw_img mt_20px">
+                                                <img src="images/shop_snack_01.png" alt="" class="img-fluid">
+                                            </div>
+
+                                            <div class="sw_snack_ico mt_20px">
+                                                <img src="images/sw_snack_ico1.png" alt="" class="img-fluid">
+                                                관절
+                                                <img src="images/sw_snack_ico2.png" alt="" class="img-fluid">
+                                                스트레스
+                                            </div>
+
+                                            <div class="sw_snack_info pt_20px pb_30px">
+                                                <div class="d-flex">
+                                                    <div class="fw_700 mw_info">주성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                                <div class="d-flex pt_10px">
+                                                    <div class="fw_700 mw_info">기타성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sw_select_btn fw_700">
+                                                선택하기
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="sw_title">
+                                                <div class="d-table-cell align-middle">
+                                                    <p class="fs_18 fw_700 sw_num">2nd</p>
+                                                </div>
+                                                <div class="d-table-cell align-middle pl_10px fs_20 fw_700">
+                                                    하루n스틱(관절건강)<br>
+                                                    <span class="color_sub_blue fs_18 fw_700">￦ 10,800</span>
+                                                </div>
+                                            </div>
+                                            <div class="sw_img mt_20px">
+                                                <img src="images/shop_snack_01.png" alt="" class="img-fluid">
+                                            </div>
+
+                                            <div class="sw_snack_ico mt_20px">
+                                                <img src="images/sw_snack_ico1.png" alt="" class="img-fluid">
+                                                관절
+                                                <img src="images/sw_snack_ico2.png" alt="" class="img-fluid">
+                                                스트레스
+                                            </div>
+
+                                            <div class="sw_snack_info pt_20px pb_30px">
+                                                <div class="d-flex">
+                                                    <div class="fw_700 mw_info">주성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                                <div class="d-flex pt_10px">
+                                                    <div class="fw_700 mw_info">기타성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sw_select_btn fw_700">
+                                                선택하기
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-slide">
+                                            <div class="sw_title">
+                                                <div class="d-table-cell align-middle">
+                                                    <p class="fs_18 fw_700 sw_num">2nd</p>
+                                                </div>
+                                                <div class="d-table-cell align-middle pl_10px fs_20 fw_700">
+                                                    하루n스틱(관절건강)<br>
+                                                    <span class="color_sub_blue fs_18 fw_700">￦ 10,800</span>
+                                                </div>
+                                            </div>
+                                            <div class="sw_img mt_20px">
+                                                <img src="images/shop_snack_01.png" alt="" class="img-fluid">
+                                            </div>
+
+                                            <div class="sw_snack_ico mt_20px">
+                                                <img src="images/sw_snack_ico1.png" alt="" class="img-fluid">
+                                                관절
+                                                <img src="images/sw_snack_ico2.png" alt="" class="img-fluid">
+                                                스트레스
+                                            </div>
+
+                                            <div class="sw_snack_info pt_20px pb_30px">
+                                                <div class="d-flex">
+                                                    <div class="fw_700 mw_info">주성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                                <div class="d-flex pt_10px">
+                                                    <div class="fw_700 mw_info">기타성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sw_select_btn fw_700">
+                                                선택하기
+                                            </div>
+                                        </div>
+
+                                         <div class="swiper-slide">
+                                            <div class="sw_title">
+                                                <div class="d-table-cell align-middle">
+                                                    <p class="fs_18 fw_700 sw_num">2nd</p>
+                                                </div>
+                                                <div class="d-table-cell align-middle pl_10px fs_20 fw_700">
+                                                    하루n스틱(관절건강)<br>
+                                                    <span class="color_sub_blue fs_18 fw_700">￦ 10,800</span>
+                                                </div>
+                                            </div>
+                                            <div class="sw_img mt_20px">
+                                                <img src="images/shop_snack_01.png" alt="" class="img-fluid">
+                                            </div>
+
+                                            <div class="sw_snack_ico mt_20px">
+                                                <img src="images/sw_snack_ico1.png" alt="" class="img-fluid">
+                                                관절
+                                                <img src="images/sw_snack_ico2.png" alt="" class="img-fluid">
+                                                스트레스
+                                            </div>
+
+                                            <div class="sw_snack_info pt_20px pb_30px">
+                                                <div class="d-flex">
+                                                    <div class="fw_700 mw_info">주성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                                <div class="d-flex pt_10px">
+                                                    <div class="fw_700 mw_info">기타성분</div>
+                                                    <div class="sub_gray_text">222</div>
+                                                </div>
+                                            </div>
+
+                                            <div class="sw_select_btn fw_700">
+                                                선택하기
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </dd>
+                            <dt class="dt_snack fs_22 fw_700">
+                                질문입니다...222
+                            </dt>
+                            <dd class="dd_snack">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum maiores.
+                            </dd>
+                            <dt class="dt_snack fs_22 fw_700">
+                                질문입니다...3333
+                            </dt>
+                            <dd class="dd_snack">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. 333333Earum maiores.
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>22222222</div>
+                    <div>44444444444444</div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    // 컨텐츠 내용을 숨겨주세요!
+    var tabBtn = $("#tab-btn > ul > li"); //각각의 버튼을 변수에 저장
+    var tabCont = $("#tab-cont > div");  //각각의 컨텐츠를 변수에 저장
+
+    tabCont.hide().eq(0).show();
+
+    tabBtn.click(function () {
+        var target = $(this);        //버튼의 타켓(순서)을 변수에 저장
+        var index = target.index();  //버튼의 순서를 변수에 저장
+        // alert(index);
+        tabBtn.removeClass("active");   //버튼의 클래스를 삭제
+        target.addClass("active");   //타켓의 클래스를 추가
+        tabCont.css("display", "none");
+        tabCont.eq(index).css("display", "block");
+    });
+
+
+
+    var acodian = {
+
+        click: function (target) {
+            var _self = this,
+                $target = $(target);
+            $target.on('click', function () {
+                var $this = $(this);
+                if ($this.next($(".dd_snack")).css('display') == 'none') {
+                    $(".dd_snack").slideUp();
+                    _self.onremove($target);
+
+                    $this.addClass('on');
+                    $this.next().slideDown();
+                } else {
+                    $(".dd_snack").slideUp();
+                    _self.onremove($target);
+                }
+            });
+        },
+        onremove: function ($target) {
+            $target.removeClass('on');
+        }
+    };
+    acodian.click($(".dt_snack"));
+    $(".dt_snack").eq(0).trigger("click");
+
+    var swiper = new Swiper(".snack_swiper", {
+        slidesPerView: 3,
+        spaceBetween: 37,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    var sw_select_btn = $(".swiper-slide > .sw_select_btn");   
+    var sw_num = $(".swiper-slide > .sw_title > .d-table-cell > .sw_num");   
+
+    
+    sw_select_btn.click(function () {
+        var target = $(this);      
+        var index = target.index(); 
+      
+        sw_select_btn.removeClass("active");  
+        target.addClass("active");     
+        sw_select_btn.parent().removeClass("active");  
+        target.parent().addClass("active");  
+        
+        sw_num.removeClass("active");   
+        sw_num.eq(index).addClass("active");  
+    });
+
+</script>
+
+
+<body>
+</body>
+
+</html>

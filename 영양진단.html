@@ -1807,8 +1807,11 @@
             $('#name_slot_' + rank + "_" + category).html(name);
             $('#not_select_' + rank + "_" + category).prop('checked', false);
             diagnosis.selected[rank]["s" + category] = String(id);
-            $('.snack_select_btn').addClass('active');
             console.log(diagnosis.selected);
+
+            if (diagnosis.isfill()) {
+                $('.snack_select_btn').addClass('active');
+            }
         },
 
         unselectCategory: (rank, category) => {
@@ -1818,9 +1821,10 @@
             $swSelectBtn.text("선택하기");
             $('#name_slot_' + rank + "_" + category).html("-");
 
-            diagnosis.selected[rank]["s" + category] = null;
+            delete diagnosis.selected[rank]["s" + category];
+
             //값이 없으면 버튼끄기
-            if (JSON.stringify(diagnosis.selected).replace(/s[0-9]/g, '').match(/[0-9]/g) == null) {
+            if (!diagnosis.isfill()) {
                 $('.snack_select_btn').removeClass('active');
             }
 
@@ -1939,15 +1943,26 @@
             $(".dt_snack").eq(0).trigger("click");
         },
 
-        goToNextPage: () => {
-            if (JSON.stringify(diagnosis.selected).replace(/s[0-9]/g, '').match(/[0-9]/g) == null) {
-                alert('최소 한개의 상품을 선택해주세요.');
+        isfill : ()=>{
+            let min;
+            switch(diagnosis.rank){
+                case 1 : min = 2; break;
+                case 2 : min = 3; break;
+                case 3 : min = 5; break;
+            }
+            if(Object.keys(diagnosis.selected[diagnosis.rank]).length >= min){
+                return true;
+            }else{
                 return false;
             }
+        },
 
-            let nextPage = '/page/?M2_IDX=26056';
-            let params = "&id=" + util.getIdFromUrl() +"&rank="+diagnosis.rank+"&items=" + JSON.stringify(diagnosis.selected);
-            location.href = nextPage + params;
+        goToNextPage: () => {
+            if (diagnosis.isfill()) {
+                let nextPage = '/page/?M2_IDX=26056';
+                let params = "&id=" + util.getIdFromUrl() +"&rank="+diagnosis.rank+"&items=" + JSON.stringify(diagnosis.selected);
+                location.href = nextPage + params;
+            }
         },
 
 

@@ -1,0 +1,380 @@
+<style>
+    #section1 {
+        left: 147px;
+        max-width: 858px;
+        padding-top: 135px;
+        padding-bottom: 700px;
+    }
+
+    .del_box {
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 40px 50px;
+        min-height: 170px;
+    }
+
+    .del_box2 {
+        background: #F7F7F7;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+
+    .subbox_green {
+        background: #6E9357;
+        border-radius: 6px;
+        color: #fff;
+        padding: 10px 12px;
+        width: 98px;
+        text-align: center;
+    }
+
+    .subbox_fff {
+        background: #FFFFFF;
+        border: 2px solid #6E9357;
+        color: #6E9357;
+        border-radius: 6px;
+        padding: 8px 22px;
+        text-align: center;
+    }
+
+    .h_40 {
+        height: 40px;
+    }
+
+    .table tr td:nth-child(1) {
+        font-weight: 700;
+        width: 130px;
+    }
+
+    .table tr td:nth-child(2) {
+        color: #787878;
+    }
+
+    .btn_mypagetab {
+        width: 8px;
+        margin-right: 12px;
+        top: -1px;
+    }
+
+    .modal-body {
+        padding: 50px 60px;
+    }
+
+    .modal-dialog {
+        max-width: 700px;
+    }
+
+    .close {
+        opacity: 1;
+    }
+
+    .input_check input[type=checkbox]+label {
+        width: 100%;
+        background-position-y: 14px;
+    }
+
+    .form-control {
+        background: #FFFFFF;
+        border: 1px solid #DBDADA;
+        border-radius: 6px;
+        padding: 14px 20px;
+        font-size: 16px;
+        height: 52px;
+    }
+
+    .popup_btn_wrap .btn {
+        min-width: 270px;
+    }
+
+    @media screen and (max-width:576px) {
+        #section1 {
+            left: 0;
+            padding: 0 22px;
+            padding-top: 140px;
+            padding-bottom: 600px;
+        }
+
+        .m_box_pd .pr_10px {
+            padding-right: 15px;
+        }
+
+        .m_box_pd .pl_10px {
+            padding-left: 15px;
+        }
+
+        .m_box_pd .col:nth-child(2) {
+            margin-top: 20px;
+        }
+
+        .del_box {
+            padding: 24px;
+            min-height: 126px;
+        }
+
+        .subbox_green {
+            width: 80px;
+        }
+
+        .subbox_fff {
+            padding: 8px 20px;
+        }
+
+        .h_40 {
+            height: 32px;
+        }
+
+        .del_box .align-items-center {
+            -ms-flex-align: end !important;
+            align-items: end !important;
+        }
+
+        .pay_m {
+            height: 18px;
+        }
+
+        .m_btn_re {
+            position: relative;
+            top: 24px;
+        }
+
+        .table_flex {
+            display: inline-block !important;
+        }
+
+        .table tr td:nth-child(1) {
+            width: 60px;
+        }
+
+        .table_flex .table td,
+        .table_flex .table th {
+            padding: 5px;
+        }
+
+        .subbox_green.h_40 {
+            height: 35px;
+        }
+
+        .popup_btn_wrap .btn-outline-success,
+        .popup_btn_wrap .btn-secondary {
+            width: 100%;
+            font-size: 12px;
+            padding: 13px 22px;
+        }
+
+        .popup_btn_wrap .col {
+            display: contents;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .close img {
+            max-width: 20px;
+        }
+
+        .modal_title {
+            position: relative;
+            top: 25px;
+        }
+
+        .modal_title_sub {
+            padding-top: 30px;
+        }
+
+        .modal-dialog {
+            max-width: 286px;
+            margin: 0 auto;
+        }
+
+        .del_box2 {
+            padding: 15px;
+        }
+
+        .form-control {
+            padding: 12px;
+            font-size: 13px;
+            height: 44px;
+        }
+
+        .popup_btn_wrap .btn {
+            min-width: 226px;
+        }
+
+        .order_last.mr_30px {
+            margin-right: 0;
+            margin-top: 10px;
+        }
+
+    }
+</style>
+
+
+<div class="container-fluid" id="section1">
+    <div class="row mw_1152">
+        <div class="col">
+            <div class="fs_28 fw_700">배송/결제방법</div>
+
+            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt=""
+                    class="img-fluid btn_mypagetab">돌아가기
+            </div>
+
+
+            <div class="row mt_40px m_box_pd">
+                <div class="col pr_10px">
+                    <div class="del_box fw_700">
+                        <div class="h_40 align-items-center d-flex">
+                            <span class="fs_18 ">정기 배송일</span>
+                            <span class="subbox_green fs_14 ml-auto">구독중</span>
+                        </div>
+                        <div class="h_40 mt_10px align-items-center d-flex">
+                            <span class="sub_gray_text fw_400">매월 1일</span>
+                            <a href="" class="ml-auto"><span class="subbox_fff fs_14 ">추가하기 </span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col pl_10px">
+                    <div class="del_box fw_700">
+                        <div class="h_40 align-items-center d-flex">
+                            <span class="fs_18 ">결제 수단</span>
+                            <span class="subbox_green fs_14 ml-auto m_btn_re">구독중</span>
+                        </div>
+                        <div class="h_40 mt_10px align-items-center d-flex pay_m">
+                            <span class="sub_gray_text fw_400">카카오페이</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 pt_50px">
+                    <div class="fw_700 fs_18">정기 배송 정보</div>
+
+                    <div class="del_box mt_20px d-flex table_flex">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td>이름</td>
+                                    <td>오아영</td>
+                                </tr>
+                                <tr>
+                                    <td>연락처</td>
+                                    <td>01012345678</td>
+                                </tr>
+                                <tr>
+                                    <td>주소</td>
+                                    <td>서울시 서울구 서울로 64, 디지털플라자 E-401동</td>
+                                </tr>
+                                <tr>
+                                    <td>배송시 주의사항</td>
+                                    <td>조심히 와주세요</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="subbox_green fs_14 ml-auto h_40 fw_700">구독중</div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- The Modal -->
+<div class="modal fade" id="deli_modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <!-- Modal Header -->
+                <button type="button" class="close" data-dismiss="modal"><img
+                        src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                        class="img-fluid"></button>
+                <div class="fw_700 fs_20 modal_title">정기구독 해지 시<br>
+                    아래 혜택을 더이상 받을 수 없습니다.</div>
+
+                <div class="sub_gray_text pt_10px modal_title_sub">회원님은 현재 <span class="point_color fw_700">3개의 할인
+                        혜택</span>을 적용받아
+                    <span class="point_color fw_700">매달 5,349원</span>의 할인을 받고 있습니다.
+                </div>
+
+                <div class="del_box2 text-center mt_20px">
+                    <div class="check_custom">
+                        <input type="checkbox" name="select_chk01" id="select_chk01">
+                        <label for="select_chk01" class="fw_700 point_color">정기 구독 혜택 포기에 동의합니다.</label>
+                    </div>
+                </div>
+
+
+                <div class="fw_700 pt_20px">
+                    정기 구독 해지 사유를 선택해주세요.
+                </div>
+
+                <div class="check_custom pt_20px">
+                    <input type="checkbox" name="select_chk01" id="select_chk01">
+                    <label for="select_chk01" class="sub_gray_text">가격이 너무 비싸요</label>
+                </div>
+                <div class="check_custom pt_14px">
+                    <input type="checkbox" name="select_chk01" id="select_chk01">
+                    <label for="select_chk01" class="sub_gray_text">건강 기능 식품이 필요하지 않아요</label>
+                </div>
+                <div class="check_custom pt_14px">
+                    <input type="checkbox" name="select_chk01" id="select_chk01">
+                    <label for="select_chk01" class="sub_gray_text">다른 제품을 이용할 예정이에요</label>
+                </div>
+
+                <div class="check_custom pt_14px input_check">
+                    <input type="checkbox" name="select_chk01" id="select_chk01">
+                    <label for="select_chk01 " class="sub_gray_text">
+                        <input type="text" class="form-control" placeholder="직접 입력해주세요.">
+                    </label>
+                </div>
+
+
+
+
+
+                <div class="row pt_50px popup_btn_wrap">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-outline-success fw_700 mr_30px order_last"
+                            data-dismiss="modal">
+                            닫기
+                        </button>
+                        <button type="button" class="btn btn-secondary fw_700 order_1">
+                            구독 해지하기
+                        </button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    $(()=>{
+        $('.mypage_menu_btn').click(function () {
+            $('#sidebar6').css('left', '-9999px');
+        });
+
+        $('.btn_mypage').click(function () {
+            $('#sidebar6').css('left', '0');
+        });
+    })
+
+
+</script>

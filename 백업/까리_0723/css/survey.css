@@ -5,53 +5,14 @@
 	background: #FFFFFF;
 	box-shadow: 0px 5.33333px 32px rgba(0, 0, 0, 0.12);
 	border-radius: 32px;
-	max-height: 954px;
-	height: 954px;
+	max-height: 830px;
+	height: 830px;
 }
 
 .survey_pages .row {
 	margin-right: 0;
 	margin-left: 0;
 }
-.cat_namebox{
-	display : flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.cat_name{
-	margin-right : 4px;
-}
-
-#progress_box{
-	position : absolute;
-	z-index : 30;
-	left : 50%;
-	transform : translateX(-50%);
-}
-
-#creating {
-	height : 940px;
-	max-height : 940px;
-}
-
-#pop_loader_bar {
-	position: absolute;
-	background-color: #6E9357;
-	border-radius: 50px;
-	top: 0px;
-	left: 0px;
-	width: 10px;
-	height: 12px;
-	z-index: 0;
-	opacity: 1;
-}
-
-.under_bar_box {
-	padding-top : 220px;	
-}
-
-
 
 .h_2 {
 	height: 2px;
@@ -139,41 +100,13 @@
     display: table-cell;
     vertical-align: middle;
 }
+
 .pop_box2.toggle {
     background-color: #6E9357;
     border-radius: 10px;
     color: #fff;
 }
 
-.next_btn {
-    background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_no.png);
-    background-size: 197px 80px;
-    width: 197px;
-    height: 80px;
-    background-repeat: no-repeat;
-    background-position-x: 75%;
-	background-position-y: 29%;
-	cursor: pointer;
-}
-
-.next_btn.active {
-	background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png);
-    background-size: 197px 80px;
-    width: 197px;
-    height: 80px;
-    background-repeat: no-repeat;
-    background-position-x: 75%;
-	background-position-y: 29%;
-	cursor: pointer;
- 
-}
-
-#questing .next_btn {	
-    background-position-y: 49%;
-}
-#questing .toggle2 {	
-    background-position-y: 49%;
-}
 .cursor {
     cursor: pointer;
 }
@@ -398,13 +331,42 @@
 }
 
 
+.modal_page3_input {
+	position: relative;
+	width: 490px;
+	margin: 0 auto;
+	margin-bottom: -0.5rem;
+}
+
+.modal_page3_input input[type=checkbox] {
+	display: none;
+}
+
+.modal_page3_input input[type=checkbox]+label {
+	cursor: pointer;
+	padding-left: 32px;
+	background-repeat: no-repeat;
+	background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-off.png);
+	background-size: 22px;
+	right: -300px;
+	top: -37px;
+	color: #6E9357;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.modal_page3_input input[type=checkbox]:checked+label {
+	background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on.png');
+}
+
+
 .pop_loading_box {
 	display: inline-block;
 	position: relative;
 	/* margin: 0 -4px -5px -2px; */
 	/* transition: all .2s ease; */
 }
-/*
+
 .pop_loader:before {
 	content: "";
 	position: absolute;
@@ -416,8 +378,9 @@
 	height: 12px;
 	z-index: 0;
 	opacity: 1;
+	/* -webkit-animation: loader4 20s ease-in-out infinite; */
+	/* animation: loader4 20s ease-in-out infinite; */
 }
-*/
 
 .pop_loader:after {
 	content: "";
@@ -433,7 +396,7 @@
 	height: 50px;
 	position: absolute;
 	top: -62px;
-	left: 0px;
+	left: 42px;
 	/* animation: loader4_top 20s ease-in-out infinite; */
 	background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec6_charactor.png);
 	background-size: 54px;
@@ -484,22 +447,22 @@
 	border-top: 1px solid rgba(110, 147, 87, 0.5);
 }
 
-.tip_box {
+.q5_tip {
 	background: #EDF2EA;
 	border-radius: 10px;
 	padding: 14px 20px;
 }
 
-.tip_box img {
+.q5_tip img {
 	width: 32px;
 }
 
 
-.answers input[type=checkbox] {
+.q5_question input[type=checkbox] {
 	display: none;
 }
 
-.answers input[type=checkbox]+label {
+.q5_question input[type=checkbox]+label {
 	cursor: pointer;
 	padding-left: 45px;
 	background-repeat: no-repeat;
@@ -512,41 +475,35 @@
 	height: 45px;
 }
 
-.answers input[type=checkbox]:checked+label {
+.q5_question input[type=checkbox]:checked+label {
 	background-image: url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_2.png");
 }
 
 
-.answers input[type=radio] {
+.q8_question input[type=checkbox] {
 	display: none;
 }
 
-.answers.have_radio{
-	display: flex;
-    justify-content: space-between;
-}
-
-.answers input[type=radio]+label {
-    padding: 26px;
-    width: 180px;
-    display: inline-block;
-    text-align: center;
-    font-size: 16px;
+.q8_question input[type=checkbox]+label {
+	cursor: pointer;
+	padding: 28px 53.5px;
+	font-size: 16px;
 	/* border: 2px solid #6E9357; */
 	/* color: #6E9357; */
 	background: #F7F7F7;
 	border-radius: 10px;
-	margin-bottom: 15px;
 }
 
-.answers input[type=radio]:checked+label {
+.q8_question input[type=checkbox]:checked+label {
 	background-color: #6E9357;
-	color: #fff !important;
+	color: #fff;
 	font-weight: 700;
 }
 
-.answers input[type=textarea] {
+.q10_input {
 	border: 2px solid #6E9357;
+	/* height: 57px; */
+	/* font-weight: 700; */
 	font-size: 15px;
 	background: #FFFFFF;
 	border: 2px solid #DBDADA;
@@ -554,7 +511,7 @@
 	padding: 20px;
 }
 
-.answers input[type=textarea]::placeholder {
+.q10_input::placeholder {
 	color: #BEBCBB;
 }
 
@@ -590,16 +547,15 @@
 		padding-right: 0;
 	}
 
-/*.survey_pages {
+/*.survay_pages {
 		max-height: calc(100vh - 80px);
 		height: calc(100vh - 80px);
 	}
 	*/
-	.survey_pages {
+	.survay_pages {
 		max-height: 100%;
 		height: 100%;
 		margin: 40px 0;
-		margin-top : 120px;
 	}
 	
 	.px_100 {
@@ -615,25 +571,21 @@
 		padding-top: 10px;
 	}
 
-	#opening .pt-9 {
+	#survay_page0 .pt-9 {
 		padding-top: 6rem !important;
 	}
 
-	#opening .pb-7 {
+	#survay_page0 .pb-7 {
 		padding-bottom: 5rem !important;
 	}
-	#opening .fs_16{
+	#survay_page0 .fs_16{
 		font-size: 10px;
 	}
 	.progress_mobile {
 		margin-top: -6rem;
 	}
 
-	#progress_box{
-		top : 120px;
-	}
-	
-	#selecting .px_100, #questing .px_100, #questing .px_100, #questing .px_100 {
+	#survay_page1 .px_100, #survay_page3 .px_100, #survay_page4 .px_100, #survay_page5 .px_100 {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -694,28 +646,28 @@
 	.m_pt_20 {
 		padding-top: 20px;
 	}
-	#selecting .pr-6, #creating .pr-6, #questing .pr-6, #questing .pr-6, #questing .pr-6 {
+	#survay_page1 .pr-6, #survay_page2 .pr-6, #survay_page3 .pr-6, #survay_page4 .pr-6, #survay_page5 .pr-6 {
 		padding-right: 2rem !important;
 	}
-	#selecting .pb-6 {
+	#survay_page1 .pb-6 {
 		padding-bottom: 4rem !important;
 	}
-	#selecting .pt-5_1 {
+	#survay_page1 .pt-5_1 {
 		padding-top: 4rem !important;
 	}
 
-	#creating .fs_40 {
+	#survay_page2 .fs_40 {
 		font-size: 20px;
 	}
 
-	#creating .pt_120px {
+	#survay_page2 .pt_120px {
 		padding-top: 0;
 	}
 
-	#creating .pb-3 {
+	#survay_page2 .pb-3 {
 		padding-bottom: 10px!important;
 	}
-	#creating .pb_30px {
+	#survay_page2 .pb_30px {
 		padding-bottom: 20px;
 	}
 	.m_col_100 .col-6 {
@@ -724,15 +676,15 @@
 		max-width: 100%;
 	}
 
-	#creating .fs_18 {
+	#survay_page2 .fs_18 {
 		font-size: 14px;
 		font-weight: 700;
 	}
-	#creating .pr-0, #creating .pl-0 {
+	#survay_page2 .pr-0, #survay_page2 .pl-0 {
 		padding-right: 0;
 		padding-left: 0;
 	}
-	#creating .form-control {
+	#survay_page2 .form-control {
 		height: 50px;
 		font-size: 14px;
 		font-weight: 400;
@@ -808,39 +760,35 @@
 		margin-left: -1.6rem;
 	}
 
-	.tip_box {
+	.q5_tip_mobile {
+		background: #EDF2EA;
+		border-radius: 10px;
 		padding: 14px 12px 14px 16px;
 	}
 
-	.tip_box img {
+	.q5_tip_mobile img {
 		width: 36px;
 	}
 
-	.tip_box .fs_16 {
+	.q5_tip_mobile .fs_16 {
 		font-size: 14px;
 	}
-	
 	.line_14 {
 		line-height: 21px;
 	}
-	.answers input[type=checkbox]+label {
+	.q5_question input[type=checkbox]+label {
 		font-size: 14px;
 		font-weight: 400;
 		height: 66px;
 	}
 
-	.answers input[type=radio]+label {
+	.q8_question input[type=checkbox]+label {
 		padding: 20px 27px;
 		font-size: 14px;
 		width: 136px;
 		margin-bottom: 16px;
 		text-align: center;
 	}
-
-	.answers.have_radio{
-		display: block;
-	}
-	
 	.mr_3_m2 {
 		margin-right: 12px!important;
 	}
@@ -854,13 +802,19 @@
 	.m_pt_5 {
 		padding-top: 1.5rem!important;
 	}
-	#questing .pb-6 {
+	#survay_page4 .pb-6 {
 		padding-bottom: 3rem !important;
 	}
-	#questing .pb-5_2 {
-		padding-bottom: 4rem !important;
+	#survay_page4 .pt-6 {
+		padding-top: 3rem !important;
 	}
-	#ending .pt-10 {
+	#survay_page5 .pb-5_2 {
+		padding-bottom: 3rem !important;
+	}
+	#survay_page5 .pt-5_2 {
+		padding-top: 4rem !important;
+	}
+	#survay_page6 .pt-10 {
 		padding-top: 4rem !important;
 		padding-bottom: 38px;
 	}
@@ -869,47 +823,22 @@
 		height: 136px;
 		font-size: 20px;
 	}
-	#ending .fs_40 {
+	#survay_page6 .fs_40 {
 		font-size: 32px;
 		line-height: 40px;
 	}
-	#ending .fs_16 {
+	#survay_page6 .fs_16 {
 		font-size: 14px;
 	}
-	#ending .pb-10 {
+	#survay_page6 .pb-10 {
 		padding: 40px;
 		padding-bottom: 7rem !important;
 		padding-top: 38px!important;
 	}
-	#ending .pb-1
+	#survay_page6 .pb-1
 	 {padding-bottom: 20px!important;
 
 	 }
-
-	.next_btn {
-		background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile_no.png);
-		background-size: 60px 60px;
-		width: 60px;
-		height: 60px;
-		background-repeat: no-repeat;
-		background-position-x: 75%;
-		background-position-y: 50%;
-	}
-	.toggle2 {
-		background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png);
-		background-size: 60px 60px;
-		width: 60px;
-		height: 60px;
-		background-repeat: no-repeat;
-		background-position-x: 75%;
-		background-position-y: 50%;
-	 
-	}
-	#creating .next_btn {
-		background-position-y: 31%;
-	}#questing .next_btn {
-		margin-top: -48px;
-	}
 }
 
 
@@ -917,10 +846,10 @@
 	.pt_180 {
 		padding-top: 50px;
 	}
-	#selecting .pt-5_1 {
+	#survay_page1 .pt-5_1 {
 		padding-top: 3rem !important;
 	}
-	#selecting .pb-6 {
+	#survay_page1 .pb-6 {
 		padding-bottom: 1rem !important;
 	}
 	.swiper-button-next, .swiper-button-prev {
@@ -933,7 +862,7 @@
 	.pt_180 {
 		padding-top: 10px;
 	}
-	#opening .pt-9 {
+	#survay_page0 .pt-9 {
 		padding-top: 2rem !important;
 	}
 	.slide2 {
@@ -949,22 +878,11 @@
 		width: 263px;
 		margin-left: 1.8rem;
 	}
-	.under_bar_box{
-		padding-top: 150px;
-	}
-	.pop_loader{
-		width : 350px;		
-	}
-
-
-	#creating{
-		height : 1060px;
-		max-height : 1060px;
-	}
-	#selecting .pt-5_1 {
+	
+	#survay_page1 .pt-5_1 {
 		padding-top: 2rem !important;
 	}
-	#selecting .pb-6 {
+	#survay_page1 .pb-6 {
 		padding-bottom: 1rem !important;
 	}
 	.pop_loader_top {
@@ -974,15 +892,9 @@
 		left: 52px;
 		background-size: 38px;
 	}
-	.answers input[type=radio]+label {
+	.q8_question input[type=checkbox]+label {
 		padding: 20px 17px;
 		width: 115px;
 	}
 
-	.next_btn {
-		margin-top: 14px;
-	}
-
-	
-	
 }

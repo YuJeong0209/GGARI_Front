@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>무제 문서</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .mw_360 {
+            max-width: 398px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            background: #FFFFFF;
+            border: 1px solid #DBDADA;
+            border-radius: 6px!important;
+            padding: 14px 20px;
+            font-size: 16px;
+            height: 50px;
+        }
+
+        .form-control::placeholder {
+            color: #BEBCBB;
+        }
+
+        .form-control:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+            border: 2px solid #6e9357 !important;
+        }
+
+        .shadow1 img {
+            box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.12);
+            border-radius: 100px;
+        }
+
+
+
+        .mt_28px {
+            margin-top: 28px;
+        }
+
+        .mt_40px {
+            margin-top: 40px;
+        }
+
+        .hr-sect {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            font-size: 16px;
+            margin: 18px 0px 30px 0;
+        }
+
+        .hr-sect::before,
+        .hr-sect::after {
+            content: "";
+            flex-grow: 1;
+            background: #DBDADA;
+            height: 2px;
+            font-size: 0px;
+            line-height: 0px;
+            margin: 0px;
+        }
+
+        .fs_12 {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width:576px) {
+            .mw_360 {
+                max-width: 318px;
+                margin: 0 auto;
+            }
+
+            .fs_28 {
+                font-size: 18px;
+            }
+
+            .fs_16 {
+                font-size: 14px;
+            }
+
+            .fs_12 {
+                font-size: 12px;
+            }
+
+            .hr-sect {
+                font-size: 12px;
+                margin: 20px 0px 20px 0;
+            }
+
+            .pt_30px {
+                padding-top: 20px;
+            }
+            .log .pt_20px {
+                padding-top: 10px;
+            }
+
+            .h_100 {
+                height: 130vh !important;
+            }
+
+            .form-control {
+                font-size: 14px;
+                font-weight: 500;
+                height: 44px;
+                padding: 14px 10px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<div class="container-fluid d-flex h-100 ">
+    <div class="row align-items-center align-self-center mw_360 ">
+        <div class="col ">
+            <div class="fs_28 fw_700 text-center">로그인</div>
+
+            <div class="pb-2 fs_16 pt_30px">아이디</div>
+            <input type="text" class="form-control" placeholder="아이디를 입력해주세요.">
+
+            <div class="pb-2 fs_16 pt_20px">비밀번호</div>
+            <input type="password" class="form-control" placeholder="비밀번호를 입력해주세요.">
+
+            <div class="pt_20px fs_16 sub_gray_text text-center fs_12">
+                <a href="">아이디, 비밀번호를 잊어버리셨나요?</a>&emsp;|&emsp;
+                <a href="#" class="fw_700 text-right">회원가입</a>
+            </div>
+
+            <div class="mt_28px">
+                <button type="submit" class="login">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/login_button.png" alt="" class="img-fluid ">
+                </button>
+            </div>
+
+
+
+            <div class="mt_40px sub_black_30 hr-sect">
+                &emsp;&emsp;또는&emsp;&emsp;
+            </div>
+
+            <div class="log">
+            <div>
+                <a href="#" class="">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/kk_login.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+            <div class="pt_20px">
+                <a href="#" class="">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/fb_login.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+            <div class="pt_20px">
+                <a href="#" class="">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/nb_login.png" alt="" class="img-fluid ">
+                </a>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $(function () {
+        var input_bg = $(".form-control").css("border");  // #input1 은 input 의 id 값 - 기존 배경색 저장
+        $("input").blur(function () {
+            if ($(this).val()) $(this).css("border", "1px solid #BEBCBB"); /* 값이 입력되면 #EEF6E2 로 변경한다 */
+            else $(this).css("border", input_bg);  /* 입력값이 지워지면 기본배경색으로 */
+        });
+    });
+</script>
+
+
+<body>
+</body>
+
+</html>
