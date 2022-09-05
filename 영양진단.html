@@ -988,7 +988,11 @@
 
 <div class="container-fluid " id="section_share">
     <div class="row mw_1152">
-        <div class="col text-right share">
+        <div class="col text-right share">            
+            <a id="clip_text" onclick="diagnosis.clipUrl()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_clip.png" class="img-fluid" alt=""> 
+                이 페이지 복사하기
+            </a>
             <a onclick="diagnosis.share()">
                 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_share.png" class="img-fluid" alt=""> 영양진단
                 공유하기
@@ -1674,11 +1678,18 @@
         extend: [],
         selected: [null, {}, {}, {}],
         rank: 1,
+        exists : [],
 
         init: () => {
-            if (util.isEmpty(util.getIdFromUrl())) {
+            //고양이 ID없이 접근하면 튕김
+            if (util.isEmpty(util.getParamFromUrl('id'))) {
                 alert('잘못된 접근입니다.')
                 location.href = '/';
+            }
+
+            //복사하기 모바일에선 안나옴
+            if($(window).width() < 570){
+                $('#clip_text').remove();
             }
 
             // 컨텐츠 내용을 숨겨주세요!
@@ -1733,8 +1744,21 @@
                     .catch((error) => console.log('공유 실패', error));
             }
         },
+
+        clipUrl: () =>{
+            var url = '';
+            var textarea = document.createElement("textarea");
+            document.body.appendChild(textarea);
+            url = window.document.location.href;
+            textarea.value = url;
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("URL이 복사되었습니다.")            
+        },
+
         getCatFromId: () => {
-            $.ajax(util.getAjaxSetting(serverUrl + "/api/cat/" + util.getIdFromUrl())).done((data) => {
+            $.ajax(util.getAjaxSetting(serverUrl + "/api/cat/diseases/", {id : util.getParamFromUrl('id'), round : util.getParamFromUrl('round')})).done((data) => {
                 console.log(data);
                 if (util.isEmpty(data)) {
                     alert('잘못된 접근입니다.');
@@ -1751,7 +1775,7 @@
 
         mergeProducts: () => {
             var pr1 = $.ajax(util.getAjaxSetting(serverUrl + '/api/product', {
-                id: util.getIdFromUrl()
+                id: util.getParamFromUrl('id')
             })).done((data) => {
                 console.log(data);
                 diagnosis.extend = data;
@@ -1787,10 +1811,21 @@
                     }
                     diagnosis.ggari[item.rank][item.category].push(item);
                 });
-                console.log(diagnosis.ggari);
+                console.log(diagnosis.ggari);                
                 diagnosis.drawProducts();
+
             }).fail(() => {
                 alert('목록작성에 실패했습니다.')
+            });
+        },
+
+        getExistSelect : ()=>{
+            $.ajax(util.getAjaxSetting(serverUrl+"/api/subscribe/exist", {id:util.getParamFromUrl('id'), round:util.getParamFromUrl('round')}))
+            .done((data)=>{
+                diagnosis.exist = data[0].items;
+                diagnosis.drawExistSelect();
+            }).fail((error)=>{
+                console.log('SUBSCRIBE EXIST ERROR!!', )
             });
         },
 
@@ -1939,8 +1974,19 @@
                 });
 
             });
-            acodian.click($(".dt_snack"));
-            $(".dt_snack").eq(0).trigger("click");
+                acodian.click($(".dt_snack"));
+            if(util.isEmpty(util.getParamFromUrl('round'))){
+                $(".dt_snack").eq(0).trigger("click");
+            }else{
+                diagnosis.getExistSelect();
+            }
+        },
+
+        drawExistSelect : ()=>{
+            console.log(diagnosis.exist);
+            $.each(diagnosis.exist, (i, item)=>{
+                $('#select_btn_'+item.id_product_extended).trigger('click');
+            });
         },
 
         isfill : ()=>{
@@ -1960,7 +2006,7 @@
         goToNextPage: () => {
             if (diagnosis.isfill()) {
                 let nextPage = '/page/?M2_IDX=26056';
-                let params = "&id=" + util.getIdFromUrl() +"&rank="+diagnosis.rank+"&items=" + JSON.stringify(diagnosis.selected);
+                let params = "&id=" + util.getParamFromUrl('id') +"&rank="+diagnosis.rank+"&items=" + JSON.stringify(diagnosis.selected);
                 location.href = nextPage + params;
             }
         },

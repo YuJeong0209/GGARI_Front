@@ -161,7 +161,7 @@
         #section1 {
             left: 0;
             padding: 0 22px;
-            padding-top: 140px;
+            padding-top: 50px;
             padding-bottom: 600px;
         }
 
@@ -271,17 +271,14 @@
         }
 
         .tab_text .float-right {
-            float: none !important;
+            float: none!important;
         }
-
-        .tab_text {
+        .tab_text {                
             padding: 30px 30px;
         }
-
         .btn_survey_result {
             width: 228px;
         }
-
         .btn1_1 {
             width: 208px;
         }
@@ -289,8 +286,7 @@
         .btn_mobile .btn_minus_img.mr_30px {
             margin-right: 0;
         }
-
-        .m_btn_100 {
+        .m_btn_100 {    
             width: 100%;
             margin-top: 20px;
         }
@@ -309,12 +305,10 @@
 <div class="container-fluid" id="section1">
     <div class="row mw_1152 ">
         <div class="col">
-            <div class="fs_28 fw_700 "><span class="point_color">가로</span> 반려묘 정보</div>
+            <div class="fs_28 fw_700 "><span class="point_color cat_name">가로</span> 반려묘 정보</div>
 
             <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt=""
-                    class="img-fluid btn_mypagetab">돌아가기
-            </div>
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">돌아가기</div>
             <div class="tab_btn pt_40px">
                 <ul>
                     <li class="active fs_18 fw_700">
@@ -329,12 +323,12 @@
             <div id="tab-cont" class="mt_20px">
                 <!--값 있을때
                 -->
-                <div>
+                <div id="survey_tab">
                     <div class="tab_text">
                         <span class="point_color fw_700 pr_10px">#헤어볼</span>
                         <span class="point_color fw_700 pr_10px">#헤어볼</span>
                         <span class="point_color fw_700 pr_10px">#헤어볼</span>
-
+                        
                         <button class="float-right btn_survey_result fs_14 point_color fw_700">설문조사 결과보기</button>
                         <div class="pt_10px sub_gray_text">2022-08-08</div>
                     </div>
@@ -353,7 +347,7 @@
                     </div>
                 </div>
 
-                <!--값 없을때
+                <!--값 없을때-->
                 <div class="tab_text_null">
                     <div class="row align-items-center h-100 text-center">
                         <div class="col">
@@ -364,7 +358,6 @@
                         </div>
                     </div>
                 </div>
-                -->
 
                 <div>
 
@@ -386,8 +379,8 @@
                                         </div>
                                     </div>
                                     <div class="d-inline-block align-middle pr_30px cart_round_box">
-                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png" alt=""
-                                            class="img-fluid list_img">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png"
+                                            alt="" class="img-fluid list_img">
                                     </div>
 
                                     <div class="d-inline-block align-middle">
@@ -395,7 +388,8 @@
                                             스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키
                                                 연어캔</span>
                                         </div>
-                                        <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img"
+                                        <button type="button"
+                                            class="btn btn-outline-success small_btn2 btn_plus_img"
                                             onclick="count2('plus')" value="+">
                                             <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png"
                                                 alt="" class="img-fluid">
@@ -425,8 +419,8 @@
                                         </div>
                                     </div>
                                     <div class="d-inline-block align-middle pr_30px cart_round_box">
-                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png" alt=""
-                                            class="img-fluid list_img">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png"
+                                            alt="" class="img-fluid list_img">
                                     </div>
 
                                     <div class="d-inline-block align-middle">
@@ -434,7 +428,8 @@
                                             스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키
                                                 연어캔</span>
                                         </div>
-                                        <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img"
+                                        <button type="button"
+                                            class="btn btn-outline-success small_btn2 btn_plus_img"
                                             onclick="count('plus')" value="+">
                                             <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png"
                                                 alt="" class="img-fluid">
@@ -504,13 +499,14 @@
 </div>
 
 <script>
+$(()=>{    
     // 컨텐츠 내용을 숨겨주세요!
     var tabBtn = $(".tab_btn > ul > li"); //각각의 버튼을 변수에 저장
     var tabCont = $("#tab-cont > div");  //각각의 컨텐츠를 변수에 저장
 
     tabCont.hide().eq(0).show();
 
-    tabBtn.click(function () {
+    tabBtn.click(() => {
         var target = $(this);        //버튼의 타켓(순서)을 변수에 저장
         var index = target.index();  //버튼의 순서를 변수에 저장
         // alert(index);
@@ -520,33 +516,9 @@
         tabCont.eq(index).css("display", "block");
     });
 
-
-    function count(type) {
-        const resultElement = document.getElementById('result');
-        let number = resultElement.innerText;
-        if (type === 'plus') {
-            number = parseInt(number) + 1;
-        } else if (type === 'minus') {
-            number = parseInt(number) - 1;
-        }
-        resultElement.innerText = number;
-    }
-    function count2(type) {
-        const resultElement = document.getElementById('result2');
-        let number = resultElement.innerText;
-        if (type === 'plus') {
-            number = parseInt(number) + 1;
-        } else if (type === 'minus') {
-            number = parseInt(number) - 1;
-        }
-        resultElement.innerText = number;
-    }
-
-    $(window).resize(function () {
+    $(window).resize(()=> {
         if (window.innerWidth > 480) {  // 다바이스 크기가 480이상일때 
-            $(document).ready(function () {
-                changeIMG();
-            });
+            $(document).ready(() => { changeIMG(); });
             function changeIMG() {
                 $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png");
                 $(".btn_minus_txt span").text("제품 삭제하기");
@@ -556,9 +528,7 @@
                 $(".cart_order_btn img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_order_btn.png");
             }
         } else {
-            $(document).ready(function () {
-                changeIMG();
-            });
+            $(document).ready(() => { changeIMG(); });
             function changeIMG() {
                 $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png");
                 $(".btn_minus_txt span").text("");
@@ -571,12 +541,74 @@
     }).resize();
 
 
-
-    $('.mycat_namebox').click(function () {
-        $('#sidebar6').css('left', '-9999px');
+    $('.mycat_namebox').click(function(){
+        $('#sidebar6').css('left','-9999px');
     });
 
-    $('.btn_mypage').click(function () {
-        $('#sidebar6').css('left', '0');
+    $('.btn_mypage').click(function(){
+        $('#sidebar6').css('left','0');
     });
+        
+    catPage.init();
+});
+
+
+function count(type) {
+    const resultElement = document.getElementById('result');
+    let number = resultElement.innerText;
+    if (type === 'plus') {
+        number = parseInt(number) + 1;
+    } else if (type === 'minus') {
+        number = parseInt(number) - 1;
+    }
+    resultElement.innerText = number;
+}
+function count2(type) {
+    const resultElement = document.getElementById('result2');
+    let number = resultElement.innerText;
+    if (type === 'plus') {
+        number = parseInt(number) + 1;
+    } else if (type === 'minus') {
+        number = parseInt(number) - 1;
+    }
+    resultElement.innerText = number;
+}
+
+
+var catPage = {
+    id : null,    
+    surveys: {},
+
+    init : () => {
+        catPage.id = util.getParamFromUrl('id');
+        if(catPage.id == undefined){
+            catPage.id = $('.mycat_namebox').eq(0).attr('data-id')
+        }
+        let thisCat = cat.cats.find(e=>e.id == id);
+        catPage.getMySurveys();
+    },
+
+    getMySurveys : ()=>{
+        $.ajax(util.getAjaxSetting(serverUrl+"/api/cat/diseases/olly/"+user.id))
+        .done((data)=>{
+            $.each(data, (i, item)=> {
+                if(!catPage.surveys.hasOwnProperty(item.id)){
+                    
+                }
+                catPage.surveys[item.id][item.round] = item;
+            });
+            console.log(catPage.surveys);
+
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('No Cat Here!' + textStatus + " : " + errorThrown);
+        });
+    },
+
+
+    drawCatPage : ()=>{
+
+    },
+
+
+}
 </script>

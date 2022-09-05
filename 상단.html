@@ -5,10 +5,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
-<script src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sidbar.js"></script>
+<script src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sidebar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/common.css">
 
@@ -77,7 +77,7 @@
             }
         }
   
-    </style>
+</style>
 
 <!--마이페이지 서브메뉴-->
 <style>
@@ -131,6 +131,7 @@
             max-width: 270px;
             width: 270px;
             color: #787878;
+            margin-bottom : 4px;
         }
 
         .mycat_namebox img {
@@ -202,12 +203,12 @@
                 padding-top: 20px;
             }
         }
-    </style>
+</style>
  
 <div class="container-fluid">
         <div class="row mw_1152">
             <!--고객센터 서브메뉴-->
-            <div class="col sidebars d-none" id="sidebar4">
+            <div class="col sidebars d-none" id="sidebar5">
                 <div class="fs_28 fw_700 m_fix">고객센터</div>
                 <div class="cs_menu mt_40px fw_700">
                     <div class="cs_menu_w" id="cs_menu_01">
@@ -224,16 +225,37 @@
                     </div>
                 </div>
             </div>
+            <!--인트로 서브메뉴-->
+            <div class="col sidebars d-none" id="sidebar1">
+                <div class="fs_28 fw_700 m_fix">까리 소개</div>
+                <div class="cs_menu mt_40px fw_700">
+                    <div class="cs_menu_w" id="intro_menu_01">
+                        <a href="/board/list.php?M2_IDX=26951">서비스 소개</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_02">
+                        <a href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_03">
+                        <a href="/board/list.php?M2_IDX=26059">공지사항</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_04">
+                        <a href="/board/list.php?M2_IDX=26060">이벤트</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_05">
+                        <a href="/board/list.php?M2_IDX=26061">까리 히스토리</a>
+                    </div>
+                </div>
+            </div>
             <!--마이페이지 서브메뉴-->
             <div class="col sidebars_mypage pr-0 d-none" id="sidebar6">
                 <div class="fs_28 fw_700 m_fix">마이페이지</div>
                 <div class="mt_40px fs_20 ">
                     <div class="row">
                         <div class="col">
-                            <span><span class="fw_700 point_color">오아영</span> 님</span>
+                            <span><span class="fw_700 point_color user_name"></span> 님</span>
                         </div>
                         <div class="col text-right pr-0">
-                            <span class="name_box fs_14 point_color fw_700">구독 3개월째</span>
+                            <span class="name_box fs_14 point_color fw_700 subscribe_month_text">구독 개월째</span>
                         </div>
                     </div>
                 </div>
@@ -241,11 +263,11 @@
                 <div class="mypage_menu mt_28px fw_700 m_inflex">
                     <div>
                         포인트
-                        <div class="float-right"><span class="point_color">3,000</span> P</div>
+                        <div class="float-right"><span class="point_color user_point"></span> P</div>
                     </div>
                     <div class="pt_10px">
                         쿠폰
-                        <div class="float-right"><span class="point_color">2</span> 장</div>
+                        <div class="float-right"><span class="point_color user_coupon"></span> 장</div>
                     </div>
                 </div>
 
@@ -255,7 +277,7 @@
                             반려묘 정보
                         </div>
                         <div class="col text-right pr-0 point_color">
-                            <a href="">
+                            <a href="/page/?M2_IDX=26058">
                                 <span class="cat_add fs_14 fw_700">추가하기</span>
                             </a>
                         </div>
@@ -263,22 +285,6 @@
                 </div>
 
                 <div class="mycat_list mt_20px">
-                    <button class="mycat_namebox fw_700 text-left border-0 active">
-                        가로<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png" alt=""
-                            class="img-fluid">
-                    </button>
-                    <button class="mycat_namebox fw_700 text-left border-0 mt_10px">
-                        가로<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xy_up.png" alt=""
-                            class="img-fluid">
-                    </button>
-                    <button class="mycat_namebox fw_700 text-left border-0 mt_10px">
-                        가로<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xy_up.png" alt=""
-                            class="img-fluid">
-                    </button>
-                    <button class="mycat_namebox fw_700 text-left border-0 mt_10px">
-                        가로<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_xx_up.png" alt=""
-                            class="img-fluid">
-                    </button>
                 </div>
 
 
@@ -291,21 +297,27 @@
                 </div>
 
                 <div class="mypage_menu mt_20px fw_700">
+                    <!--
                     <div class="mypage_menu_btn">
                        배송/결제방법
                     </div>
-                    <div class="pt_30px mypage_menu_btn">
-                        주문조회
-                    </div>
+                    -->
+                    <a href="/my/sett.list.php">
+                        <div class="pt_30px mypage_menu_btn">
+                            주문조회
+                        </div>
+                    </a>
                     <div class="pt_30px mypage_menu_btn">
                         내가 쓴 리뷰
                     </div>
                     <div class="pt_30px mypage_menu_btn">
                        1:1 QnA
                     </div>
-                    <div class="pt_30px mypage_menu_btn">
-                        회원정보변경
-                    </div>
+                    <a href="/my/memb.info.php">
+                        <div class="pt_30px mypage_menu_btn">
+                            회원정보변경
+                        </div>    
+                    </a>
                 </div>
             </div>            
 
@@ -331,11 +343,11 @@
                     </ul>
                     <ul class="navbar-nav " id="menu">
                         <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle" href="/page/?M2_IDX=26035" id="navbardrop" data-toggle="dropdown">까리
+                            <a class="nav-link dropdown-toggle" href="/board/list.php?M2_IDX=26951" id="navbardrop" data-toggle="dropdown">까리
                                 소개</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/page/?M2_IDX=26035">서비스 소개</a>
-                                <a class="dropdown-item" href="/page/?M2_IDX=26859">까리박스 리뷰</a>
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26951">서비스 소개</a>
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26059">공지사항</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26060">이벤트</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26061">까리 히스토리</a>
@@ -448,17 +460,13 @@
                     </div>
                     <!--로그인했을때 -->
 
-
-
-
-
                     <dt class="dt_ham_menu">
                         까리 소개
                     </dt>
                     <dd class="dd_ham_menu">
                         <ul>
-                            <li class="pb_20px"><a href="/page/?M2_IDX=26035">서비스 소개</a></li>
-                            <li class="pb_20px"><a href="/page/?M2_IDX=26859">까리박스 리뷰</a></li>
+                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26951">서비스 소개</a></li>
+                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a></li>
                             <li class="pb_20px"><a href="/board/list.php?M2_IDX=26059">공지사항</a></li>
                             <li class="pb_20px"><a href="/board/list.php?M2_IDX=26060">이벤트</a></li>
                             <li><a href="/board/list.php?M2_IDX=26061">까리 히스토리</a></li>
@@ -487,10 +495,10 @@
                     </dt>
                     <dd class="dd_ham_menu">
                         <ul>
-                            <li class="pb_20px"><a href="page/?M2_IDX=26802">자주 묻는 질문</a></li>
-                            <li class="pb_20px"><a href="page/?M2_IDX=26801">약관 및 방침</a></li>
-                            <li class="pb_20px"><a href="page/?M2_IDX=26803">반품/환불 규정</a></li>
-                            <li><a href="coun/?M2_IDX=26800">제휴 문의</a></li>
+                            <li class="pb_20px"><a href="/page/?M2_IDX=26802">자주 묻는 질문</a></li>
+                            <li class="pb_20px"><a href="/page/?M2_IDX=26801">약관 및 방침</a></li>
+                            <li class="pb_20px"><a href="/page/?M2_IDX=26803">반품/환불 규정</a></li>
+                            <li><a href="/coun/?M2_IDX=26800">제휴 문의</a></li>
                         </ul>
                     </dd>
 
@@ -519,35 +527,24 @@ const apikey = "4kzsu2j6xklbn6s8kv5c1kteopqg0por";
 const serverUrl = "https://api.ggaridev.site";
 
 $(() => {
+    
     //로그인처리
     if (user.check()) {
         user.info();
         $('.logged_in').css({ display: 'none' });
         $('.logged_out').css({ display: 'block' });
         $('.username_text').html(user.name);
-
     }
 
     /*행버거*/
     let gnbSlide = false;// 메뉴가 열려 있는지 확인
-    var scroll = getCurrentScroll();
+    var scroll = util.getCurrentScroll();
     $('.hamburger-button').on('click', function (event) {
         event.preventDefault();
         $(this).toggleClass('active');
         $('.overlay').toggleClass('visible');
     });
-    //고양이처리
-    cat.getCatsData();
-    species.getSpeciesData();
-
-    //마이페이지일 경우 사이드바 수정
-    
-
 });
-
-function getCurrentScroll() {
-    return window.pageYOffset || document.documentElement.scrollTop;
-}
 
 var user = {    
     id: null,
@@ -573,9 +570,9 @@ var user = {
     },
 
     info: () => {
-        $.ajax({
+        let pr = $.ajax({
             url: '/api/info.nx',
-            data: { "KEY": apikey, "SESS_ID": util.getSessionId(), "param": "id,name" },
+            data: { "KEY": apikey, "SESS_ID": util.getSessionId(), "param": "id,name,level" },
             type: "POST",
             async: false,
         }).done(function (data) {
@@ -583,6 +580,7 @@ var user = {
                 console.log('UserAuth Success!');
                 user.id = data.items.id;
                 user.name =data.items.name;
+                user.level = data.items.level;
                 $('.user_name').html(user.name);
                 $('.log_off').addClass('d-none');
                 $('.log_on').removeClass('d-none');
@@ -595,6 +593,7 @@ var user = {
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log('login Error!' + textStatus + " : " + errorThrown);
         });
+        return pr;
     },
 };
 
@@ -669,19 +668,24 @@ var cat = {
     cats : [],
     getCatsData : () => {
         cat.cats.length = 0;
-        $.ajax({
-            url : serverUrl + "/api/cat",
-            data : {id : user.id},
-            type : 'GET',
-            dataType : 'JSONP',
-            async : false,
-            callback : 'callback',
-        }).done((data)=>{
+        let pr = $.ajax(util.getAjaxSetting(serverUrl+'/api/cat/iduser/'+user.id)).done((data)=>{
             cat.cats = data;
         }).fail((jqXHR, textStatus, errorThrown)=>{
             console.log('No Cat Here!' + textStatus + " : " + errorThrown);
-        })
+        });
+        return pr;
     },
+
+    getCatWithDiseases : (id) => {
+        cat.catPromise = $.ajax(util.getAjaxSetting(serverUrl+'/api/cat/diseases'+id)).done((data)=>{
+            cat.cats.find(e => e.id == data.id);
+            cat.cats = data;
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('No Cat Here!' + textStatus + " : " + errorThrown);
+        });
+    }
+
+
 };
 
 
@@ -706,12 +710,12 @@ var util = {
         return object;
     },
 
-    getIdFromUrl : () => {
+    getParamFromUrl : (key) => {
         let search = location.search.substring(1);
         let object = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
-        let id = object.id;
+        let param = object[key];
 //        object.find(e=> e.id == q)
-        return id;
+        return param;
     },
 
     isEmpty : (str) => {
@@ -723,7 +727,9 @@ var util = {
     getSessionId : () => {
         return document.cookie.match('nx_session=([^;]*)')[1];
     },
-    
+    getCurrentScroll : () => {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    },    
 };
 
 

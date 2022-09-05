@@ -183,10 +183,6 @@
     border-radius: 140px;
 }
 
-
-
-
-
 .select {
 	width: 321px;
 	height: 66px;
@@ -197,7 +193,7 @@
 }
 
 .select02 {
-	width: 321px;
+	width: 306px;
 	height: 66px;
 	cursor: pointer;
 	background-color: white;

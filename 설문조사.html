@@ -148,11 +148,11 @@
                                 <div class="fs_18 pb-3">이름</div>
                                 <input id="cat_name" type="text" class="form-control" placeholder="이름을 입력해 주세요." maxlength="10" onblur="survey.setCatData('name', this.value)">
                             </div>
-                            <div class="col-4 pr-0">
+                            <div class="col-4">
                                 <div class="fs_18 pb-3 m_pt_20">몸무게</div>
                                 <input id="cat_kg" type="text" class="form-control" placeholder="몸무게를 소수점 1자리까지 입력해 주세요.(예: 2.3kg)" maxlength="4" onblur="survey.setCatData('kg', this.value)">
                             </div>
-                            <div class="col-4 pl-0">
+                            <div class="col-4 pr-0">
                                 <div class="fs_18 pb-3">성별</div>
                                 <ul class="select">
                                     <li>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="row pb_30px m_col_100">
-                            <div class="col-4 pr-0">
+                            <div class="col-4 pl-0">
                                 <div class="fs_18 pb-3 m_pt_20">나이</div>
                                 <ul class="select02">
                                     <li>
@@ -263,7 +263,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-4 pl-0">
+                            <div class="col-4">
                                 <div class="fs_18 pb-3">품종</div>
                                 <ul class="select02">
                                     <li>
@@ -466,6 +466,10 @@ var survey = {
 
 
     init : ()=> {
+        //고양이처리
+        cat.catPromise = cat.getCatsData();
+        species.getSpeciesData();
+
         survey.progress = 0;
         survey.selectedCat = -1,
         survey.survey_pages = $('.survey_pages');
