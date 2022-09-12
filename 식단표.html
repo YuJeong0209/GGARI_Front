@@ -3,17 +3,6 @@
         max-width: 24px;
     }
 
-    .calendar {
-        background-repeat: no-repeat;
-        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/calander_07.png);
-        background-size: 1152px 834px;
-        filter: drop-shadow(4px 10px 10px rgba(0, 0, 0, 0.2));
-        border-radius: 10px;
-        height: 834px;
-        margin-left: 15px;
-        background-position-x: center;
-    }
-
     .banner_bg {
         background-repeat: no-repeat;
         background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_top_bg.png);
@@ -26,120 +15,6 @@
         padding-right: 10px;
     }
 
-    .week_01,
-    .week_02,
-    .week_03,
-    .week_04,
-    .week_05 {
-        position: relative;
-        top: 217px;
-        left: 25px;
-    }
-
-    .week_02 {
-        top: 245px;
-    }
-
-    .week_03 {
-        top: 278px;
-    }
-
-    .week_04 {
-        top: 312px;
-    }
-
-    .week_05 {
-        top: 345px;
-    }
-
-    .week_01 td,
-    .week_02 td,
-    .week_03 td,
-    .week_04 td,
-    .week_05 td {
-        vertical-align: top;
-        padding-left: 0;
-    }
-
-    .week_01 td img,
-    .week_02 td img,
-    .week_03 td img,
-    .week_04 td img,
-    .week_05 td img {
-        display: block;
-    }
-
-    .week_01 td:nth-child(1),
-    .week_02 td:nth-child(1),
-    .week_03 td:nth-child(1),
-    .week_04 td:nth-child(1),
-    .week_05 td:nth-child(1) {
-        width: 110px;
-        left: 13px;
-    }
-
-    .week_01 td:nth-child(2),
-    .week_02 td:nth-child(2),
-    .week_03 td:nth-child(2),
-    .week_04 td:nth-child(2),
-    .week_05 td:nth-child(2) {
-        width: 114px;
-        left: 14px;
-    }
-
-    .week_01 td:nth-child(3),
-    .week_02 td:nth-child(3),
-    .week_03 td:nth-child(3),
-    .week_04 td:nth-child(3),
-    .week_05 td:nth-child(3) {
-        width: 117px;
-        left: 18px;
-    }
-
-    .week_01 td:nth-child(4),
-    .week_02 td:nth-child(4),
-    .week_03 td:nth-child(4),
-    .week_04 td:nth-child(4),
-    .week_05 td:nth-child(4) {
-        width: 116px;
-        left: 14px;
-    }
-
-    .week_01 td:nth-child(5),
-    .week_02 td:nth-child(5),
-    .week_03 td:nth-child(5),
-    .week_04 td:nth-child(5),
-    .week_05 td:nth-child(5) {
-        width: 114px;
-        left: 14px;
-    }
-
-    .week_01 td:nth-child(6),
-    .week_02 td:nth-child(6),
-    .week_03 td:nth-child(6),
-    .week_04 td:nth-child(6),
-    .week_05 td:nth-child(6) {
-        width: 114px;
-        left: 14px;
-    }
-
-    .week_01 td:nth-child(7),
-    .week_02 td:nth-child(7),
-    .week_03 td:nth-child(7),
-    .week_04 td:nth-child(7),
-    .week_05 td:nth-child(7) {
-        width: 114px;
-        left: 14px;
-    }
-
-    .week_01 td:nth-child(8),
-    .week_02 td:nth-child(8),
-    .week_03 td:nth-child(8),
-    .week_04 td:nth-child(8),
-    .week_05 td:nth-child(8) {
-        width: 114px;
-        left: 37px;
-    }
 
 
     .cat_wrap {
@@ -291,132 +166,151 @@
         padding-right: 40px;
     }
 
-    @media screen and (max-width:576px) {
+    #calender_area{
+        font-size : 16px;
+        color : #787878;
+        width : 100%;
+    }
 
-        .calendar {
-            background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/calander_07_mobile.png);
-            background-size: 360px 628px;
-            border-radius: 10px;
-            height: 628px;
-            margin-left: 0;
-        }
+    #calender{
+        width : 770px;
+    }
 
-        .week_01,
-        .week_02,
-        .week_03,
-        .week_04,
-        .week_05 {
-            top: 215px;
-            left: -36px;
-        }
+    .red_color {
+        color : #F08080 !important;
+    }
+    
+    .day_box{
+        width : 100px;
+        height : 100px;
+        margin : 5px;
+        padding : 10px;
+        float : left;
+        text-align : center;
+        border-radius: 6px;
+    }
 
-        .week_02 {
-            top: 221px;
-        }
+    .day_box.active{
+        background-color: #EDF2EA;
+    }
 
-        .week_03 {
-            top: 226px;
-        }
+    .day_box.title{
+        height : 30px;
+    }
+    
+    .day_box.speical{
+        font-weight: 700;
+    }
 
-        .week_04 {
-            top: 231px;
-        }
+    .day_text{
+        margin : 0px auto 20px;
+        width : 40px;
+        height : 40px;
+        border-radius : 20px;
+        background-color: white;            
+        line-height: 40px;    
+    }
 
-        .week_05 {
-            top: 236px;
-        }
+    .ball{
+        width : 8px;
+        height : 8px;
+        border-radius : 4px;
+        margin : 2px;
+        float: left;
+    }
 
-        .float_l_10 {
-            padding-right: 0;
-        }
+    #special_box{
+        width : 110px;
+        height : 540px;
+        float: left;
+        color : #6E9357;
+    }
 
-        .week_01 td img,
-        .week_02 td img,
-        .week_03 td img,
-        .week_04 td img,
-        .week_05 td img {
-            max-width: 16px;
-        }
+    #snack_content_box{
+        width : 270px;
+        margin-left : 7px;
+        float: left;
+    }
 
-        .week_01 td:nth-last-child(1) img,
-        .week_02 td:nth-last-child(1) img,
-        .week_03 td:nth-last-child(1) img,
-        .week_04 td:nth-last-child(1) img,
-        .week_05 td:nth-last-child(1) img {
-            max-width: 32px;
-        }
+    #snack_content_title{
+        width : 100%;
+        height : 50px;
+        border-radius: 50px;
+        background-color: #EDF2EA;
+        color: #6E9357;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
 
-        .week_01 td:nth-child(1),
-        .week_02 td:nth-child(1),
-        .week_03 td:nth-child(1),
-        .week_04 td:nth-child(1),
-        .week_05 td:nth-child(1) {
-            width: 40px;
-            left: 14px;
-        }
+    #snack_contents{
+        background-color : #F9FCF7;
+        border-radius : 10px;
+        padding: 30px;
+        color : #BEBCBB;
+    }
 
-        .week_01 td:nth-child(2),
-        .week_02 td:nth-child(2),
-        .week_03 td:nth-child(2),
-        .week_04 td:nth-child(2),
-        .week_05 td:nth-child(2) {
-            width: 40px;
-            left: 18px;
-        }
+    #snack_title{
+        color: #6E9357;
+        font-weight: 700;
+    }
 
-        .week_01 td:nth-child(3),
-        .week_02 td:nth-child(3),
-        .week_03 td:nth-child(3),
-        .week_04 td:nth-child(3),
-        .week_05 td:nth-child(3) {
-            width: 40px;
-            left: 25px;
-        }
+    #snack_pos{
 
-        .week_01 td:nth-child(4),
-        .week_02 td:nth-child(4),
-        .week_03 td:nth-child(4),
-        .week_04 td:nth-child(4),
-        .week_05 td:nth-child(4) {
-            width: 40px;
-            left: 33px;
-        }
+    }
+    #snack_list{
 
-        .week_01 td:nth-child(5),
-        .week_02 td:nth-child(5),
-        .week_03 td:nth-child(5),
-        .week_04 td:nth-child(5),
-        .week_05 td:nth-child(5) {
-            width: 40px;
-            left: 38px;
-        }
+    }
 
-        .week_01 td:nth-child(6),
-        .week_02 td:nth-child(6),
-        .week_03 td:nth-child(6),
-        .week_04 td:nth-child(6),
-        .week_05 td:nth-child(6) {
-            width: 40px;
-            left: 44px;
-        }
+    .dot_contents{
+        margin : 15px;
+        height: 24px;
+        clear : both;
+    }
 
-        .week_01 td:nth-child(7),
-        .week_02 td:nth-child(7),
-        .week_03 td:nth-child(7),
-        .week_04 td:nth-child(7),
-        .week_05 td:nth-child(7) {
-            width: 40px;
-            left: 50px;
-        }
+    .dot_marker{
+        width : 8px;
+        height : 20px;
+        border-radius : 4px;
+        margin-right : 10px;
+        float : left;
+    }
 
-        .week_01 td:nth-child(8),
-        .week_02 td:nth-child(8),
-        .week_03 td:nth-child(8),
-        .week_04 td:nth-child(8),
-        .week_05 td:nth-child(8) {
-            width: 40px;
-            left: 65px;
-        }
+    .dot_description{
+        
+    }
+
+    .cate1{
+        background-color : #dd7172;
+    }
+    .cate2{
+        background-color : #966CDF;
+    }
+    .cate3{
+        background-color : #FFA559;
+    }
+    .cate4{
+        background-color : #FFD455;
+    }
+    .cate5{
+        background-color : #8BCA64;
+    }
+    .cate6{
+        background-color : #D76ADF;
+    }
+    .cate7{
+        background-color : #769DE1;
+    }
+    .cate8{
+        background-color : #689088;
+    }
+    .cate9{
+        background-color : #6B6B82;
+    }
+
+
+    @media screen and (max-width: 576px ) {
+
 
         #section1 .pt_36px {
             padding-top: 20px;
@@ -654,11 +548,11 @@
 
 <div class="container-fluid pt_150px" id="section1">
     <div class="row mw_1152">
-        <div class="col-12 text-center">
+        <div class="col-12">
             <div class="fs_28">
-                2022년 7월<br>
+                <span id="year_month"></span><br>
                 <span class="fw_700">
-                    <span class="point_color">가로</span>님 맞춤 권장 간식단표
+                    <span id="cat_name" class="point_color"></span>님 맞춤 권장 간식단표
                 </span>
             </div>
             <div class="pt_36px">
@@ -673,382 +567,23 @@
 
 <!--calendar-->
 <div class="container-fluid mt_34px calendar" id="section2">
-    <div class="row mw_1152">
-        <div class="col ">
-            <div class="week_01" id="week_01">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico05.png" alt=""
-                                class="img-fluid cal_ico05">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico08.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico07.png" alt=""
-                                class="img-fluid">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="week_02" id="week_02">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico05.png" alt=""
-                                class="img-fluid cal_ico05">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico06.png" alt=""
-                                class="img-fluid cal_ico06">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico07.png" alt=""
-                                class="img-fluid">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="week_03" id="week_03">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico05.png" alt=""
-                                class="img-fluid cal_ico05">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico08.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico07.png" alt=""
-                                class="img-fluid">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="week_04" id="week_04">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico05.png" alt=""
-                                class="img-fluid cal_ico05">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico08.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico07.png" alt=""
-                                class="img-fluid">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="week_05" id="week_05">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico01.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico02.png" alt=""
-                                class="img-fluid cal_ico02">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico03.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico04.png" alt=""
-                                class="img-fluid">
-                        </td>
-
-                        <td>
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico05.png" alt=""
-                                class="img-fluid cal_ico05">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico08.png" alt=""
-                                class="img-fluid">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_ico07.png" alt=""
-                                class="img-fluid">
-                        </td>
-                    </tr>
-                </table>
+    <div id="calender_area" class="row mw_1152">
+        <div id="calender">
+            <div class="day_box title red_color">일</div>
+            <div class="day_box title">월</div>
+            <div class="day_box title">화</div>
+            <div class="day_box title">수</div>
+            <div class="day_box title">목</div>
+            <div class="day_box title">금</div>
+            <div class="day_box title">토</div>    
+        </div>
+        <div id="special_box">
+            <div class="day_box title special">SPECIAL</div>
+        </div>
+        <div id="snack_content_box">
+            <div id="snack_content_title">간식 리스트</div>
+            <div id="snack_contents">
+                캘린더에서 <br>날짜를 선택해주세요.</div>
             </div>
         </div>
     </div>
@@ -1082,7 +617,7 @@
             </div>
         </div>
         <div class="col-12 pt_40px px-0">
-            <button type="button" class="btn btn-outline-success fw_700 btn_plus_img mr-3">
+            <button type="button" class="btn btn-outline-success fw_700 btn_plus_img mr-3" onclick="calender.goToCycle()">
                 주기 재설정하기
             </button>
             <button type="button" class="btn btn-outline-success fw_700 btn_plus_img btn_plus_txt">
@@ -1113,65 +648,7 @@
 <!--장바구니 목록-->
 <div class="container-fluid pt_30px bg_sub_gray_etc" id="section5">
     <div class="row mw_1152 cart_wrap">
-        <div class="col">
-            <div class="cart_box">
-                <div class="d-inline-block align-middle pr_15px">
-                    <div class="check_custom">
-                        <input type="checkbox" name="select_chk01" id="select_chk01">
-                        <label for="select_chk01">&nbsp;</label>
-                    </div>
-                </div>
-                <div class="d-inline-block align-middle pr_30px">
-                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_ggari.png" alt=""
-                        class="img-fluid list_img">
-                </div>
-
-                <div class="d-inline-block align-middle">
-                    <div class="fs_18 fw_700">까리박스 정기배송</div>
-                    <button type="button" class="btn btn-outline-success fw_700 small_btn mt_12px">
-                        수정하기
-                    </button>
-                </div>
-                <div class="d-inline-block align-middle float-right price pr_2rem text-right">
-                    <div class="fs_20 fw_700 point_color">￦8,500</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mw_1152 cart_wrap">
-        <div class="col">
-            <div class="cart_box">
-                <div class="d-inline-block align-middle pr_15px">
-                    <div class="check_custom">
-                        <input type="checkbox" name="select_chk02" id="select_chk02">
-                        <label for="select_chk02">&nbsp;</label>
-                    </div>
-                </div>
-                <div class="d-inline-block align-middle pr_30px cart_round_box">
-                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png" alt=""
-                        class="img-fluid list_img">
-                </div>
-
-                <div class="d-inline-block align-middle">
-                    <div class="fs_18 fw_700 mb_12px">
-                        스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키 연어캔</span>
-                    </div>
-                    <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img"
-                        onclick="count('plus')" value="+">
-                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt=""
-                            class="img-fluid">
-                    </button>
-                    <div class="cart_quantity ml_10px" id="result">1</div>
-                    <button type="button" class="btn btn-outline-success small_btn2 ml_10px btn_minus_img"
-                        onclick="count('minus')" value="-">
-                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt=""
-                            class="img-fluid">
-                    </button>
-                </div>
-                <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
-                    <div class="fs_20 fw_700 point_color">￦1,000</div>
-                </div>
-            </div>
+        <div id="cart_boxes" class="col">
         </div>
     </div>
 
@@ -1251,205 +728,189 @@
 <script>
 
 
-    $(document).ready(function () {
-
-        /*첫번째줄~*/
-        var week_01_01_total = $('#week_01 td:first img').length;
-        var week_01_01 = $('#week_01 td img:first');
-        if (week_01_01_total > 3) {
-            week_01_01.addClass("float_l_10");
-        }
-        var week_01_02_total = $('#week_01 td:nth-child(2) img').length;
-        var week_01_02 = $('#week_01 td:nth-child(2) img:first');
-        if (week_01_02_total > 3) {
-            week_01_02.addClass("float_l_10");
-        }
-        var week_01_03_total = $('#week_01 td:nth-child(3) img').length;
-        var week_01_03 = $('#week_01 td:nth-child(3) img:first');
-        if (week_01_03_total > 3) {
-            week_01_03.addClass("float_l_10");
-        }
-        var week_01_04_total = $('#week_01 td:nth-child(4) img').length;
-        var week_01_04 = $('#week_01 td:nth-child(4) img:first');
-        if (week_01_04_total > 3) {
-            week_01_04.addClass("float_l_10");
-        }
-        var week_01_05_total = $('#week_01 td:nth-child(5) img').length;
-        var week_01_05 = $('#week_01 td:nth-child(5) img:first');
-        if (week_01_05_total > 3) {
-            week_01_05.addClass("float_l_10");
-        }
-        var week_01_06_total = $('#week_01 td:nth-child(6) img').length;
-        var week_01_06 = $('#week_01 td:nth-child(6) img:first');
-        if (week_01_06_total > 3) {
-            week_01_06.addClass("float_l_10");
-        }
-        var week_01_07_total = $('#week_01 td:nth-child(7) img').length;
-        var week_01_07 = $('#week_01 td:nth-child(7) img:first');
-        if (week_01_07_total > 3) {
-            week_01_07.addClass("float_l_10");
-        }
-
-
-        /*2번째줄~*/
-        var week_02_01_total = $('#week_02 td:first img').length;
-        var week_02_01 = $('#week_02 td img:first');
-        if (week_02_01_total > 3) {
-            week_02_01.addClass("float_l_10");
-        }
-        var week_02_02_total = $('#week_02 td:nth-child(2) img').length;
-        var week_02_02 = $('#week_02 td:nth-child(2) img:first');
-        if (week_02_02_total > 3) {
-            week_02_02.addClass("float_l_10");
-        }
-        var week_02_03_total = $('#week_02 td:nth-child(3) img').length;
-        var week_02_03 = $('#week_02 td:nth-child(3) img:first');
-        if (week_02_03_total > 3) {
-            week_02_03.addClass("float_l_10");
-        }
-        var week_02_04_total = $('#week_02 td:nth-child(4) img').length;
-        var week_02_04 = $('#week_02 td:nth-child(4) img:first');
-        if (week_02_04_total > 3) {
-            week_02_04.addClass("float_l_10");
-        }
-        var week_02_05_total = $('#week_02 td:nth-child(5) img').length;
-        var week_02_05 = $('#week_02 td:nth-child(5) img:first');
-        if (week_02_05_total > 3) {
-            week_02_05.addClass("float_l_10");
-        }
-        var week_02_06_total = $('#week_02 td:nth-child(6) img').length;
-        var week_02_06 = $('#week_02 td:nth-child(6) img:first');
-        if (week_02_06_total > 3) {
-            week_02_06.addClass("float_l_10");
-        }
-        var week_02_07_total = $('#week_02 td:nth-child(7) img').length;
-        var week_02_07 = $('#week_02 td:nth-child(7) img:first');
-        if (week_02_07_total > 3) {
-            week_02_07.addClass("float_l_10");
-        }
-
-
-        /*3번째줄~*/
-        var week_03_01_total = $('#week_03 td:first img').length;
-        var week_03_01 = $('#week_03 td img:first');
-        if (week_03_01_total > 3) {
-            week_03_01.addClass("float_l_10");
-        }
-        var week_03_02_total = $('#week_03 td:nth-child(2) img').length;
-        var week_03_02 = $('#week_03 td:nth-child(2) img:first');
-        if (week_03_02_total > 3) {
-            week_03_02.addClass("float_l_10");
-        }
-        var week_03_03_total = $('#week_03 td:nth-child(3) img').length;
-        var week_03_03 = $('#week_03 td:nth-child(3) img:first');
-        if (week_03_03_total > 3) {
-            week_03_03.addClass("float_l_10");
-        }
-        var week_03_04_total = $('#week_03 td:nth-child(4) img').length;
-        var week_03_04 = $('#week_03 td:nth-child(4) img:first');
-        if (week_03_04_total > 3) {
-            week_03_04.addClass("float_l_10");
-        }
-        var week_03_05_total = $('#week_03 td:nth-child(5) img').length;
-        var week_03_05 = $('#week_03 td:nth-child(5) img:first');
-        if (week_03_05_total > 3) {
-            week_03_05.addClass("float_l_10");
-        }
-        var week_03_06_total = $('#week_03 td:nth-child(6) img').length;
-        var week_03_06 = $('#week_03 td:nth-child(6) img:first');
-        if (week_03_06_total > 3) {
-            week_03_06.addClass("float_l_10");
-        }
-        var week_03_07_total = $('#week_03 td:nth-child(7) img').length;
-        var week_03_07 = $('#week_03 td:nth-child(7) img:first');
-        if (week_03_07_total > 3) {
-            week_03_07.addClass("float_l_10");
-        }
-
-        /*4번째줄~*/
-        var week_04_01_total = $('#week_04 td:first img').length;
-        var week_04_01 = $('#week_04 td img:first');
-        if (week_04_01_total > 3) {
-            week_04_01.addClass("float_l_10");
-        }
-        var week_04_02_total = $('#week_04 td:nth-child(2) img').length;
-        var week_04_02 = $('#week_04 td:nth-child(2) img:first');
-        if (week_04_02_total > 3) {
-            week_04_02.addClass("float_l_10");
-        }
-        var week_04_03_total = $('#week_04 td:nth-child(3) img').length;
-        var week_04_03 = $('#week_04 td:nth-child(3) img:first');
-        if (week_04_03_total > 3) {
-            week_04_03.addClass("float_l_10");
-        }
-        var week_04_04_total = $('#week_04 td:nth-child(4) img').length;
-        var week_04_04 = $('#week_04 td:nth-child(4) img:first');
-        if (week_04_04_total > 3) {
-            week_04_04.addClass("float_l_10");
-        }
-        var week_04_05_total = $('#week_04 td:nth-child(5) img').length;
-        var week_04_05 = $('#week_04 td:nth-child(5) img:first');
-        if (week_04_05_total > 3) {
-            week_04_05.addClass("float_l_10");
-        }
-        var week_04_06_total = $('#week_04 td:nth-child(6) img').length;
-        var week_04_06 = $('#week_04 td:nth-child(6) img:first');
-        if (week_04_06_total > 3) {
-            week_04_06.addClass("float_l_10");
-        }
-        var week_04_07_total = $('#week_04 td:nth-child(7) img').length;
-        var week_04_07 = $('#week_04 td:nth-child(7) img:first');
-        if (week_04_07_total > 3) {
-            week_04_07.addClass("float_l_10");
-        }
-
-        /*5번째줄~*/
-        var week_05_01_total = $('#week_05 td:first img').length;
-        var week_05_01 = $('#week_05 td img:first');
-        if (week_05_01_total > 3) {
-            week_05_01.addClass("float_l_10");
-        }
-        var week_05_02_total = $('#week_05 td:nth-child(2) img').length;
-        var week_05_02 = $('#week_05 td:nth-child(2) img:first');
-        if (week_05_02_total > 3) {
-            week_05_02.addClass("float_l_10");
-        }
-        var week_05_03_total = $('#week_05 td:nth-child(3) img').length;
-        var week_05_03 = $('#week_05 td:nth-child(3) img:first');
-        if (week_05_03_total > 3) {
-            week_05_03.addClass("float_l_10");
-        }
-        var week_05_04_total = $('#week_05 td:nth-child(4) img').length;
-        var week_05_04 = $('#week_05 td:nth-child(4) img:first');
-        if (week_05_04_total > 3) {
-            week_05_04.addClass("float_l_10");
-        }
-        var week_05_05_total = $('#week_05 td:nth-child(5) img').length;
-        var week_05_05 = $('#week_05 td:nth-child(5) img:first');
-        if (week_05_05_total > 3) {
-            week_05_05.addClass("float_l_10");
-        }
-        var week_05_06_total = $('#week_05 td:nth-child(6) img').length;
-        var week_05_06 = $('#week_05 td:nth-child(6) img:first');
-        if (week_05_06_total > 3) {
-            week_05_06.addClass("float_l_10");
-        }
-        var week_05_07_total = $('#week_05 td:nth-child(7) img').length;
-        var week_05_07 = $('#week_05 td:nth-child(7) img:first');
-        if (week_05_07_total > 3) {
-            week_05_07.addClass("float_l_10");
-        }
+    $(()=>{
+        calender.init();
     });
 
-    function count(type) {
-        const resultElement = document.getElementById('result');
-        let number = resultElement.innerText;
-        if (type === 'plus') {
-            number = parseInt(number) + 1;
-        } else if (type === 'minus') {
-            number = parseInt(number) - 1;
-        }
-        resultElement.innerText = number;
+    var calender = {
+        id : null,
+        items : null,
+        date : new Date(),
+        cat : null,
+        products : null,
+        itemlist : null,
+        ollyshop : null,
+        ggaribox : {},
+        totalPrice : 0,
+
+        init : () => {
+            calender.id = util.getParamFromUrl('id');
+            calender.items = JSON.parse(util.getParamFromUrl('items'));  
+            $('#year_month').html(calender.date.getFullYear() + "년 " + calender.date.getMonth()+1 + "월");
+            calender.getDatas();
+        },
+
+        getDatas : ()=>{
+            let pr1 = $.ajax(util.getAjaxSetting(serverUrl+"/api/cat/idcat/"+calender.id)
+                ).done((data)=>{
+                    calender.cat = data;
+                    $('#cat_name').html(calender.cat.name);
+                }).fail((err)=>{
+                    console.log("NO CAT HERE! ", err);
+                });
+            let pr2 = $.ajax({
+                url: '/api/shop.all.list.nx',
+                type: "POST",
+                data: {
+                    "KEY": apikey,
+                    menu2_id: "26044",
+                    mode: 'ALL'
+                },
+            }).done((data) => {
+                console.log(data);
+                calender.ollyshop = data.items;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log(errorThrown)
+            });
+
+            let ids = JSON.stringify(Object.keys(calender.items));
+            var pr3 = $.ajax(util.getAjaxSetting(serverUrl+"/api/product/ids/", {id_str : ids})).done((data) => {
+                console.log(data);
+                if (util.isEmpty(data)) {
+                    alert('잘못된 접근입니다.');
+                    location.href = '/';
+                    return false;
+                }
+                calender.itemlist = data;
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('PRODUCT ERROR!!' + textStatus + " : " + errorThrown);
+                alert('상품정보 열람에 실패했습니다!');
+            });
+
+            $.when(pr1, pr2, pr3).done(()=>{
+                $.each(calender.itemlist, (i, item)=>{
+                    //선가공
+                    if (item.id_olly_product != null) {
+                        Object.assign(item, calender.ollyshop.find(e => e.product_code == item.id_olly_product));
+                    } else { }
+                });
+                calender.drawcalender();
+                calender.drawGgaribox();
+            });
+        },
+
+        goToCycle : () =>{
+            location.href = "/page/?M2_IDX=26046&id="+util.getParamFromUrl('id');
+        },
+
+        drawcalender : ()=>{            
+            let boxCount = 1;
+            let firstDayOfWeek = new Date(calender.date.getFullYear(), calender.date.getMonth()+1, 1).getDay()-1;
+            let lastday = new Date(calender.date.getFullYear(), calender.date.getMonth()+2, -1).getDate();
+            let $calender = $('#calender');               
+            outer : for(let i =0; i < 7; i++){
+                inner : for(let j =0; j < 5; j++){                    
+                    if(boxCount >= firstDayOfWeek+lastday){
+                        break outer;
+                    }
+                    let $box = $('<div>').attr('id', 'box'+boxCount).addClass('day_box');
+                    if(firstDayOfWeek <= boxCount){
+                        $box.click(calender.drawSnacklist);
+                        let $day = $('<div>').addClass('day_text').html(boxCount-firstDayOfWeek+1);
+                        $box.append($day);
+                        for(key in calender.items){
+                            let isEat = false;
+                            switch (parseInt(calender.items[key])){
+                                case 30 : case 60 : case 90 : isEat = true; break;
+                                case 15 : isEat = boxCount % 2 == 0; break;
+                                case 10 : isEat = boxCount % 3 == 0; break;
+                                case 7 : isEat = boxCount % 4 == 0; break;
+                                case 3 : isEat = boxCount % 10 == 0; break;
+                                case 2 : isEat = boxCount % 15 == 0; break;
+                                case 1 : isEat = boxCount % 30 == 0; break;
+                            }
+                            if(isEat){
+                                let product = calender.itemlist.find(e=> e.id == key);
+                                let $ball = $('<div>').addClass('ball cate'+product.category);
+                                $box.append($ball);
+                            }
+                        };
+                    }
+                    $calender.append($box);
+                    boxCount++;                           
+                }
+            }
+
+            //기타 나중에 하기
+        },
+
+        drawSnacklist : (e) =>{
+            let $self = $(e.currentTarget);
+            $('.day_box').removeClass('active');
+            $self.addClass('active');
+            $contents = $('#snack_contents');            
+            $contents.empty();
+
+            let $title = $('<span>').attr('id', 'snack_title').html('일일 간식 | ');
+            let day = $self.find('.day_text').html();
+            let dayText = calender.date.getFullYear()+"년 "+(calender.date.getMonth()+1)+"월 "+day+"일";
+            let $pos =  $('<span>').attr('id', 'snack_pos').html(dayText);
+            $contents.append($title, $pos);
+            $.each($self.find('.ball'), (i, item)=>{
+                let idCate = $(item).attr('class').replace(/[^0-9]/g ,"")
+                let $dotMarker = $('<div>').addClass('dot_marker cate'+idCate);
+                let $dotDescription = $('<div>').addClass('dot_description').html(util.getCategoryStr(parseInt(idCate)));
+                let $dots = $('<div>').addClass('dot_contents').append($dotMarker, $dotDescription);
+                $contents.append($dots);                
+            });            
+
+        },
+
+        drawGgaribox : () =>{
+            let $carts = $('#cart_boxes');
+            let $originbox = $('#origin_inbox');
+            $.each(calender.itemlist, (i, item)=>{
+                let $box = $originbox.clone().removeClass('d-none').attr('id', 'cart'+item.id);
+                $box.find('.list_img').attr('src', item.img);                
+                $box.find('.category').html(item.category2_name);
+                $box.find('.itemmm_name').html( item.product_name);
+                $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
+                $box.find('label').attr({for:'delete'+item.id});
+                $box.find('.price').html(util.won3Comma(item.product_price));                
+                let amount = calender.items[item.id];
+                let ggari = {
+                    id : item.id,
+                    amount : amount,
+                    amount_user_added :0,
+                }
+                calender.ggaribox[item.id] = ggari;
+                calender.totalPrice += parseInt(item.product_price) * amount;
+                $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
+                $box.find('.btn_plus_img').click(()=>{calender.count(item.id, true)});
+                $box.find('.btn_minus_img').click(()=>{calender.count(item.id, false)});
+                $carts.append($box);
+            });            
+        },
+
+        count : (id, isPlus)=>{
+            const $quantity = $('#amount'+id);
+            let quantity = parseInt($quantity.html());
+            let price = calender.itemlist.find(e=> e.id == id).product_price;            
+            if(isPlus){
+                quantity++;
+                calender.totalPrice += price;
+                calender.ggaribox[id].amount_user_added++;
+            }else{
+                if(quantity != 0){
+                    quantity--;                    
+                    calender.totalPrice -= price;
+                    calender.ggaribox[id].amount_user_added--;
+                }
+            }
+            console.log(calender.ggaribox);
+            $quantity.html(quantity);
+            $('#total_price').html(util.won3Comma(calender.totalPrice));
+        },
     }
 
     $(window).resize(function () {
@@ -1516,4 +977,38 @@
         }
     };
     acodian.click($(".dt_snack"));
+
 </script>
+
+<div id="origin_inbox" class="row mt_20px d-none">
+    <div class="col">
+        <div class="cart_box">
+            <div class="d-inline-block align-middle pr_15px">
+                <div class="check_custom">
+                    <input type="checkbox" name="select_chk01" id="select_chk01">
+                    <label for="select_chk01">&nbsp;</label>
+                </div>
+            </div>
+            <div class="d-inline-block align-middle pr_30px cart_round_box">
+                <img src="" alt="" class="img-fluid list_img">
+            </div>
+
+            <div class="d-inline-block align-middle">
+                <div class="fs_18 fw_700 mb_12px">
+                    <span class="category"></span>
+                    <span class="fw_400 sub_gray_text pl_20px itemmm_name"></span>
+                </div>
+                <button type="button" class="btn btn-outline-success small_btn2 ml_10px btn_minus_img" value="-">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid">
+                </button>
+                <div class="cart_quantity ml_10px"></div>
+                <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img" value="+">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid">
+                </button>
+            </div>
+            <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
+                <div class="fs_20 fw_700 point_color price"></div>
+            </div>
+        </div>
+    </div>
+</div>

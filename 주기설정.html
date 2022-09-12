@@ -531,7 +531,7 @@
             }).fail((jqXHR, textStatus, errorThrown) => {
                 console.log(errorThrown)
             });
-
+7
             $.when(pr0, pr1, pr2).done(()=>{
                 $.each(calory.itemlist, (i, item)=>{
                     //선가공
@@ -597,7 +597,7 @@
                     let item = calory.itemlist.find(e=> e.id == calory.productIds[calory.rank]["s"+i]);
                     let $box = $('#origin_box').clone().attr('id', 'snack_boxs'+i).removeClass('d-none');
                     $box.find('.item_name').html(item.product_name);
-                    $box.find('.price').html("￦ "+ item.product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                    $box.find('.price').html(util.won3Comma(item.product_price));
                     let categoryName = i == loop ? "기타" : calory.categoryStr[i];
                     $box.find('.category_name').html(categoryName);
                     $box.find('img').attr('src', item.img);
@@ -624,6 +624,7 @@
                 }
             }
             $('#origin_box_not', '#origin_box').remove();
+            //기타들
         },
     }
 </script>

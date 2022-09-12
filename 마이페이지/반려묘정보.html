@@ -10,11 +10,11 @@
         list-style: none;
     }
 
-    .tab_btn {
+    .tab_btn_area {
         overflow: hidden;
     }
 
-    .tab_btn li {
+    .tab_btn_area li {
         float: left;
         cursor: pointer;
         width: 196px;
@@ -23,21 +23,21 @@
     }
 
 
-    .tab_btn li a {
+    .tab_btn_area li a {
         font-weight: bold;
         vertical-align: middle;
         color: #BEBCBB !important;
     }
 
-    .tab_btn li.active {
+    .tab_btn_area li.active {
         border-bottom: 2px solid #6E9357;
     }
 
-    .tab_btn li.active a {
+    .tab_btn_area li.active a {
         color: #6E9357 !important;
     }
 
-    .tab_btn li a:hover {
+    .tab_btn_area li a:hover {
         color: #6E9357 !important;
     }
 
@@ -75,9 +75,6 @@
     .btn_survey {
         min-width: 270px;
     }
-
-
-
 
     .small_btn {
         padding: 10px 22px;
@@ -155,7 +152,14 @@
         background-position-y: 0;
     }
 
-
+    .cart_price{
+        display: flex;        
+        background: #FFFFFF;
+        padding: 32px 94px;
+        border-radius: 10px;
+        border: 2px solid #6E9357;
+        box-shadow: 0px 4px 10px rgb(0 0 0 / 10%);        
+    }
 
     @media screen and (max-width:576px) {
         #section1 {
@@ -286,6 +290,7 @@
         .btn_mobile .btn_minus_img.mr_30px {
             margin-right: 0;
         }
+
         .m_btn_100 {    
             width: 100%;
             margin-top: 20px;
@@ -295,6 +300,10 @@
             width: 8px;
             margin-right: 12px;
             top: -1px;
+        }
+
+        .cart_price{
+            padding: 27px 25px;            
         }
 
     }
@@ -309,187 +318,87 @@
 
             <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage">
                 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">돌아가기</div>
-            <div class="tab_btn pt_40px">
+            <div class="tab_btn_area pt_40px">
                 <ul>
-                    <li class="active fs_18 fw_700">
+                    <li id="tab_btn1" class="tab_btns active fs_18 fw_700" onclick="catPage.tabButton(1)">
                         <a>설문조사 기록</a>
                     </li>
-                    <li class="fs_18 fw_700">
+                    <li id="tab_btn2" class="tab_btns fs_18 fw_700" onclick="catPage.tabButton(2)">
                         <a>까리박스 구성 정보</a>
                     </li>
 
                 </ul>
             </div>
-            <div id="tab-cont" class="mt_20px">
-                <!--값 있을때
-                -->
-                <div id="survey_tab">
-                    <div class="tab_text">
-                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
-                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
-                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
-                        
-                        <button class="float-right btn_survey_result fs_14 point_color fw_700">설문조사 결과보기</button>
-                        <div class="pt_10px sub_gray_text">2022-08-08</div>
-                    </div>
-
-                    <div class="tab_text mt_20px">
-                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
-                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
-                        <span class="point_color fw_700 pr_10px">#헤어볼</span>
-                        <button class="float-right btn_survey_result fs_14 point_color fw_700">설문조사 결과보기</button>
-                        <div class="pt_10px sub_gray_text">2022-08-08</div>
-                    </div>
-
-                    <div class="mt_40px float-right">
-                        <button class="btn btn-success fw_700 btn_survey"
-                            onclick="location.href='/page/?M2_IDX=26434';">설문조사 다시하기</button>
-                    </div>
+            <div id="tab-1" class="tabs">
+                <!--값 있을때-->                
+                <div id="survey_exist">
                 </div>
-
                 <!--값 없을때-->
-                <div class="tab_text_null">
+                <div id="survey_exist_not" class="tab_text_null d-none">
                     <div class="row align-items-center h-100 text-center">
                         <div class="col">
                             <div class="fs_18 fw_700 point_color">설문조사 기록이 없습니다</div>
                             <div class="pt_10px fs_14 sub_gray_text">질문을 통해 내 반려묘에게 꼭 필요한 영양 간식을 알아보세요.</div>
-
                             <button class="btn btn-success fw_700 btn_survey mt_40px" onclick="location.href='/page/?M2_IDX=26434';">설문조사 하러가기</button>
                         </div>
                     </div>
                 </div>
+            </div>    
 
-                <div>
+            <div id="tab-2" class="tabs">
 
                     <!--값 있을때 -->
-                    <div class="tab_text2">
-                        <div class="ggaribox_info fw_700">
-                            해당 리스트는 <span class="point_color">매달 정기배송될 제품들</span>입니다. <span class="point_color">당월
-                                1회만 구입하고 싶은 제품은 장바구니</span>에서 추가하세요.
-                        </div>
-
-
-                        <div class="row cart_wrap mt_20px">
-                            <div class="col">
-                                <div class="cart_box">
-                                    <div class="d-inline-block align-middle pr_15px">
-                                        <div class="check_custom">
-                                            <input type="checkbox" name="select_chk01" id="select_chk01">
-                                            <label for="select_chk01">&nbsp;</label>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-block align-middle pr_30px cart_round_box">
-                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png"
-                                            alt="" class="img-fluid list_img">
-                                    </div>
-
-                                    <div class="d-inline-block align-middle">
-                                        <div class="fs_18 fw_700 mb_12px">
-                                            스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키
-                                                연어캔</span>
-                                        </div>
-                                        <button type="button"
-                                            class="btn btn-outline-success small_btn2 btn_plus_img"
-                                            onclick="count2('plus')" value="+">
-                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png"
-                                                alt="" class="img-fluid">
-                                        </button>
-                                        <div class="cart_quantity ml_10px" id="result2">1</div>
-                                        <button type="button"
-                                            class="btn btn-outline-success small_btn2 ml_10px btn_minus_img"
-                                            onclick="count2('minus')" value="-">
-                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png"
-                                                alt="" class="img-fluid">
-                                        </button>
-                                    </div>
-                                    <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
-                                        <div class="fs_20 fw_700 point_color">￦1,000</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row cart_wrap ">
-                            <div class="col">
-                                <div class="cart_box">
-                                    <div class="d-inline-block align-middle pr_15px">
-                                        <div class="check_custom">
-                                            <input type="checkbox" name="select_chk02" id="select_chk02">
-                                            <label for="select_chk02">&nbsp;</label>
-                                        </div>
-                                    </div>
-                                    <div class="d-inline-block align-middle pr_30px cart_round_box">
-                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cart_01.png"
-                                            alt="" class="img-fluid list_img">
-                                    </div>
-
-                                    <div class="d-inline-block align-middle">
-                                        <div class="fs_18 fw_700 mb_12px">
-                                            스틱형 <span class="fw_400 sub_gray_text pl_20px itemmm_name">아임베키
-                                                연어캔</span>
-                                        </div>
-                                        <button type="button"
-                                            class="btn btn-outline-success small_btn2 btn_plus_img"
-                                            onclick="count('plus')" value="+">
-                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png"
-                                                alt="" class="img-fluid">
-                                        </button>
-                                        <div class="cart_quantity ml_10px" id="result">1</div>
-                                        <button type="button"
-                                            class="btn btn-outline-success small_btn2 ml_10px btn_minus_img"
-                                            onclick="count('minus')" value="-">
-                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png"
-                                                alt="" class="img-fluid">
-                                        </button>
-                                    </div>
-                                    <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
-                                        <div class="fs_20 fw_700 point_color">￦1,000</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mw_1152 btn_mobile">
-                            <div class="col-12 pt_30px px-0">
-                                <button type="button" class="btn btn-outline-success fw_700 btn1_1">
-                                    추천 제품 다시 선택
-                                </button>
-                                <button type="button"
-                                    class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt mr_30px mobile">
-                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png" alt=""
-                                        class="img-fluid">
-                                    <span>선택 삭제</span>
-                                </button>
-                                <button type="button" class="btn btn-success fw_700 float-right px-5 m_btn_100">
-                                    <span>변경 완료</span>
-                                </button>
-                                <button type="button"
-                                    class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt mr_30px pc">
-                                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png" alt=""
-                                        class="img-fluid">
-                                    <span>선택 삭제</span>
-                                </button>
-                            </div>
+                <div id="inbox_exist" class="tab_text2 d-none">
+                    <div class="ggaribox_info fw_700">
+                        해당 리스트는 <span class="point_color">매달 정기배송될 제품들</span>입니다. <span class="point_color">당월
+                            1회만 구입하고 싶은 제품은 장바구니</span>에서 추가하세요.
+                    </div>
+                    
+                    <div id="cart_boxes" class="cart_wrap">
+                    </div>
+                    <div class="cart_price">
+                        <div class="col pr-0">
+                            <div class="fs_20 fw_700 float-left point_color">합계</div>
+                            <div id="total_price" class="fs_20 fw_700 float-right point_color"></div>
                         </div>
                     </div>
-
-
-                    <!--값 없을때 
-                    <div class="tab_text_null">
-                        <div class="row align-items-center h-100 text-center">
-                            <div class="col">
-                                <div class="fs_18 fw_700 point_color">까리박스 구성 정보가 없습니다</div>
-                                <div class="pt_10px fs_14 sub_gray_text">지금 까리박스를 구독하시면 배송비 무료, 구독 할인 등 많은 혜택을 받을 수
-                                    있습니다.</div>
-
-                                <button class="btn btn-success fw_700 btn_survey mt_40px"
-                                    onclick="location.href='/page/?M2_IDX=26434';">설문조사 하러가기</button>
-                            </div>
+                    <div class="row mw_1152 btn_mobile">
+                        <div class="col-12 pt_30px px-0">
+                            <button type="button" class="btn btn-outline-success fw_700 btn1_1" onclick="catPage.gotoDiagnosis()">
+                                추천 제품 다시 선택
+                            </button>    
+                            <button type="button" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt mr_30px mobile" onclick="catPage.postDeleteItem()">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png" alt="" class="img-fluid">
+                                <span>선택 삭제</span>
+                            </button>
+                            <button type="button" class="btn btn-success fw_700 float-right px-5 m_btn_100" onclick="catPage.postEdit()">
+                                <span>변경 완료</span>
+                            </button>
+                            <button type="button" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt mr_30px pc" onclick="catPage.postDeleteItem()">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/trash_ico.png" alt="" class="img-fluid">
+                                <span>선택 삭제</span>
+                            </button>
                         </div>
                     </div>
-                    -->
-
                 </div>
+
+
+                <!--값 없을때 -->
+                <div id="inbox_exist_not" class="tab_text_null d-none">
+                    <div class="row align-items-center h-100 text-center">
+                        <div class="col">
+                            <div class="fs_18 fw_700 point_color">까리박스 구성 정보가 없습니다</div>
+                            <div class="pt_10px fs_14 sub_gray_text">지금 까리박스를 구독하시면 배송비 무료, 구독 할인 등 많은 혜택을 받을 수
+                                있습니다.</div>
+
+                            <button class="btn btn-success fw_700 btn_survey mt_40px"
+                                onclick="location.href='/page/?M2_IDX=26434';">설문조사 하러가기</button>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
 
             </div>
 
@@ -500,22 +409,6 @@
 
 <script>
 $(()=>{    
-    // 컨텐츠 내용을 숨겨주세요!
-    var tabBtn = $(".tab_btn > ul > li"); //각각의 버튼을 변수에 저장
-    var tabCont = $("#tab-cont > div");  //각각의 컨텐츠를 변수에 저장
-
-    tabCont.hide().eq(0).show();
-
-    tabBtn.click(() => {
-        var target = $(this);        //버튼의 타켓(순서)을 변수에 저장
-        var index = target.index();  //버튼의 순서를 변수에 저장
-        // alert(index);
-        tabBtn.removeClass("active");   //버튼의 클래스를 삭제
-        target.addClass("active");   //타켓의 클래스를 추가
-        tabCont.css("display", "none");
-        tabCont.eq(index).css("display", "block");
-    });
-
     $(window).resize(()=> {
         if (window.innerWidth > 480) {  // 다바이스 크기가 480이상일때 
             $(document).ready(() => { changeIMG(); });
@@ -548,67 +441,273 @@ $(()=>{
     $('.btn_mypage').click(function(){
         $('#sidebar6').css('left','0');
     });
-        
-    catPage.init();
+
 });
 
-
-function count(type) {
-    const resultElement = document.getElementById('result');
-    let number = resultElement.innerText;
-    if (type === 'plus') {
-        number = parseInt(number) + 1;
-    } else if (type === 'minus') {
-        number = parseInt(number) - 1;
-    }
-    resultElement.innerText = number;
-}
-function count2(type) {
-    const resultElement = document.getElementById('result2');
-    let number = resultElement.innerText;
-    if (type === 'plus') {
-        number = parseInt(number) + 1;
-    } else if (type === 'minus') {
-        number = parseInt(number) - 1;
-    }
-    resultElement.innerText = number;
-}
-
-
 var catPage = {
-    id : null,    
+    id : null,
+    idRecord : null,
     surveys: {},
+    extends : [],
+    products : [],
+    deleteIds : [],
+    edits : {},
+    totalPrice : 0,
 
-    init : () => {
+    init : () => {        
         catPage.id = util.getParamFromUrl('id');
         if(catPage.id == undefined){
-            catPage.id = $('.mycat_namebox').eq(0).attr('data-id')
+            let pr = cat.getCatsData();
+            $.when(pr).then(()=>{
+                catPage.id = cat.cats[0].id;
+                catPage.getMySurveys();
+                catPage.getMySubscribes();
+            })
+        }else{
+            catPage.getMySurveys();
+            catPage.getMySubscribes();
         }
-        let thisCat = cat.cats.find(e=>e.id == id);
-        catPage.getMySurveys();
+        catPage.tabButton(1);
     },
-
+    
     getMySurveys : ()=>{
         $.ajax(util.getAjaxSetting(serverUrl+"/api/cat/diseases/olly/"+user.id))
         .done((data)=>{
             $.each(data, (i, item)=> {
-                if(!catPage.surveys.hasOwnProperty(item.id)){
-                    
+                if(!catPage.surveys.hasOwnProperty(item.id_cat)){
+                    catPage.surveys[item.id_cat] = {};
                 }
-                catPage.surveys[item.id][item.round] = item;
+                if(!catPage.surveys[item.id_cat].hasOwnProperty(item.round)){
+                    catPage.surveys[item.id_cat][item.round] = [];
+                }
+                
+                catPage.surveys[item.id_cat][item.round].push(item);
             });
             console.log(catPage.surveys);
-
+            catPage.drawCatPage();
         }).fail((jqXHR, textStatus, errorThrown)=>{
             console.log('No Cat Here!' + textStatus + " : " + errorThrown);
         });
     },
 
+    getMySubscribes : ()=>{
+        let extend;
+        let ollyShop;
+        let pr1 = $.ajax(util.getAjaxSetting(serverUrl+"/api/subscribe/"+catPage.id)
+        ).done((data)=>{
+            if(data.length != 0){
+                catPage.idRecord = data[0].id;
+                catPage.extends = data[0].items;
+                console.log(data);
+            }
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('No Cat Here!' + textStatus + " : " + errorThrown);
+        });
+
+        var pr2 = $.ajax({
+            url: '/api/shop.all.list.nx',
+            type: "POST",
+            data: { "KEY": apikey, menu2_id: "26044", mode: 'ALL' },
+        }).done((data) => {
+            ollyShop = data.items;
+        }).fail((jqXHR, textStatus, errorThrown) => {
+            console.log(errorThrown)
+        });
+
+        $.when(pr1, pr2).done(()=>{
+            $.each(catPage.extends, (i, item)=>{
+                if(item.extended.id_olly_product != null){
+                    Object.assign(item, ollyShop.find(e=> e.product_code == item.extended.id_olly_product));
+                }
+                catPage.products.push(item);
+            });
+
+            console.log(catPage.products);
+            catPage.drawGgaribox();
+        });
+    },
+
+    tabButton : (index)=>{
+        $('.tab_btns').removeClass('active');
+        $('#tab_btn'+index).addClass('active');
+        $('.tabs').hide();
+        $('#tab-'+index).show();
+    },
+
+    count : (id, isPlus)=>{
+        const $quantity = $('#amount'+id);
+        let quantity = parseInt($quantity.html());
+        let price = catPage.products.find(e=> e.id == id).product_price;
+        if(!catPage.edits.hasOwnProperty(id)){
+            catPage.edits[id] = catPage.products.find(e=> e.id == id).amount_user_added;
+        }        
+        if(isPlus){
+            quantity++;
+            catPage.edits[id]++;
+            catPage.totalPrice += price;
+        }else{
+            if(quantity != 0){
+                quantity--;
+                catPage.edits[id]--;
+                catPage.totalPrice -= price;
+            }
+        }
+        console.log(catPage.edits);
+        $quantity.html(quantity);
+        $('#total_price').html(util.won3Comma(catPage.totalPrice));
+    },
 
     drawCatPage : ()=>{
+        $('.mycat_namebox[data-id='+catPage.id+']').addClass('active');
+        let $exist = $('#survey_exist');
+        let $origin = $('#origin_survey_box');
+        let exist = false;
+
+        if(!util.isEmpty(catPage.surveys[catPage.id])){
+            if(Object.keys(catPage.surveys[catPage.id]).length != 0){
+                exist = true;
+            }
+        }
+        if(exist){
+            $.each(catPage.surveys[catPage.id], (i, item)=>{
+                let $box = $origin.clone().removeClass('d-none').attr('id', 'survey_round'+item[0].round);
+                $box.find('span').eq(0).html("#"+ util.getDisStr(item[0].id_diseases));
+                $box.find('span').eq(1).html("#"+ util.getDisStr(item[1].id_diseases));
+                $box.find('span').eq(2).html("#"+ util.getDisStr(item[2].id_diseases));
+                $box.find('button').click(()=>{location.href="/page/?M2_IDX=26046&id="+item[0].id_cat+"&round="+item[0].round });
+                $box.find('div').html(item[0].createdAt.substr(0, 10));
+                $exist.append($box);
+            });
+        }else{
+            $('#survey_exist').addClass('d-none');
+            $('#survey_exist_not').removeClass('d-none');
+        }
+        $origin.remove();
+    },
+
+    drawGgaribox : ()=>{
+        if(catPage.products.length !=0){
+            $('#inbox_exist').removeClass('d-none');
+            let $carts = $('#cart_boxes');
+            let $originbox = $('#origin_inbox');
+            $.each(catPage.products, (i, item)=>{
+                let $box = $originbox.clone().removeClass('d-none').attr('id', 'cart'+item.id);
+                $box.find('.list_img').attr('src', item.img);                
+                $box.find('.category').html(item.category2_name);
+                $box.find('.itemmm_name').html( item.product_name);
+                $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
+                $box.find('label').attr({for:'delete'+item.id});
+                $box.find('.price').html(util.won3Comma(item.product_price));                
+                let amount = item.amount + item.amount_user_added;
+                catPage.totalPrice += parseInt(item.product_price) * amount;
+                $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
+                $box.find('.btn_plus_img').click(()=>{catPage.count(item.id, true)});
+                $box.find('.btn_minus_img').click(()=>{catPage.count(item.id, false)});
+                $carts.append($box);
+            });
+            $originbox.remove();
+            $('#total_price').html(util.won3Comma(catPage.totalPrice));
+        }else{
+            $('#inbox_exist').addClass('d-none');
+            $('#inbox_exist_not').removeClass('d-none');
+        }
+    },
+    
+    gotoDiagnosis : () => {        
+        location.href = '/page/?M2_IDX=26046&id='+catPage.id;
+    },
+
+    postDeleteItem : ()=>{
+        let $deletes = $('input[type=checkbox]:checked');
+        if($deletes.length == 0 ){
+            alert('삭제할 상품을 골라주세요.');
+            return false;
+        }
+        let ids = [];
+        $.each($deletes, (i, item)=>{            
+            ids.push($(item).attr('id').replace(/[^0-9]/g, ""));
+        });
+        console.log(ids);
+
+        $.ajax({
+            url : serverUrl +"/api/subscribe/item/",
+            type : "DELETE",
+            data : {
+                ids : ids.toString()
+            }
+        }).done((data)=>{
+            console.log(data);
+            alert ('삭제되었습니다.');
+            location.reload();
+        }).fail((jqXHR, textStatus, errorThrown) => {
+            console.log("DELETE FAIL", errorThrown)            
+        });
 
     },
 
+    postEdit : () => {
+        if(catPage.edits.length == 0){
+            alert('반영할 변경사항이 없습니다.');
+            return false;
+        }
+        
+        $.ajax({
+            url : serverUrl+"/api/subscribe/item/",
+            type : "PATCH",
+            data : {
+                id : catPage.idRecord,
+                total_price : catPage.totalPrice,
+                edits : JSON.stringify(catPage.edits),
+            }
+        }).done((data)=>{
+            alert('내용이 변경되었습니다.')
+            location.reload();
+        }).fail((jqXHR, textStatus, errorThrown) => {
+            console.log(errorThrown)
+        });
+
+    }
 
 }
 </script>
+
+<div id="origin_survey_box" class="tab_text mt_20px d-none">
+    <span class="point_color fw_700 pr_10px"></span>
+    <span class="point_color fw_700 pr_10px"></span>
+    <span class="point_color fw_700 pr_10px"></span>
+    <button class="float-right btn_survey_result fs_14 point_color fw_700">설문조사 결과보기</button>
+    <div class="pt_10px sub_gray_text">2022-08-08</div>
+</div>
+
+<div id="origin_inbox" class="row mt_20px d-none">
+    <div class="col">
+        <div class="cart_box">
+            <div class="d-inline-block align-middle pr_15px">
+                <div class="check_custom">
+                    <input type="checkbox" name="select_chk01" id="select_chk01">
+                    <label for="select_chk01">&nbsp;</label>
+                </div>
+            </div>
+            <div class="d-inline-block align-middle pr_30px cart_round_box">
+                <img src="" alt="" class="img-fluid list_img">
+            </div>
+
+            <div class="d-inline-block align-middle">
+                <div class="fs_18 fw_700 mb_12px">
+                    <span class="category"></span>
+                    <span class="fw_400 sub_gray_text pl_20px itemmm_name"></span>
+                </div>
+                <button type="button" class="btn btn-outline-success small_btn2 ml_10px btn_minus_img" value="-">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid">
+                </button>
+                <div class="cart_quantity ml_10px"></div>
+                <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img" value="+">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid">
+                </button>
+            </div>
+            <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
+                <div class="fs_20 fw_700 point_color price"></div>
+            </div>
+        </div>
+    </div>
+</div>

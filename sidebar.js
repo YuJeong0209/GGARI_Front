@@ -24,7 +24,7 @@ var sidebar = {
     showSidebar : () => {
         outer : for(var i=1; i<7; i++){
             inner : for(let ids in sidebar.pageIds[i]){
-                if(location.href.includes(sidebar.pageIds[i][ids])){
+                if(!location.href.includes('log') && location.href.includes(sidebar.pageIds[i][ids])){
                     $('#sidebar'+i).removeClass('d-none');                    
                     if(i==6) sidebar.getPointCoupon();
                     break outer;
@@ -80,16 +80,15 @@ var sidebar = {
         $s6.find(".user_point").html(sidebar.point);
         $s6.find(".user_coupon").html(sidebar.coupon);
         $.each(cat.cats, (i, item) => {
-            let $cat = $('<button>').addClass('mycat_namebox fw_700 text-left border-0').attr('data-id', item.id);
-            let $name = $('<span>').html(item.name);    
+            let $cat = $('<button>').addClass('mycat_namebox fw_700 text-left border-0').attr('data-id', item.id).click(()=>{location.href = "/page/?M2_IDX=26922&id="+item.id });
+            let $name = $('<span>').html(item.name);
             let sexual = item.is_male ? 'xy' : 'xx';
             $sexIcon = $('<img>').attr('src', 'https://ggaribox.s3.ap-northeast-2.amazonaws.com/sex_'+sexual+'_up.png').addClass('img-fluid');
             $cat.append($name, $sexIcon);
             $s6.find('.mycat_list').append($cat);
-        });
+        });        
 
-
-
+        catPage.init();
     }
 
 }

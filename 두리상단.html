@@ -1,0 +1,738 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
+<script src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sidebar.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/common.css">
+
+<style>
+       .sidebars {
+            position: absolute;
+            top: 235px;
+            left: 0;
+            z-index: 1000;
+            width: 270px;
+        }
+
+        .cs_menu {
+            background: #F7F7F7;
+            border-radius: 6px;
+            padding: 30px;
+            max-width: 270px;
+            width: 270px;
+        }
+
+        .cs_menu a {
+            color: #BEBCBB;
+        }
+
+        .cs_menu a:hover {
+            color: #6E9357;
+        }
+
+        @media screen and (max-width:576px) {
+            .sidebars {
+                width: 600px;
+                top: 135px;
+                padding: 0;
+                overflow: scroll;
+                -ms-overflow-style: none;
+            }
+
+            .sidebars::-webkit-scrollbar{
+                display:none;
+                }
+            .cs_menu {
+                max-width: 700px;
+                width: 700px;
+                display: flex;
+                padding: 13px;
+                border-radius: 0;
+            }
+
+            .cs_menu .pt_30px {
+                padding-top: 0;
+            }
+
+            .cs_menu_w {
+                width: 120px;
+            }
+            .m_fix {
+                position: sticky;
+                left: 36px;
+            }
+            .cs_menu.mt_40px {
+                margin-top: 20px;
+            }
+
+            .cs_menu_w:nth-child(1) {
+                margin-left: 25px;
+            }
+        }
+  
+</style>
+
+<!--마이페이지 서브메뉴-->
+<style>
+        .sidebars_mypage {
+            position: absolute;
+            top: 235px;
+            left: 0;
+            z-index: 1000;
+            width: 270px;
+        }
+
+        .mypage_menu {
+            background: #F7F7F7;
+            border-radius: 6px;
+            padding: 30px;
+            max-width: 270px;
+            width: 270px;
+        }
+
+        .mypage_menu a {
+            color: #787878;
+        }
+
+        .mypage_menu a:hover {
+            color: #6E9357;
+        }
+
+        .mypage_menu_btn {
+            color: #787878;
+        }
+
+
+        .name_box {
+            background: #EDF2EA;
+            border-radius: 6px;
+            padding: 10px;
+            max-width: 100px;
+        }
+
+        .cat_add {
+            padding: 8px 20px;
+            max-width: 100px;
+            border: 2px solid #6E9357;
+            border-radius: 6px;
+        }
+
+        .mycat_namebox {
+            background: #F7F7F7;
+            border-radius: 6px;
+            padding: 14px 30px;
+            max-width: 270px;
+            width: 270px;
+            color: #787878;
+            margin-bottom : 4px;
+        }
+
+        .mycat_namebox img {
+            max-width: 20px;
+            margin-left: 10px;
+        }
+
+        .mycat_namebox.active {
+            background-color: #EDF2EA;
+            color: #231815;
+        }
+
+        @media screen and (max-width:576px) {
+
+            .sidebars_mypage {
+                width: 288px;
+                top: 135px;
+                padding-left: 0;
+                background-color: #fff;    
+                height: 900px;
+            }
+
+            .sidebar6 .pr-0 {
+                padding-right: 15px !important;
+            }
+
+            .sidebars_mypage.pr-0 {
+                padding-right: 0 !important;
+            }
+
+            .sidebar6 .mw_1152 {
+                max-width: 288px;
+                margin: 0 auto;
+            }
+
+            .m_inflex {
+                display: inline-flex;
+            }
+
+            .mypage_menu {
+                max-width: 288px;
+                width: 288px;
+            }
+
+            .mypage_menu .float-right:nth-child(1) {
+                left: 30px;
+            }
+
+            .mypage_menu .float-right:nth-child(2) {
+                left: 30px;
+            }
+
+            .mypage_menu .pt_10px {
+                padding-top: 0;
+                left: 60px;
+            }
+
+            .mycat_namebox {
+
+                text-align: center !important;
+                width: 136px;
+            }
+
+            .mycat_namebox:nth-child(2n+1) {
+                margin-right: 13px;
+            }
+
+            .mypage_menu .pt_30px {
+                padding-top: 20px;
+            }
+        }
+</style>
+ 
+<div class="container-fluid">
+        <div class="row mw_1152">
+            <!--고객센터 서브메뉴-->
+            <div class="col sidebars d-none" id="sidebar5">
+                <div class="fs_28 fw_700 m_fix">고객센터</div>
+                <div class="cs_menu mt_40px fw_700">
+                    <div class="cs_menu_w" id="cs_menu_01">
+                        <a href="/page/?M2_IDX=26802">자주 묻는 질문</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="cs_menu_02">
+                        <a href="/page/?M2_IDX=26801">약관 및 방침</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="cs_menu_03">
+                        <a href="/page/?M2_IDX=26803">반품/환불 규정</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="cs_menu_04">
+                        <a href="/coun/?M2_IDX=26800">제휴 문의</a>
+                    </div>
+                </div>
+            </div>
+            <!--인트로 서브메뉴-->
+            <div class="col sidebars d-none" id="sidebar1">
+                <div class="fs_28 fw_700 m_fix">까리 소개</div>
+                <div class="cs_menu mt_40px fw_700">
+                    <div class="cs_menu_w" id="intro_menu_01">
+                        <a href="/board/list.php?M2_IDX=26951">서비스 소개</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_02">
+                        <a href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_03">
+                        <a href="/board/list.php?M2_IDX=26059">공지사항</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_04">
+                        <a href="/board/list.php?M2_IDX=26060">이벤트</a>
+                    </div>
+                    <div class="cs_menu_w pt_30px" id="intro_menu_05">
+                        <a href="/board/list.php?M2_IDX=26061">까리 히스토리</a>
+                    </div>
+                </div>
+            </div>
+            <!--마이페이지 서브메뉴-->
+            <div class="col sidebars_mypage pr-0 d-none" id="sidebar6">
+                <div class="fs_28 fw_700 m_fix">마이페이지</div>
+                <div class="mt_40px fs_20 ">
+                    <div class="row">
+                        <div class="col">
+                            <span><span class="fw_700 point_color user_name"></span> 님</span>
+                        </div>
+                        <div class="col text-right pr-0">
+                            <span class="name_box fs_14 point_color fw_700 subscribe_month_text">구독 개월째</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mypage_menu mt_28px fw_700 m_inflex">
+                    <div>
+                        포인트
+                        <div class="float-right"><span class="point_color user_point"></span> P</div>
+                    </div>
+                    <div class="pt_10px">
+                        쿠폰
+                        <div class="float-right"><span class="point_color user_coupon"></span> 장</div>
+                    </div>
+                </div>
+
+                <div class="mt_40px">
+                    <div class="row">
+                        <div class="col fw_700">
+                            반려묘 정보
+                        </div>
+                        <div class="col text-right pr-0 point_color">
+                            <a href="/page/?M2_IDX=26058">
+                                <span class="cat_add fs_14 fw_700">추가하기</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mycat_list mt_20px">
+                </div>
+
+
+                <div class="mt_40px">
+                    <div class="row">
+                        <div class="col fw_700">
+                            내 정보
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mypage_menu mt_20px fw_700">
+                    <!--
+                    <div class="mypage_menu_btn">
+                       배송/결제방법
+                    </div>
+                    -->
+                    <a href="/my/sett.list.php">
+                        <div class="pt_30px mypage_menu_btn">
+                            주문조회
+                        </div>
+                    </a>
+                    <div class="pt_30px mypage_menu_btn">
+                        내가 쓴 리뷰
+                    </div>
+                    <div class="pt_30px mypage_menu_btn">
+                       1:1 QnA
+                    </div>
+                    <a href="/my/memb.info.php">
+                        <div class="pt_30px mypage_menu_btn">
+                            회원정보변경
+                        </div>    
+                    </a>
+                </div>
+            </div>            
+
+
+        </div>
+    </div>
+
+
+
+
+
+<header>
+    
+    <div id="navs">
+        <div class="nav_c roll">
+
+            <nav class="navbar navbar-expand-md mw_1152 fixed-top">
+                <a class="nav-link brand" href="/"><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/logo.png"
+                        alt="Logo" class="img-fluid" width="84px"></a>
+
+                <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                    <ul class="navbar-nav mr-auto">
+                    </ul>
+                    <ul class="navbar-nav " id="menu">
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="/board/list.php?M2_IDX=26951" id="navbardrop" data-toggle="dropdown">까리
+                                소개</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26951">서비스 소개</a>
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26059">공지사항</a>
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26060">이벤트</a>
+                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26061">까리 히스토리</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/page/?M2_IDX=26434" >설문조사</a>
+                           
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/shop/list.php?M2_IDX=26044">쇼핑몰</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " href="/my/cart.list.php">장바구니</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link dropdown-toggle" href="/page/?M2_IDX=26802">고객센터</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/page/?M2_IDX=26802">자주 묻는 질문</a>
+                                <a class="dropdown-item" href="/page/?M2_IDX=26801">약관 및 방침</a>
+                                <a class="dropdown-item" href="/page/?M2_IDX=26803">반품/환불 규정</a>
+                                <a class="dropdown-item" href="/coun/?M2_IDX=26800">제휴 문의</a>
+                            </div>
+                        </li>
+                        
+                        <!--로그인안했을시--->
+                        <li class="log_off nav-item">
+                            <a class="nav-link " href="/log/log.php">로그인</a>
+                        </li>
+                        <!--로그인했을시--->
+                        <li class="log_on nav-item d-none">
+                            <a class="nav-link d-flex dropdown-toggle" href="#">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_user.png" alt="" class="img-fluid ico_user" >
+                                <span class="fw_700"><span class="user_name point_color"></span> 님</span>
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_exit.png" alt="" class="img-fluid ico_exit" onclick="location.href='/lib/logoutProc.php'" >
+                            </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/page/?M2_IDX=26922">반려묘 정보</a>
+                                    <a class="dropdown-item" href="/page/?M2_IDX=26926">배송/결제방법</a>
+                                    <a class="dropdown-item" href="#">주문조회</a>
+                                    <a class="dropdown-item" href="#">내가 쓴 리뷰</a>
+                                    <a class="dropdown-item" href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a>
+                                    <a class="dropdown-item" href="/my/memb.info.php">회원정보변경</a>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!--햄붜거-->
+    <a href="#" class="hamburger-button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </a>
+    <div class="overlay">
+        <nav class="hamburger_menu">
+
+            <dl class="dl_ham_menu">
+
+                <div class="wrap_dt">
+
+                    <!--로그인안했을때 -->
+                    <div class="log_off">
+                        <dt class="dt_ham_menu back_no px-0">
+                            <a href="/memb/memb.agree.php">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ham_btn_01.png" alt=""
+                                    class="img-fluid">
+                            </a>
+                        </dt>
+                        <dt class="dt_ham_menu back_no px-0 border-0">
+                            <a href="/log/log.php">
+                                <div class="login_m point_color">로그인</div>
+                            </a>
+                        </dt>    
+                    </div>
+                    <!--로그인안했을때 -->
+
+
+                    <!--로그인했을때 -->
+                    <div class="log_on">
+                        <dt class="dt_ham_menu back_no border-0 ham_myinfo ">
+                            <span class="point_color user_name"></span> 님 안녕하세요!
+                            <span class="ham_myinfo_right">구독중</span>
+                        </dt>
+                        <dt class="dt_ham_menu back_no border-0 h_44 d-flex ">
+                            <div class="col p-0">포인트</div>
+                            <div class="col-4 text-right p-0 "><span class="point_color">3,000</span> P</div>
+                            <div class="col ">쿠폰</div>
+                            <div class="col text-right p-0"><span class="point_color">2</span> 장</div>
+                        </dt>
+                        <dt class="dt_ham_menu back_no border-0 h_44_2 d-flex">
+                            <div class="col p-0 point_color">
+                                <a href="">설문 결과</a>
+                            </div>
+                            <div class="col text-center point_color">
+                                <a href="">구독 정보</a>
+                            </div>
+                            <div class="col text-right p-0 point_color">
+                                <a href="">주문 조회</a>
+                            </div>
+                        </dt>
+                    </div>
+                    <!--로그인했을때 -->
+
+                    <dt class="dt_ham_menu">
+                        까리 소개
+                    </dt>
+                    <dd class="dd_ham_menu">
+                        <ul>
+                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26951">서비스 소개</a></li>
+                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a></li>
+                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26059">공지사항</a></li>
+                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26060">이벤트</a></li>
+                            <li><a href="/board/list.php?M2_IDX=26061">까리 히스토리</a></li>
+                        </ul>
+                    </dd>
+
+
+                    <dt class="dt_ham_menu back_no">
+                        <a href="/page/?M2_IDX=26434">
+                            설문조사
+                        </a>
+                    </dt>
+                    <dt class="dt_ham_menu back_no">
+                        <a href="/shop/list.php?M2_IDX=26044">
+                            쇼핑몰
+                        </a>
+                    </dt>
+                    <dt class="dt_ham_menu  back_no">
+                        <a href="/my/cart.list.php">
+                            장바구니
+                        </a>
+                    </dt>
+
+                    <dt class="dt_ham_menu">
+                        고객센터
+                    </dt>
+                    <dd class="dd_ham_menu">
+                        <ul>
+                            <li class="pb_20px"><a href="/page/?M2_IDX=26802">자주 묻는 질문</a></li>
+                            <li class="pb_20px"><a href="/page/?M2_IDX=26801">약관 및 방침</a></li>
+                            <li class="pb_20px"><a href="/page/?M2_IDX=26803">반품/환불 규정</a></li>
+                            <li><a href="/coun/?M2_IDX=26800">제휴 문의</a></li>
+                        </ul>
+                    </dd>
+
+                    <div class="log_on">
+                        <dt class="dt_ham_menu ">
+                            마이페이지
+                        </dt>
+                        <dd class="dd_ham_menu ">
+                            <ul>
+                              <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
+                                <li class="pb_20px"><a href="">배송/결제방법</a></li>
+                                <li class="pb_20px"><a href="">주문조회</a></li>
+                                <li class="pb_20px"><a href="">내가 쓴 리뷰</a></li>
+                                <li class="pb_20px"><a href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a></li>
+                                <li><a href="/my/memb.info.php">회원정보변경</a></li>
+                            </ul>
+                        </dd>
+                    </div>
+                </div>
+            </dl>
+        </nav>
+    </div>
+</header>
+<script>
+const apikey = "4kzsu2j6xklbn6s8kv5c1kteopqg0por";
+const serverUrl = "https://api.ggaridev.site";
+
+$(() => {
+    
+    //로그인처리
+    if (user.check()) {
+        user.info();
+        $('.logged_in').css({ display: 'none' });
+        $('.logged_out').css({ display: 'block' });
+        $('.username_text').html(user.name);
+    }
+
+    /*행버거*/
+    let gnbSlide = false;// 메뉴가 열려 있는지 확인
+    var scroll = util.getCurrentScroll();
+    $('.hamburger-button').on('click', function (event) {
+        event.preventDefault();
+        $(this).toggleClass('active');
+        $('.overlay').toggleClass('visible');
+    });
+});
+
+var user = {    
+    id: null,
+    name: null,
+    check: () => {
+        let isLogin = false; 
+        $.ajax({
+            url: '/api/login.nx',
+            data: { "KEY": apikey, "SESS_ID": util.getSessionId() },
+            type: 'POST',
+            async: false
+        }).done((data) => {
+            if (data.success === true) {
+                console.log('login Success!');
+                isLogin = true;
+            } else {
+                console.log('login Nothing!');
+            }
+        }).fail((jqXHR, textStatus, errorThrown) => {
+            console.log('login Error!' + textStatus + " : " + errorThrown);
+        });
+        return isLogin;
+    },
+
+    info: () => {
+        let pr = $.ajax({
+            url: '/api/info.nx',
+            data: { "KEY": apikey, "SESS_ID": util.getSessionId(), "param": "id,name,level" },
+            type: "POST",
+            async: false,
+        }).done(function (data) {
+            if (data.success === true) {
+                console.log('UserAuth Success!');
+                user.id = data.items.id;
+                user.name =data.items.name;
+                user.level = data.items.level;
+                $('.user_name').html(user.name);
+                $('.log_off').addClass('d-none');
+                $('.log_on').removeClass('d-none');
+                subscribe.init();
+            } else {
+                console.log('login Nothing!');
+                $('.log_off').removeClass('d-none');
+                $('.log_on').addClass('d-none');
+            }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log('login Error!' + textStatus + " : " + errorThrown);
+        });
+        return pr;
+    },
+};
+
+var subscribe = {
+    init : ()=>{
+        $.ajax(util.getAjaxSetting(serverUrl+'/api/subscribe/olly/'+user.id))
+        .done((data)=>{
+            console.log(data);
+            
+        }).fail((jqXHR, textStatus, errorThrown)=> {
+            console.log('scribe Error!' + textStatus + " : " + errorThrown);
+        });
+    }
+}
+
+var acodian = {
+
+click: function (target) {
+    var _self = this,
+        $target = $(target);
+    $target.on('click', function () {
+        var $this = $(this);
+        if ($this.next($(".dd_ham_menu")).css('display') == 'none') {
+            $(".dd_ham_menu").slideUp();
+            _self.onremove($target);
+
+            $this.addClass('on');
+            $this.next().slideDown();
+        } else {
+            $(".dd_ham_menu").slideUp();
+            _self.onremove($target);
+
+        }
+    });
+},
+onremove: function ($target) {
+    $target.removeClass('on');
+}
+
+};
+acodian.click('dt');
+
+
+var species = {
+    data : null,
+    getSpeciesData : () => {
+        $.ajax({
+            url : serverUrl + "/api/species",
+            type : 'GET',
+            dataType : "JSONP",
+            async : false,
+            callback : 'callback'
+        }).done((data)=>{
+            species.data = data;
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('No Species!' + textStatus + " : " + errorThrown);
+        })
+    },
+    getName : (id) => {
+        let name;
+        $.each(species.data, (i, item)=>{
+            if(item.id == id){
+                name = item.name;
+                return false;
+            }
+        });
+        return name;
+    }
+};
+
+var cat = {
+    cats : [],
+    getCatsData : () => {
+        cat.cats.length = 0;
+        let pr = $.ajax(util.getAjaxSetting(serverUrl+'/api/cat/iduser/'+user.id)).done((data)=>{
+            cat.cats = data;
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('No Cat Here!' + textStatus + " : " + errorThrown);
+        });
+        return pr;
+    },
+
+    getCatWithDiseases : (id) => {
+        cat.catPromise = $.ajax(util.getAjaxSetting(serverUrl+'/api/cat/diseases'+id)).done((data)=>{
+            cat.cats.find(e => e.id == data.id);
+            cat.cats = data;
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('No Cat Here!' + textStatus + " : " + errorThrown);
+        });
+    }
+
+
+};
+
+
+var util = {
+    ajaxSetting : {
+        get : {
+            type : "GET",
+            dataType : "JSONP",
+            async : false,
+            callback : 'callback',
+        },
+        post : {
+            type : "POST",
+            async : false,
+        }
+    },
+
+    getAjaxSetting : (url, data) =>{
+        let object = util.ajaxSetting.get;
+        object.url = url;
+        object.data = data;
+        return object;
+    },
+
+    getParamFromUrl : (key) => {
+        let search = location.search.substring(1);
+        let object = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+        let param = object[key];
+//        object.find(e=> e.id == q)
+        return param;
+    },
+
+    isEmpty : (str) => {
+    if(typeof str === "undefined" || str === null || str === "")
+        return true;
+    else
+        return false ;
+    },
+    getSessionId : () => {
+        return document.cookie.match('nx_session=([^;]*)')[1];
+    },
+    getCurrentScroll : () => {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    },    
+};
+
+
+
+
+</script>

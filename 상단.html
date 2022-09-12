@@ -703,6 +703,34 @@ var util = {
         }
     },
 
+    getDisStr : (id) =>{
+        let str;
+        switch(id){
+            case 1 : str = '관절'; break;
+            case 2 : str = '릴렉스'; break;
+            case 3 : str = '구강'; break;
+            case 4 : str = '헤어볼'; break;
+            case 5 : str = '요로'; break;
+            case 6 : str = '장'; break;
+            case 7 : str = '다이어트'; break;
+        }    
+        return str;
+    },
+
+    getCategoryStr : (id) =>{
+        let str;
+        switch(id){
+            case 1 : str = '스틱형'; break;
+            case 2 : str = '캔형'; break;
+            case 3 : str = '동결/건조형'; break;
+            case 4 : str = '통살형'; break;
+            case 5 : str = '스낵형'; break;
+            case 6 : str = '파우치형'; break;
+            case 7 : str = '덴탈 간식'; break;
+        }    
+        return str;
+    },
+
     getAjaxSetting : (url, data) =>{
         let object = util.ajaxSetting.get;
         object.url = url;
@@ -729,7 +757,14 @@ var util = {
     },
     getCurrentScroll : () => {
     return window.pageYOffset || document.documentElement.scrollTop;
-    },    
+    },
+
+    won3Comma : (str) => {
+        if(Number.isInteger(str)){
+            str = str.toString();
+        }
+        return "￦"+(str.replace(/\B(?=(\d{3})+(?!\d))/g, ','));        
+    }
 };
 
 
