@@ -484,7 +484,7 @@
         },
 
         getCatById: () => {
-            var pr = $.ajax(util.getAjaxSetting(serverUrl + "/api/cat/" + util.getParamFromUrl('id'))).done((data) => {
+            var pr = $.ajax(util.getAjaxSetting(serverUrl + "/api/cat/idcat/" + util.getParamFromUrl('id'))).done((data) => {
                 console.log(data);
                 if (util.isEmpty(data)) {
                     alert('잘못된 접근입니다.');
@@ -546,6 +546,10 @@
         selectCycle : (id, cycle) =>{
             calory.selected[id] = cycle;
             console.log(calory.selected);
+            calory.DrawKcalCounter();
+        },
+
+        recommendCycle : () => {
             calory.DrawKcalCounter();
         },
 

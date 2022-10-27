@@ -5,8 +5,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<link id="topSwiperCss" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script id="topSwiperJs" src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
 <script src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sidebar.js"></script>
 
@@ -230,7 +230,7 @@
                 <div class="fs_28 fw_700 m_fix">까리 소개</div>
                 <div class="cs_menu mt_40px fw_700">
                     <div class="cs_menu_w" id="intro_menu_01">
-                        <a href="/board/list.php?M2_IDX=26951">서비스 소개</a>
+                        <a href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299">서비스 소개</a>
                     </div>
                     <div class="cs_menu_w pt_30px" id="intro_menu_02">
                         <a href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
@@ -261,14 +261,16 @@
                 </div>
 
                 <div class="mypage_menu mt_28px fw_700 m_inflex">
-                    <div>
-                        포인트
-                        <div class="float-right"><span class="point_color user_point"></span> P</div>
-                    </div>
-                    <div class="pt_10px">
-                        쿠폰
-                        <div class="float-right"><span class="point_color user_coupon"></span> 장</div>
-                    </div>
+                    <a href="/my/coupon.list.php">
+                        <div>
+                            포인트
+                            <div class="float-right"><span class="point_color user_point"></span> P</div>
+                        </div>
+                        <div class="pt_10px">
+                            쿠폰
+                            <div class="float-right"><span class="point_color user_coupon"></span> 장</div>
+                        </div>    
+                    </a>
                 </div>
 
                 <div class="mt_40px">
@@ -310,9 +312,11 @@
                     <div class="pt_30px mypage_menu_btn">
                         내가 쓴 리뷰
                     </div>
-                    <div class="pt_30px mypage_menu_btn">
-                       1:1 QnA
-                    </div>
+                    <a href="/cons/list.nx?M2_IDX=26065">
+                        <div class="pt_30px mypage_menu_btn">
+                            1:1 QnA
+                         </div>     
+                    </a>
                     <a href="/my/memb.info.php">
                         <div class="pt_30px mypage_menu_btn">
                             회원정보변경
@@ -343,10 +347,10 @@
                     </ul>
                     <ul class="navbar-nav " id="menu">
                         <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle" href="/board/list.php?M2_IDX=26951" id="navbardrop" data-toggle="dropdown">까리
+                            <a class="nav-link dropdown-toggle" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299" id="navbardrop" data-toggle="dropdown">까리
                                 소개</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/board/list.php?M2_IDX=26951">서비스 소개</a>
+                                <a class="dropdown-item" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299">서비스 소개</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26059">공지사항</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26060">이벤트</a>
@@ -360,7 +364,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="/shop/list.php?M2_IDX=26044">쇼핑몰</a>
+                            <a class="nav-link " href="/shop/list.php?M2_IDX=27038">쇼핑몰</a>
                         </li>
 
                         <li class="nav-item">
@@ -391,7 +395,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/page/?M2_IDX=26922">반려묘 정보</a>
                                     <a class="dropdown-item" href="/page/?M2_IDX=26926">배송/결제방법</a>
-                                    <a class="dropdown-item" href="#">주문조회</a>
+                                    <a class="dropdown-item" href="/my/sett.list.php">주문조회</a>
                                     <a class="dropdown-item" href="#">내가 쓴 리뷰</a>
                                     <a class="dropdown-item" href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a>
                                     <a class="dropdown-item" href="/my/memb.info.php">회원정보변경</a>
@@ -440,11 +444,11 @@
                             <span class="point_color user_name"></span> 님 안녕하세요!
                             <span class="ham_myinfo_right">구독중</span>
                         </dt>
-                        <dt class="dt_ham_menu back_no border-0 h_44 d-flex ">
+                        <dt class="dt_ham_menu back_no border-0 h_44 d-flex" onclick="location.href='/my/coupon.list.php'">
                             <div class="col p-0">포인트</div>
                             <div class="col-4 text-right p-0 "><span class="point_color">3,000</span> P</div>
                             <div class="col ">쿠폰</div>
-                            <div class="col text-right p-0"><span class="point_color">2</span> 장</div>
+                            <div class="col text-right p-0"><span class="point_color">2</span> 장</div>    
                         </dt>
                         <dt class="dt_ham_menu back_no border-0 h_44_2 d-flex">
                             <div class="col p-0 point_color">
@@ -465,7 +469,7 @@
                     </dt>
                     <dd class="dd_ham_menu">
                         <ul>
-                            <li class="pb_20px"><a href="/board/list.php?M2_IDX=26951">서비스 소개</a></li>
+                            <li class="pb_20px"><a href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299">서비스 소개</a></li>
                             <li class="pb_20px"><a href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a></li>
                             <li class="pb_20px"><a href="/board/list.php?M2_IDX=26059">공지사항</a></li>
                             <li class="pb_20px"><a href="/board/list.php?M2_IDX=26060">이벤트</a></li>
@@ -480,7 +484,7 @@
                         </a>
                     </dt>
                     <dt class="dt_ham_menu back_no">
-                        <a href="/shop/list.php?M2_IDX=26044">
+                        <a href="/shop/list.php?M2_IDX=27038">
                             쇼핑몰
                         </a>
                     </dt>
@@ -510,7 +514,7 @@
                             <ul>
                               <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
                                 <li class="pb_20px"><a href="">배송/결제방법</a></li>
-                                <li class="pb_20px"><a href="">주문조회</a></li>
+                                <li class="pb_20px"><a href="/my/sett.list.php">주문조회</a></li>
                                 <li class="pb_20px"><a href="">내가 쓴 리뷰</a></li>
                                 <li class="pb_20px"><a href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a></li>
                                 <li><a href="/my/memb.info.php">회원정보변경</a></li>
@@ -534,6 +538,8 @@ $(() => {
         $('.logged_in').css({ display: 'none' });
         $('.logged_out').css({ display: 'block' });
         $('.username_text').html(user.name);
+    }else{
+        
     }
 
     /*행버거*/
@@ -562,6 +568,8 @@ var user = {
                 isLogin = true;
             } else {
                 console.log('login Nothing!');
+                $('.log_off').removeClass('d-none');
+                $('.log_on').addClass('d-none');           
             }
         }).fail((jqXHR, textStatus, errorThrown) => {
             console.log('login Error!' + textStatus + " : " + errorThrown);
@@ -585,10 +593,8 @@ var user = {
                 $('.log_off').addClass('d-none');
                 $('.log_on').removeClass('d-none');
                 subscribe.init();
-            } else {
-                console.log('login Nothing!');
-                $('.log_off').removeClass('d-none');
-                $('.log_on').addClass('d-none');
+            }else{
+                console.log('Info Error');
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log('login Error!' + textStatus + " : " + errorThrown);

@@ -1,0 +1,204 @@
+.nx-prefix.sub-content {
+    padding-bottom: 100px;
+    background: #fff;
+}
+.nx-prefix.sub-content.bgcolor1 {
+    background: #f3f3f3;
+}
+.nx-prefix.sub-content .inner-static {
+    position: relative;
+    max-width: 1152px;
+    min-height: 100vh;
+    margin: 0 10px;
+    padding-left: 300px;
+    padding-top : 230px;
+}
+.nx-prefix.sub-content .inner-static::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nx-prefix.sub-content .consult-detail-tit {
+    padding: 30px 0;
+    border: 1px solid;
+    border-color: #666 transparent #ccc transparent;
+    text-align: center;
+}
+.nx-prefix.sub-content .consult-detail-tit .date,
+.nx-prefix.sub-content .consult-detail-tit .tit {
+    display: block;
+    line-height: 1.25;
+}
+.nx-prefix.sub-content .consult-detail-tit .tit {
+    margin-bottom: 10px;
+    color: #3a3a3a;
+    font-weight: 500;
+    font-size: 24px;
+}
+.nx-prefix.sub-content .consult-detail-tit .date {
+    color: #666;
+    font-size: 16px;
+}
+.nx-prefix.sub-content .consult-detail-tit .inner-static {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 10px;
+}
+.nx-prefix.sub-content .consult-detail-tit .inner-static::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nx-prefix.sub-content .consult-view-area {
+    border-bottom: 1px solid #ccc;
+}
+.nx-prefix.sub-content .consult-view-area .consult-view-content {
+    padding: 20px 20px 30px;
+}
+.nx-prefix.sub-content .consult-view-area .consult-file-area {
+    margin-bottom: 30px;
+    padding: 18px 20px;
+    background: #f3f3f3;
+}
+.nx-prefix.sub-content .consult-view-area .file {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding-left: 26px;
+    background: url("https://cdn.nxcloud.biz/site/skin01/imgs/ico/ico_file.png") no-repeat 0 center/16px auto;
+    font-size: 16px;
+    line-height: 24px;
+}
+.nx-prefix.sub-content .consult-view-area .inner-static {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 10px;
+}
+.nx-prefix.sub-content .consult-view-area .inner-static::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nx-prefix.sub-content .consult-view-area2 {
+    border: solid 1px #CCCCCC;
+    padding: 20px;
+}
+.nx-prefix.sub-content .consult-view-area2 .consult-file-area {
+    margin-bottom: 30px;
+    padding: 18px 20px;
+    background: #f3f3f3;
+}
+.nx-prefix.sub-content .consult-view-area2 .file {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding-left: 26px;
+    background: url("https://cdn.nxcloud.biz/site/skin01/imgs/ico/ico_file.png") no-repeat 0 center/16px auto;
+    font-size: 16px;
+    line-height: 24px;
+}
+.nx-prefix.sub-content .consult-view-area2 .inner-static {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 10px;
+}
+.nx-prefix.sub-content .consult-view-area2 .inner-static::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nx-prefix.sub-content .btn-area {
+    margin: 30px 0;
+    text-align: center;
+}
+.nx-prefix.sub-content .btn-area .btn-edit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    box-sizing: border-box;
+    vertical-align: top;
+    transition: all 0.25s linear;
+    width: 140px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 16px;
+    background: #6E9357;
+    color: #fff;
+    border-radius: 4px;
+}
+.nx-prefix.sub-content .btn-area .btn-edit:hover {
+    background: rgb(23, 146, 78);
+}
+.nx-prefix.sub-content .btn-area .btn-del {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    box-sizing: border-box;
+    vertical-align: top;
+    transition: all 0.25s linear;
+    width: 140px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 16px;
+    background: #EB5757;
+    color: #fff;
+    border-radius: 4px;
+}
+.nx-prefix.sub-content .btn-area .btn-del:hover {
+    background: #666;
+}
+.nx-prefix.sub-content .btn-area .btn-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    box-sizing: border-box;
+    vertical-align: top;
+    transition: all 0.25s linear;
+    width: 140px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 16px;
+    background: #878CA3;
+    color: #fff;
+    border-radius: 4px;
+}
+.nx-prefix.sub-content .btn-area .btn-list:hover {
+    background: #666;
+}
+@media print, screen and (min-width: 1200px) {
+    .nx-prefix.sub-content .inner-static {
+        margin: 0 auto;
+    }
+}
+@media print, screen and (max-width: 768px) {
+    .nx-prefix.sub-content {
+        padding: 0 0 50px;
+    }
+    .nx-prefix.sub-content .inner-static {
+        margin: 0 15px;
+        padding-top : 100px;
+        padding-left : 0px;
+    }
+    .nx-prefix.sub-content .consult-view-area+.btn-area {
+        margin: 60px 0;
+    }
+    .nx-prefix.sub-content .btn-area .btn-del,
+    .nx-prefix.sub-content .btn-area .btn-edit,
+    .nx-prefix.sub-content .btn-area .btn-list {
+        width: 30%;
+    }
+}

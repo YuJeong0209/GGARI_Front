@@ -1,0 +1,99 @@
+<div class="nx-prefix sub-content">
+    <div class="content-container">
+        <div class="inner-static">
+
+        	<!-- 안내타이틀 -->
+            <div class="consult-spot">
+                <p class="lead">[##_help_lead_##]</p>
+            </div>
+            <!-- //안내타이틀 -->
+
+            <!-- 검색 -->
+            <s_search>
+                <div class="consult-search">
+                    <div class="input-box">
+                        <input type="text" name="[##_search_name_##]" id="[##_search_id_##]" value="[##_search_value_##]" placeholder="검색어를 입력해 주세요." class="input-search int2"
+                            onkeypress="if (event.keyCode == 13) { requestSearch('.input-search') }">
+                    </div>
+                    <div class="btn-box">
+                        <a href="javascript: void(0);" onclick="requestSearch('.input-search')" class="btn-search">
+                            <span class="ico">검색</span>
+                        </a>
+                    </div>
+                </div>
+            </s_search>
+            <!-- //검색 -->
+          
+            <!-- 카테고리 -->
+            <!--
+            <s_cate>
+                <div class="consult-category">
+                  	<s_cate_cur>
+                        <div class="open-category">
+                            <a href="javascript: void(0);" onClick="$(this).parent().parent().find('.lst-category').toggleClass('active');">
+                                <strong>[##_cate_rep_link_text_##]</strong><i class="arr"></i>
+                            </a>
+                        </div>
+                    </s_cate_cur>
+                    <ul class="lst-category">
+                        <s_cate_rep>
+                            <li>
+                                <a class="[##_cate_active_##]" href="javascript: void(0);"
+                                   onclick="document.getElementById('CCL_IDX').value = '[##_cate_id_##]';requestSearch({ 'cate1' : '#CCL_IDX' })" >[##_cate_name_##]</a>
+                            </li>
+                        </s_cate_rep>
+                    </ul>
+                </div>
+            </s_cate>
+            -->
+            <!-- //카테고리 -->
+
+            <!-- 리스트 -->
+            <div class="nx-prefix consult-list-area">
+                <s_list>
+                    <div class="nx-prefix consult-list">
+                        <ul class="lst-basic-list">
+                            <s_list_rep>
+                                <li>
+                                    <a [##_item_detail_link_##]>
+                                        <div class="cnt">
+                                            <dl class="desc">
+                                                <dt class="category">[##_item_category_##]</dt>
+                                                <dd class="tit">[##_item_title_##]</dd>
+                                            	<dd class="date">[##_item_regdate_##]</dd>
+                                            </dl>
+                                          	<span class="status">[##_item_status_##]</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </s_list_rep>
+                            <s_nolist>
+                                <li class="no-data">검색된 결과가 없습니다.</li>
+                            </s_nolist>
+                        </ul>
+                    </div>
+          			
+                  	<s_list_btn_add>
+                        <div class="btn-area">
+                            <a [##_btn_add_##] class="btn-write">글쓰기</a>
+                        </div>
+                    </s_list_btn_add>
+                </s_list>
+                
+                <s_paging>
+                    <div class="pagenate">
+                        <a [##_link_prev_##] class="btn-prev [##_no_more_prev_##]">이전 페이지로 이동</a>
+                        <div class="inner-wrap">
+                            <s_paging_rep>
+                                <a [##_paging_rep_link_##] class="[##_paging_rep_link_num_active_##]" style="cursor: pointer;">[##_paging_rep_link_num_##]</a>
+                            </s_paging_rep>
+                        </div>
+                        <a [##_link_next_##] class="btn-next [##_no_more_next_##]">다음 페이지로 이동</a>
+                    </div>
+                </s_paging>
+            </div>
+            <!-- //리스트 -->
+
+        </div>
+    </div>
+</div>

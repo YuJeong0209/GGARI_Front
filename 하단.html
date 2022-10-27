@@ -4,20 +4,20 @@
             <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/logo.png" alt="" class="img-fluid ">
         </div>
         <div class="col text-right">
-            <a href="#"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/kk.png" alt=""
+            <a href="http://pf.kakao.com/_xlygdxj"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/kk.png" alt=""
                     class="img-fluid mr-2"></a>
-            <a href="#"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/fb.png" alt=""
+            <a href="https://www.facebook.com/profile.php?id=100083209522654"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/fb.png" alt=""
                     class="img-fluid mr-2"></a>
-            <a href="#"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/in.png" alt="" class="img-fluid"></a>
+            <a href="https://www.instagram.com/ggari_official/"><img src="https://ggari.s3.ap-northeast-2.amazonaws.com/in.png" alt="" class="img-fluid"></a>
         </div>
     </div>
 
     <div class="row mw_1152 mt-4">
         <div class="col fs_12 letter0 line_22 fw_400">
-            서울시 송파구 충민로 52, 가든파이브 웍스 A-201동<br>
-            사업자등록번호: 000-00-00000  통신판매업신고: 000-00-00000<br>
-            대표: 000   개인정보책임자: 000<br>
-            Email: info@info.com
+            충청남도 천안시 동남구 병천면 충절로 1600<br>
+            사업자등록번호: 272-48-00761  통신판매업신고: 제 2022-충남천안-2200호<br>
+            대표: 오유정   개인정보책임자: 오유정<br>
+            Email: iloveoyj0209@naver.com
         </div>
     </div>
 
@@ -26,26 +26,67 @@
             Copyright©2022 까리박스 All rights reserved.
         </div>
         <div class="col text-right fs_12 fw_400">
-            <a href="#">이용약관</a> l 
-            <a href="#">개인정보처리방침</a> l 
-            <a href="#">고객센터</a>
+            <a href="/page/?M2_IDX=26801">이용약관</a> l 
+            <a href="/page/?M2_IDX=26801">개인정보처리방침</a> l 
+            <a href="/page/?M2_IDX=26802">고객센터</a>
         </div>
     </div>
 </footer>
 
 
 <script type="text/javascript">
-    $(() => {
+       $(() => {
         if ($(window).width() > 768) {
             if (location.href.includes('page') ||
-                location.href.includes('coun') ||
+                location.href.includes('cons') ||
                 location.href.includes('board') ||
-                location.href.includes('shop') ) 
+                location.href.includes('cart') ||
+                location.href.includes('coupon') ||
+                location.href.includes('shop') 
+            )
             {
                 $('.content_wrap1').css('padding-top', '100px')
             }
         }
+
+        //각종 마이페이지 좌우좁힘
+        if(
+            location.href.includes('coupon') ||
+            location.href.includes('sett') ||
+            location.href.includes('memb')
+        )
+        {
+            $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : '100vh'});
+
+        }
+
+        //PC판 마이페이지 사이드바 대책
+        if($(window).width() > 578 && location.href.includes('sett')){
+            $('.content_wrap1').css({paddingLeft : 300, paddingTop : 250});
+        }
+
+        if ($(window).width() < 768) {
+            if (location.href.includes('26434') ||
+                location.href.includes('coupon')
+            ) 
+            {
+                $('.content_wrap1').css('padding-top', '80px')
+            }
+        }
+
+        //쇼핑몰 마개조
+        if(location.href.includes('shop/list')){
+            let $firstCate = $('.category-d2').children().eq(0);
+            let $a = $('<a>').attr({href : '/shop/list.php?M2_IDX=27038'}).append($('<strong>').html('전체'));
+            let $li = $('<li>').append($a);
+            $firstCate.before($li);
+            $('.category-d2>li').css({width : 128});
+        }
+
+         //장바구니 마개조
+         if(location.href.includes('cart')){
+            $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');            
+        }
     });
-
-
+    
 </script>

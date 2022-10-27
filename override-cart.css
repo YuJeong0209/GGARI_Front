@@ -1,0 +1,205 @@
+
+.cls_sub_bg{
+    background : #F6F6F6;    
+}
+
+.content_wrap2{
+    padding-top : 150px;
+    max-width : 1152px !important;
+}
+
+.my-tab-wrap.mb30{
+    display: none;
+}
+
+.tit_shop.fL{
+    font-size:28px;
+    font-weight: 700;  
+    margin-bottom : 40px;  
+}
+
+.cart_item li{
+    background-color: white;    
+    height: 150px;
+}
+
+.cart_item li .name {
+    font-size: 18px;
+    color: #787878;
+}
+
+
+/* 어차피 안먹히더라 ㅂㄷㅂㄷ
+.cart_item li .img-view {
+    top : 26px;
+    left : 94px;
+}
+
+.cart_item li .img-view img {
+    width : 90px;
+    height : 90px;
+}
+*/
+
+.btn_area.mt20.taC :first-child {
+    background-color: white;
+    font-size : 0px;
+    background-image : url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/button_order.png");
+    width: 560px;
+    height: 80px;
+    border-radius: 40px;
+    margin-bottom: 60px;
+}
+
+.btn_area.mt20.taC :last-child {
+    display: none;
+}
+
+
+
+
+#frmOrder .tit_shop:nth-child(3){
+    display: none;
+}
+
+#frmOrder p.fR {
+    display: none;
+}
+
+
+.choice_item.pre-billing-price{
+    border-top : none;
+}
+
+.choice_item.pre-billing-price > li .ofH:nth-of-type(1) {
+    display: none;
+}
+
+.choice_item.pre-billing-price > li .ofH {
+    display: block;
+    margin-top: 20px;
+}
+
+.ofH.pre-billing-second{
+    width: 1152px;
+    height: 100px;
+    font-size: 20px;
+    line-height: 100px;    
+    border-radius: 20px;
+    background: white;
+}
+
+.choice_item.pre-billing-price li .pre-billing-second div {
+    font-weight: 700;
+    padding-left : 94px;
+    padding-right : 750px;    
+    padding-top : 0px;
+    padding-bottom : 0px;
+}
+
+.ofH.pre-total-price{
+    width : 1152px;
+    height : 100px;
+    line-height: 100px;    
+    font-size : 22px;
+    border-radius: 20px;
+    background : white;
+    border : #6E9357 1px solid;
+}
+
+.choice_item.pre-billing-price li .pre-total-price div {
+    font-weight: 700;
+    padding-top : 0px;
+    padding-bottom : 0px;
+    padding-left : 90px;
+    padding-right : 645px;
+    color : #6E9357;
+    border-top : none;
+}
+
+
+@media screen and (max-width: 576px ) {
+
+    .content_wrap2{
+        max-width : 100% !important;
+        padding-top : 250px;
+        padding-right : 36px;
+        padding-left : 36px;
+    }    
+    
+    .cart_item li {
+        height : auto;
+    }
+
+    
+    .ofH.pre-billing-second {
+        width : 100%;
+        height : 76px;
+        line-height : 76px;
+    }
+
+    .choice_item.pre-billing-price li{
+        float: none;
+        display: block;
+        padding : 0px;        
+    }
+        
+    .cart_item li .name {
+        font-size : 14px;
+    }
+    
+    .choice_item.pre-billing-price li .pre-billing-second div:first-child {
+        font-size : 14px;
+        font-weight: 700;
+        position : absolute;
+        padding : 0px;
+        left : 24px;
+    }
+
+    .choice_item.pre-billing-price li .pre-billing-second div:last-child {
+        font-size : 14px;
+        font-weight: 700;
+        position : absolute;
+        padding : 0px;
+        right : 24px;
+    }
+
+
+    .ofH.pre-total-price {
+        width : 100%;
+        height : 76px;
+        line-height : 76px;
+    }
+
+    .choice_item.pre-total-price li{
+        float: none;
+        display: block;        
+    }
+        
+    .choice_item.pre-billing-price li .pre-total-price div:first-child {
+        font-size : 14px;
+        font-weight: 700;
+        position : absolute;
+        padding : 0px;
+        left : 24px;
+    }
+
+    .choice_item.pre-billing-price li .pre-total-price div:last-child {
+        font-size : 14px;
+        font-weight: 700;
+        position : absolute;
+        padding : 0px;
+        right : 24px;
+    }
+
+    .btn_area.mt20.taC :first-child {
+        background-color: white;
+        font-size: 0px;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/button_order.png);
+        background-size: cover;
+        width: 100%;
+        height: 44px;
+        border-radius: 40px;
+        margin-bottom: 60px;
+    }
+}

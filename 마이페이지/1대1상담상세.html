@@ -1,0 +1,80 @@
+<!-- 서브 콘텐츠 : 멀티보드 상세페이지 start -->
+<div class="nx-prefix sub-content">
+
+    <!-- 서브 콘텐츠 내용 start -->
+    <div class="content-container">
+        <div class="inner-static">
+
+            <s_cons_common>
+                <!-- 상담 세부페이지 타이틀 start -->
+                <div class="consult-detail-tit">
+                    <span class="cate">
+                        [##_item_category_##]
+                    </span>
+                    <h4 class="tit">[##_item_title_value_##]</h4>
+                    <span class="date">[##_item_regdate_##]</span>
+                </div>
+                <!-- 상담 세부페이지 타이틀 end -->
+
+                <!-- 상담 질문 내용 영역 start -->
+                <div class="consult-view-area">
+                    <div class="consult-view-content">
+                        [##_item_content_value_##]
+                    </div>
+                  	<s_file>
+                      	<div class="consult-file-area">
+                            <p class="clip" />
+                            [##_item_file_value_##]
+                        </div>
+                  	</s_file>
+                </div>
+                <!-- 상담 질문 내용 영역 end -->
+            </s_cons_common>
+
+            <!-- 상담 답변 내용 영역 start -->
+            <s_reply>
+                <div class="consult-view-area2">
+                    <div class="consult-view-content">
+                        [##_item_content_value_##]
+                    </div>
+                  	<s_reply_file>
+                      	<div class="consult-file-area">
+                            <p class="clip" />
+                            [##_item_file_value_##]
+                        </div>
+                  	</s_reply_file>
+                </div>
+            </s_reply>
+            <!-- 상담 답변 내용 영역 end -->
+
+            <!-- 버튼 영역 start -->
+            <div class="btn-area">
+                <s_btn>
+                    <!-- 편집 버튼 -->
+                    <s_btn_edit>
+                        <a [##_href_edit_##] class="btn-edit">수정</a>
+                    </s_btn_edit>
+
+                    <!-- 삭제 버튼 -->
+                    <s_btn_del>
+                        <a [##_href_del_##] class="btn-del">삭제</a>
+                    </s_btn_del>
+
+                    <!-- 목록 버튼 -->
+                    <a [##_href_list_##] class="btn-list">목록</a>
+                </s_btn>
+            </div>
+            <!-- 버튼 영역 end -->
+
+            <!-- 댓글 영역 start -->
+            <s_cmt>
+                <iframe id="if_cmt" name="if_cmt" src="[##_s_cmt_link_##]" width="100%"></iframe>
+            </s_cmt>
+            <!-- 댓글 영역 end -->
+
+        </div>
+    </div>
+    <!-- 서브 콘텐츠 내용 end -->
+
+</div>
+<!-- 서브 콘텐츠 : 멀티보드 상세페이지 end -->

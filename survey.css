@@ -578,6 +578,56 @@
 .line_14 {
 	line-height: 14px;
 }
+
+#fatty_area{
+	background-color: #EDF2EA;
+	height : 60px;
+	border-radius : 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.fat_btns{
+	width : 190px;
+	height : 232px;
+	border-radius: 10px;
+	background-size: contain;	
+}
+
+
+
+
+#fat1_label{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty1.png');
+}
+#fat2_label{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty2.png');
+}
+#fat3_label{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty3.png');
+}
+#fat4_label{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty4.png');
+}
+#fat5_label{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty5.png');
+}
+#fat1_label.active{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty1a.png');
+}
+#fat2_label.active{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty2a.png');
+}
+#fat3_label.active{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty3a.png');
+}
+#fat4_label.active{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty4a.png');
+}
+#fat5_label.active{
+	background-image : url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty5a.png');
+}
+
 @media screen and (max-width:576px) {
 
 	
@@ -733,6 +783,7 @@
 		font-size: 14px;
 		font-weight: 400;
 		padding: 15px 20px;
+		width : 321px;
 	}
 
 	.select, .select02, .select03 {

@@ -1299,19 +1299,19 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700 dt_snack_last">
                                 기타
-                                <div id="name_slot_1_99" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_1_8" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
-                                <div id="snack_swiper_1_99" class="swiper">
+                                <div id="snack_swiper_1_8" class="swiper">
                                     <div class="swiper-wrapper"></div>
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
 
                                 <div class="check_custom text-right pr-7 pt_20px">
-                                    <input type="checkbox" name="not_select_1_99" id="not_select_1_99"
-                                        onclick="diagnosis.unselectCategory(1, 99)">
-                                    <label for="not_select_1_99">
+                                    <input type="checkbox" name="not_select_1_8" id="not_select_1_8"
+                                        onclick="diagnosis.unselectCategory(1, 8)">
+                                    <label for="not_select_1_8">
                                         선택하지 않을래요
                                     </label>
                                 </div>
@@ -1414,19 +1414,19 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700 dt_snack_last">
                                 기타
-                                <div id="name_slot_2_99" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_2_8" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
-                                <div id="snack_swiper_2_99" class="swiper">
+                                <div id="snack_swiper_2_8" class="swiper">
                                     <div class="swiper-wrapper"></div>
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
 
                                 <div class="check_custom text-right pr-7 pt_20px">
-                                    <input type="checkbox" name="not_select_2_99" id="not_select_2_99"
-                                        onclick="diagnosis.unselectCategory(2, 99)">
-                                    <label for="not_select_2_99">선택하지 않을래요</label>
+                                    <input type="checkbox" name="not_select_2_8" id="not_select_2_8"
+                                        onclick="diagnosis.unselectCategory(2, 8)">
+                                    <label for="not_select_2_8">선택하지 않을래요</label>
                                 </div>
                             </dd>
                         </dl>
@@ -1563,10 +1563,10 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700 dt_snack_last">
                                 기타
-                                <div id="name_slot_3_99" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_8" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
-                                <div id="snack_swiper_3_99" class="swiper">
+                                <div id="snack_swiper_3_8" class="swiper">
                                     <div class="swiper-wrapper">
                                     </div>
                                 </div>
@@ -1574,9 +1574,9 @@
                                 <div class="swiper-button-prev"></div>
 
                                 <div class="check_custom text-right pr-7 pt_20px">
-                                    <input type="checkbox" name="not_select_3_99" id="not_select_3_99"
-                                        onclick="diagnosis.unselectCategory(3, 99)">
-                                    <label for="not_select_3_99">
+                                    <input type="checkbox" name="not_select_3_8" id="not_select_3_8"
+                                        onclick="diagnosis.unselectCategory(3, 8)">
+                                    <label for="not_select_3_8">
                                         선택하지 않을래요
                                     </label>
                                 </div>
@@ -1649,7 +1649,7 @@
         tags: {
             "01": {
                 name: '관절',
-                /*icoUrl : "https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_991.png"*/
+                /*icoUrl : "https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_81.png"*/
             },
             "02": {
                 name: '릴렉스',
@@ -1785,12 +1785,13 @@
             });
 
             var pr2 = $.ajax({
-                url: '/api/shop.all.list.nx',
+                url: '/api/shop.list.php',
                 type: "POST",
                 data: {
                     "KEY": apikey,
                     menu2_id: "26044",
-                    mode: 'ALL'
+                    use_page : false,
+                    use_limit : false,
                 },
             }).done((data) => {
                 diagnosis.ollyShop = data.items;

@@ -314,10 +314,10 @@
 <div class="container-fluid" id="section1">
     <div class="row mw_1152 ">
         <div class="col">
-            <div class="fs_28 fw_700 "><span class="point_color cat_name">가로</span> 반려묘 정보</div>
-
-            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">돌아가기</div>
+            <div class="fs_28 fw_700 "><span class="point_color cat_name"></span> 반려묘 정보</div>
+            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage" onclick="catPage.slideOutSidebar()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">돌아가기
+            </div>
             <div class="tab_btn_area pt_40px">
                 <ul>
                     <li id="tab_btn1" class="tab_btns active fs_18 fw_700" onclick="catPage.tabButton(1)">
@@ -326,7 +326,6 @@
                     <li id="tab_btn2" class="tab_btns fs_18 fw_700" onclick="catPage.tabButton(2)">
                         <a>까리박스 구성 정보</a>
                     </li>
-
                 </ul>
             </div>
             <div id="tab-1" class="tabs">
@@ -334,7 +333,7 @@
                 <div id="survey_exist">
                 </div>
                 <!--값 없을때-->
-                <div id="survey_exist_not" class="tab_text_null d-none">
+                <div id="survey_exist_not" class="tab_text_null">
                     <div class="row align-items-center h-100 text-center">
                         <div class="col">
                             <div class="fs_18 fw_700 point_color">설문조사 기록이 없습니다</div>
@@ -345,7 +344,7 @@
                 </div>
             </div>    
 
-            <div id="tab-2" class="tabs">
+            <div id="tab-2" class="tabs d-none">
 
                     <!--값 있을때 -->
                 <div id="inbox_exist" class="tab_text2 d-none">
@@ -384,7 +383,7 @@
 
 
                 <!--값 없을때 -->
-                <div id="inbox_exist_not" class="tab_text_null d-none">
+                <div id="inbox_exist_not" class="tab_text_null">
                     <div class="row align-items-center h-100 text-center">
                         <div class="col">
                             <div class="fs_18 fw_700 point_color">까리박스 구성 정보가 없습니다</div>
@@ -569,6 +568,7 @@ var catPage = {
             }
         }
         if(exist){
+            $('#survey_exist_not').addClass('d-none');
             $.each(catPage.surveys[catPage.id], (i, item)=>{
                 let $box = $origin.clone().removeClass('d-none').attr('id', 'survey_round'+item[0].round);
                 $box.find('span').eq(0).html("#"+ util.getDisStr(item[0].id_diseases));
@@ -587,6 +587,7 @@ var catPage = {
 
     drawGgaribox : ()=>{
         if(catPage.products.length !=0){
+            $('#inbox_exist_not').addClass('d-none');
             $('#inbox_exist').removeClass('d-none');
             let $carts = $('#cart_boxes');
             let $originbox = $('#origin_inbox');
@@ -665,7 +666,13 @@ var catPage = {
         }).fail((jqXHR, textStatus, errorThrown) => {
             console.log(errorThrown)
         });
+    },
 
+    //임시방책. 나중에 플로 다시 확인해야함. 피그마에 플로 없음.
+    slideOutSidebar : ()=> {
+        $('.btn_mypage').remove();
+        let xPos = $('#sidebar6').width()+100;
+        $('#sidebar6').animate({left : -xPos}, 1000);        
     }
 
 }

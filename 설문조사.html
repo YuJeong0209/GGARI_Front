@@ -1,9 +1,1236 @@
+<!--
 <link rel="stylesheet" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/survey.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+-->
+
+
+<style>
+    @charset "utf-8";
+
+
+    .survey_pages {
+        background: #FFFFFF;
+        box-shadow: 0px 5.33333px 32px rgba(0, 0, 0, 0.12);
+        border-radius: 32px;
+        max-height: 954px;
+        height: 954px;
+    }
+
+    .survey_pages .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .cat_namebox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cat_name {
+        margin-right: 4px;
+    }
+
+    #progress_box {
+        position: absolute;
+        z-index: 30;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #creating {
+        height: 1200px;
+        max-height: 1200px;
+    }
+
+    #pop_loader_bar {
+        position: absolute;
+        background-color: #6E9357;
+        border-radius: 50px;
+        top: 0px;
+        left: 0px;
+        width: 10px;
+        height: 12px;
+        z-index: 0;
+        opacity: 1;
+    }
+
+    .under_bar_box {
+        padding-top: 220px;
+    }
+
+
+
+    .h_2 {
+        height: 2px;
+    }
+
+    .swiper-button-next {
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_right.png);
+        right: 30px;
+    }
+
+    .swiper-button-prev {
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png);
+        left: 30px;
+    }
+
+    #cat_swiper .swiper-button-next,
+    #cat_swiper .swiper-button-prev {
+        position: absolute;
+        top: 54%;
+        width: 40px;
+        height: 40px;
+        margin-top: 0;
+        background-size: 16px 32px;
+    }
+
+
+
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    #cat_swiper .swiper-slide {
+        text-align: center;
+        /* Center slide text vertically */
+        display: inline-block;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    #fatty_swiper_wrap {
+        width : 100%;
+    }
+
+    #fatty_swiper {
+        overflow: hidden;
+    }
+/*    
+    #fatty_swiper .swiper-slide{
+        width: 190px !important;
+
+    }
+  */  
+    /*
+    .cat_swiper {
+        margin-left: -23.5rem !important;
+    }
+    */
+
+    .swiper2_wrap {
+        width: 1004px;
+        overflow-x: hidden;
+        margin-left: 6rem;
+    }
+
+    .slide2 {
+        margin-right: 24px;
+        width: 220px !important;
+    }
+
+    .pop_w {
+        cursor: pointer;
+        border-radius: 10px;
+        height: 220px;
+        background: rgba(110, 147, 87, 0.12);
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        text-align: center;
+    }
+
+    .pop_box1 {
+        display: table-cell;
+        vertical-align: middle;
+        background-color: #F7F7F7;
+        border-radius: 10px;
+    }
+
+    .pop_box2 {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .pop_box2.toggle {
+        background-color: #6E9357;
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .prev_btn {
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png);
+        background-size: 197px 80px;
+        width: 197px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position-x: 6rem;
+        background-position-y: 29%;
+        cursor: pointer;
+
+    }
+
+    .next_btn {
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_no.png);
+        background-size: 197px 80px;
+        width: 197px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position-x: 75%;
+        background-position-y: 29%;
+        cursor: pointer;
+    }
+
+    .next_btn.active {
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn.png);
+        background-size: 197px 80px;
+        width: 197px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position-x: 75%;
+        background-position-y: 29%;
+        cursor: pointer;
+
+    }
+
+    #questing .next_btn {
+        background-position-y: 49%;
+    }
+
+    #questing .toggle2 {
+        background-position-y: 49%;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
+
+    .next_shadow {
+        box-shadow: 5px 5px 32px rgba(0, 0, 0, 0.12);
+        border-radius: 140px;
+    }
+
+    .select {
+        width: 321px;
+        height: 66px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: 0 2px 0 white;
+        border-radius: 2px;
+    }
+
+    .select02 {
+        width: 306px;
+        height: 66px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: 0 2px 0 white;
+        border-radius: 2px;
+    }
+
+    .select_expand {
+        width: 0;
+        height: 66px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .select_expand::after {
+        content: ' ';
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/chevron-down.png);
+        background-size: 24px 24px;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 21px;
+        right: 18px;
+        z-index: 10;
+    }
+
+
+    .select_expandLabel {
+        display: block;
+        width: 100%;
+        height: 66px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .select_close {
+        display: none;
+    }
+
+    .select_closeLabel {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .select_items {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background: rgba(110, 147, 87, 0.12); */
+        border-radius: 10px;
+        padding-top: 66px;
+        z-index: 2;
+        border: 2px solid #DBDADA;
+    }
+
+
+    .select_input {
+        display: none
+    }
+
+    .select_label {
+        transition: all .2s ease;
+        display: block;
+        height: 0;
+        font-size: 18px;
+        line-height: 66px;
+        overflow: hidden;
+        color: #231815;
+        background-color: #fff;
+        cursor: pointer;
+        padding-left: 24px;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+
+    .select_label-placeholder {
+        height: 66px;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /*opacity: .6;*/
+        color: #BEBCBB;
+        background-color: transparent;
+        font-weight: 400;
+    }
+
+    .select_expand:checked+.select_closeLabel {
+        display: block;
+    }
+
+    .z_10 {
+        z-index: 10;
+    }
+
+    .select .select_expand:checked+.select_closeLabel+.select_options {
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .select03 .select_expand:checked+.select_closeLabel+.select_options {
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .select02 .select_expand:checked+.select_closeLabel+.select_options {
+        height: 210px;
+        overflow-y: scroll;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .select_options::-webkit-scrollbar {
+        width: 10px;
+        height: 0;
+    }
+
+    .select_options::-webkit-scrollbar-button:start:decrement,
+    .select_options::-webkit-scrollbar-button:end:increment {
+        display: block;
+        height: 0;
+    }
+
+    .select_options::-webkit-scrollbar-track {
+        /*  background:rgba(0,0,0,.05);*/
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    .select_options::-webkit-scrollbar-thumb {
+        height: 50px;
+        width: 50px;
+        background: #6E9357;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label {
+        height: 66px;
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options .select_label:hover {
+        background-color: #e9efe6
+    }
+
+    .select_expand:checked+.select_closeLabel+.select_options+.select_expandLabel {
+        display: none
+    }
+
+    .select_input:checked+.select_label {
+        height: 66px;
+        margin-top: -66px;
+    }
+
+    .form-control:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+        border: 2px solid #6e9357 !important;
+    }
+
+    .form-control {
+        color: #231815;
+        cursor: pointer;
+    }
+
+    #creating .form-control {
+        background: #FFFFFF;
+        border: 2px solid #DBDADA;
+        border-radius: 10px;
+        height: 66px;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0.375rem 24px;
+    }
+
+    #creating .form-control::placeholder {
+        color: #BEBCBB;
+        font-weight: 400;
+    }
+
+
+
+
+    .progress_bar {
+        padding: 12px 24px;
+        border-radius: 100px;
+    }
+
+
+    .pop_loading_box {
+        display: inline-block;
+        position: relative;
+        /* margin: 0 -4px -5px -2px; */
+        /* transition: all .2s ease; */
+    }
+
+    /*
+    .pop_loader:before {
+        content: "";
+        position: absolute;
+        background-color: #6E9357;
+        border-radius: 50px;
+        top: 0px;
+        left: 0px;
+        width: 62px;
+        height: 12px;
+        z-index: 0;
+        opacity: 1;
+    }
+    */
+
+    .pop_loader:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        left: 0;
+        top: 0px;
+    }
+
+    .pop_loader_top {
+        width: 54px;
+        height: 50px;
+        position: absolute;
+        top: -62px;
+        left: 0px;
+        /* animation: loader4_top 20s ease-in-out infinite; */
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/sec6_charactor.png);
+        background-size: 54px;
+    }
+
+    .pop_loader {
+        position: relative;
+        width: 1004px;
+        height: 12px;
+        background-color: #D9D9D9;
+        border-radius: 50px;
+    }
+
+    .top2 {
+        left: 470px;
+    }
+
+    .loader2::before {
+        width: 500px;
+    }
+
+    .top3 {
+        left: 772px;
+        /* background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_slide.png);*/
+    }
+
+    .loader3::before {
+        width: 790px;
+    }
+
+    .top_last {
+        left: 939px;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_slide.png);
+    }
+
+    .loader_last::before {
+        width: 969px;
+    }
+
+    .q5_box {
+        background: #6E9357;
+        padding: 8px 20px;
+        border-radius: 100px;
+        top: -2.5rem;
+    }
+
+    .border_line {
+        border-top: 1px solid rgba(110, 147, 87, 0.5);
+    }
+
+    .tip_box {
+        background: #EDF2EA;
+        border-radius: 10px;
+        padding: 14px 20px;
+    }
+
+    .tip_box img {
+        width: 32px;
+    }
+
+
+    .answers input[type=checkbox] {
+        display: none;
+    }
+
+    .answers input[type=checkbox]+label {
+        cursor: pointer;
+        padding-left: 45px;
+        background-repeat: no-repeat;
+        background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/checkbox.png);
+        background-size: 24px;
+        background-position-y: 2px;
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        height: 45px;
+    }
+
+    .answers input[type=checkbox]:checked+label {
+        background-image: url("https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_2.png");
+    }
+
+
+    .answers input[type=radio] {
+        display: none;
+    }
+
+    .answers.have_radio {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .answers input[type=radio]+label {
+        padding: 26px;
+        width: 180px;
+        display: inline-block;
+        text-align: center;
+        font-size: 16px;
+        /* border: 2px solid #6E9357; */
+        /* color: #6E9357; */
+        background: #F7F7F7;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .answers input[type=radio]:checked+label {
+        background-color: #6E9357;
+        color: #fff !important;
+        font-weight: 700;
+    }
+
+    .answers input[type=textarea] {
+        border: 2px solid #6E9357;
+        font-size: 15px;
+        background: #FFFFFF;
+        border: 2px solid #DBDADA;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .answers input[type=textarea]::placeholder {
+        color: #BEBCBB;
+    }
+
+    #circle_loading {
+        width: 220px;
+        height: 220px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 36px;
+    }
+
+    #circle_loading path:first-child {
+        stroke: rgba(110, 147, 87, 0.12);
+    }
+
+    #circle_loading path {
+        stroke-linecap: round;
+    }
+
+    .progressbar-text {
+        font-weight: 700;
+    }
+
+    .line_14 {
+        line-height: 14px;
+    }
+
+    #fatty_area {
+        background-color: #EDF2EA;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+
+    .fat_box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .fat_btns {
+        width: 190px;
+        height: 232px;
+        border-radius: 10px;
+        background-size: cover;
+    }
+
+
+
+
+    #fat1_label {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty1.png');
+    }
+
+    #fat2_label {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty2.png');
+    }
+
+    #fat3_label {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty3.png');
+    }
+
+    #fat4_label {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty4.png');
+    }
+
+    #fat5_label {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty5.png');
+    }
+
+    #fat1_label.active {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty1a.png');
+    }
+
+    #fat2_label.active {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty2a.png');
+    }
+
+    #fat3_label.active {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty3a.png');
+    }
+
+    #fat4_label.active {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty4a.png');
+    }
+
+    #fat5_label.active {
+        background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty5a.png');
+    }
+
+    @media screen and (max-width:576px) {
+
+        #creating .col-4{
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-left: 0!important;
+            padding-right: 0!important;
+        }
+       
+
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        /*.survey_pages {
+            max-height: calc(100vh - 80px);
+            height: calc(100vh - 80px);
+        }
+        */
+        .survey_pages {
+            max-height: 100%;
+            height: 100%;
+            margin: 40px 0;
+            /*margin-top : 120px;*/
+        }
+
+        .px_100 {
+            padding-left: 36px;
+            padding-right: 36px;
+        }
+
+        .pt_180 {
+            padding-top: 96px;
+        }
+
+        .m_pt_10 {
+            padding-top: 10px;
+        }
+
+        #opening .pt-9 {
+            padding-top: 6rem !important;
+        }
+
+        #opening .pb-7 {
+            padding-bottom: 5rem !important;
+        }
+
+        #opening .fs_16 {
+            font-size: 10px;
+        }
+
+        .progress_mobile {
+            margin-top: -10rem;
+        }
+
+        #progress_box {
+            top: 120px;
+        }
+
+        #selecting .px_100,
+        #questing .px_100,
+        #questing .px_100,
+        #questing .px_100 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .pop_loader:before {
+            border-radius: 0 50px 50px 0;
+            width: 72px;
+            height: 8px;
+        }
+
+        .pop_loader {
+            height: 8px;
+        }
+        #pop_loader_bar {
+            height: 8px;            
+        }
+
+        .mw_1000 {
+            max-width: 320px;
+        }
+
+        .px-6 {
+            padding-left: 36px !important;
+            padding-right: 36px !important;
+        }
+        #creating .px-6 {
+            padding-left: 26px!important;
+            padding-right: 26px!important;
+        }
+
+        .swiper2_wrap {
+            width: 294px;
+            margin-left: 1.8rem;
+        }
+
+        .cat_swiper {
+            margin-left: -0.5rem !important;
+        }
+
+        .swiper-button-prev {
+            left: 0px;
+        }
+
+        .swiper-button-next {
+            right: 0;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            top: 58.5%;
+            width: 36px;
+            height: 36px;
+            margin-top: 0;
+            background-size: 9.6px 19.2px;
+        }
+
+        .pop_w {
+            height: 136px;
+        }
+
+        .slide2 {
+            margin-right: 16px !important;
+            width: 136px !important;
+        }
+
+        .plusbox {
+            width: 24px;
+        }
+
+        .m_pt_20 {
+            padding-top: 20px;
+        }
+
+        #selecting .pr-6,
+        #creating .pr-6,
+        #questing .pr-6,
+        #questing .pr-6,
+        #questing .pr-6 {
+            padding-right: 2rem !important;
+        }
+
+        #selecting .pb-6 {
+            padding-bottom: 4rem !important;
+        }
+
+        #selecting .pt-5_1 {
+            padding-top: 4rem !important;
+        }
+
+        #creating {
+            height: 1424px;
+            max-height: 1424px;
+        }
+        
+        #creating .fs_40 {
+            font-size: 20px;
+        }
+
+        #creating .pt_120px {
+            padding-top: 0;
+        }
+
+        #creating .pb-3 {
+            padding-bottom: 10px !important;
+        }
+
+        #creating .pb_30px {
+            padding-bottom: 20px;
+        }
+
+
+        #creating .fs_18 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        #creating .pr-0,
+        #creating .pl-0 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        #creating .form-control {
+            height: 50px;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 15px 20px;
+            width:100%;
+        }
+
+        .select,
+        .select02,
+        .select03 {
+            width: 100%;
+            height: 50px;
+        }
+
+        .select_items {
+            padding-top: 50px;
+        }
+
+        .select_expand {
+            height: 50px;
+        }
+
+        .select_label-placeholder {
+            height: 50px;
+        }
+
+        .select_label {
+            line-height: 50px;
+            font-size: 14px;
+        }
+
+        .select_expandLabel {
+            height: 50px;
+        }
+
+        .h_100 {
+            height: 100%;
+        }
+
+        .z_10 {
+            z-index: 13;
+        }
+
+        .z_10_m {
+            z-index: 12;
+        }
+
+        .z_10_m2 {
+            z-index: 11;
+        }
+
+        .select_expand::after {
+            background-size: 20px 20px;
+            width: 20px;
+            height: 20px;
+            top: 15px;
+            right: 15px;
+        }
+
+        .select_input:checked+.select_label {
+            height: 50px;
+            margin-top: -50px;
+        }
+
+        .select_expand:checked+.select_closeLabel+.select_options .select_label {
+            height: 50px;
+        }
+
+        .top2 {
+            left: 200px;
+        }
+
+        .loader2::before {
+            width: 228px !important;
+        }
+
+        .top3 {
+            left: 200px;
+        }
+
+        .loader3::before {
+            width: 228px !important;
+        }
+
+        .top_last {
+            left: 291px;
+        }
+
+        .loader_last::before {
+            width: 321px !important;
+        }
+
+        .ml_-3 {
+            margin-left: -1.6rem;
+        }
+
+        .tip_box {
+            padding: 14px 12px 14px 16px;
+        }
+
+        .tip_box img {
+            width: 36px;
+        }
+
+        .tip_box .fs_16 {
+            font-size: 14px;
+        }
+
+        .line_14 {
+            line-height: 21px;
+        }
+
+        .answers input[type=checkbox]+label {
+            font-size: 14px;
+            font-weight: 400;
+            height: 66px;
+        }
+
+        .answers input[type=radio]+label {
+            padding: 20px 27px;
+            font-size: 14px;
+            width: 136px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .answers.have_radio {
+            display: block;
+        }
+
+        .mr_3_m2 {
+            margin-right: 12px !important;
+        }
+
+        .mr_3_m {
+            margin-right: 0 !important;
+        }
+
+        .letter00 {
+            margin-right: -4px;
+            margin-left: -4px;
+        }
+
+        .m_pt_5 {
+            padding-top: 1.5rem !important;
+        }
+
+        #questing .pb-6 {
+            padding-bottom: 3rem !important;
+        }
+
+        #questing .pb-5_2 {
+            padding-bottom: 4rem !important;
+        }
+
+        #ending .pt-10 {
+            padding-top: 4rem !important;
+            padding-bottom: 38px;
+        }
+
+        #circle_loading {
+            width: 136px;
+            height: 136px;
+            font-size: 20px;
+        }
+
+        #ending .fs_40 {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        #ending .fs_16 {
+            font-size: 14px;
+        }
+
+        #ending .pb-10 {
+            padding: 40px;
+            padding-bottom: 7rem !important;
+            padding-top: 38px !important;
+        }
+
+        #ending .pb-1 {
+            padding-bottom: 20px !important;
+
+        }
+
+        .prev_btn {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png);
+            background-size: 60px 60px;
+            width: 60px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-position-x: 36px;
+            background-position-y: 50%;
+            height: 130px;
+
+        }
+
+        .next_btn {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile_no.png);
+            background-size: 60px 60px;
+            width: 60px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-position-x: 75%;
+            background-position-y: 50%;
+        }
+
+        .next_btn.active {
+        background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png);
+            background-size: 60px 60px;
+            width: 60px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-position-x: 75%;
+            background-position-y: 50%;
+
+    }
+
+        .toggle2 {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png);
+            background-size: 60px 60px;
+            width: 60px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-position-x: 75%;
+            background-position-y: 50%;
+
+        }
+
+
+        .fat_description_box {
+            line-height: 14px;
+        }
+        .survey_close {
+            margin-top: -11rem;
+            max-width: 26px;
+        }
+
+        .progress_bar.fs_18 {
+            font-size: 12px;
+        }
+
+        .mobile_gray {
+            color: #787878;
+        }
+        #fatty_area {
+            height: auto;
+            line-height: inherit;
+            border-radius: 10px;
+            padding: 20px;
+            word-break: break-all;
+        }
+
+        .fatty_swiper .swiper-slide{
+            width: 128px !important;
+        }
+        .fat_btns {
+            width: 136px;
+            height: 172px;
+        }
+        
+        #fatty_swiper_prev {
+                left: -31px;
+            }
+            #fatty_swiper_next {
+                right: -32px;
+            }
+
+            #fatty_swiper_next, #fatty_swiper_prev {
+                top: 36.5%;
+            }
+    }
+
+
+    @media screen and (max-height: 670px) {
+        .pt_180 {
+            padding-top: 50px;
+        }
+
+        #selecting .pt-5_1 {
+            padding-top: 3rem !important;
+        }
+
+        #selecting .pb-6 {
+            padding-bottom: 1rem !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            top: 63.5%;
+        }
+    }
+
+    @media screen and (max-height: 570px) {
+
+        .pt_180 {
+            padding-top: 10px;
+        }
+
+        #opening .pt-9 {
+            padding-top: 2rem !important;
+        }
+
+        .slide2 {
+            width: 116px !important;
+        }
+
+        .pop_w {
+            height: 116px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            top: 65.5%;
+        }
+
+        .swiper2_wrap {
+            width: 263px;
+            margin-left: 1.8rem;
+        }
+
+        .under_bar_box {
+            padding-top: 150px;
+        }
+
+        .pop_loader {
+            width: 350px;
+        }
+
+        #selecting .pt-5_1 {
+            padding-top: 2rem !important;
+        }
+
+        #selecting .pb-6 {
+            padding-bottom: 1rem !important;
+        }
+
+        .pop_loader_top {
+            width: 38px;
+            height: 35px;
+            top: -42px;
+            left: 52px;
+            background-size: 38px;
+        }
+
+        .answers input[type=radio]+label {
+            padding: 20px 17px;
+            width: 115px;
+        }
+
+        .next_btn {
+            margin-top: 14px;
+        }
+
+        
+
+
+
+    }
+</style>
 
 <div class="container-fluid">
-    <div class="row align-items-center h_100 bg_point">
+    <div id="bg_screen" class="row align-items-center h_100 bg_point">
         <div class="col">
 
             <!-- 시작 -->
@@ -11,7 +1238,8 @@
                 <div class="row align-items-center h-100 ">
                     <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
                         <button type="button" class="btn ">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt="" class="img-fluid">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid">
                         </button>
                     </div>
                     <div class="col-12 px_100 pt_180 ">
@@ -29,26 +1257,27 @@
                         </div>
                         <div class="text-center pt-9 pb-7">
                             <a onclick="survey.movePage('#selecting')">
-                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/start_button.png" alt="" class="img-fluid next_shadow">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/start_button.png" alt=""
+                                    class="img-fluid next_shadow">
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>     
+            </div>
 
             <div id="progress_box" class="container-fluid mw_1200 d-none">
                 <div class="align-items-center">
                     <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
                         <button type="button" class="btn ">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt="" class="img-fluid">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid survey_close">
                         </button>
                     </div>
                     <div class="col-12 text-center pt-5 progress_mobile">
-                        <span id=announce0 class="fs_18 color_fff bg_point progress_bar">
-                            <span class="fw_700">설문조사</span>
-                            를 시작하기 전에...
+                        <span id="announce0" class="fs_18 color_fff bg_point progress_bar">
+                            <span class="fw_700">설문조사</span>를 시작하기 전에...
                         </span>
-                        <span id=announce1 class="fs_18 color_fff bg_point progress_bar d-none">
+                        <span id="announce1" class="fs_18 color_fff bg_point progress_bar d-none">
                             <span class="fw_700 selected_cat_name"></span>
                             의 설문조사 진행중...
                         </span>
@@ -65,18 +1294,18 @@
                     </div>
                     <div class="col-12 text-center mw_1000 px-0 pt-3">
                         <div class="row  text-center">
-                            <div class="col fs_16 fw_700 point_color text-center">
+                            <div id="category1" class="categories col fs_16 fw_700 point_color text-center">
                                 기본정보</div>
-                            <div class="col fs_16 fw_700 color_subgray text-center">
+                            <div id="category2" class="categories col fs_16 fw_700 color_subgray text-center">
                                 질병/증상</div>
-                            <div class="col fs_16 fw_700 color_subgray text-center">
+                            <div id="category3" class="categories col fs_16 fw_700 color_subgray text-center">
                                 생활습관</div>
-                            <div class="col fs_16 fw_700 color_subgray text-center">
+                            <div id="category4" class="categories col fs_16 fw_700 color_subgray text-center">
                                 기타</div>
                         </div>
                     </div>
-                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">                            
-                    </div>    
+                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">
+                    </div>
                 </div>
             </div>
 
@@ -91,12 +1320,13 @@
 
                     <div class="swiper2_wrap pt_40px">
                         <!-- Swiper -->
-                        <div class="swiper catname_swiper">
+                        <div id="cat_swiper" class="swiper">
                             <div class="swiper-wrapper">
                                 <div id="cat_card0" class="swiper-slide slide2">
                                     <div class="pop_box_open pop_w" onclick="survey.checkToCreating(true)">
                                         <div class=" pop_box1 cursor">
-                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/plus.png" alt="" class="img-fluid plusbox">
+                                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/plus.png" alt=""
+                                                class="img-fluid plusbox">
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +1339,7 @@
                                                 <div class="icon_sex"></div>
                                             </div>
                                             <div class="fs_18 pt-1">
-                                                <span class="cat_specie_name">코리안숏헤어</span>, 
+                                                <span class="cat_specie_name">코리안숏헤어</span>,
                                                 <span class="cat_kg">6</span>
                                                 kg
                                             </div>
@@ -118,41 +1348,43 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                    <div id="cat_swiper_next" class="swiper-button-next"></div>
+                    <div id="cat_swiper_prev" class="swiper-button-prev"></div>
 
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
 
-                    <div class="col-6 px-6 pt-5_1 pb-6">
+                    <div class="col-6 px-6 pt-5_1 pb-6 prev_btn">
                         <a onclick="survey.movePage('#opening')">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png" class="img-fluid cursor pc" alt="">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png" class="img-fluid cursor mobile" alt="">
+                            <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png" class="img-fluid cursor pc" alt="">
+                                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png" class="img-fluid cursor mobile" alt="">-->
                         </a>
                     </div>
                     <div class="col-6 pr-6 pt-5_1 pb-6 text-right next_btn" onclick="survey.checkToCreating()">
                     </div>
                 </div>
-            </div>  
+            </div>
 
-                <!--고양이 고르기-->
+            <!--고양이 고르기-->
             <div id="creating" class="container-fluid mw_1200 d-none survey_pages">
                 <div class="row align-items-center h-100 under_bar_box">
                     <div class="col-12 px-6 pt_40px pb_30px">
-                        <div id="creating_title" class=" fs_40 fw_700"></div>
+                        <div id="creating_title" class=" fs_24 fw_700"></div>
                     </div>
 
                     <div class="col-12 px-6 ">
-                        <div class="row pb_30px m_col_100">
-                            <div class="col-4 pl-0">
+                        <div class="row pb_30px">
+                            <div class="col-4 pl-0 pb_30px">
                                 <div class="fs_18 pb-3">이름</div>
-                                <input id="cat_name" type="text" class="form-control" placeholder="이름을 입력해 주세요." maxlength="10" onblur="survey.setCatData('name', this.value)">
+                                <input id="cat_name" type="text" class="form-control" placeholder="이름을 입력해 주세요."
+                                    maxlength="10" onblur="survey.setCatData('name', this.value)">
                             </div>
-                            <div class="col-4">
-                                <div class="fs_18 pb-3 m_pt_20">몸무게</div>
-                                <input id="cat_kg" type="text" class="form-control" placeholder="몸무게를 소수점 1자리까지 입력해 주세요.(예: 2.3kg)" maxlength="4" onblur="survey.setCatData('kg', this.value)">
+                            <div class="col-4 pb_30px">
+                                <div class="fs_18 pb-3">몸무게</div>
+                                <input id="cat_kg" type="text" class="form-control"
+                                    placeholder="몸무게를 소수점 1자리까지 입력해 주세요.(예: 2.3kg)" maxlength="4"
+                                    onblur="survey.setCatData('kg', this.value)">
                             </div>
-                            <div class="col-4 pr-0">
+                            <div class="col-4 pr-0 pb_30px">
                                 <div class="fs_18 pb-3">성별</div>
                                 <ul class="select">
                                     <li>
@@ -162,16 +1394,19 @@
                                     </li>
                                     <li class="select_items z_10">
                                         <input class="select_expand" type="radio" name="is_male" id="option1-opener" />
-                                        <label class="select_closeLabel" for="option1-close" onclick="survey.setCatData('is_male', null)"></label>
+                                        <label class="select_closeLabel" for="option1-close"
+                                            onclick="survey.setCatData('is_male', null)"></label>
 
                                         <ul class="select_options">
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="is_male" id="is_male_0" onclick="survey.setCatData('is_male', 0)" />
+                                                <input class="select_input" type="radio" name="is_male" id="is_male_0"
+                                                    onclick="survey.setCatData('is_male', 0)" />
                                                 <label class="select_label" for="is_male_0">여</label>
                                             </li>
 
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="is_male" id="is_male_1" onclick="survey.setCatData('is_male', 1)" />
+                                                <input class="select_input" type="radio" name="is_male" id="is_male_1"
+                                                    onclick="survey.setCatData('is_male', 1)" />
                                                 <label class="select_label" for="is_male_1">남</label>
                                             </li>
                                         </ul>
@@ -179,10 +1414,8 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        <div class="row pb_30px m_col_100">
-                            <div class="col-4 pl-0">
-                                <div class="fs_18 pb-3 m_pt_20">나이</div>
+                            <div class="col-4 pl-0 pb_30px">
+                                <div class="fs_18 pb-3">나이</div>
                                 <ul class="select02">
                                     <li>
                                         <input class="select_close" type="radio" name="age" id="cat_age-close"
@@ -191,71 +1424,88 @@
                                     </li>
                                     <li class="select_items z_10 z_10_m">
                                         <input class="select_expand" type="radio" name="age" id="cat_age-opener" />
-                                        <label class="select_closeLabel" for="cat_age-close" onclick="survey.setCatData('age', null)"></label>
+                                        <label class="select_closeLabel" for="cat_age-close"
+                                            onclick="survey.setCatData('age', null)"></label>
 
                                         <ul class="select_options">
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="모름" onclick="survey.setCatData('age', 6)" />
+                                                <input class="select_input" type="radio" name="age" id="모름"
+                                                    onclick="survey.setCatData('age', 6)" />
                                                 <label class="select_label" for="모름">모름</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_0" onclick="survey.setCatData('age', 1)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_0"
+                                                    onclick="survey.setCatData('age', 1)" />
                                                 <label class="select_label" for="cat_age_0">1살 미만</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_1" onclick="survey.setCatData('age', 1)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_1"
+                                                    onclick="survey.setCatData('age', 1)" />
                                                 <label class="select_label" for="cat_age_1">1살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_2" onclick="survey.setCatData('age', 2)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_2"
+                                                    onclick="survey.setCatData('age', 2)" />
                                                 <label class="select_label" for="cat_age_2">2살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_3" onclick="survey.setCatData('age', 3)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_3"
+                                                    onclick="survey.setCatData('age', 3)" />
                                                 <label class="select_label" for="cat_age_3">3살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_4" onclick="survey.setCatData('age', 4)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_4"
+                                                    onclick="survey.setCatData('age', 4)" />
                                                 <label class="select_label" for="cat_age_4">4살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_5" onclick="survey.setCatData('age', 5)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_5"
+                                                    onclick="survey.setCatData('age', 5)" />
                                                 <label class="select_label" for="cat_age_5">5살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_6" onclick="survey.setCatData('age', 6)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_6"
+                                                    onclick="survey.setCatData('age', 6)" />
                                                 <label class="select_label" for="cat_age_6">6살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_7" onclick="survey.setCatData('age', 7)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_7"
+                                                    onclick="survey.setCatData('age', 7)" />
                                                 <label class="select_label" for="cat_age_7">7살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_8" onclick="survey.setCatData('age', 8)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_8"
+                                                    onclick="survey.setCatData('age', 8)" />
                                                 <label class="select_label" for="cat_age_8">8살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_9" onclick="survey.setCatData('age', 9)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_9"
+                                                    onclick="survey.setCatData('age', 9)" />
                                                 <label class="select_label" for="cat_age_9">9살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_10"  onclick="survey.setCatData('age', 10)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_10"
+                                                    onclick="survey.setCatData('age', 10)" />
                                                 <label class="select_label" for="cat_age_10">10살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_11"  onclick="survey.setCatData('age', 11)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_11"
+                                                    onclick="survey.setCatData('age', 11)" />
                                                 <label class="select_label" for="cat_age_11">11살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_12"  onclick="survey.setCatData('age', 12)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_12"
+                                                    onclick="survey.setCatData('age', 12)" />
                                                 <label class="select_label" for="cat_age_12">12살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_13" onclick="survey.setCatData('age', 13)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_13"
+                                                    onclick="survey.setCatData('age', 13)" />
                                                 <label class="select_label" for="cat_age_13">13살</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="age" id="cat_age_13_over" onclick="survey.setCatData('age', 13)" />
+                                                <input class="select_input" type="radio" name="age" id="cat_age_13_over"
+                                                    onclick="survey.setCatData('age', 13)" />
                                                 <label class="select_label" for="cat_age_13_over">13살이상</label>
                                             </li>
                                         </ul>
@@ -263,16 +1513,19 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 pb_30px">
                                 <div class="fs_18 pb-3">품종</div>
                                 <ul class="select02">
                                     <li>
-                                        <input class="select_close" type="radio" name="id_species" id="cat_breed-close" />
+                                        <input class="select_close" type="radio" name="id_species"
+                                            id="cat_breed-close" />
                                         <span class="select_label select_label-placeholder">품종을 선택해 주세요</span>
                                     </li>
                                     <li class="select_items z_10_m2">
-                                        <input class="select_expand" type="radio" id="cat_breed-opener" name="id_species" />
-                                        <label class="select_closeLabel" for="cat_breed-close" onclick="survey.setCatData('id_species', null)"></label>
+                                        <input class="select_expand" type="radio" id="cat_breed-opener"
+                                            name="id_species" />
+                                        <label class="select_closeLabel" for="cat_breed-close"
+                                            onclick="survey.setCatData('id_species', null)"></label>
                                         <ul id="species_list" class="select_options">
 
                                         </ul>
@@ -280,27 +1533,36 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-4 pr-0">
-                                <div class="fs_18 pb-3 m_pt_20">중성화 여부</div>
+                            <div class="col-4 pr-0 pb_30px">
+                                <div class="fs_18 pb-3">중성화 여부</div>
                                 <ul class="select03">
                                     <li>
-                                        <input class="select_close" type="radio" name="is_neutering" id="cat_neuter-close"/>
+                                        <input class="select_close" type="radio" name="is_neutering"
+                                            id="cat_neuter-close" />
                                         <span class="select_label select_label-placeholder">중성화 여부를 선택해주세요.</span>
                                     </li>
                                     <li class="select_items z_13">
-                                        <input class="select_expand" type="radio" name="is_neutering" id="cat_neuter-opener"/>
-                                        <label class="select_closeLabel" for="cat_neuter-close" onclick="survey.setCatData('is_neutering', null)"></label>
+                                        <input class="select_expand" type="radio" name="is_neutering"
+                                            id="cat_neuter-opener" />
+                                        <label class="select_closeLabel" for="cat_neuter-close"
+                                            onclick="survey.setCatData('is_neutering', null)"></label>
                                         <ul class="select_options">
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="is_neutering" id="is_neutering_unknown" onclick="survey.setCatData('is_neutering', false)" />
+                                                <input class="select_input" type="radio" name="is_neutering"
+                                                    id="is_neutering_unknown"
+                                                    onclick="survey.setCatData('is_neutering', false)" />
                                                 <label class="select_label" for="is_neutering_unknown">모름</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="is_neutering" id="is_neutering_0" onclick="survey.setCatData('is_neutering', 1)" />
+                                                <input class="select_input" type="radio" name="is_neutering"
+                                                    id="is_neutering_0"
+                                                    onclick="survey.setCatData('is_neutering', 1)" />
                                                 <label class="select_label" for="is_neutering_0">완료</label>
                                             </li>
                                             <li class="select_option">
-                                                <input class="select_input" type="radio" name="is_neutering" id="is_neutering_1" onclick="survey.setCatData('is_neutering', false)" />
+                                                <input class="select_input" type="radio" name="is_neutering"
+                                                    id="is_neutering_1"
+                                                    onclick="survey.setCatData('is_neutering', false)" />
                                                 <label class="select_label" for="is_neutering_1">미완료</label>
                                             </li>
                                         </ul>
@@ -309,14 +1571,84 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="row m_col_100">
+                        <div class="row pb-3 m_pt_20">
+                            <div class="fs_18">비만도</div>
+                        </div>
+                        <div id="fatty_area" class="row">
+                            <div class="fat_description_box">
+                                <div class="pc_br_none">
+                                    
+                                    <span class="point_color progressbar-text">아주마름</span><br>     
+                                    <span class="mobile_gray">
+                                    갈비뼈가 육안으로 완전히 보이며 배 부분이 홀쭉해요.
+                                    뼈들이 육안으로 쉽게 보이며 털만 느껴져요.</span>
+                                </div>
+                                <div class="d-none">
+                                    <span class="point_color progressbar-text">마름</span><br>     
+                                    <span class="mobile_gray">갈비뼈가 아주 얇게 덮여있어요. 뼈들이 털 길이에 따라
+                                    쉽게 드러나는 편이에요.</span>
+                                </div>
+                                <div class="d-none">
+                                    <span class="point_color progressbar-text">정상</span><br>     
+                                    <span class="mobile_gray"> 허리선이 명확히 드러나며 갈비뼈가 덮여있어 육안으로는
+                                    보이지 않지만 쉽게 만져져요.</span>
+                                </div>
+                                <div class="d-none">
+                                    <span class="point_color progressbar-text">과체중</span><br>     
+                                    <span class="mobile_gray"> 뱃살이 늘어진 것이 보여요. 허리선이 없고 뼈들이 지방
+                                    때문에 잘 느껴지지 않아요.</span>
+                                </div>
+                                <div class="d-none">
+                                    <span class="point_color progressbar-text">비만</span><br>     
+                                    <span class="mobile_gray"> 허리가 튀어나와 있어요. 뱃살이 출렁거리고 만졌을 때
+                                    뼈들이 느껴지지 않아요.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="fatty_swiper_wrap">
+                                <!-- Swiper -->
+                                <div id="fatty_swiper" class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <input id="fat1" type="radio" name="fatty" value="1">
+                                            <label id="fat1_label" class="fat_btns" for="fat1" onclick="survey.toggleFatty(this)"></label>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <input id="fat2" type="radio" name="fatty" value="2">
+                                            <label id="fat2_label" class="fat_btns" for="fat2" onclick="survey.toggleFatty(this)"></label>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <input id="fat3" type="radio" name="fatty" value="3">
+                                            <label id="fat3_label" class="fat_btns" for="fat3"
+                                                onclick="survey.toggleFatty(this)"></label>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <input id="fat4" type="radio" name="fatty" value="4">
+                                            <label id="fat4_label" class="fat_btns" for="fat4"
+                                                onclick="survey.toggleFatty(this)"></label>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <input id="fat5" type="radio" name="fatty" value="5">
+                                            <label id="fat5_label" class="fat_btns" for="fat5"
+                                                onclick="survey.toggleFatty(this)"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fatty_swiper_next" class="swiper-button-next mobile"></div>
+                            <div id="fatty_swiper_prev" class="swiper-button-prev mobile"></div>
+
+
+                            
                         </div>
                     </div>
 
 
-                    <div class="col-6 px-6 pt-5_1 pb-6" onclick="survey.movePage('#selecting')">
-                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png" class="img-fluid cursor pc" alt="">
-                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png" class="img-fluid cursor mobile" alt="">
+                    <div class="col-6 px-6 pt-5_1 pb-6 prev_btn" onclick="survey.movePage('#selecting')">
+                        <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png" class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png" class="img-fluid cursor mobile" alt="">-->
                     </div>
                     <div class="col-6 pr-6 pt-5_1 pb-6 text-right next_btn" onclick="survey.postCat()">
                     </div>
@@ -328,12 +1660,15 @@
                     <div id="question_box" class="col-12 px-6">
                     </div>
 
-                    <div class="col-6 px-6 pt-5_1 pb-6" onclick="survey.moveQuestion(false)">
-                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png" class="img-fluid cursor pc" alt="">
-                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png" class="img-fluid cursor mobile" alt="">
+
+                    <div class="col-6 px-6 pt-5_1 pb-6 prev_btn" onclick="survey.moveQuestion(false)">
+                        <!--<img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn.png" class="img-fluid cursor pc" alt="">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/prev_btn_mobile.png" class="img-fluid cursor mobile" alt="">-->
                     </div>
                     <div class="col-6 pr-6 pt-5_1 pb-6 text-right next_btn">
-                    </div>                    
+                    </div>
+
+
                 </div>
             </div>
 
@@ -341,7 +1676,8 @@
                 <div class="row align-items-center h-100 ">
                     <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
                         <button type="button" class="btn">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt="" class="img-fluid">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                                class="img-fluid survey_close">
                         </button>
                     </div>
                     <div class="col-12 text-center fs_40 fw_700 pt-10">
@@ -356,9 +1692,9 @@
                         <div class="fw_700 pb-1">까리는 정략/정성적인 자료들을 근거한 알고리즘을 토대로 간식을 구성해드리고 있습니다.</div>
                         예방/관리에 도움이 되는 제품들이나 질병 치료를 희망하시는 분은 전문의료기관을 통해 처방받는 것을 권장합니다.
                     </div>
-                </div>                
+                </div>
             </div>
-          
+
         </div>
     </div>
 </div>
@@ -367,446 +1703,509 @@
 
 <script>
 
-$(()=>{
-    survey.init();
-});
-  
-var survey = {
-    progress : 0,
-    surveyData : null,
-    mySurveyData : {},
-    selectedCat : 0,
-    survey_pages : [],
-    catData : {},
-    guageWidth : 0,
-    ajaxEnd : false,
+    $(() => {
+        survey.init();
+    });
 
-    movePage : (idTarget)=>{
-        //진행바 제어
-        if(idTarget == '#opening' || idTarget == "#ending") $('#progress_box').addClass('d-none');
-        else    $('#progress_box').removeClass('d-none');
-        //고양이 이름 새기기
-        if(idTarget == "#questing"){
-            $('.selected_cat_name').html($('#cat_name').val());
-            $('#announce0').addClass('d-none');
-            $('#announce1').removeClass('d-none');
-        }else{
-            $('#announce0').removeClass('d-none');
-            $('#announce1').addClass('d-none');
-        }
+    var survey = {
+        progress: 0,
+        surveyData: null,
+        mySurveyData: {},
+        selectedCat: 0,
+        survey_pages: [],
+        catData: {},
+        guageWidth: 0,
+        ajaxEnd: false,
+
+        init: () => {
+            //스와이프 끄고 다시 불러오기
+            $('#topSwiperCss').remove();
+            $('#topSwiperJs').remove();
+            $swiperCss = $('<link>').attr({ rel: "stylesheet", type: 'text/css', href: "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css" });
+            $swiperJs = $('<script>').attr({ src: "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js" });
+            $('head').append($swiperCss);
+            $('html').append($swiperJs);
+
+            //고양이처리
+            cat.catPromise = cat.getCatsData();
+            species.getSpeciesData();
+
+            survey.progress = 0;
+            survey.selectedCat = -1,
+                survey.survey_pages = $('.survey_pages');
+            survey.guageWidth = $('.pop_loader').width();
+
+            $.ajax({
+                url: serverUrl + '/api/surveys',
+                type: 'GET',
+                dataType: 'jsonp',
+                jsonp: "callback",
+                async: false,
+            })
+                .done(function (data) {
+                    console.log('Survey Loaded');
+                    survey.questions = data;
+                    survey.questions.forEach((item, i, array) => {
+                        survey.mySurveyData["q" + item.id] = "";
+                    });
+                    survey.drawQuestions();
+                })
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    console.log('AJAX Error!' + textStatus + " : " + errorThrown);
+                    alert('서버와의 접속에 실패했습니다.');
+                });
+
+                var swiperOptions = {
+                    navigation: {
+                            nextEl: '#fatty_swipper_next',
+                            prevEl: '#fatty_swipper_prev',
+                    },
+                }
         
-        //그외의 경우
+                if($(window).width() < 576){
+                    swiperOptions.slidesPerView = 2;
+                    swiperOptions.spaceBetween = 11;
+                }else{
+                    swiperOptions.slidesPerView = 5;
+                    swiperOptions.spaceBetween = 14;
+                }
 
-        switch(idTarget){
-            case '#selecting':
-                survey.drawCatCards();
-                survey.drawSpeciesList();
-                survey.animateBar(60);
-                break;
-            case "#creating" :
-                survey.animateBar(140);
-                break;
-            case "#ending" :
-                bar.animate(1);
-                survey.postSurveys();
-                break;    
-        }
-        survey.survey_pages.addClass('d-none');
-        $(idTarget).removeClass('d-none');
-    },
+                var fatty_swiper = new Swiper('#fatty_swiper', swiperOptions);
+        },
 
-    addAnswer : (q, a)=>{
-        //값입력
-        if(survey.questions.find(e=> e.id == q).input_type == 'checkbox'){            
-            if(!survey.mySurveyData["q"+q].includes(a)){
-                survey.mySurveyData["q"+q] += String(a) + ",";
-            }else{
-                survey.mySurveyData["q"+q] = survey.mySurveyData["q"+q].replace(a+",", "");
-            }
-        }else{
-            if(survey.mySurveyData["q"+q] == a){
-                survey.mySurveyData["q"+q] = "";
-                $('#q'+q+"_"+a).prop('checked', false);
+        movePage: (idTarget) => {
+            //진행바 제어
+            if (idTarget == '#opening' || idTarget == "#ending") $('#progress_box').addClass('d-none');
+            else $('#progress_box').removeClass('d-none');
+
+            //화면길게하기
+            if (idTarget == "#creating") {
+                let height = $(window).width() < 576 ? 234 : 100;
+                $("#bg_screen").css({ height: height+"vh" });
             } 
-            else survey.mySurveyData["q"+q] = a;
-        }
-        console.log(survey.mySurveyData);
+            else if (idTarget == "#questing") {
+                let height = $(window).width() < 576 ? 184 : 100;
+                $("#bg_screen").css({ height: height+"vh" });
+            }
+            else {
+                $("#bg_screen").css({ height: "100vh" });
+            }
 
-        survey.verifyQuestions(q);
-    },
+            //고양이 이름 새기기
+            if (idTarget == "#questing") {
+                $('.selected_cat_name').html($('#cat_name').val());
+                $('#announce0').addClass('d-none');
+                $('#announce1').removeClass('d-none');
+            } else {
+                $('#announce0').removeClass('d-none');
+                $('#announce1').addClass('d-none');
+            }
 
+            //그외의 경우
+            switch (idTarget) {
+                case '#selecting':
+                    survey.drawCatCards();
+                    survey.drawSpeciesList();
+                    survey.animateBar(20);
+                    break;
+                case "#creating":
+                    survey.animateBar(60);
+                    break;
+                case "#questing":
+                    survey.animateBar(120);
+                    break;
+                case "#ending":
+                    bar.animate(1);
+                    survey.postSurveys();
+                    break;
+            }
+            survey.survey_pages.addClass('d-none');
+            $(idTarget).removeClass('d-none');
+        },
 
+        addAnswer: (q, a) => {
+            //값입력
+            if (survey.questions.find(e => e.id == q).input_type == 'checkbox') {
+                if (!survey.mySurveyData["q" + q].includes(a)) {
+                    survey.mySurveyData["q" + q] += String(a) + ",";
+                } else {
+                    survey.mySurveyData["q" + q] = survey.mySurveyData["q" + q].replace(a + ",", "");
+                }
+            } else {
+                if (survey.mySurveyData["q" + q] == a) {
+                    survey.mySurveyData["q" + q] = "";
+                    $('#q' + q + "_" + a).prop('checked', false);
+                }
+                else survey.mySurveyData["q" + q] = a;
+            }
+            console.log(survey.mySurveyData);
 
-    moveQuestion : (isNext) =>{        
-        $('#questing .next_btn').removeClass('active').off('click');
-
-        //앞막음
-        if(!isNext && survey.progress == 1){
-            survey.progress--;
-            survey.movePage("#creating");
-            return false;
-        }
-        //뒤 엔딩으로 보냄
-        if(isNext && survey.progress == survey.questions.length){
-            //갚이 다 차있는지 체크
-            survey.movePage("#ending"); 
-            return true;
-        }
-        if(isNext){
-            survey.progress++;
-        }else{
-            survey.progress--;
-        }
-        $('.questions').addClass('d-none');
-        $('#question'+survey.questions[survey.progress-1].id).removeClass('d-none');
-        survey.animateBar($('.pop_loader').width()/12*(3+survey.questions[survey.progress-1].category));
-        survey.verifyQuestions(survey.questions[survey.progress-1].id);
-    },
-
-
-
-    init : ()=> {
-        //고양이처리
-        cat.catPromise = cat.getCatsData();
-        species.getSpeciesData();
-
-        survey.progress = 0;
-        survey.selectedCat = -1,
-        survey.survey_pages = $('.survey_pages');
-        survey.guageWidth = $('.pop_loader').width();
-
-        $.ajax({
-            url : serverUrl+'/api/surveys',
-            type : 'GET',
-            dataType : 'jsonp',
-            jsonp : "callback",
-            async : false,
-        })
-        .done(function(data) {
-            console.log('Survey Loaded');
-            survey.questions = data;
-            survey.questions.forEach((item, i, array)=>{
-                survey.mySurveyData["q"+item.id] = "";
-            });     
-            survey.drawQuestions();
-        })
-        .fail(function (jqXHR, textStatus, errorThrown) {
-            console.log('AJAX Error!' + textStatus + " : " + errorThrown);
-            alert('서버와의 접속에 실패했습니다.');
-        });        
-    },
-
-    setSelectedCat : (id)=>{
-        let $thisbox = $('#cat_card'+id);
-        $('.pop_box2').removeClass('toggle');
-        $('.icon_sex').removeClass('active');
-        if(survey.selectedCat == id){
-            survey.selectedCat = -1;
-        }else{
-            survey.selectedCat = id;
-            $thisbox.find('.pop_box2').addClass('toggle');
-            $thisbox.find('.icon_sex').addClass('active');
-        }
-        console.log("THIS CAT : ", survey.selectedCat);
-        if(survey.selectedCat == -1) $('#selecting .next_btn').removeClass('active');
-        else $('#selecting .next_btn').addClass('active');
-    },
-
-    checkToCreating : (isNew)=>{
-        if(isNew) survey.selectedCat = 0;
-        switch(survey.selectedCat){
-            case -1 : 
-                alert('반려묘를 선택해주세요.');
-                break;
-            default : 
-                survey.initCreating();
-                survey.movePage('#creating');
-                break;
-        }        
-    },
+            survey.verifyQuestions(q);
+        },
 
 
 
-    initCreating : ()=>{
-        let $title = $('#creating_title');
-        if(survey.selectedCat > 0){
-            const originCat = cat.cats.find(e => e.id == survey.selectedCat); 
-            $title.html(originCat.name+"의 정보 수정하기");
-            survey.catData['name'] = originCat.name;
-            survey.catData['kg'] = originCat.kgx10;
-            survey.catData['age'] = originCat.age;
-            survey.catData['is_male'] = originCat.is_male;
-            survey.catData['is_neutering'] = originCat.is_neutering;
-            survey.catData['id_species'] = originCat.id_species;
-            $('#cat_name').val(originCat.name);
-            $('#cat_kg').val(parseFloat(originCat.kgx10 / 10));
-            $('#cat_age_'+originCat.age).trigger('click');
-            $('#is_male_'+(+originCat.is_male).toString()).trigger('click');
-            $('#is_neutering_'+(+originCat.is_neutering).toString()).trigger('click');
-            $('#id_species_'+(+originCat.is_male).toString()).trigger('click');
-            survey.verifyInputs();
-        }else{
-            $title.html('새로운 반려묘 등록하기');            
-            survey.catData['name'] = null;
-            survey.catData['kg'] = null;
-            survey.catData['age'] = null;
-            survey.catData['is_male'] = null;
-            survey.catData['is_neutering'] = null;
-            survey.catData['id_species'] = null;
-            $('#cat_name').val('');
-            $('#cat_kg').val('');
-            $('.select_closeLabel').trigger('click');
+        moveQuestion: (isNext) => {
+            $('#questing .next_btn').removeClass('active').off('click');
 
-        }
-    },
-            
-    setCatData : (key, val) => {
-        if(key == 'name'){
-            survey.catData['name'] = $('#cat_name').val();
-        }else if(key == 'kg'){
-            let kgStr = $('#cat_kg').val();
-            if(kgStr.substr(-2, 1) != "."){
-                alert('몸무게가 바르지 않습니다!');
+            //앞막음
+            if (!isNext && survey.progress == 1) {
+                survey.progress--;
+                survey.movePage("#creating");
+                return false;
+            }
+            //뒤 엔딩으로 보냄
+            if (isNext && survey.progress == survey.questions.length) {
+                //갚이 다 차있는지 체크
+                survey.movePage("#ending");
+                return true;
+            }
+            if (isNext) {
+                survey.progress++;
+            } else {
+                survey.progress--;
+            }
+            $('.questions').addClass('d-none');
+            $('#question' + survey.questions[survey.progress - 1].id).removeClass('d-none');
+            let thisCategories = survey.questions.filter(e => e.category == survey.questions[survey.progress - 1].category);
+            let thisQuestionIndex = thisCategories.indexOf(survey.questions[survey.progress - 1]);
+            let bar = 120 + ((survey.questions[survey.progress - 1].category - 1) * 250) + ((250 / thisCategories.length) * thisQuestionIndex);
+            if (bar > $('.pop_loader').width()) bar = $('.pop_loader').width();
+
+            survey.animateBar(bar);
+            $('.categories').removeClass('point_color').addClass('color_subgray');
+            $('#category' + thisQuestionIndex).addClass('point_color').removeClass('color_subgray');
+            survey.verifyQuestions(survey.questions[survey.progress - 1].id);
+        },
+
+
+        setSelectedCat: (id) => {
+            let $thisbox = $('#cat_card' + id);
+            $('.pop_box2').removeClass('toggle');
+            $('.icon_sex').removeClass('active');
+            if (survey.selectedCat == id) {
+                survey.selectedCat = -1;
+            } else {
+                survey.selectedCat = id;
+                $thisbox.find('.pop_box2').addClass('toggle');
+                $thisbox.find('.icon_sex').addClass('active');
+            }
+            console.log("THIS CAT : ", survey.selectedCat);
+            if (survey.selectedCat == -1) $('#selecting .next_btn').removeClass('active');
+            else $('#selecting .next_btn').addClass('active');
+        },
+
+        toggleFatty: (self) => {
+            survey.setCatData('fatty', self.htmlFor.replace(/[^0-9]/g, ''));
+            $('.fat_btns').removeClass('active');
+            $(self).addClass('active');
+        },
+
+        checkToCreating: (isNew) => {
+            if (isNew) survey.selectedCat = 0;
+            switch (survey.selectedCat) {
+                case -1:
+                    alert('반려묘를 선택해주세요.');
+                    break;
+                default:
+                    survey.initCreating();
+                    survey.movePage('#creating');
+                    break;
+            }
+        },
+
+
+
+        initCreating: () => {
+            let $title = $('#creating_title');
+            if (survey.selectedCat > 0) {
+                const originCat = cat.cats.find(e => e.id == survey.selectedCat);
+                $title.html(originCat.name + "의 정보 수정하기");
+                survey.catData['name'] = originCat.name;
+                survey.catData['kg'] = originCat.kgx10;
+                survey.catData['age'] = originCat.age;
+                survey.catData['is_male'] = originCat.is_male;
+                survey.catData['is_neutering'] = originCat.is_neutering;
+                survey.catData['id_species'] = originCat.id_species;
+                survey.catData['fatty'] = originCat.fatty;
+                $('#cat_name').val(originCat.name);
+                $('#cat_kg').val(parseFloat(originCat.kgx10 / 10));
+                $('#cat_age_' + originCat.age).trigger('click');
+                $('#is_male_' + (+originCat.is_male).toString()).trigger('click');
+                $('#is_neutering_' + (+originCat.is_neutering).toString()).trigger('click');
+                $('#id_species_' + (+originCat.is_male).toString()).trigger('click');
+                $('fat' + originCat.fatty + '_label').trigger('click');
+                survey.verifyInputs();
+            } else {
+                $title.html('새로운 반려묘 등록하기');
+                survey.catData['name'] = null;
+                survey.catData['kg'] = null;
+                survey.catData['age'] = null;
+                survey.catData['is_male'] = null;
+                survey.catData['is_neutering'] = null;
+                survey.catData['id_species'] = null;
+                survey.catData['fatty'] = null;
+                $('#fat3_label').trigger('click');
+                $('#cat_name').val('');
                 $('#cat_kg').val('');
+                $('.select_closeLabel').trigger('click');
             }
-            survey.catData['kg'] = kgStr;
 
-        }else{
-            survey.catData[key] = val;
-        }
-        console.log("CatData :", survey.catData);
-        survey.verifyInputs();
-    },
+        },
 
-    verifyInputs : () => {
-        //값이 모두 들어왔나 체크
-        if(util.isEmpty(survey.catData['name']) || 
-           util.isEmpty(survey.catData['kg']) || 
-           util.isEmpty(survey.catData['age']) ||
-           util.isEmpty(survey.catData['is_male'])  ||
-           util.isEmpty(survey.catData['is_neutering'])  ||
-           util.isEmpty(survey.catData['id_species'])
-        ){
-            $("#creating .next_btn").removeClass('active');
-            return false;
-        }else{
-            $("#creating .next_btn").addClass('active');
-            return true;
-        }
-    },
+        setCatData: (key, val) => {
+            if (key == 'name') {
+                survey.catData['name'] = $('#cat_name').val();
+            } else if (key == 'kg') {
+                let kgStr = $('#cat_kg').val();
+                if (kgStr.substr(-2, 1) != ".") {
+                    alert('몸무게가 바르지 않습니다!');
+                    $('#cat_kg').val('');
+                }
+                survey.catData['kg'] = kgStr;
+
+            } else {
+                survey.catData[key] = val;
+            }
+            console.log("CatData :", survey.catData);
+            survey.verifyInputs();
+        },
+
+        verifyInputs: () => {
+            //값이 모두 들어왔나 체크
+            if (util.isEmpty(survey.catData['name']) ||
+                util.isEmpty(survey.catData['kg']) ||
+                util.isEmpty(survey.catData['age']) ||
+                util.isEmpty(survey.catData['fatty']) ||
+                util.isEmpty(survey.catData['is_male']) ||
+                util.isEmpty(survey.catData['is_neutering']) ||
+                util.isEmpty(survey.catData['id_species'])
+
+            ) {
+                $("#creating .next_btn").removeClass('active');
+                return false;
+            } else {
+                $("#creating .next_btn").addClass('active');
+                return true;
+            }
+        },
 
 
-    verifyQuestions : (q)=>{
-        $('#questing .next_btn').removeClass('active').off('click');
+        verifyQuestions: (q) => {
+            $('#questing .next_btn').removeClass('active').off('click');
             //선택 질문일떄                                        //값이 차있으면
-        if(!survey.questions.find(e=> e.id == q).is_required || survey.mySurveyData["q"+q].length != 0){
-            $('#questing .next_btn').addClass('active').click(()=>{survey.moveQuestion(true)});
-            return true;
-        }else{
-            return false;
-        }
-    },
+            if (!survey.questions.find(e => e.id == q).is_required || survey.mySurveyData["q" + q].length != 0) {
+                $('#questing .next_btn').addClass('active').click(() => { survey.moveQuestion(true) });
+                return true;
+            } else {
+                return false;
+            }
+        },
 
 
-    animateBar : (goal) =>{
-        $('#pop_loader_bar').animate({width : goal}, 2000);
-        $('.pop_loader_top').animate({left : goal-27}, 2000);
-    },
+        animateBar: (goal) => {
+            $('#pop_loader_bar').animate({ width: goal }, 2000);
+            $('.pop_loader_top').animate({ left: goal - 27 }, 2000);
+        },
 
-    drawCatCards : ()=>{
-        survey.selectedCat = -1; //노선택 상태
-        let $origin = $('#cat_card_origin').clone();
-        for(let catOne of cat.cats){
-            $card = $origin.clone().attr({id : "cat_card"+catOne.id, data_id_cat : catOne.id}).removeClass('d-none');
-            $card.find('.cat_name').html(catOne.name);
-            let sexStr = catOne.is_male ? "xy" : "xx"
-            $card.find('.icon_sex').addClass(sexStr);
-            $card.find('.cat_specie_name').html(species.getName(catOne.id_species));
-            $card.find('.cat_kg').html(catOne.kgx10 / 10);
-            $card.click(()=>{survey.setSelectedCat(catOne.id)});
-            $('#cat_card0').after($card);
-        }
-        $('#cat_card_origin').remove();
-        survey.setSelectedCat(-1);
-        // 스와이퍼
-        var catSwiper = new Swiper('.catname_swiper', {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-            spaceBetween: 30,
-        });
-    },
-    drawSpeciesList : ()=>{
-        let $speciesList = $('#species_list').empty();
-        //품종 추가
-        for (const item of species.data){
-            let $li = $('<li>').addClass('select_option');
-            let $input = $('<input>').addClass('select_input').attr({ id : "id_species_"+item.id, type: "radio", name : "id_species", value: item.id}).click(()=>{survey.setCatData('id_species', item.id);});
-            let $label = $('<label>').addClass('select_label').attr({for : "id_species_"+item.id }).html(item.name);
-            $li.append([$input, $label]);
-            $speciesList.append($li);
-        }
-    },
+        drawCatCards: () => {
+            survey.selectedCat = -1; //노선택 상태
+            let $origin = $('#cat_card_origin').clone();
+            for (let catOne of cat.cats) {
+                $card = $origin.clone().attr({ id: "cat_card" + catOne.id, data_id_cat: catOne.id }).removeClass('d-none');
+                $card.find('.cat_name').html(catOne.name);
+                let sexStr = catOne.is_male ? "xy" : "xx"
+                $card.find('.icon_sex').addClass(sexStr);
+                $card.find('.cat_specie_name').html(species.getName(catOne.id_species));
+                $card.find('.cat_kg').html(catOne.kgx10 / 10);
+                $card.click(() => { survey.setSelectedCat(catOne.id) });
+                $('#cat_card0').after($card);
+            }
+            $('#cat_card_origin').remove();
+            survey.setSelectedCat(-1);
+            // 스와이퍼
+            var catSwiper = new Swiper('#cat_swiper', {
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '#cat_swiper_next',
+                    prevEl: '#cat_swiper_prev',
+                },
+            });
+        },
+        drawSpeciesList: () => {
+            let $speciesList = $('#species_list').empty();
+            //품종 추가
+            for (const item of species.data) {
+                let $li = $('<li>').addClass('select_option');
+                let $input = $('<input>').addClass('select_input').attr({ id: "id_species_" + item.id, type: "radio", name: "id_species", value: item.id }).click(() => { survey.setCatData('id_species', item.id); });
+                let $label = $('<label>').addClass('select_label').attr({ for: "id_species_" + item.id }).html(item.name);
+                $li.append([$input, $label]);
+                $speciesList.append($li);
+            }
+        },
 
-    drawQuestions : () =>{
-        let $body = $('#question_box');
-        let $originTip = $('#origin_tip');
-        survey.questions.forEach((question, i) =>{
-            let $page = $('<div>').attr({id : "question"+question.id} ).addClass('questions d-none');
-            let $qBox = $('<div>').addClass('pt_40px');
-            let $qNo = $('<span>').addClass('fs_24 fw_700 point_color').html("Q"+(i+1)+". ");
-            let $qDescription = $('<span>').addClass('fs_24 fw_700').html(question.description);
-            $qBox.append([$qNo, $qDescription])
-            if(!question.is_required){
-                let $qIsNotRequired = $('<span>').addClass('fs_24 fw_400').css({color : "#D1D0D0"}).html('  (선택)');
+        drawQuestions: () => {
+            let $body = $('#question_box');
+            let $originTip = $('#origin_tip');
+            survey.questions.forEach((question, i) => {
+                let $page = $('<div>').attr({ id: "question" + question.id }).addClass('questions d-none');
+                let $qBox = $('<div>').addClass('pt_40px');
+                let $qNo = $('<span>').addClass('fs_24 fw_700 point_color').html("Q" + (i + 1) + ". ");
+                let $qDescription = $('<span>').addClass('fs_24 fw_700').html(question.description);
+                $qBox.append([$qNo, $qDescription])
+                if (!question.is_required) {
+                    let $qIsNotRequired = $('<span>').addClass('fs_24 fw_400').css({ color: "#D1D0D0" }).html('  (선택)');
                     $qBox.append($qIsNotRequired);
+                }
+
+                let $tipBox = $('<div>').addClass('col-12 pt-3 px-6 tip_box');
+                if (question.tip != null) {
+                    $tipBox = $originTip.clone();
+                    $tipBox.removeClass('d-none').find('.tip_description').html(question.tip);
+                }
+
+                let $aBox = $('<div>').addClass('pt_2rem answers');
+                switch (question.input_type) {
+                    case 'textarea':
+                        let $input = $('<textarea>').attr({ id: "q" + question.id, rows: 3, placeholder: "직접 입력하기" }).addClass(["form-control", "mt_2rem"]).blur(() => { survey.addAnswer(question.id, $("#q" + question.id).val()) });
+                        $aBox.append($input);
+                        break;
+                    case 'checkbox':
+                        question.answers.forEach((answer, j) => {
+                            let $input = $('<input>').attr({ id: "q" + question.id + "_" + (j + 1), type: "checkbox" }).click(() => { survey.addAnswer(question.id, j + 1) });
+                            let $label = $('<label>').attr({ for: "q" + question.id + "_" + (j + 1) }).addClass("pb-4").html(answer.description);
+                            $aBox.append($input, $label);
+                        });
+                        break;
+                    case 'radio':
+                        $aBox.addClass('have_radio');
+                        question.answers.forEach((answer, j) => {
+                            let $input = $('<input>').attr({ id: "q" + question.id + "_" + (j + 1), name: "q" + question.id, type: "radio" }).click(() => { survey.addAnswer(question.id, j + 1) });
+                            let $label = $('<label>').attr({ for: "q" + question.id + "_" + (j + 1) }).addClass('["mr-3", "mr_3_m2"]').html(answer.description);
+                            $aBox.append($input, $label);
+                        });
+                        break;
+                }
+                $page.append([$qBox, $tipBox, $aBox]);
+
+                $body.append($page);
+
+            });
+
+            //        $('#origin_question, #origin_tip').remove();
+        },
+
+        postCat: () => {
+            //값이 안찼는데 들어오는 경우
+            if (!survey.verifyInputs()) {
+                alert('정보를 입력해주세요!');
+                return false;
+            }
+            //비로그인자일 경우 아이디칸에 세션아이디로 대체
+            if (user.id == null) {
+                user.id = util.getSessionId;
             }
 
-            let $tipBox = $('<div>').addClass('col-12 pt-3 px-6 tip_box');
-            if(question.tip != null){
-                $tipBox = $originTip.clone();
-                $tipBox.removeClass('d-none').find('.tip_description').html(question.tip);
+            let type;
+            survey.catData['id_ollysite'] = user.id;
+            if (survey.selectedCat != 0) {
+                survey.catData['id'] = survey.selectedCat;
+                type = "PATCH";
+            } else {
+                type = "POST";
             }
+            $.ajax({
+                url: serverUrl + "/api/cat",
+                type: type,
+                data: survey.catData,
+                statusCode: {
+                    200: (data) => {
+                        cat.getCatsData();
+                        console.log("Cat Updated.", cat.cats);
+                        survey.movePage('#questing');
+                        survey.moveQuestion(true);
+                    },
+                    201: (data) => {
+                        cat.getCatsData();
+                        console.log("Cat Inserted.", cat.cats);
+                        survey.selectedCat = data.id;
+                        survey.movePage('#questing');
+                        survey.moveQuestion(true);
+                    },
+                }
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('Cat Blocked!!' + textStatus + " : " + errorThrown);
+                alert('고양이 정보 등록에 실패했습니다!');
+            })
+        },
 
-            let $aBox = $('<div>').addClass('pt_2rem answers');
-            switch(question.input_type){
-                case 'textarea' :
-                    let $input = $('<textarea>').attr({id: "q"+question.id, rows : 3, placeholder : "직접 입력하기"}).addClass(["form-control", "mt_2rem"]).blur(()=>{survey.addAnswer(question.id, $("#q"+question.id).val())});
-                    $aBox.append($input);
-                    break;
-                case 'checkbox' :
-                    question.answers.forEach((answer, j)=>{
-                        let $input = $('<input>').attr({id: "q"+question.id+"_"+(j+1), type: "checkbox"}).click(()=>{survey.addAnswer(question.id, j+1)});
-                        let $label = $('<label>').attr({for: "q"+question.id+"_"+(j+1)}).addClass("pb-4").html(answer.description);
-                        $aBox.append($input, $label);
-                    });
-                    break;
-                case 'radio' :
-                    $aBox.addClass('have_radio');
-                    question.answers.forEach((answer, j)=>{
-                        let $input = $('<input>').attr({id: "q"+question.id+"_"+(j+1), name : "q"+question.id, type: "radio"}).click(()=>{survey.addAnswer(question.id, j+1)});
-                        let $label = $('<label>').attr({for: "q"+question.id+"_"+(j+1)}).addClass('["mr-3", "mr_3_m2"]').html(answer.description);
-                        $aBox.append($input, $label);
-                    });
-                    break;         
-            }
-            $page.append([$qBox, $tipBox, $aBox]);
+        postSurveys: () => {
+            var data = JSON.stringify(survey.mySurveyData);
+            console.log(data)
+            $.ajax({
+                url: serverUrl + "/api/surveys",
+                type: "POST",
+                data: { id: survey.selectedCat, data: data },
+                dataType: 'JSON',
+                statusCode: {
+                    201: (data) => {
+                        console.log("Survey Inserted.");
+                        survey.postDisease();
+                    }
+                }
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('Survey Blocked!!' + textStatus + " : " + errorThrown);
+                alert('고양이 정보 등록에 실패했습니다!');
+            })
+        },
 
-            $body.append($page);
- 
-        });
- 
-//        $('#origin_question, #origin_tip').remove();
-    },
-
-    postCat : () => {
-        //값이 안찼는데 들어오는 경우
-        if(!survey.verifyInputs()){
-            alert('정보를 입력해주세요!');
-            return false;
+        postDisease: () => {
+            console.log("Disease Start to", survey.selectedCat);
+            $.ajax({
+                url: serverUrl + "/api/surveys/disease",
+                type: "POST",
+                data: { id_cat: survey.selectedCat },
+                statusCode: {
+                    201: (data) => {
+                        console.log("Survey-Disease Inserted.");
+                        setTimeout(() => {
+                            location.href = '/page/?M2_IDX=26046&id=' + survey.selectedCat;
+                        }, 10000)
+                    }
+                }
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log('Survey ERROR!!' + textStatus + " : " + errorThrown);
+                alert('고양이 정보 등록에 실패했습니다!');
+            })
         }
-        //비로그인자일 경우 아이디칸에 세션아이디로 대체
-        if(user.id == null){
-            user.id = util.getSessionId;
-        }
-    
-        let type;
-        survey.catData['id_ollysite'] = user.id;        
-        if(survey.selectedCat != 0 ){
-            survey.catData['id'] = survey.selectedCat;
-            type = "PATCH";
-        }else{            
-            type = "POST";
-        }
-        $.ajax({
-            url :  serverUrl + "/api/cat",
-            type : type,
-            data : survey.catData,
-            statusCode: {
-                200: (data) => {
-                    cat.getCatsData();
-                    console.log("Cat Updated.", cat.cats); 
-                    survey.movePage('#questing');
-                    survey.moveQuestion(true);
-            },
-                201: (data) => { 
-                    cat.getCatsData();
-                    console.log("Cat Inserted.", cat.cats); 
-                    survey.selectedCat = data.id;
-                    survey.movePage('#questing');
-                    survey.moveQuestion(true);
-            },
-            }
-        }).fail((jqXHR, textStatus, errorThrown)=>{
-            console.log('Cat Blocked!!' +textStatus + " : " + errorThrown);
-            alert('고양이 정보 등록에 실패했습니다!');
-        })
-    },
 
-    postSurveys : ()=>{
-        var data = JSON.stringify(survey.mySurveyData);
-        console.log(data)
-        $.ajax({
-            url : serverUrl + "/api/surveys",
-            type : "POST",
-            data : {id : survey.selectedCat, data: data },
-            dataType : 'JSON',
-            statusCode: {
-                201: (data) => {
-                    console.log("Survey Inserted."); 
-                    survey.postDisease();
-               }
-             }            
-        }).fail((jqXHR, textStatus, errorThrown)=>{
-            console.log('Survey Blocked!!' +textStatus + " : " + errorThrown);
-            alert('고양이 정보 등록에 실패했습니다!');
-        })
-    },
-
-    postDisease : ()=>{
-        console.log("Disease Start to", survey.selectedCat);
-        $.ajax({
-            url : serverUrl + "/api/surveys/disease",
-            type : "POST",
-            data : {id_cat : survey.selectedCat},
-            statusCode: {
-                201: (data) => {
-                    console.log("Survey-Disease Inserted.");
-                    setTimeout(()=>{
-                        location.href='/page/?M2_IDX=26046&id='+survey.selectedCat;
-                    }, 10000)
-               }
-             }
-        }).fail((jqXHR, textStatus, errorThrown)=>{
-            console.log('Survey ERROR!!' +textStatus + " : " + errorThrown);
-            alert('고양이 정보 등록에 실패했습니다!');
-        })
     }
 
-}
+    var bar = new ProgressBar.Circle(circle_loading, {
+        color: '#6E9357',
+        strokeWidth: 6,
+        trailWidth: 6,
+        easing: 'easeInOut',
+        duration: 7500,
+        text: {
+            autoStyleContainer: false
+        },
+        from: { color: '#6E9357', width: 6 },
+        to: { color: '#6E9357', width: 6 },
+        step: function (state, circle) {
+            circle.path.setAttribute('stroke', state.color);
+            circle.path.setAttribute('stroke-width', state.width);
 
-var bar = new ProgressBar.Circle(circle_loading, {
-    color: '#6E9357',
-    strokeWidth: 6,
-    trailWidth: 6,
-    easing: 'easeInOut',
-    duration: 7500,
-    text: {
-        autoStyleContainer: false
-    },
-    from: { color: '#6E9357', width: 6 },
-    to: { color: '#6E9357', width: 6 },
-    step: function (state, circle) {
-        circle.path.setAttribute('stroke', state.color);
-        circle.path.setAttribute('stroke-width', state.width);
-
-        var value = Math.round(circle.value() * 100);
-        if (value === 0) {
-            circle.setText('');
-        } else {
-            circle.setText(value);
+            var value = Math.round(circle.value() * 100);
+            if (value === 0) {
+                circle.setText('');
+            } else {
+                circle.setText(value);
+            }
         }
-    }
-});
+    });
 
 </script>
 
@@ -820,7 +2219,7 @@ var bar = new ProgressBar.Circle(circle_loading, {
         </div>
         <div class="pl-1 line_14">
             <span class="fs_16 fw_700 pl-2">Tip. </span>
-            <span class="fs_16 tip_description"></span>    
-        </div>           
+            <span class="fs_16 tip_description"></span>
+        </div>
     </div>
 </div>

@@ -1,0 +1,207 @@
+.nx-prefix.sub-content {
+    padding-bottom: 100px;
+    background: #fff;
+}
+.nx-prefix.sub-content.bgcolor1 {
+    background: #f3f3f3;
+}
+.nx-prefix.sub-content .inner-static {
+    position: relative;
+    max-width: 1152px;
+    min-height: 100vh;
+    margin: 0 10px;
+    padding-left: 300px;
+    padding-top : 230px;
+}
+
+.nx-prefix.sub-content .inner-static::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.nx-prefix.sub-content .consult-spot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #D9DCE7;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+}
+.nx-prefix.sub-content .consult-spot .tit {
+    font-weight: 500;
+    font-size: 22px;
+}
+.nx-prefix.sub-content .consult-spot .lead {
+    font-size: 16px;
+    line-height: 1.35;
+}
+.nx-prefix.sub-content .consult-spot+.consult-search {
+    margin-top: 20px;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-top: 2px solid #dedede;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td,
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr th {
+    border-bottom: 1px solid #dedede;
+    box-sizing: border-box;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr th {
+    padding: 15px 10px 15px 15px;
+    width: 200px;
+    background: #f3f3f3;
+    vertical-align: top;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr th .item {
+    display: block;
+    padding: 10px 0;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.03em;
+    color: #333;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td {
+    padding: 15px 10px;
+    width: calc(100% - 200px);
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-ips1 {
+    padding: 5px 20px;
+    max-width: 100%;
+    width: 100%;
+    height: 45px;
+    background: #f6f9fb;
+    border: 1px solid #dedede;
+    box-sizing: border-box;
+    border-radius: 2px;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    color: #666;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-ips1.ips-ws1- {
+    max-width: 260px;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-ips1.ips-ws2- {
+    max-width: 600px;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-txta1 {
+    padding: 14px 20px;
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    background: #f6f9fb;
+    border: 1px solid #dedede;
+    box-sizing: border-box;
+    border-radius: 2px;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    color: #666;
+    resize: none;
+}
+.nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-txta1.txta-hs1- {
+    height: 150px;
+}
+.nx-prefix.sub-content .btn-area {
+    margin-top: 80px;
+    text-align: center;
+}
+.nx-prefix.sub-content .btn-area .btn-cancel,
+.nx-prefix.sub-content .btn-area .btn-save {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    box-sizing: border-box;
+    vertical-align: top;
+    transition: all 0.25s linear;
+    width: 140px;
+    height: 46px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    transition: background 0.15s linear;
+}
+.nx-prefix.sub-content .btn-area .btn-save {
+    background: #4D5163;
+}
+.nx-prefix.sub-content .btn-area .btn-save:hover {
+    background: #5573dc;
+}
+.nx-prefix.sub-content .btn-area .btn-cancel {
+    background: #878CA3;
+}
+.nx-prefix.sub-content .btn-area .btn-cancel:hover {
+    background: #424658;
+}
+@media print, screen and (min-width: 1200px) {
+    .nx-prefix.sub-content .inner-static {
+        margin: 0 auto;
+    }
+}
+@media print, screen and (max-width: 768px) {
+    .nx-prefix.sub-content {
+        padding: 0 0 50px;
+    }
+    .nx-prefix.sub-content .inner-static {
+        margin: 0 15px;
+        padding-top : 100px;
+        padding-left : 0px;
+    }
+    .nx-prefix.sub-content .consult-spot {
+        padding: 10px;
+        height: 160px;
+    }
+    .nx-prefix.sub-content .consult-spot .tit {
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+    .nx-prefix.sub-content .consult-spot+.consult-search {
+        margin-top: 10px;
+    }
+    .nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr th {
+        padding: 10px;
+        width: 100px;
+    }
+    .nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td {
+        padding: 10px;
+        width: calc(100% - 100px);
+    }
+    .nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-ips1 {
+        padding: 5px 10px;
+    }
+    .nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-txta1 {
+        padding: 10px;
+        height: 200px;
+    }
+    .nx-prefix.sub-content .consult-add-area .consult-ts-add tbody tr td .skin-txta1.txta-hs1- {
+        height: 100px;
+    }
+    .nx-prefix.sub-content .consult-add-area+.btn-area {
+        margin-top: 60px;
+    }
+}

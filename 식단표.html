@@ -312,6 +312,10 @@
     @media screen and (max-width: 576px ) {
 
 
+        #section1 .mw_1152{
+            max-width : 100%;
+            padding: 0 32px;
+        }
         #section1 .pt_36px {
             padding-top: 20px;
             text-align: left;
@@ -321,6 +325,18 @@
 
         #section2.mt_34px {
             margin-top: 20px;
+        }
+
+        #section2 .mw_1152{
+            max-width : 100%;
+            padding : 0px;
+        }
+        #calender {
+            width : 100%;
+            padding : 0 12px;
+        }
+        #special_box {
+            padding : 0 12px;
         }
 
         #section3.mt_90px {
@@ -336,6 +352,18 @@
             margin-top: 20px !important;
         }
 
+        #section4,
+        #section5,
+        #section6,
+        #section7,
+        #section8,
+        #section9,
+        #section10,
+        #section11 {
+            background-color: white;
+        }
+
+        
         .bang_ico {
             max-width: 24px;
             max-height: 24px;
@@ -413,6 +441,14 @@
             padding-top: 140px;
         }
 
+        #snack_content_box{
+            width : 100%;
+            margin-bottom : 30px;
+            margin-left : 0px;
+        }
+        #snack_content_title{
+            display : none;
+        }
         .cart_wrap {
             padding: 0 25px;
         }
@@ -542,6 +578,49 @@
             top: -8px;
         }
 
+        .day_box{
+            width : 48px;
+            height : 48px;
+            border-radius: 6px;
+            margin-left : 2px;
+            margin-right : 2px;
+            padding : 6px;
+        }
+
+
+        #calender_area{
+            max-width : 100%;
+        }
+
+        .day_text{
+            width : 26px;
+            height : 26px;
+            font-size : 14px;
+            border-radius : 13px;
+            line-height : 26px;
+            margin-bottom : 0px;
+        }
+
+        .ball{
+            margin : 1px;
+            width : 4px;
+            height : 4px;
+        }
+
+        .balls{
+           display: flex;
+            justify-content: center;          
+        }
+
+        .day_box.title.special{
+            width : 96px;
+        }
+
+        #special_box{
+            width : 100%;
+            height : 80px;
+        }
+
     }
 </style>
 
@@ -579,6 +658,26 @@
         </div>
         <div id="special_box">
             <div class="day_box title special">SPECIAL</div>
+            <div class="day_box special" id="special1" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">1주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special2" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">2주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special3" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">3주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special4" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">4주</div>
+                <div class="balls"></div>
+            </div>
+            <div class="day_box special" id="special5" onclick="calender.drawSnacklist(this, false)">
+                <div class="day_text">5주</div>
+                <div class="balls"></div>
+            </div>
         </div>
         <div id="snack_content_box">
             <div id="snack_content_title">간식 리스트</div>
@@ -620,14 +719,12 @@
             <button type="button" class="btn btn-outline-success fw_700 btn_plus_img mr-3" onclick="calender.goToCycle()">
                 주기 재설정하기
             </button>
-            <button type="button" class="btn btn-outline-success fw_700 btn_plus_img btn_plus_txt">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt=""
-                    class="img-fluid mr-2">
+            <button type="button" class="btn btn-outline-success fw_700 btn_plus_img btn_plus_txt" onclick="calender.goToDiagnosis()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid mr-2">
                 <span>제품 추가하기</span>
             </button>
-            <button type="button" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt=""
-                    class="img-fluid mr-2">
+            <button type="button" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt" onclick="calender.deleteItem()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid mr-2">
                 <span>제품 삭제하기</span>
             </button>
         </div>
@@ -668,7 +765,7 @@
     <div class="row mw_1152 cart_wrap3">
         <div class="col pr-0">
             <div class="fs_20 fw_700 float-left">합계</div>
-            <div class="fs_20 fw_700 float-right point_color">￦2,500</div>
+            <div id="total_price" class="fs_20 fw_700 float-right point_color"></div>
         </div>
     </div>
 </div>
@@ -680,13 +777,14 @@
             <dl class="dl_snack">
                 <dt class="dt_snack fs_22 fw_700 pc_br_none">
                     정기 구독 서비스 <br><span class="m_f2">이용 시</span>
-                    <div class="float-right pr_140px fs_20 fw_700 text-right">- ￦10,000</div>
+                    <div id="total_discount" class="float-right pr_140px fs_20 fw_700 text-right"></div>
                 </dt>
+                <!-- 깎아주는 값 -->
                 <dd class="dd_snack fs_20 fw_700 point_color">
                     <div>
                         배송비 무료 <span class="float-right">- ￦2,500</span>
                     </div>
-                    <div>
+                    <div id="first_discount">
                         첫 설문조사 참여 쿠폰 <span class="float-right">- ￦2,500</span>
                     </div>
                     <div>
@@ -706,22 +804,22 @@
     <div class="row mw_1152 cart_wrap4">
         <div class="col">
             <div class="fs_22 fw_700 float-left point_color">총 결제 금액</div>
-            <div class="fs_20 fw_700 float-right point_color">￦112,500</div>
+            <div id="final_price" class="fs_20 fw_700 float-right point_color"></div>
         </div>
     </div>
 </div>
 
 
-<div class="text-center pt_80px subscription_button bg_sub_gray_etc">
-    <a href="#">
-        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/subscription_button.png" class="img-fluid"
-            alt=""></a>
+<div class="text-center pt_80px subscription_button bg_sub_gray_etc" id="section10">
+    <a onclick="calender.postSubscribe()">
+        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/subscription_button.png" class="img-fluid" alt="">
+    </a>
 </div>
 
 
 <!--비구독자에게만 보임-->
-<div class="text-center pt_40px fs_18  sub_gray_text subscribe_btn pb_80px bg_sub_gray_etc">
-    <a href="#">구독 없이 장바구니에 담기</a>
+<div class="text-center pt_40px fs_18  sub_gray_text subscribe_btn pb_80px bg_sub_gray_etc" id="section11">
+    <a onclick="calender.postOllyShop()">구독 없이 장바구니에 담기</a>
 </div>
 
 
@@ -741,12 +839,20 @@
         itemlist : null,
         ollyshop : null,
         ggaribox : {},
+        totalDiscount : 0,
         totalPrice : 0,
+        finalPrice : 0,
+        isSpecialDrawn : [],
+        isFirst : false,
 
         init : () => {
             calender.id = util.getParamFromUrl('id');
+            if(calender.id == undefined){
+                alert('잘못된 접근입니다.');
+                location.href = "/"
+            }
             calender.items = JSON.parse(util.getParamFromUrl('items'));  
-            $('#year_month').html(calender.date.getFullYear() + "년 " + calender.date.getMonth()+1 + "월");
+            $('#year_month').html(calender.date.getFullYear() + "년 " + (calender.date.getMonth()+1) + "월");
             calender.getDatas();
         },
 
@@ -787,6 +893,14 @@
                 alert('상품정보 열람에 실패했습니다!');
             });
 
+            var pr4 = $.ajax(util.getAjaxSetting(serverUrl+"/api/surveys/first/"+calender.id))
+                .done((data)=>{
+                    console.log(data);
+                    calender.isFirst = data;
+                }).fail((jqXHR, textStatus, errorThrown) => {
+                    console.log(errorThrown)
+                });
+
             $.when(pr1, pr2, pr3).done(()=>{
                 $.each(calender.itemlist, (i, item)=>{
                     //선가공
@@ -794,20 +908,89 @@
                         Object.assign(item, calender.ollyshop.find(e => e.product_code == item.id_olly_product));
                     } else { }
                 });
-                calender.drawcalender();
+                calender.drawCalender();
                 calender.drawGgaribox();
+                calender.drawFirstDiscount();
             });
         },
 
-        goToCycle : () =>{
+        postSubscribe : ()=>{
+            let start;
+            let startStr;
+            let y = calender.date.getFullYear();
+            let m = calender.date.getMonth();
+            if(10 < calender.date.getDate() && calender.date.getDate() < 25){
+                start = new Date(y, m+1, 1);
+            }else{
+                start = new Date(y, m, 15);
+            }
+            startStr = start.toISOString().substr(0, 19).replace('T', ' ');
+            console.log(startStr);
+            var pr1 = $.ajax({
+                url : serverUrl+"/api/subscribe/",
+                data : { id_cat : calender.id,
+                    startday : startStr,
+                    items : JSON.stringify(calender.ggaribox),
+                    price : calender.finalPrice,
+                },
+                type : 'POST',
+            }).done((data)=>{
+                console.log(data);
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log(jqXHR, textStatus, errorThrown)
+            });
+
+            $.when(pr1).done(()=>{
+                alert('구독해주셔서 감사합니다.');
+                location.href="/my/cart.list.php";
+            })
+        },
+
+        postOllyShop : () => {
+            var pr;
+
+            return pr;
+        },
+
+
+        goToCycle : () =>{            
+            location.href = document.referrer;
+        },
+
+        goToDiagnosis : () =>{
             location.href = "/page/?M2_IDX=26046&id="+util.getParamFromUrl('id');
         },
 
-        drawcalender : ()=>{            
+        deleteItem : () =>{    
+            let $deletes = $('input[type=checkbox]:checked');
+            if($deletes.length == 0 ){
+                alert('삭제할 상품을 골라주세요.');
+                return false;
+            }           
+            $.each($deletes, (i, item)=>{                           
+                let id = $(item).attr('id').replace(/[^0-9]/g, "");
+                $('#cart'+id).remove();
+                delete calender.ggaribox[id];
+                
+                console.log(calender.ggaribox);
+            });            
+        },
+
+        drawPrices : (price) =>{
+            calender.totalPrice += price;
+            //할인 금액. 
+            let dis = calender.isFirst ? 7500 : 5000;
+            calender.finalPrice = calender.totalPrice - dis;
+            $('#total_price').html(util.won3Comma(calender.totalPrice));
+            $('#total_discount').html("- "+util.won3Comma(dis));            
+            $('#final_price').html(util.won3Comma(calender.finalPrice));
+        },
+
+        drawCalender : ()=>{            
             let boxCount = 1;
             let firstDayOfWeek = new Date(calender.date.getFullYear(), calender.date.getMonth()+1, 1).getDay()-1;
             let lastday = new Date(calender.date.getFullYear(), calender.date.getMonth()+2, -1).getDate();
-            let $calender = $('#calender');               
+            let $calender = $('#calender');
             outer : for(let i =0; i < 7; i++){
                 inner : for(let j =0; j < 5; j++){                    
                     if(boxCount >= firstDayOfWeek+lastday){
@@ -815,45 +998,61 @@
                     }
                     let $box = $('<div>').attr('id', 'box'+boxCount).addClass('day_box');
                     if(firstDayOfWeek <= boxCount){
-                        $box.click(calender.drawSnacklist);
                         let $day = $('<div>').addClass('day_text').html(boxCount-firstDayOfWeek+1);
                         $box.append($day);
+                        $balls = $('<div>').addClass('balls');               
                         for(key in calender.items){
                             let isEat = false;
                             switch (parseInt(calender.items[key])){
                                 case 30 : case 60 : case 90 : isEat = true; break;
                                 case 15 : isEat = boxCount % 2 == 0; break;
                                 case 10 : isEat = boxCount % 3 == 0; break;
-                                case 7 : isEat = boxCount % 4 == 0; break;
-                                case 3 : isEat = boxCount % 10 == 0; break;
-                                case 2 : isEat = boxCount % 15 == 0; break;
-                                case 1 : isEat = boxCount % 30 == 0; break;
+                                default :
+                                    if(!calender.isSpecialDrawn.includes(key))
+                                        calender.drawSpecialList(key, calender.items[key]);
+                                    break;
                             }
                             if(isEat){
                                 let product = calender.itemlist.find(e=> e.id == key);
-                                let $ball = $('<div>').addClass('ball cate'+product.category);
-                                $box.append($ball);
+                                let $ball = $('<div>').addClass('ball cate'+product.category);                                
+                                $balls.append($ball);
                             }
                         };
+                        $box.append($balls);
+                        $box.on("click", ()=>{calender.drawSnacklist($box, true)});
                     }
                     $calender.append($box);
-                    boxCount++;                           
+                    boxCount++;
                 }
             }
 
-            //기타 나중에 하기
         },
 
-        drawSnacklist : (e) =>{
-            let $self = $(e.currentTarget);
+        drawSpecialList : (id, iterate)=>{
+            for(let i=1; i <5; i++){
+                let product = calender.itemlist.find(e=> e.id == id);
+                let $ball = $('<div>').addClass('ball cate'+product.category);
+                $('#special'+i).find('.balls').append($ball);
+            }
+            calender.isSpecialDrawn.push(id);
+        },
+
+        drawSnacklist : (self, isDay) =>{
+            let $self = isDay ? self : $(self);
             $('.day_box').removeClass('active');
             $self.addClass('active');
-            $contents = $('#snack_contents');            
+            $contents = $('#snack_contents');
             $contents.empty();
-
-            let $title = $('<span>').attr('id', 'snack_title').html('일일 간식 | ');
-            let day = $self.find('.day_text').html();
-            let dayText = calender.date.getFullYear()+"년 "+(calender.date.getMonth()+1)+"월 "+day+"일";
+            let dayText = calender.date.getFullYear()+"년 "+(calender.date.getMonth()+1)+"월 ";
+            if(isDay){
+                let day = $self.find('.day_text').html();
+                dayText += day+"일";
+            }else{
+                let week = $self.attr('id').replace(/[^0-9]/g, '');
+                dayText += week+"주";
+            }
+            let title = isDay ? '일일 간식 | ' : '스페셜 간식 | ';
+            let $title = $('<span>').attr('id', 'snack_title').html(title);
             let $pos =  $('<span>').attr('id', 'snack_pos').html(dayText);
             $contents.append($title, $pos);
             $.each($self.find('.ball'), (i, item)=>{
@@ -883,13 +1082,20 @@
                     amount : amount,
                     amount_user_added :0,
                 }
-                calender.ggaribox[item.id] = ggari;
+                calender.ggaribox["item"+item.id] = ggari;
                 calender.totalPrice += parseInt(item.product_price) * amount;
                 $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
                 $box.find('.btn_plus_img').click(()=>{calender.count(item.id, true)});
                 $box.find('.btn_minus_img').click(()=>{calender.count(item.id, false)});
                 $carts.append($box);
-            });            
+            });
+            calender.drawPrices(0);
+        },
+
+        drawFirstDiscount : () => {
+            if(!calender.isFirst){
+                $('#first_discount').hide();
+            }
         },
 
         count : (id, isPlus)=>{
@@ -898,19 +1104,21 @@
             let price = calender.itemlist.find(e=> e.id == id).product_price;            
             if(isPlus){
                 quantity++;
-                calender.totalPrice += price;
-                calender.ggaribox[id].amount_user_added++;
+                calender.ggaribox["item"+id].amount_user_added++;
+                calender.drawPrices(price);
             }else{
                 if(quantity != 0){
                     quantity--;                    
                     calender.totalPrice -= price;
-                    calender.ggaribox[id].amount_user_added--;
+                    calender.ggaribox["item"+id].amount_user_added--;
+                    calender.drawPrices(-price);
                 }
             }
             console.log(calender.ggaribox);
             $quantity.html(quantity);
-            $('#total_price').html(util.won3Comma(calender.totalPrice));
         },
+
+
     }
 
     $(window).resize(function () {

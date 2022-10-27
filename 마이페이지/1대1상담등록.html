@@ -1,0 +1,107 @@
+<!-- 서브 콘텐츠 : 상담 등록페이지 start -->
+<div class="nx-prefix sub-content">
+
+    <!-- 서브 콘텐츠 내용 start -->
+    <div class="content-container">
+        <div class="inner-static">
+
+            <!-- 상담 안내타이틀 start -->
+            <div class="consult-spot">
+                <p class="lead">
+                    [##_help_lead_##]
+                </p>
+            </div>
+            <!-- 상담 안내타이틀 end -->
+
+            <!-- 상담 등록페이지 내용 영역 start -->
+            <div class="consult-add-area">
+                <table class="consult-ts-add">
+                    <tbody>
+                        <s_cate>
+                            <tr>
+                                <th>
+                                  	<strong class="item">카테고리</strong>
+                                </th>
+                                <td>
+                                    <span class="slt1">
+                                        <select id="[##_cate_form_name_##]" name="[##_cate_form_name_##]">
+                                            <s_cate_rep>
+                                                <option value="[##_cate_id_##]">[##_cate_name_##]</option>
+                                            </s_cate_rep>
+                                        </select>
+                                        <span class="ico_arr1_d"></span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </s_cate>
+                      
+                      	<s_cons_form>
+                          	<s_cons_form_rep>
+                              	<tr>
+                                    <th>
+                                        <label for="[##_item_id_##]" class="item">[##_item_title_##]</label>
+                                    </th>
+                                    <td>
+                                        [##_item_element_##]
+                                    </td>
+                                </tr>
+                          	</s_cons_form_rep>
+                      	</s_cons_form>
+                        
+                        <s_cons_common>
+                            <tr>
+                                <th>
+                                    <label for="[##_item_title_name_##]" class="item">제목</label>
+                              	</th>
+                                <td>
+                                  	<input type="text" id="[##_item_title_name_##]" name="[##_item_title_name_##]" placeholder="제목을 입력해 주세요." maxlength="100"  class="skin-ips1">
+                              	</td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="[##_item_content_name_##]" class="item">내용</label>
+                                </th>
+                                <td>
+                                  	<textarea class="skin-txta1" id="[##_item_content_name_##]" name="[##_item_content_name_##]" rows="10" cols="1" placeholder="[##_item_content_placeholder_##]"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <strong class="item">파일</strong>
+                                </th>
+                                <td>
+                                    [##_item_file_element_##]
+                              	</td>
+                            </tr>
+                        </s_cons_common>
+
+                        <!-- 패스워드 -->
+                        <s_cons_password>
+                            <tr>
+                                <th> <label for="[##_item_content_name_##]" class="item"> 패스워드 </label> </th>
+                                <td><input type="password" name="[##_item_password_name_##]" id="[##_item_password_name_##]" class="ips-ws1- skin-ips1"></td>
+                            </tr>
+                            <tr>
+                                <th> <label for="[##_item_content_name_##]" class="item"> 패스워드 확인 </label> </th>
+                                <td><input type="password" name="[##_item_password2_name_##]" id="[##_item_password2_name_##]" class="ips-ws1- skin-ips1"></td>
+                            </tr>
+                        </s_cons_password>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 캡차 -->
+            <s_captcha></s_captcha>
+
+            <s_btn_add>
+                <div class="btn-area">
+                    <a [##_href_submit_##] class="btn-save">등록하기</a>
+                    <a [##_href_list_##] class="btn-cancel">취소하기</a>
+                </div>
+            </s_btn_add>
+        </div>
+    </div>
+    <!-- 서브 콘텐츠 내용 end -->
+
+</div>
+<!-- 서브 콘텐츠 : 상담 등록페이지 end -->

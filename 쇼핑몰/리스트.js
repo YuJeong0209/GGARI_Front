@@ -1,18 +1,10 @@
-
-<div id="datas">
-테스트트트<br>
-
-</div>
-
-<script>
-
 $(()=>{
     $.ajax({
         url : '/api/shop.list.php',
         type : "POST",
         data : {
             KEY : apikey,
-            menu2_id : "26044",
+            menu2_id : "27038",
             use_page : false,
             use_limit : false,
         },
@@ -20,13 +12,8 @@ $(()=>{
         async : false,
     }).done((data)=> {
         console.log(data);
-        $.each(data.items, (i, item)=>{
-            $col = $('<div>').html(JSON.stringify(item));
-            $('#datas').append($col);
-        });
+        $('#all_product').html(data.items.length); 
     }).fail((jqXHR, textStatus, errorThrown) => {console.log(errorThrown)});
 
 
 });
-
-</script>
