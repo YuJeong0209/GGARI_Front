@@ -53,12 +53,9 @@
         z-index: 0;
         opacity: 1;
     }
-
     .under_bar_box {
         padding-top: 220px;
     }
-
-
 
     .h_2 {
         height: 2px;
@@ -66,12 +63,17 @@
 
     .swiper-button-next {
         background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_right.png);
-        right: 30px;
+        right: -50px;
     }
 
     .swiper-button-prev {
         background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png);
-        left: 30px;
+        left: -50px;
+    }
+
+    #cat_swiper {
+        width : 1004px;
+        overflow-x : hidden;
     }
 
     #cat_swiper .swiper-button-next,
@@ -83,9 +85,6 @@
         margin-top: 0;
         background-size: 16px 32px;
     }
-
-
-
 
     .swiper {
         width: 100%;
@@ -113,22 +112,13 @@
     #fatty_swiper {
         overflow: hidden;
     }
-/*    
-    #fatty_swiper .swiper-slide{
-        width: 190px !important;
 
-    }
-  */  
-    /*
-    .cat_swiper {
-        margin-left: -23.5rem !important;
-    }
-    */
 
     .swiper2_wrap {
-        width: 1004px;
-        overflow-x: hidden;
-        margin-left: 6rem;
+        width: 100%;
+        display : flex;
+        justify-content : center;
+
     }
 
     .slide2 {
@@ -519,12 +509,16 @@
         background: #EDF2EA;
         border-radius: 10px;
         padding: 14px 20px;
+        height : 60px;
     }
 
     .tip_box img {
         width: 32px;
     }
 
+    .tip_description{
+        margin-left : 100px;
+    }
 
     .answers input[type=checkbox] {
         display: none;
@@ -679,6 +673,11 @@
         background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/fatty5a.png');
     }
 
+    .cathead{
+            float : left;
+            margin-right : 14px;
+    }
+
     @media screen and (max-width:576px) {
 
         #creating .col-4{
@@ -755,6 +754,7 @@
         }
 
         .pop_loader {
+            width : calc(100vw - 60px);
             height: 8px;
         }
         #pop_loader_bar {
@@ -775,25 +775,25 @@
         }
 
         .swiper2_wrap {
-            width: 294px;
+            width: calc(100vw - 3.6rem);;
             margin-left: 1.8rem;
         }
 
-        .cat_swiper {
-            margin-left: -0.5rem !important;
+        #cat_swiper {
+            width : 100%;
         }
 
         .swiper-button-prev {
-            left: 0px;
+            left: -30px;
         }
 
         .swiper-button-next {
-            right: 0;
+            right: -30px;
         }
 
         .swiper-button-next,
         .swiper-button-prev {
-            top: 58.5%;
+            top: 38%;
             width: 36px;
             height: 36px;
             margin-top: 0;
@@ -965,6 +965,8 @@
 
         .tip_box {
             padding: 14px 12px 14px 16px;
+            display : flex;
+            justify-content : center;
         }
 
         .tip_box img {
@@ -973,6 +975,10 @@
 
         .tip_box .fs_16 {
             font-size: 14px;
+        }
+
+        .tip_description{
+            margin-left : 0px;
         }
 
         .line_14 {
@@ -1130,15 +1136,15 @@
         }
         
         #fatty_swiper_prev {
-                left: -31px;
-            }
-            #fatty_swiper_next {
-                right: -32px;
-            }
+            left: -31px;
+        }
+        #fatty_swiper_next {
+            right: -32px;
+        }
 
-            #fatty_swiper_next, #fatty_swiper_prev {
-                top: 36.5%;
-            }
+        #fatty_swiper_next, #fatty_swiper_prev {
+            top: 36.5%;
+        }
     }
 
 
@@ -1221,10 +1227,6 @@
         .next_btn {
             margin-top: 14px;
         }
-
-        
-
-
 
     }
 </style>
@@ -1319,6 +1321,9 @@
                     </div>
 
                     <div class="swiper2_wrap pt_40px">
+                        <div class=swiper_button_box>
+                            <div id="cat_swiper_prev" class="swiper-button-prev"></div>
+                        </div>    
                         <!-- Swiper -->
                         <div id="cat_swiper" class="swiper">
                             <div class="swiper-wrapper">
@@ -1348,10 +1353,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class=swiper_button_box>
+                            <div id="cat_swiper_next" class="swiper-button-next"></div>
+                        </div>
                     </div>
-                    <div id="cat_swiper_next" class="swiper-button-next"></div>
-                    <div id="cat_swiper_prev" class="swiper-button-prev"></div>
-
 
                     <div class="col-6 px-6 pt-5_1 pb-6 prev_btn">
                         <a onclick="survey.movePage('#opening')">
@@ -1376,7 +1381,7 @@
                             <div class="col-4 pl-0 pb_30px">
                                 <div class="fs_18 pb-3">이름</div>
                                 <input id="cat_name" type="text" class="form-control" placeholder="이름을 입력해 주세요."
-                                    maxlength="10" onblur="survey.setCatData('name', this.value)">
+                                    maxlength="6" onblur="survey.setCatData('name', this.value)">
                             </div>
                             <div class="col-4 pb_30px">
                                 <div class="fs_18 pb-3">몸무게</div>
@@ -1576,30 +1581,30 @@
                         </div>
                         <div id="fatty_area" class="row">
                             <div class="fat_description_box">
-                                <div class="pc_br_none">
+                                <div id="fatty_description1" class="fatty_descriptions pc_br_none">
                                     
-                                    <span class="point_color progressbar-text">아주마름</span><br>     
+                                    <span class="point_color progressbar-text">아주마름&nbsp;&nbsp;</span>   
                                     <span class="mobile_gray">
                                     갈비뼈가 육안으로 완전히 보이며 배 부분이 홀쭉해요.
                                     뼈들이 육안으로 쉽게 보이며 털만 느껴져요.</span>
                                 </div>
-                                <div class="d-none">
-                                    <span class="point_color progressbar-text">마름</span><br>     
+                                <div id="fatty_description2" class="fatty_descriptions d-none">
+                                    <span class="point_color progressbar-text">마름&nbsp;&nbsp;</span>    
                                     <span class="mobile_gray">갈비뼈가 아주 얇게 덮여있어요. 뼈들이 털 길이에 따라
                                     쉽게 드러나는 편이에요.</span>
                                 </div>
-                                <div class="d-none">
-                                    <span class="point_color progressbar-text">정상</span><br>     
+                                <div id="fatty_description3" class="fatty_descriptions d-none">
+                                    <span class="point_color progressbar-text">정상&nbsp;&nbsp;</span>     
                                     <span class="mobile_gray"> 허리선이 명확히 드러나며 갈비뼈가 덮여있어 육안으로는
                                     보이지 않지만 쉽게 만져져요.</span>
                                 </div>
-                                <div class="d-none">
-                                    <span class="point_color progressbar-text">과체중</span><br>     
+                                <div id="fatty_description4" class="fatty_descriptions d-none">
+                                    <span class="point_color progressbar-text">과체중&nbsp;&nbsp;</span>     
                                     <span class="mobile_gray"> 뱃살이 늘어진 것이 보여요. 허리선이 없고 뼈들이 지방
                                     때문에 잘 느껴지지 않아요.</span>
                                 </div>
-                                <div class="d-none">
-                                    <span class="point_color progressbar-text">비만</span><br>     
+                                <div id="fatty_description5" class="fatty_descriptions d-none">
+                                    <span class="point_color progressbar-text">비만&nbsp;&nbsp;</span>     
                                     <span class="mobile_gray"> 허리가 튀어나와 있어요. 뱃살이 출렁거리고 만졌을 때
                                     뼈들이 느껴지지 않아요.</span>
                                 </div>
@@ -1773,23 +1778,36 @@
                 var fatty_swiper = new Swiper('#fatty_swiper', swiperOptions);
         },
 
+        barOffset : {
+            selecting : [20, 5],
+            creating : [60, 10],
+            questing : [120, 60],
+            oneCategoryWidth : [250, 90]
+        },
+
+
         movePage: (idTarget) => {
             //진행바 제어
             if (idTarget == '#opening' || idTarget == "#ending") $('#progress_box').addClass('d-none');
             else $('#progress_box').removeClass('d-none');
 
+            const heightText = $(window).width() < 576 ? "calc(100vh - 484px)" : "calc(100vh-464px)" 
+            $("#bg_screen").css({ minHeight: heightText });
+
             //화면길게하기
+            /*
             if (idTarget == "#creating") {
                 let height = $(window).width() < 576 ? 234 : 100;
-                $("#bg_screen").css({ height: height+"vh" });
+                $("#bg_screen").css({ minHeight: height+"vh" });
             } 
             else if (idTarget == "#questing") {
                 let height = $(window).width() < 576 ? 184 : 100;
-                $("#bg_screen").css({ height: height+"vh" });
+                $("#bg_screen").css({ minHeight: height+"vh" });
             }
             else {
-                $("#bg_screen").css({ height: "100vh" });
+                $("#bg_screen").css({ minHeight: "100vh" });
             }
+            */
 
             //고양이 이름 새기기
             if (idTarget == "#questing") {
@@ -1806,13 +1824,13 @@
                 case '#selecting':
                     survey.drawCatCards();
                     survey.drawSpeciesList();
-                    survey.animateBar(20);
+                    survey.animateBar(survey.barOffset.selecting[util.isMobile]);
                     break;
                 case "#creating":
-                    survey.animateBar(60);
+                    survey.animateBar(survey.barOffset.creating[util.isMobile]);
                     break;
                 case "#questing":
-                    survey.animateBar(120);
+                    survey.animateBar(survey.barOffset.questing[util.isMobile]);
                     break;
                 case "#ending":
                     bar.animate(1);
@@ -1869,12 +1887,13 @@
             $('#question' + survey.questions[survey.progress - 1].id).removeClass('d-none');
             let thisCategories = survey.questions.filter(e => e.category == survey.questions[survey.progress - 1].category);
             let thisQuestionIndex = thisCategories.indexOf(survey.questions[survey.progress - 1]);
-            let bar = 120 + ((survey.questions[survey.progress - 1].category - 1) * 250) + ((250 / thisCategories.length) * thisQuestionIndex);
+
+            let bar = survey.barOffset.questing[util.isMobile] + ((survey.questions[survey.progress - 1].category - 1) * survey.barOffset.oneCategoryWidth[util.isMobile]) + ((survey.barOffset.oneCategoryWidth[util.isMobile] / thisCategories.length) * thisQuestionIndex);
             if (bar > $('.pop_loader').width()) bar = $('.pop_loader').width();
 
             survey.animateBar(bar);
             $('.categories').removeClass('point_color').addClass('color_subgray');
-            $('#category' + thisQuestionIndex).addClass('point_color').removeClass('color_subgray');
+            $('#category' + survey.questions[survey.progress - 1].category).addClass('point_color').removeClass('color_subgray');
             survey.verifyQuestions(survey.questions[survey.progress - 1].id);
         },
 
@@ -1896,9 +1915,12 @@
         },
 
         toggleFatty: (self) => {
-            survey.setCatData('fatty', self.htmlFor.replace(/[^0-9]/g, ''));
+            const id = self.htmlFor.replace(/[^0-9]/g, '');
+            survey.setCatData('fatty', id);
             $('.fat_btns').removeClass('active');
             $(self).addClass('active');
+            $('.fatty_descriptions').addClass('d-none');
+            $('#fatty_description'+id).removeClass('d-none');
         },
 
         checkToCreating: (isNew) => {
@@ -1934,7 +1956,7 @@
                 $('#is_male_' + (+originCat.is_male).toString()).trigger('click');
                 $('#is_neutering_' + (+originCat.is_neutering).toString()).trigger('click');
                 $('#id_species_' + (+originCat.is_male).toString()).trigger('click');
-                $('fat' + originCat.fatty + '_label').trigger('click');
+                $('#fat' + originCat.fatty + '_label').trigger('click');
                 survey.verifyInputs();
             } else {
                 $title.html('새로운 반려묘 등록하기');
@@ -2089,7 +2111,6 @@
                         break;
                 }
                 $page.append([$qBox, $tipBox, $aBox]);
-
                 $body.append($page);
 
             });
@@ -2213,13 +2234,11 @@
 
 
 <div id="origin_tip" class="point_color d-none pt-4">
-    <div class="tip_box row align-items-center h-100">
-        <div class="px-0">
+    <div class="tip_box">
+        <div class="cathead">
             <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt="" class="img-fluid">
         </div>
-        <div class="pl-1 line_14">
-            <span class="fs_16 fw_700 pl-2">Tip. </span>
-            <span class="fs_16 tip_description"></span>
-        </div>
+        <div class="fs_16 fw_700" style="float :left">Tip.</div>
+        <div class="fs_16 tip_description"></div>
     </div>
 </div>

@@ -36,6 +36,8 @@
 
 <script type="text/javascript">
        $(() => {
+
+        //PC일 때
         if ($(window).width() > 768) {
             if (location.href.includes('page') ||
                 location.href.includes('cons') ||
@@ -47,25 +49,21 @@
             {
                 $('.content_wrap1').css('padding-top', '100px')
             }
-        }
-
-        //각종 마이페이지 좌우좁힘
-        if(
-            location.href.includes('coupon') ||
-            location.href.includes('sett') ||
-            location.href.includes('memb')
-        )
-        {
-            $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : '100vh'});
-
-        }
-
-        //PC판 마이페이지 사이드바 대책
-        if($(window).width() > 578 && location.href.includes('sett')){
-            $('.content_wrap1').css({paddingLeft : 300, paddingTop : 250});
-        }
-
-        if ($(window).width() < 768) {
+            //각종 마이페이지 좌우좁힘
+            if(
+                location.href.includes('coupon') ||
+                location.href.includes('sett') ||
+                location.href.includes('memb')
+            )
+            {
+                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : 'calc(100vh-464px)'});
+            }
+            //PC판 마이페이지 사이드바 대책
+            if(location.href.includes('sett')){
+                $('.content_wrap1').css({paddingLeft : 300, paddingTop : 250});
+            }            
+        //모바일에서
+        }else{
             if (location.href.includes('26434') ||
                 location.href.includes('coupon')
             ) 
@@ -74,6 +72,11 @@
             }
         }
 
+
+
+
+
+    
         //쇼핑몰 마개조
         if(location.href.includes('shop/list')){
             let $firstCate = $('.category-d2').children().eq(0);

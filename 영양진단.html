@@ -116,6 +116,11 @@
         transform: translatex(-50%);
     }
 
+    .tab_btn > ul {
+        display: flex;
+        justify-content : center;
+    }
+
     .tab_btn {
         overflow: hidden;
     }
@@ -400,6 +405,12 @@
         color: #fff;
     }
 
+    .name_slots{
+        overflow-x: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     /*스탠다드 선택시 색상 변경*/
 
     .dl_snack02 .sw_num {
@@ -471,7 +482,7 @@
     .snack_select_btn {
         width: 560px;
         height: 80px;
-        background-size: cover;
+        background-size: contain;
         background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn.png');
         margin: 0 auto;
     }
@@ -589,6 +600,7 @@
             background: #FFFFFF;
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
             border-radius: 10px;
+            min-width: calc(100vw - 77px);
         }
 
         .share img {
@@ -738,6 +750,10 @@
             padding: 20px;
         }
 
+        .name_slots {
+            width: 146px;
+        }
+
         .dl_snack .pr_120px {
             padding-right: 24px;
         }
@@ -802,8 +818,8 @@
         }
 
         .snack_select_btn {
-            width: 560px;
-            height: 80px;
+            width: 300px;
+            height: 46px;
             background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn_m.png');
         }
 
@@ -1243,7 +1259,7 @@
                         <dl class="dl_snack dl_snack01">
                             <dt class="dt_snack fs_22 fw_700">
                                 스틱형
-                                <div id="name_slot_1_1" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_1_1" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_1_1" class="swiper">
@@ -1259,7 +1275,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 캔형
-                                <div id="name_slot_1_2" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_1_2" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_1_2" class="swiper">
@@ -1278,7 +1294,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 동결/건조형
-                                <div id="name_slot_1_3" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_1_3" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_1_3" class="swiper">
@@ -1299,7 +1315,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700 dt_snack_last">
                                 기타
-                                <div id="name_slot_1_8" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_1_8" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_1_8" class="swiper">
@@ -1322,7 +1338,7 @@
                         <dl class="dl_snack dl_snack02">
                             <dt class="dt_snack fs_22 fw_700">
                                 스틱형
-                                <div id="name_slot_2_1" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_2_1" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_2_1" class="swiper">
@@ -1341,7 +1357,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 캔형
-                                <div id="name_slot_2_2" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_2_2" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_2_2" class="swiper">
@@ -1362,7 +1378,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 동결/건조형
-                                <div id="name_slot_2_3" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_2_3" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_2_3" class="swiper">
@@ -1397,7 +1413,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 스낵형
-                                <div id="name_slot_2_5" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_2_5" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_2_5" class="swiper">
@@ -1414,7 +1430,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700 dt_snack_last">
                                 기타
-                                <div id="name_slot_2_8" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_2_8" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_2_8" class="swiper">
@@ -1435,7 +1451,7 @@
                         <dl class="dl_snack dl_snack03">
                             <dt class="dt_snack fs_22 fw_700">
                                 스틱형
-                                <div id="name_slot_3_1" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_1" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_1" class="swiper">
@@ -1451,7 +1467,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 캔형
-                                <div id="name_slot_3_2" class="float-right pr_120px fs_20 fw_400 text-right"></div>
+                                <div id="name_slot_3_2" class="name_slots float-right pr_120px fs_20 fw_400 text-right"></div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_2" class="swiper">
@@ -1471,7 +1487,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 동결/건조형
-                                <div id="name_slot_3_3" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_3" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_3" class="swiper">
@@ -1489,7 +1505,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 통살형
-                                <div id="name_slot_3_4" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_4" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_4" class="swiper">
@@ -1509,7 +1525,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 스낵형
-                                <div id="name_slot_3_5" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_5" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_5" class="swiper">
@@ -1528,7 +1544,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 파우치형
-                                <div id="name_slot_3_6" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_6" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_6" class="swiper">
@@ -1546,7 +1562,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700">
                                 덴탈 간식
-                                <div class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_7" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_7" class="swiper">
@@ -1563,7 +1579,7 @@
                             </dd>
                             <dt class="dt_snack fs_22 fw_700 dt_snack_last">
                                 기타
-                                <div id="name_slot_3_8" class="float-right pr_120px fs_20 fw_400 text-right">-</div>
+                                <div id="name_slot_3_8" class="name_slots float-right pr_120px fs_20 fw_400 text-right">-</div>
                             </dt>
                             <dd class="dd_snack">
                                 <div id="snack_swiper_3_8" class="swiper">
@@ -1609,41 +1625,42 @@
 
     var diagnosis = {
         cat: null,
+        //진단 문구
         dialogs: {
             1: [
-                "관절 별로야",
-                "관절 그저그래",
-                "관절 그레이트캡숑킹왕짱갓갓좋음"
+                "높은 곳과 점프를 사랑하는 고양이에게 관절 건강은 매우 중요합니다. 관절 건강에 도움이 되는 칼슘, 초록인 홍합 분말 등이 함유된 간식을 급여하는 걸 적극 추천드립니다!",
+                "관절 건강은 치료보다 예방이 훨씬 중요합니다. 아직 문제가 없어 보여도 미리미리 관절 관련 질병을 예방하면 우리 고양이가 오랫동안 캣타워를 올라갈 수 있을 거예요!",
+                "관절 관리를 아주 잘하고 있습니다! 지금처럼 칼슘이 많이 함유된 간식을 꾸준히 급여하시면 건강한 관절을 오랫동안 유지할 수 있을 거예요."
             ],
             2: [
-                "릴렉스 별로야",
-                "릴렉스 그저그래",
-                "릴렉스 그레이트캡숑킹왕짱갓갓좋음"
+                "고양이는 매우 예민하기 때문에 조금만 스트레스 받아도 여러 질병으로 이어지기가 쉽습니다. 고양이가 안정감을 느끼게 해주고 L-테아닌이 함유된 간식 급여를 적극 추천드립니다!",
+                "하루에 5분이라도 더 놀아주면 지금보다 더 행복한 냥생이 될 수 있을 것 같아요. 더 잘자고, 더 잘 먹고, 더 잘 놀 수 있는 환경을 지금보다 조금만 더 신경 써주세요!",
+                "집사님을 잘 만나서 어떤 고양이보다도 더 행복한 냥생을 보내고 있어요! 지금처럼 우리 고양이의 행복과 건강을 위해 노력해 봐요!"
             ],
             3: [
-                "구강 별로야",
-                "구강 그저그래",
-                "구강 그레이트캡숑킹왕짱갓갓좋음"
+                "구강 건강이 좋지 않으면 세균에 의해 신장과 간, 심장에까지도 영향을 줄 수 있습니다. 양치질을 싫어하는 고양이 라면 치석제거에 도움이 되는 간식을 급여해 보세요!",
+                "사람의 눈으로 확인할 수 없는 플라그가 쌓이고 있을지도 모르니까 지금보다 조금 더 관리를 해주면 치석이 생기는 걸 방지할 수 있을 거예요!",
+                "꾸준히 잘 관리하고 있는 집사님이시네요! 양치질을 규칙적으로 시키시다 보면 점점 익숙해져서 양치질이 더 쉬워질 거예요."
             ],
             4: [
-                "헤어볼 별로야",
-                "헤어볼 그저그래",
-                "헤어볼 그레이트캡숑킹왕짱갓갓좋음"
+                "헤어볼을 너무 자주 한다면 위염, 장염 등의 소화기관 질병으로 이어질 수 있으니 잦은 빗질과 헤어볼 배출에 도움이 되는 식이섬유가 함유된 간식을 급여해 보세요!",
+                "헤어볼이 잦은 털갈이 시즌에는 특히 식이섬유가 많이 함유된 간식을 급여해 보는 것을 추천해 드려요! 빗질도 '최소'하루에 한 번은 기본인 거 아시죠?",
+                "빗질을 잘하면 헤어볼을 충분히 예방할 수 있는 걸 잘 아시는 집사님이시네요! 헤어볼을 한 번씩 하는 건 특성상 당연한 일이니 너무 걱정하지 마세요"
             ],
             5: [
-                "요로 별로야",
-                "요로 그저그래",
-                "요로 그레이트캡숑킹왕짱갓갓좋음"
+                "물을 잘 마시지 않는 고양이 특성과 건조 사료 섭취 등으로 인해 음수량이 부족해서 생기는 질병입니다. 매일 규칙적으로 물과 간식을 섞어 급여해 보세요!",
+                "물그릇에 물을 매일 청결하게 갈고 자동 급수기를 사용하는 경우 필터관리에 좀 더 신경 써보세요! 고양이가 물을 더 자주 마시는 그날까지!",
+                "수속성 고양이는 전생에 나라를 구해야 된다는데 집사님은 나라를 구하셨나 봐요! 지금처럼 청결하게 물그릇 관리를 해보세요."
             ],
             6: [
-                "장 별로야",
-                "장 그저그래",
-                "장 그레이트캡숑킹왕짱갓갓좋음"
+                "장 건강에 도움이 되는 유산균이 함유된 간식을 급여해 보세요. 유산균은 장 건강 이외에도 면역력, 알레르기 개선, 피부 건강에도 도움이 된다고 해요!",
+                "집사님이 먹는 음식처럼 관심을 갖고 한번 개봉한 간식이나 유통기한이 임박한 제품들은 항상 꼼꼼히 살펴보고 급여해 주세요!",
+                "집사님은 집사님이 드시는 음식보다 고양이 먹이는 게 더 중요하신 분 같아 보이시네요! 고양이도 그 마음을 잘 알고 있을 거예요."
             ],
             7: [
-                "다이어트 별로야",
-                "다이어트 그저그래",
-                "다이어트 그레이트캡숑킹왕짱갓갓좋음"
+                "고양이는 활동량이 낮은 경우가 매우 많습니다. 장난감을 아무리 신나게 흔들어도 움직이지 않는다면 저칼로리 간식을 급여해 보는 것을 추천합니다!",
+                "아직 심각한 비만은 아니지만 조금만 방심했다가는 비만과 여러 질병으로 이어질 수 있기 때문에 지금부터 조금씩 저칼로리 식단과 활동량을 늘리는 것이 좋을 것 같아요!",
+                "살찐 고양이 정말 귀엽지만 정상체중인 고양이가 최고죠! 날씬하고 우아한 100점짜리 고양이를 키우고 계시네요!"
             ]
         },
         tags: {

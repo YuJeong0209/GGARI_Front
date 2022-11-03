@@ -1,0 +1,120 @@
+<div class="nx-prefix sub-content">
+    <div class="fs_28 fw_700 pc">이벤트</div>
+    <div class="content-container">
+        <div class="inner-static">
+
+            <!-- 안내문구 
+            <div class="mboard-spot">
+                <p class="logo">
+                    <img src="[##_mboard_visual_logo_##]" alt="[##_mboard_visual_lead_##]">
+                </p>
+                <p class="lead">
+                    [##_mboard_visual_lead_##]
+                </p>
+            </div>-->
+            <!-- //안내문구 -->
+
+            <!-- 검색 
+            <s_search>
+                <div class="mboard-search">
+                    <div class="input-box">
+                        <input type="text" name="[##_search_name_##]" id="[##_search_id_##]"
+                            value="[##_search_value_##]" placeholder="검색어를 입력해 주세요." class="input-search int2"
+                            onkeypress="if (event.keyCode==13) { requestSearch('.input-search') }">
+                    </div>
+                    <div class="btn-box">
+                        <a href="javascript: void(0);" onclick="requestSearch('.input-search')" class="btn-search">
+                            <span class="ico">검색</span>
+                        </a>
+                    </div>
+                </div>
+            </s_search>-->
+            <!-- //검색 -->
+
+            <!-- 카테고리 -->
+            <s_category>
+                <div class="mboard-category">
+                    <s_category_cur>
+                        <div class="open-category">
+                            <a href="javascript: void(0);"
+                                onClick="$(this).parent().parent().find('.lst-category').toggleClass('active');">
+                                <strong>[##_category_rep_link_text_##]</strong><i class="arr"></i>
+                            </a>
+                        </div>
+                    </s_category_cur>
+                    <ul class="lst-category">
+                        <s_category_rep>
+                            <li>
+                                <a [##_category_rep_link_##]
+                                    class="[##_category_rep_active_##]">[##_category_rep_link_text_##]</a>
+                            </li>
+                        </s_category_rep>
+                    </ul>
+                </div>
+            </s_category>
+            <!-- //카테고리 -->
+
+            <!-- 전체보기 -->
+            <s_search_init>
+                <div class="btn-all-area">
+                    <button type="button" [##_btn_init_##] class="btn-all">전체보기</button>
+                </div>
+            </s_search_init>
+            <!-- //전체보기 -->
+
+            <!-- 리스트 -->
+            <div class="mboard-list-area">
+                <div class="mboard-list">
+                    <s_list>
+                        <ul class="lst-image-card">
+                            <s_list_rep>
+                                <li>
+                                    <a href="[##_item_detail_link_##]">
+                                        <div class="thumb">
+                                            [##_item_image_##]
+                                        </div>
+                                        <div class="cnt">
+                                            <span class="category">[##_item_cate_name_##]</span>
+                                            <dl class="desc">
+                                                <dt class="tit">
+                                                    <strong>[##_item_title_##]</strong>
+                                                </dt>
+                                                <dd class="dsc">[##_item_content_##]</dd>
+                                            </dl>
+                                            <span class="date">[##_item_regdate_##]</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </s_list_rep>
+                            <s_list_nodata>
+                                <li class="no-data">등록된 정보가 없습니다. </li>
+                            </s_list_nodata>
+                        </ul>
+                        <s_list_btn_add>
+                            <div class="btn-area">
+                                <button onclick="[##_btn_add_onclick_##]" class="btn-write">글쓰기</button>
+                            </div>
+                        </s_list_btn_add>
+                    </s_list>
+                </div>
+
+                <!-- //페이징 -->
+                <s_paging>
+                    <div class="pagenate">
+                        <a [##_link_prev_##] class="btn-prev">이전 페이지로 이동</a>
+                        <div class="inner-wrap">
+                            <s_paging_rep>
+                                <a [##_paging_rep_link_##] class="[##_paging_rep_link_num_active_##]"
+                                    style="cursor: pointer;">[##_paging_rep_link_num_##]</a>
+                            </s_paging_rep>
+                        </div>
+                        <a [##_link_next_##] class="btn-next">다음 페이지로 이동</a>
+                    </div>
+                </s_paging>
+
+            </div>
+            <!-- //리스트 -->
+
+        </div>
+    </div>
+</div>

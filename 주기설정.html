@@ -310,6 +310,13 @@
             padding-top: 20px;
         }
 
+        .product_img_box{
+            width : 100px;
+            height : 100px;
+            line-height : 100px;
+            margin-right : 10px;
+        }
+
         .select {
             height: 44px;
         }
@@ -451,7 +458,7 @@
             <button type="button" class="btn btn-outline-success fw_700 mr-3 order_last" onclick="location.href='/page/?M2_IDX=26046&id='+calory.cat.id">
                 간식 다시 선택하기
             </button>
-            <button type="button" class="btn btn-secondary fw_700 order_1" onclick="calory.goToCalander()">
+            <button type="button" class="btn btn-secondary active fw_700 order_1" onclick="calory.goToCalander()">
                 간식단표 보러가기
             </button>
         </div>
@@ -547,6 +554,8 @@
             calory.selected[id] = cycle;
             console.log(calory.selected);
             calory.DrawKcalCounter();
+            if(calory.itemlist.length == calory.selected.length){
+            }
         },
 
         recommendCycle : () => {
@@ -559,9 +568,38 @@
                 return false;
             }
             let url = '/page/?M2_IDX=26057&id='+calory.cat.id+"&items="+JSON.stringify(calory.selected);
-            location.href=url;
+            location.href=url;            
         },
 
+        firstSetCalory : ()=>{
+            let data = [];
+            let treatcap = calory.cat.rer * 0.1;
+
+            $.each(calory.itemlist, (i, item)=>{
+                data["id"+item.id] = [];
+                let feeds = item.feedcycle.replace(/\[|\]|\'|\"|\ /g, '').split(',').reverse();
+                $.each(feeds, (i, feed)=>{
+                    let kcal = item.kcal*parseInt(feed);
+                    if(kcal < treatcap) data['id'+item.id].push({data : item.id, kcal : item.kcal*parseInt(feed), feed : feed});
+                });
+            });
+            console.log(data);
+            let reckcal = 0;
+            let result =[]
+            let spilloverPos = 0;
+            do{
+                for(let key in data){
+                    reckcal += data[key][spilloverPos].kcal;
+                }
+                spilloverPos++;
+            }while(reckcal < treatcap)
+            console.log("Spillover Position : ", spilloverPos);
+            $('ul.select_options').each((i, lis)=>{
+                if($(lis).children().length == 0 ) return true;
+                $(lis).children().eq(spilloverPos).find('label').trigger('click');
+            });
+
+        },
 
         DrawKcalCounter: () => {
             let kcal=0;
@@ -573,11 +611,11 @@
             calory.kcal = kcal;
             $('#kcal_text').removeClass();
             $('#kcal_text').addClass('fs_20 fw_700 c_result_box');
-            if(calory.cat.rer * 0.2 < calory.kcal ){
+            if(calory.cat.mer * 0.2 < calory.kcal ){
                 $('#kcal_text').addClass('over').html('위험');
-            }else if(calory.cat.rer * 0.15 < calory.kcal){
+            }else if(calory.cat.mer * 0.15 < calory.kcal){
                 $('#kcal_text').addClass('danger').html('초과');
-            }else if(calory.cat.rer * 0.1 < calory.kcal ){
+            }else if(calory.cat.mer * 0.1 < calory.kcal ){
                 $('#kcal_text').addClass('good').html('권장');
             }else{
                 $('#kcal_text').addClass('lack').html('부족');
@@ -613,7 +651,7 @@
                         let $input = $('<input>').addClass('select_input').attr({type:'radio', name : "feed_"+item.id, id : "feed_"+item.id+"_"+feed});                        
                         let $label = $('<label>').addClass('select_label').attr({for: "feed_"+item.id+"_"+feed}).html(calory.cycleStr[feed]).click(()=>{calory.selectCycle(item.id, feed)});
                         $li.append($input, $label);
-                        $box.find('.select_options').append($li);                            
+                        $box.find('.select_options').append($li);
                     })
                     $box.find('.select_close').attr({name:"feed_"+item.id, id : "feed_"+item.id+"-close"});
                     $box.find('.select_expand').attr({name:"feed_"+item.id, id : "feed_"+item.id+"-opener"});
@@ -628,7 +666,9 @@
                 }
             }
             $('#origin_box_not', '#origin_box').remove();
-            //기타들
+
+            //자동추천
+            calory.firstSetCalory();
         },
     }
 </script>

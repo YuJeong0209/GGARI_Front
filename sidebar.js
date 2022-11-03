@@ -24,20 +24,17 @@ var sidebar = {
     showSidebar : () => {
         outer : for(var i=1; i<7; i++){
             inner : for(let ids in sidebar.pageIds[i]){
-                //페이지에 메뉴가 일치
+                //무조건 안나와야하는 곳들 제외
+                if(location.href.includes('log'))
+                    break outer;
+                //그 외 id가 일치하면
                 if(location.href.includes(sidebar.pageIds[i][ids])){
-                    //PC인가 모바일인가
-                    if($(window).width() > 578){
-                        $('#sidebar'+i).removeClass('d-none');
-                        if(i==6) sidebar.getPointCoupon();
-                        break outer; 
-                    }else{
-                        //냥이페이지에서만 출현
-                        if(location.href.includes('26922') && !location.href.includes('log')){
-                            $('#sidebar'+i).removeClass('d-none');
-                            if(i==6) sidebar.getPointCoupon();
-                        }
-                    }
+                    //모바일이면서 마이페이지 외엔 사이드바 제외
+                    if(i==6 && $(window).width() < 576 && !location.href.includes('26922'))
+                        break outer;
+                    if(i==6) sidebar.getPointCoupon();                   
+                    $('#sidebar'+i).removeClass('d-none');
+                    break outer; 
                 }
             }
         }

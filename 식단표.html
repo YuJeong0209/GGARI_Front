@@ -308,9 +308,7 @@
         background-color : #6B6B82;
     }
 
-
     @media screen and (max-width: 576px ) {
-
 
         #section1 .mw_1152{
             max-width : 100%;
@@ -461,6 +459,7 @@
 
         .cart_box .d-inline-block {
             float: left;
+            padding : 0;
         }
 
         .cart_box .pr_15px {
@@ -487,12 +486,16 @@
         .price2 {
             line-height: 1.5;
             padding: 35px 0 24px 0;
-            margin-top: 21px;
+            margin-top: 58px;
+            margin-right : 15px;
         }
 
         .itemmm_name {
             display: block;
             padding-left: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .cart_quantity {
@@ -620,7 +623,10 @@
             width : 100%;
             height : 80px;
         }
-
+        
+        .cart_text_box{
+            width : 175px;
+        }
     }
 </style>
 
@@ -935,19 +941,37 @@
                 },
                 type : 'POST',
             }).done((data)=>{
-                console.log(data);
+                console.log(data);                
             }).fail((jqXHR, textStatus, errorThrown) => {
                 console.log(jqXHR, textStatus, errorThrown)
             });
 
-            $.when(pr1).done(()=>{
+            const pr2 = calender.postOllyShop("2211ECSJ");
+
+            $.when(pr1, pr2).done(()=>{
                 alert('구독해주셔서 감사합니다.');
-                location.href="/my/cart.list.php";
+//                location.href="/my/cart.list.php";
             })
         },
 
-        postOllyShop : () => {
-            var pr;
+        postOllyShop : (pid) => {
+            let json = { key : apikey, url : "/api/my.cart.add.php", product_id : pid, type : "POST"}
+            let optionStr = "";
+            let i = 0;
+            for(let key of Object.keys(calender.ggaribox)){
+                json["quantity_"+i] = parseInt(calender.ggaribox[key].amount) + calender.ggaribox[key].amount_user_added;
+                i++;
+                optionStr += calender.itemlist.find(e => e.id == calender.ggaribox[key].id).id_olly_option + "★";
+            }
+//            json.options = optionStr;
+            json.options = "28148☆26332☆C☆[GGARI] 까리 하루냥스틱_까리한 치킨맛☆500★28148☆26333☆C☆[GGARI] 까리 하루냥캔_까리한 치킨맛☆1000★28148☆26334☆C☆[GGARI] 까리 하루냥트릿_까리한 북어맛☆1300";
+            console.log(json);
+            var pr = $.ajax(json).done((data)=>{
+                console.log("CARTADD : ", data);
+                if(data.success == false) return new $.Deferred().reject().promise();
+            }).fail((jqXHR, textStatus, errorThrown) => {
+                console.log(jqXHR, textStatus, errorThrown)
+            });
 
             return pr;
         },
@@ -1201,7 +1225,7 @@
                 <img src="" alt="" class="img-fluid list_img">
             </div>
 
-            <div class="d-inline-block align-middle">
+            <div class="d-inline-block align-middle cart_text_box">
                 <div class="fs_18 fw_700 mb_12px">
                     <span class="category"></span>
                     <span class="fw_400 sub_gray_text pl_20px itemmm_name"></span>
@@ -1215,7 +1239,7 @@
                 </button>
             </div>
             <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
-                <div class="fs_20 fw_700 point_color price"></div>
+                x <span class="fs_20 fw_700 point_color price"></div>
             </div>
         </div>
     </div>

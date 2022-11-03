@@ -27,8 +27,6 @@
     border-radius: 100px;
 }
 
-
-
 .mt_28px {
     margin-top: 28px;
 }
@@ -91,7 +89,7 @@
     }
 
     .h_100 {
-        height: 130vh !important;
+        min-height: calc(100vh - 500px);
     }
 
     .form-control {
