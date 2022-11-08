@@ -26,7 +26,6 @@
             padding: 30px;
             max-width: 270px;
             width: 270px;
-          overflow:scroll;
         }
 
         .cs_menu a {
@@ -38,6 +37,10 @@
         }
 
         @media screen and (max-width:576px) {
+            .cs_menu{
+                overflow: scroll;
+            }
+
             .sidebars {
                 width: 600px;
                 top: 135px;
@@ -105,11 +108,11 @@
             width: 270px;
         }
 
-        .mypage_menu a {
+        .mypage_menu a > div {
             color: #787878;
         }
 
-        .mypage_menu a:hover {
+        .mypage_menu a > div:hover {
             color: #6E9357;
         }
 
@@ -179,28 +182,22 @@
                 display: inline-flex;
             }
 
-            .mypage_menu {
+            #user_cp_box {
                 max-width: 288px;
                 width: 288px;
             }
 
-            .mypage_menu .float-right:nth-child(1) {
-                left: 30px;
-            }
-
-            .mypage_menu .float-right:nth-child(2) {
-                left: 30px;
-            }
-
-            .mypage_menu .pt_10px {
-                padding-top: 0;
-                left: 60px;
+            #user_cp_box > a > div {
+                display: table-cell;
+                width : 100px;
+                padding : 0 10px;
             }
 
             .mycat_namebox {
 
                 text-align: center !important;
                 width: 136px;
+                padding : 14px;
             }
 
             .mycat_namebox:nth-child(2n+1) {
@@ -268,7 +265,7 @@
                     </div>
                 </div>
 
-                <div class="mypage_menu mt_28px fw_700 m_inflex">
+                <div id="user_cp_box" class="mypage_menu mt_28px fw_700 m_inflex">
                     <a href="/my/coupon.list.php">
                         <div>
                             포인트
@@ -317,9 +314,11 @@
                             주문조회
                         </div>
                     </a>
+                    <!--
                     <div class="pt_30px mypage_menu_btn">
                         내가 쓴 리뷰
                     </div>
+                    -->
                     <a href="/cons/list.nx?M2_IDX=26065">
                         <div class="pt_30px mypage_menu_btn">
                             1:1 QnA
@@ -354,9 +353,8 @@
                     <ul class="navbar-nav mr-auto">
                     </ul>
                     <ul class="navbar-nav " id="menu">
-                        <li class="nav-item active dropdown">
-                            <a class="nav-link dropdown-toggle" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299" id="navbardrop" data-toggle="dropdown">까리
-                                소개</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299" id="navbardrop" data-toggle="dropdown">까리 소개</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299">서비스 소개</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
@@ -376,7 +374,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="/my/cart.list.php">장바구니</a>
+                            <a class="nav-link " href="/my/cart.list.php?SPO_KIND=C&SC_MODE=A">장바구니</a>
                         </li>
 
                         <li class="nav-item ">
@@ -402,9 +400,13 @@
                             </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/page/?M2_IDX=26922">반려묘 정보</a>
+                                    <!--
                                     <a class="dropdown-item" href="/page/?M2_IDX=26926">배송/결제방법</a>
+                                    -->
                                     <a class="dropdown-item" href="/my/sett.list.php">주문조회</a>
+                                    <!--
                                     <a class="dropdown-item" href="#">내가 쓴 리뷰</a>
+                                    -->
                                     <a class="dropdown-item" href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a>
                                     <a class="dropdown-item" href="/my/memb.info.php">회원정보변경</a>
                                 </div>
@@ -450,7 +452,7 @@
                     <div class="log_on">
                         <dt class="dt_ham_menu back_no border-0 ham_myinfo ">
                             <span class="point_color user_name"></span> 님 안녕하세요!
-                            <span class="ham_myinfo_right">구독중</span>
+                            <span class="ham_myinfo_right">미구독회원</span>
                         </dt>
                         <dt class="dt_ham_menu back_no border-0 h_44 d-flex" onclick="location.href='/my/coupon.list.php'">
                             <div class="col p-0">포인트</div>
@@ -460,13 +462,13 @@
                         </dt>
                         <dt class="dt_ham_menu back_no border-0 h_44_2 d-flex">
                             <div class="col p-0 point_color">
-                                <a href="">설문 결과</a>
+                                <a href="/page/?M2_IDX=26922">설문 결과</a>
                             </div>
                             <div class="col text-center point_color">
-                                <a href="">구독 정보</a>
+                                <a href="/page/?M2_IDX=26922">구독 정보</a>
                             </div>
                             <div class="col text-right p-0 point_color">
-                                <a href="">주문 조회</a>
+                                <a href="/my/sett.list.php">주문 조회</a>
                             </div>
                         </dt>
                     </div>
@@ -497,7 +499,7 @@
                         </a>
                     </dt>
                     <dt class="dt_ham_menu  back_no">
-                        <a href="/my/cart.list.php">
+                        <a href="/my/cart.list.php?SPO_KIND=C&SC_MODE=A">
                             장바구니
                         </a>
                     </dt>
@@ -521,9 +523,13 @@
                         <dd class="dd_ham_menu ">
                             <ul>
                               <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
+                                <!--
                                 <li class="pb_20px"><a href="">배송/결제방법</a></li>
+                                -->
                                 <li class="pb_20px"><a href="/my/sett.list.php">주문조회</a></li>
+                                <!--
                                 <li class="pb_20px"><a href="">내가 쓴 리뷰</a></li>
+                                -->
                                 <li class="pb_20px"><a href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a></li>
                                 <li><a href="/my/memb.info.php">회원정보변경</a></li>
                             </ul>

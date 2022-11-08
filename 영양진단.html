@@ -482,7 +482,7 @@
     .snack_select_btn {
         width: 560px;
         height: 80px;
-        background-size: contain;
+        background-size: cover;
         background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn.png');
         margin: 0 auto;
     }
@@ -1009,9 +1009,9 @@
                 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_clip.png" class="img-fluid" alt=""> 
                 이 페이지 복사하기
             </a>
-            <a onclick="diagnosis.share()">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_share.png" class="img-fluid" alt=""> 영양진단
-                공유하기
+            <a id="share_area" onclick="diagnosis.share()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_share.png" class="img-fluid" alt=""> 
+                영양진단 공유하기
             </a>
         </div>
     </div>
@@ -1747,8 +1747,12 @@
                 diagnosis.rank = 3;
             })
 
+            if(!util.checkMobile()){
+                $('#share_area').remove();
+            }
+
             diagnosis.getCatFromId();
-            diagnosis.mergeProducts();
+            diagnosis.mergeProducts();            
         },
         share: () => {
             if (navigator.share) {

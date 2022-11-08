@@ -14,16 +14,17 @@ var sidebar = {
     pageIds : [
         [],
         ["27070", "26950", "26059", "26060", "26061"], //까리소개
-        [],
-        [],
-        [],
+        ["26434"],
+        ["27038"],
+        ["cart"],
         ["26802", "26801", "26803", "26800"],
-        ["26922", "26926", 'sett', "26922", "26065"],
+        ["26922", "26926", 'sett', "26922", "26065", 'coupon', 'point'],
     ],
 
     showSidebar : () => {
         outer : for(var i=1; i<7; i++){
             inner : for(let ids in sidebar.pageIds[i]){
+                $('#menu:nth-child('+i+')').addClass('active');
                 //무조건 안나와야하는 곳들 제외
                 if(location.href.includes('log'))
                     break outer;
@@ -82,7 +83,7 @@ var sidebar = {
     drawSidebar6 : () => {
         let $s6 = $("#sidebar6");
         $s6.find(".user_name").html(user.name);        
-        let subText = sidebar.month == 0 ? '미구독회원' : `구독 ${sidebar.month}개월차`;
+        let subText = sidebar.month == -1 ? '미구독회원' : `구독 ${sidebar.month}개월차`;
         $s6.find(".subscribe_month_text").html(subText);
         $s6.find(".user_point").html(sidebar.point);
         $s6.find(".user_coupon").html(sidebar.coupon);

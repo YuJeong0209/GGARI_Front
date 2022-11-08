@@ -1,3 +1,11 @@
+
+.content_wrap2{
+    margin : 0 auto;
+    width: 1182px;
+    min-height: calc(100vh - 400px);
+    margin-top: 100px;
+}
+
 .mw_360 {
     max-width: 398px;
     margin: 0 auto;
@@ -59,6 +67,12 @@
 }
 
 @media screen and (max-width:576px) {
+    .content_wrap2{
+        width : 100%;
+        margin-top : 80px;
+        min-height : calc(100vh - 440px);
+    }
+
     .mw_360 {
         max-width: 318px;
         margin: 0 auto;

@@ -1,0 +1,31 @@
+<button onclick="postOllyShop()">테스트</button>
+<script>
+
+$(()=>{
+});
+
+const postOllyShop = (pid) => {
+    let json = {
+        url : "/api/my.cart.add.php", 
+        type : "POST",
+        data : {
+            KEY : "4kzsu2j6xklbn6s8kv5c1kteopqg0por",
+            product_id : "2211ECSJ", 
+            options : "28148☆26332☆C☆[GGARI] 까리 하루냥스틱_까리한 치킨맛☆500★28148☆26333☆C☆[GGARI] 까리 하루냥캔_까리한 치킨맛☆1000★28148☆26334☆C☆[GGARI] 까리 하루냥트릿_까리한 북어맛☆1300",
+            quantity_0 : 15,
+            quantity_1 : 30,
+            quantity_2 : 30,                 
+        }
+    };
+    console.log(json);
+    var pr = $.ajax(json).done((data)=>{
+        console.log("CARTADD : ", data);
+        if(data.success == false) return new $.Deferred().reject().promise();
+    }).fail((jqXHR, textStatus, errorThrown) => {
+        console.log(jqXHR, textStatus, errorThrown)
+    });
+
+    return pr;
+}
+
+</script>

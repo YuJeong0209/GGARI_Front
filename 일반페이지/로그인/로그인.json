@@ -1,0 +1,12 @@
+[
+    {
+        "group_title" : "로고",
+        "group_item" : [
+            {
+                "type" : "file",
+                "id" : "logo_image",
+                "label" : "로고 이미지"
+            }
+        ]
+    }
+]

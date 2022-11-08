@@ -7,20 +7,8 @@
 <script>
 
 $(()=>{
-    $.ajax(        
-    {
-        url : '/api/shop.read.php',
-        type : "POST",
-        data : {
-            KEY : apikey,
-            menu2_id : "27332",
-            product_code : "2211ECSJ",
-            use_page : false,
-            use_limit : false,
-        },  
-        async : false,
-
-/*        
+    $.ajax({
+        
         url : '/api/shop.list.php',
         type : "POST",
         data : {
@@ -30,7 +18,6 @@ $(()=>{
             use_limit : false,
         },  
         async : false,
-*/        
     }).done((data)=> {
         console.log(data);
         $.each(data.items, (i, item)=>{

@@ -1099,7 +1099,7 @@ button:focus {
 }
 
 .h_100 {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .mobile {
@@ -1179,7 +1179,7 @@ button:focus {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show,
 .navbar-nav .show>.nav-link {
-    color: #231815;
+    color: #6E9357;
 }
 
 
@@ -1439,6 +1439,14 @@ font-size: 12px;
     animation-iteration-count: infinite;
 }
 
+@keyframes floating {
+    from {
+        top : -62px;
+    }
+    to {
+        top : -52px;
+    }
+}
 
 @media screen and (min-width:1001px) {
     .hamburger-button {

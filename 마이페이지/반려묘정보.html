@@ -22,7 +22,7 @@
         text-align: center;
     }
 
-
+tab_btns
     .tab_btn_area li a {
         font-weight: bold;
         vertical-align: middle;
@@ -182,7 +182,9 @@
             padding-top: 20px;
         }
 
-
+        .tab_btn_area li {
+            width : 50%;
+        }
 
         .btn {
             font-size: 12px;
@@ -246,12 +248,12 @@
         .price2 {
             line-height: 1.5;
             padding: 35px 0 24px 0;
-            margin-top: 21px;
         }
 
         .itemmm_name {
             display: block;
             padding-left: 0;
+            width: 200px;
         }
 
         .cart_quantity {
@@ -315,8 +317,9 @@
     <div class="row mw_1152 ">
         <div class="col">
             <div class="fs_28 fw_700 "><span class="point_color cat_name"></span> 반려묘 정보</div>
-            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage" onclick="catPage.slideOutSidebar()">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">돌아가기
+            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage" onclick="catPage.slideSidebar()">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">
+                <span id="mobile_return_text">돌아가기</span>
             </div>
             <div class="tab_btn_area pt_40px">
                 <ul>
@@ -451,6 +454,7 @@ var catPage = {
     products : [],
     deleteIds : [],
     edits : {},
+    isSideOn : true,
     totalPrice : 0,
 
     init : () => {        
@@ -504,9 +508,16 @@ var catPage = {
         });
 
         var pr2 = $.ajax({
-            url: '/api/shop.all.list.nx',
+            url: '/api/shop.list.php',
             type: "POST",
-            data: { "KEY": apikey, menu2_id: "26044", mode: 'ALL' },
+            async : false,
+            data: {
+                "KEY": apikey,
+                menu2_id: "26044",
+                menu2_id : "26044",
+                use_page : false,
+                use_limit : false,
+            },
         }).done((data) => {
             ollyShop = data.items;
         }).fail((jqXHR, textStatus, errorThrown) => {
@@ -529,8 +540,8 @@ var catPage = {
     tabButton : (index)=>{
         $('.tab_btns').removeClass('active');
         $('#tab_btn'+index).addClass('active');
-        $('.tabs').hide();
-        $('#tab-'+index).show();
+        $('.tabs').addClass('d-none');
+        $('#tab-'+index).removeClass('d-none');
     },
 
     count : (id, isPlus)=>{
@@ -669,11 +680,19 @@ var catPage = {
     },
 
     //임시방책. 나중에 플로 다시 확인해야함. 피그마에 플로 없음.
-    slideOutSidebar : ()=> {
-        $('.btn_mypage').remove();
-        let xPos = $('#sidebar6').width()+100;
-        $('#sidebar6').animate({left : -xPos}, 1000);        
-    }
+    slideSidebar : ()=> {
+        let xPos;
+        if(catPage.isSideOn){
+            catPage.isSideOn = false;
+            xPos = $('#sidebar6').width()+100;
+            $('#mobile_return_text').html('마이페이지');
+        }else{
+            catPage.isSideOn = true;
+            xPos = 0;
+            $('#mobile_return_text').html('돌아가기');
+        }
+        $('#sidebar6').animate({left : -xPos}, 1000);            
+    },
 
 }
 </script>

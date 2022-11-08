@@ -871,12 +871,15 @@
                     console.log("NO CAT HERE! ", err);
                 });
             let pr2 = $.ajax({
-                url: '/api/shop.all.list.nx',
+                url: '/api/shop.list.php',
                 type: "POST",
+                async : false,
                 data: {
                     "KEY": apikey,
                     menu2_id: "26044",
-                    mode: 'ALL'
+                    menu2_id : "26044",
+                    use_page : false,
+                     use_limit : false,
                 },
             }).done((data) => {
                 console.log(data);
@@ -950,21 +953,28 @@
 
             $.when(pr1, pr2).done(()=>{
                 alert('구독해주셔서 감사합니다.');
+                location.href="/my/cart.list.php?SPO_KIND=C";
+            });
+        },
+
+        postWithoutSubscribe : ()=>{
+            const pr2 = calender.postOllyShop("2211ECSJ");
+            $.when(pr2).done(()=>{
+                alert('구독해주셔서 감사합니다.');
 //                location.href="/my/cart.list.php";
-            })
+            })                
         },
 
         postOllyShop : (pid) => {
-            let json = { key : apikey, url : "/api/my.cart.add.php", product_id : pid, type : "POST"}
+            let json = { url : "/api/my.cart.add.php", type : "POST", data : {"KEY" : apikey, product_id : pid }};
             let optionStr = "";
             let i = 0;
             for(let key of Object.keys(calender.ggaribox)){
-                json["quantity_"+i] = parseInt(calender.ggaribox[key].amount) + calender.ggaribox[key].amount_user_added;
+                json.data["quantity_"+i] = parseInt(calender.ggaribox[key].amount) + calender.ggaribox[key].amount_user_added;
                 i++;
                 optionStr += calender.itemlist.find(e => e.id == calender.ggaribox[key].id).id_olly_option + "★";
             }
-//            json.options = optionStr;
-            json.options = "28148☆26332☆C☆[GGARI] 까리 하루냥스틱_까리한 치킨맛☆500★28148☆26333☆C☆[GGARI] 까리 하루냥캔_까리한 치킨맛☆1000★28148☆26334☆C☆[GGARI] 까리 하루냥트릿_까리한 북어맛☆1300";
+            json.data.options = optionStr;
             console.log(json);
             var pr = $.ajax(json).done((data)=>{
                 console.log("CARTADD : ", data);

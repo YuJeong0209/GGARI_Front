@@ -49,23 +49,21 @@
             {
                 $('.content_wrap1').css('padding-top', '100px')
             }
-            //각종 마이페이지 좌우좁힘
+            //PC판 마이페이지 사이드바 대책
             if(
                 location.href.includes('coupon') ||
+                location.href.includes('point') ||
                 location.href.includes('sett') ||
                 location.href.includes('memb')
             )
             {
-                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : 'calc(100vh-464px)'});
+                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : 'calc(100vh-464px)', paddingLeft : 300, paddingTop : 234});
             }
-            //PC판 마이페이지 사이드바 대책
-            if(location.href.includes('sett')){
-                $('.content_wrap1').css({paddingLeft : 300, paddingTop : 250});
-            }            
         //모바일에서
         }else{
             if (location.href.includes('26434') ||
-                location.href.includes('coupon')
+                location.href.includes('coupon') ||
+                location.href.includes('point') 
             ) 
             {
                 $('.content_wrap1').css('padding-top', '80px')
@@ -78,6 +76,7 @@
 
     
         //쇼핑몰 마개조
+        /*
         if(location.href.includes('shop/list')){
             let $firstCate = $('.category-d2').children().eq(0);
             let $a = $('<a>').attr({href : '/shop/list.php?M2_IDX=27038'}).append($('<strong>').html('전체'));
@@ -85,10 +84,20 @@
             $firstCate.before($li);
             $('.category-d2>li').css({width : 128});
         }
+        */
 
          //장바구니 마개조
          if(location.href.includes('cart')){
             $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');            
+        }
+        //모든 my에서 상단탭떄기
+        if(location.href.includes('/my/')){
+            $('table.my-tab').remove();
+            $('.content_wrap2').css({minHeight : 'calc(100vh - 200px)'});
+        }
+        //회원정보수정
+        if(location.href.includes('memb.info')){
+            $('.content_wrap2').css({marginTop : 120});
         }
     });
     

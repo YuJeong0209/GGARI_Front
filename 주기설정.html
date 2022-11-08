@@ -478,8 +478,8 @@
         productIds: [],
         itemlist: [],
         rankStr: [null, 'Lite', 'Standard', 'Premium'],
-        categoryStr : [ null, '스틱형', '캔형', '동결/건조형', '통살형', '스낵형', '파우치형', '덴탈 간식'],
-        cycleStr : { "90": '1일에 3개', "60" : '1일에 2개', "30" : '1일에 1개', "15" : '2일에 1개', "10" : '3일에 1개', "7" : '1주일에 1개', "2" : '보름에 1개', "1" : "1달에 1개"},
+        categoryStr : [ null, '스틱형', '캔형', '동결/건조형', '통살형', '스낵형', '파우치형', '덴탈 간식', '기타'],
+        cycleStr : { "90": '1일에 3개', "60" : '1일에 2개', "30" : '1일에 1개', "15" : '2일에 1개', "10" : '3일에 1개', "4" : '1주일에 1개', "2" : '보름에 1개', "1" : "1달에 1개"},
         selected : {},
 
         init: () => {
@@ -525,12 +525,15 @@
             });
 
             var pr2 = $.ajax({
-                url: '/api/shop.all.list.nx',
+                url: '/api/shop.list.php',
                 type: "POST",
+                async : false,
                 data: {
                     "KEY": apikey,
                     menu2_id: "26044",
-                    mode: 'ALL'
+                    menu2_id : "26044",
+                    use_page : false,
+                     use_limit : false,
                 },
             }).done((data) => {
                 shop = data.items;
@@ -587,16 +590,17 @@
             let reckcal = 0;
             let result =[]
             let spilloverPos = 0;
-            do{
-                for(let key in data){
-                    reckcal += data[key][spilloverPos].kcal;
+            outer: do{
+                inner : for(let key in data){
+                    if(data[key][spilloverPos] == undefined) break outer;
+                    reckcal += data[key][spilloverPos]?.kcal;
                 }
                 spilloverPos++;
             }while(reckcal < treatcap)
             console.log("Spillover Position : ", spilloverPos);
             $('ul.select_options').each((i, lis)=>{
                 if($(lis).children().length == 0 ) return true;
-                $(lis).children().eq(spilloverPos).find('label').trigger('click');
+                $(lis).children().eq(spilloverPos-1).find('label').trigger('click');
             });
 
         },
@@ -634,7 +638,7 @@
                 case 3 : loop = 8; break;
             }
             let $boxs = $('#snack_boxs');
-            for(i = 1; i < loop+1; i++){
+            for(i = 1; i < 9; i++){
                 if(calory.productIds[calory.rank]["s"+i] != null){
                     let item = calory.itemlist.find(e=> e.id == calory.productIds[calory.rank]["s"+i]);
                     let $box = $('#origin_box').clone().attr('id', 'snack_boxs'+i).removeClass('d-none');
@@ -658,13 +662,15 @@
                     $box.find('.select_closeLabel').attr({for:"feed_"+item.id+"-close"});
                     $box.find('.select_expandLabel').attr({for: "feed_"+item.id+"-opener"});
                     $boxs.append($box);
-                }else{
+                }else if(loop > i && calory.productIds[calory.rank]["s"+i] == null){
                     let $box = $('#origin_box_not').clone().removeClass('d-none');
                     let categoryName = i == loop ? "기타" : calory.categoryStr[i];
                     $box.find('.category_name').html(categoryName);
                     $boxs.append($box);
                 }
             }
+            
+
             $('#origin_box_not', '#origin_box').remove();
 
             //자동추천
