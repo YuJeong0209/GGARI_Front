@@ -39,6 +39,7 @@
 
         //PC일 때
         if ($(window).width() > 768) {
+            //헤더
             if (location.href.includes('page') ||
                 location.href.includes('cons') ||
                 location.href.includes('board') ||
@@ -61,13 +62,20 @@
             }
         //모바일에서
         }else{
-            if (location.href.includes('26434') ||
-                location.href.includes('coupon') ||
-                location.href.includes('point') 
+            //헤더
+            if (location.href.includes('/my/') ||
+                location.href.includes('/memb/') 
             ) 
             {
-                $('.content_wrap1').css('padding-top', '80px')
+                $('.content_wrap1').css({paddingTop : 100, paddingLeft : 15, paddingRight : 15});                
             }
+
+            // 설문조사
+            if (location.href.includes('26434')) 
+            {
+                $('.content_wrap1').css({paddingTop : 100});                
+            }
+
         }
 
 

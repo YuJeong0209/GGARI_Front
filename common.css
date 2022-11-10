@@ -1099,7 +1099,7 @@ button:focus {
 }
 
 .h_100 {
-    min-height: 100vh;
+    min-height: calc(100vh - 484px);
 }
 
 .mobile {
@@ -1721,6 +1721,10 @@ input:-internal-autofill-selected {
 }
 
 @media screen and (max-width:576px) {
+    .h_100 {
+        min-height: calc(100vh - 464px);
+    }
+
     .pc_br_none br {
         display: block !important;
     }

@@ -6,7 +6,6 @@
 <style>
     @charset "utf-8";
 
-
     .survey_pages {
         background: #FFFFFF;
         box-shadow: 0px 5.33333px 32px rgba(0, 0, 0, 0.12);
@@ -30,6 +29,10 @@
         margin-right: 4px;
     }
 
+    #bg_screen{
+        padding : 20px;
+    }
+
     #progress_box {
         position: absolute;
         z-index: 30;
@@ -48,7 +51,7 @@
         border-radius: 50px;
         top: 0px;
         left: 0px;
-        width: 10px;
+        width: 1px;
         height: 12px;
         z-index: 0;
         opacity: 1;
@@ -509,7 +512,6 @@
         background: #EDF2EA;
         border-radius: 10px;
         padding: 14px 20px;
-        height : 60px;
     }
 
     .tip_box img {
@@ -679,6 +681,9 @@
     }
 
     @media screen and (max-width:576px) {
+        #bg_screen{
+            padding : 0;
+        }
 
         #creating .col-4{
             -ms-flex: 0 0 100%;
@@ -717,6 +722,9 @@
 
         .m_pt_10 {
             padding-top: 10px;
+        }
+        .pop_loader_top.anime_floating{
+            left : -25px;
         }
 
         #opening .pt-9 {
@@ -757,7 +765,7 @@
             width : calc(100vw - 60px);
             height: 8px;
         }
-        #pop_loader_bar {
+        #pop_loader_bar {            
             height: 8px;            
         }
 
@@ -1238,12 +1246,6 @@
             <!-- 시작 -->
             <div id="opening" class="container-fluid mw_1200 survey_pages">
                 <div class="row align-items-center h-100 ">
-                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
-                        <button type="button" class="btn ">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
-                                class="img-fluid">
-                        </button>
-                    </div>
                     <div class="col-12 px_100 pt_180 ">
                         <div class="fs_40 line_50">
                             까리!<br>
@@ -1269,12 +1271,6 @@
 
             <div id="progress_box" class="container-fluid mw_1200 d-none">
                 <div class="align-items-center">
-                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
-                        <button type="button" class="btn ">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
-                                class="img-fluid survey_close">
-                        </button>
-                    </div>
                     <div class="col-12 text-center pt-5 progress_mobile">
                         <span id="announce0" class="fs_18 color_fff bg_point progress_bar">
                             <span class="fw_700">설문조사</span>를 시작하기 전에...
@@ -1679,12 +1675,6 @@
 
             <div id="ending" class="container-fluid mw_1200 survey_pages d-none">
                 <div class="row align-items-center h-100 ">
-                    <div class="col-12 text-right pt_2rem pr-4 mpt-4 mobile">
-                        <button type="button" class="btn">
-                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
-                                class="img-fluid survey_close">
-                        </button>
-                    </div>
                     <div class="col-12 text-center fs_40 fw_700 pt-10">
                         <span class="point_color selected_cat_name"></span>의 설문 내용을 분석하고 있습니다.
                     </div>
@@ -2105,7 +2095,7 @@
                         $aBox.addClass('have_radio');
                         question.answers.forEach((answer, j) => {
                             let $input = $('<input>').attr({ id: "q" + question.id + "_" + (j + 1), name: "q" + question.id, type: "radio" }).click(() => { survey.addAnswer(question.id, j + 1) });
-                            let $label = $('<label>').attr({ for: "q" + question.id + "_" + (j + 1) }).addClass('["mr-3", "mr_3_m2"]').html(answer.description);
+                            let $label = $('<label>').attr({ for: "q" + question.id + "_" + (j + 1) }).addClass('mr-3 mr_3_m2').html(answer.description);
                             $aBox.append($input, $label);
                         });
                         break;

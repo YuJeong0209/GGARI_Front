@@ -85,7 +85,7 @@ tab_btns
         border-top: 2px solid #6E9357;
         margin-left: 0;
         margin-right: 0;
-        border-bottom: 2px solid #EDEDED;
+        border-bottom: 2px solid #6E9357;
     }
 
     .cart_box {
@@ -162,11 +162,19 @@ tab_btns
     }
 
     @media screen and (max-width:576px) {
+        #mypage_slider{
+            z-index: 200;
+            position: absolute;
+            top: 110px;
+            width: 288px;
+            left: calc((100vw - 288px)/2 );
+        }
+
         #section1 {
             left: 0;
             padding: 0 22px;
-            padding-top: 50px;
-            padding-bottom: 600px;
+            padding-top: 100px;
+            min-height : calc(100vh - 460px);
         }
 
         .tab_btn li {
@@ -212,6 +220,7 @@ tab_btns
 
         .cart_wrap {
             padding: 0 25px;
+            padding-bottom : 10px;
         }
 
         .check_custom input[type=checkbox]+label {
@@ -242,7 +251,10 @@ tab_btns
 
         .price {
             line-height: 1.5;
-            padding: 35px 0 24px 0;
+            padding: 0;
+            position: absolute;
+            right : 0px;
+            top : 58px;
         }
 
         .price2 {
@@ -253,7 +265,10 @@ tab_btns
         .itemmm_name {
             display: block;
             padding-left: 0;
-            width: 200px;
+            overflow: hidden;
+            width : 200px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .cart_quantity {
@@ -305,22 +320,26 @@ tab_btns
         }
 
         .cart_price{
-            padding: 27px 25px;            
+            padding: 27px 25px;
+            margin-top:20px;            
+        }
+        .cart_text_box{
+            width : 220px;
         }
 
     }
 </style>
 
+<div id="mypage_slider" class="pt_30px mobile fs_18 fw_700 point_color btn_mypage" onclick="catPage.slideSidebar()">
+    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">
+    <span id="mobile_return_text">돌아가기</span>
+</div>
 
 
 <div class="container-fluid" id="section1">
     <div class="row mw_1152 ">
         <div class="col">
             <div class="fs_28 fw_700 "><span class="point_color cat_name"></span> 반려묘 정보</div>
-            <div class="pt_30px mobile fs_18 fw_700 point_color btn_mypage" onclick="catPage.slideSidebar()">
-                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/catname_swiper_left.png" alt="" class="img-fluid btn_mypagetab">
-                <span id="mobile_return_text">돌아가기</span>
-            </div>
             <div class="tab_btn_area pt_40px">
                 <ul>
                     <li id="tab_btn1" class="tab_btns active fs_18 fw_700" onclick="catPage.tabButton(1)">
@@ -467,6 +486,7 @@ var catPage = {
                 catPage.getMySubscribes();
             })
         }else{
+            if(util.checkMobile()) catPage.slideSidebar();
             catPage.getMySurveys();
             catPage.getMySubscribes();
         }
@@ -548,6 +568,8 @@ var catPage = {
         const $quantity = $('#amount'+id);
         let quantity = parseInt($quantity.html());
         let price = catPage.products.find(e=> e.id == id).product_price;
+        let oldPrice = parseInt($('#price'+id).html().replace('￦', '').replace(',', ''));
+
         if(!catPage.edits.hasOwnProperty(id)){
             catPage.edits[id] = catPage.products.find(e=> e.id == id).amount_user_added;
         }        
@@ -555,11 +577,13 @@ var catPage = {
             quantity++;
             catPage.edits[id]++;
             catPage.totalPrice += price;
+            $('#price'+id).html(util.won3Comma(oldPrice + price));
         }else{
             if(quantity != 0){
                 quantity--;
                 catPage.edits[id]--;
                 catPage.totalPrice -= price;
+                $('#price'+id).html(util.won3Comma(oldPrice + price));
             }
         }
         console.log(catPage.edits);
@@ -608,9 +632,9 @@ var catPage = {
                 $box.find('.category').html(item.category2_name);
                 $box.find('.itemmm_name').html( item.product_name);
                 $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
-                $box.find('label').attr({for:'delete'+item.id});
-                $box.find('.price').html(util.won3Comma(item.product_price));                
+                $box.find('label').attr({for:'delete'+item.id});              
                 let amount = item.amount + item.amount_user_added;
+                $box.find('.price').attr('id', 'price'+item.id).html(util.won3Comma(item.product_price * amount));  
                 catPage.totalPrice += parseInt(item.product_price) * amount;
                 $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
                 $box.find('.btn_plus_img').click(()=>{catPage.count(item.id, true)});
@@ -650,7 +674,7 @@ var catPage = {
         }).done((data)=>{
             console.log(data);
             alert ('삭제되었습니다.');
-            location.reload();
+            location.href="/page/?M2_IDX=26922&id="+catPage.id;
         }).fail((jqXHR, textStatus, errorThrown) => {
             console.log("DELETE FAIL", errorThrown)            
         });
@@ -673,7 +697,7 @@ var catPage = {
             }
         }).done((data)=>{
             alert('내용이 변경되었습니다.')
-            location.reload();
+            location.href="/page/?M2_IDX=26922&id="+catPage.id;
         }).fail((jqXHR, textStatus, errorThrown) => {
             console.log(errorThrown)
         });

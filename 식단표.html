@@ -480,7 +480,9 @@
 
         .price {
             line-height: 1.5;
-            padding: 35px 0 24px 0;
+            padding: 0;
+            position: absolute;
+            right : 0px;
         }
 
         .price2 {
@@ -582,7 +584,7 @@
         }
 
         .day_box{
-            width : 48px;
+            width : 44px;
             height : 48px;
             border-radius: 6px;
             margin-left : 2px;
@@ -625,7 +627,7 @@
         }
         
         .cart_text_box{
-            width : 175px;
+            width : 220px;
         }
     }
 </style>
@@ -1109,7 +1111,6 @@
                 $box.find('.itemmm_name').html( item.product_name);
                 $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
                 $box.find('label').attr({for:'delete'+item.id});
-                $box.find('.price').html(util.won3Comma(item.product_price));                
                 let amount = calender.items[item.id];
                 let ggari = {
                     id : item.id,
@@ -1117,6 +1118,7 @@
                     amount_user_added :0,
                 }
                 calender.ggaribox["item"+item.id] = ggari;
+                $box.find('.price').attr('id', 'price'+item.id).html(util.won3Comma(item.product_price * amount));                
                 calender.totalPrice += parseInt(item.product_price) * amount;
                 $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
                 $box.find('.btn_plus_img').click(()=>{calender.count(item.id, true)});
@@ -1135,17 +1137,20 @@
         count : (id, isPlus)=>{
             const $quantity = $('#amount'+id);
             let quantity = parseInt($quantity.html());
-            let price = calender.itemlist.find(e=> e.id == id).product_price;            
+            let price = calender.itemlist.find(e=> e.id == id).product_price;
+            let oldPrice = parseInt($('#price'+id).html().replace('￦', '').replace(',', ''));
             if(isPlus){
                 quantity++;
                 calender.ggaribox["item"+id].amount_user_added++;
                 calender.drawPrices(price);
+                $('#price'+id).html(util.won3Comma(oldPrice + price));
             }else{
                 if(quantity != 0){
-                    quantity--;                    
+                    quantity--;
                     calender.totalPrice -= price;
                     calender.ggaribox["item"+id].amount_user_added--;
                     calender.drawPrices(-price);
+                    $('#price'+id).html(util.won3Comma(oldPrice - price));
                 }
             }
             console.log(calender.ggaribox);
@@ -1249,7 +1254,7 @@
                 </button>
             </div>
             <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
-                x <span class="fs_20 fw_700 point_color price"></div>
+                <span class="fs_20 fw_700 point_color price"></div>
             </div>
         </div>
     </div>

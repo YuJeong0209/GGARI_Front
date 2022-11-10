@@ -1978,7 +1978,7 @@
                         });
                         let tags = item?.disease_tags?.replace(/\[|\]| /g, '').split(',');
                         $.each(tags, (l, tag) => {
-                            let $img = $('<img>').addClass('img-fluid, snack_ico01').attr('src', `https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_${tag}.png`);
+                            let $img = $('<img>').addClass('img-fluid, snack_ico01').attr('src', `https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_${tag}.svg`);
                             let $span = $('<span>').addClass('snack_ico_text').html(diagnosis.tags[tag].name);
                             $slide.find('.sw_snack_ico').append($img, $span);
                         });
