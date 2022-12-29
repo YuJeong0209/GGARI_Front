@@ -11,10 +11,6 @@
     top: 120px;
 }
 
-.name {
-    float: left;
-}
-
 .nx-prefix.sub-content.bgcolor1 {
     background: #f3f3f3
 }
@@ -32,18 +28,14 @@
 }
 
 .nx-prefix.sub-content .mboard-detail-tit {
-    padding: 15px 0 15px 0px;
+    padding: 15px 0;
     border-bottom: 2px solid #6E9357;
 }
 
 .nx-prefix.sub-content .mboard-detail-tit .tit,
 .nx-prefix.sub-content .mboard-detail-tit .date {
     display: block;
-    line-height: 1.25;
-}
-
-.date{
-    text-align : right;
+    line-height: 1.25
 }
 
 .nx-prefix.sub-content .mboard-detail-tit .tit {

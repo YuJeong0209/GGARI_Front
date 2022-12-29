@@ -452,7 +452,7 @@ button:focus {
     background-color: #EDF2EA;
 }
 
-/***************************************************************筌띾뜆彛� 占썩뫀逾� *******************************************************/
+/***************************************************************嶺뚮씭�녶퐲占� �좎뜦維��억옙 *******************************************************/
 
 .p_2rem {
     padding: 2rem;
@@ -1448,13 +1448,13 @@ font-size: 12px;
     }
 }
 
-@media screen and (min-width:1001px) {
+@media screen and (min-width:1200px) {
     .hamburger-button {
         display: none;
     }
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1200px) {
     .brand {
         padding: 0.5rem !important;
     }
@@ -1462,8 +1462,6 @@ font-size: 12px;
     .navbar-nav {
         display: none;
     }
-
-
 }
 
 
@@ -1582,7 +1580,7 @@ li {
     border: #6E9357 2.5px solid;
 }
 
-/*泥댄겕 而ㅼ뒪�� */
+/*筌ｋ똾寃� �뚣끉�わ옙占� */
 .check_custom input[type=checkbox] {
     display: none;
 }
@@ -1600,7 +1598,7 @@ li {
     background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_2.png);
 }
 
-/*�쇰뵒�� 而ㅼ뒪��*/
+/*占쎌눖逾믭옙占� �뚣끉�わ옙占�*/
 .radio_custom input[type="radio"]+label {
     display: inline-block;
     position: relative;
@@ -1699,7 +1697,6 @@ input:-internal-autofill-selected {
     box-shadow: 0 0 0 0.2rem rgb(40 167 69 / 0%);
 }
 
-
 .btn-secondary {
     background: #D1D0D0;
     border-radius: 50px;
@@ -1720,7 +1717,7 @@ input:-internal-autofill-selected {
     border: 2px solid #6E9357;
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:1200px) {
     .h_100 {
         min-height: calc(100vh - 464px);
     }

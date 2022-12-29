@@ -33,80 +33,105 @@
     </div>
 </footer>
 
-
 <script type="text/javascript">
-       $(() => {
+    $(() => {    
+        let url = location.href;        
+        //PC일떄
+        if(screen.width > 1200){
 
-        //PC일 때
-        if ($(window).width() > 768) {
-            //헤더
-            if (location.href.includes('page') ||
-                location.href.includes('cons') ||
-                location.href.includes('board') ||
-                location.href.includes('cart') ||
-                location.href.includes('coupon') ||
-                location.href.includes('shop') 
+            //각종보드 상단간격
+            if (url.includes('page') ||
+                url.includes('cons') ||
+                url.includes('board') ||
+                url.includes('cart') ||
+                url.includes('coupon') ||
+                url.includes('shop') 
             )
             {
-                $('.content_wrap1').css('padding-top', '100px')
+                $('.content_wrap1').css('padding-top', '100px');
             }
-            //PC판 마이페이지 사이드바 대책
-            if(
-                location.href.includes('coupon') ||
-                location.href.includes('point') ||
-                location.href.includes('sett') ||
-                location.href.includes('memb')
-            )
-            {
-                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : 'calc(100vh-464px)', paddingLeft : 300, paddingTop : 234});
-            }
-        //모바일에서
-        }else{
-            //헤더
-            if (location.href.includes('/my/') ||
-                location.href.includes('/memb/') 
-            ) 
-            {
-                $('.content_wrap1').css({paddingTop : 100, paddingLeft : 15, paddingRight : 15});                
-            }
+        }  
 
-            // 설문조사
-            if (location.href.includes('26434')) 
-            {
-                $('.content_wrap1').css({paddingTop : 100});                
-            }
+
+        //각종 마이페이지 좌우좁힘
+        if(
+            url.includes('coupon') ||
+            url.includes('point') ||
+            url.includes('sett') ||
+            url.includes('memb') ||
+            url.includes('my/cons') ||
+            url.includes('my/coun.list')||
+            url.includes('my/order.temp') ||
+            url.includes('my/order.add')
+        )
+        {
+            $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : '100vh'});
 
         }
 
+        if(url.includes('my/')){
+            $('.my-tab-wrap td')[0].remove();
+        }
 
+        //PC판 마이페이지 사이드바 대책
+        if($(window).width() > 578 && 
+            (   url.includes('sett') || 
+                url.includes('my/coun.list') ||
+                url.includes('my/cons') ||
+                url.includes('coupon') ||
+                url.includes('point')
+            )
+        )
+        {
+            $('.content_wrap1').css({paddingLeft : 300, paddingTop : 250});
+        }
 
+        //모바일판 높이조정
+        if ($(window).width() < 1200) {
+            if (url.includes('26434') ||
+                url.includes('coupon') ||
+                url.includes('point') 
+            ) 
+            {
+                $('.content_wrap1').css('padding-top', '80px')
+            }
+        }
 
-
-    
         //쇼핑몰 마개조
-        /*
-        if(location.href.includes('shop/list')){
+        if(url.includes('shop/list')){
             let $firstCate = $('.category-d2').children().eq(0);
             let $a = $('<a>').attr({href : '/shop/list.php?M2_IDX=27038'}).append($('<strong>').html('전체'));
             let $li = $('<li>').append($a);
             $firstCate.before($li);
             $('.category-d2>li').css({width : 128});
         }
-        */
 
-         //장바구니 마개조
-         if(location.href.includes('cart')){
+            //장바구니 마개조
+            if(url.includes('cart')){
             $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');            
         }
-        //모든 my에서 상단탭떄기
-        if(location.href.includes('/my/')){
-            $('table.my-tab').remove();
-            $('.content_wrap2').css({minHeight : 'calc(100vh - 200px)'});
-        }
-        //회원정보수정
-        if(location.href.includes('memb.info')){
-            $('.content_wrap2').css({marginTop : 120});
+
+        //설문조사~식단표까지 강제모바일화
+        if(url.includes('26434') || 
+        url.includes('26057')){
+            forcedWidth360();    
         }
     });
     
+
+const forcedWidth360 = ()=>{
+    let htmlWidth = $('html').width();
+    if(htmlWidth < 1200 ){                
+        $('body').height($('.bg_img').height());
+        //스케일 계산
+        let scale= htmlWidth / 360;
+
+        $('header').css({width : 360});
+        $('.nav_c.roll').css({position : 'absolute'});
+        $('nav').css({position : 'absolute', left : 100});
+        $('.hamburger-button').css({position : 'absolute'});
+
+        $('body').css({width : 360, transform : 'scale('+scale+')'}).css('transform-origin', 'left top');
+    }        
+}
 </script>

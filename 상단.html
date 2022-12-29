@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
@@ -37,17 +38,12 @@
         }
 
         @media screen and (max-width:576px) {
-            .cs_menu{
-                overflow: scroll;
-            }
-
             .sidebars {
                 width: 600px;
                 top: 135px;
                 padding: 0;
-                -ms-overflow-style: none;  /* IE and Edge */
-                scrollbar-width: none;  /* Firefox */
-                overflow : scroll;                
+                overflow: scroll;
+                -ms-overflow-style: none;
             }
 
             .sidebars::-webkit-scrollbar{
@@ -59,13 +55,6 @@
                 display: flex;
                 padding: 13px;
                 border-radius: 0;
-                overflow : scroll;                
-                -ms-overflow-style: none;  /* IE and Edge */
-                scrollbar-width: none;  /* Firefox */
-            }
-
-            .cs_menu::-webkit-scrollbar{
-                display : none;
             }
 
             .cs_menu .pt_30px {
@@ -96,7 +85,7 @@
             position: absolute;
             top: 235px;
             left: 0;
-            z-index: 100;
+            z-index: 1000;
             width: 270px;
         }
 
@@ -108,11 +97,11 @@
             width: 270px;
         }
 
-        .mypage_menu a > div {
+        .mypage_menu a {
             color: #787878;
         }
 
-        .mypage_menu a > div:hover {
+        .mypage_menu a:hover {
             color: #6E9357;
         }
 
@@ -165,10 +154,6 @@
                 height: 900px;
             }
 
-            #sidebar6{
-                top : 104px;
-            }
-
             .sidebar6 .pr-0 {
                 padding-right: 15px !important;
             }
@@ -186,22 +171,28 @@
                 display: inline-flex;
             }
 
-            #user_cp_box {
+            .mypage_menu {
                 max-width: 288px;
                 width: 288px;
             }
 
-            #user_cp_box > a > div {
-                display: table-cell;
-                width : 100px;
-                padding : 0 10px;
+            .mypage_menu .float-right:nth-child(1) {
+                left: 30px;
+            }
+
+            .mypage_menu .float-right:nth-child(2) {
+                left: 30px;
+            }
+
+            .mypage_menu .pt_10px {
+                padding-top: 0;
+                left: 60px;
             }
 
             .mycat_namebox {
 
                 text-align: center !important;
                 width: 136px;
-                padding : 14px;
             }
 
             .mycat_namebox:nth-child(2n+1) {
@@ -219,7 +210,7 @@
             <!--고객센터 서브메뉴-->
             <div class="col sidebars d-none" id="sidebar5">
                 <div class="fs_28 fw_700 m_fix">고객센터</div>
-                <div id="cs_menu" class="cs_menu mt_40px fw_700">
+                <div class="cs_menu mt_40px fw_700">
                     <div class="cs_menu_w" id="cs_menu_01">
                         <a href="/page/?M2_IDX=26802">자주 묻는 질문</a>
                     </div>
@@ -237,7 +228,7 @@
             <!--인트로 서브메뉴-->
             <div class="col sidebars d-none" id="sidebar1">
                 <div class="fs_28 fw_700 m_fix">까리 소개</div>
-                <div id="intro_menu" class="cs_menu mt_40px fw_700">
+                <div class="cs_menu mt_40px fw_700">
                     <div class="cs_menu_w" id="intro_menu_01">
                         <a href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299">서비스 소개</a>
                     </div>
@@ -269,7 +260,7 @@
                     </div>
                 </div>
 
-                <div id="user_cp_box" class="mypage_menu mt_28px fw_700 m_inflex">
+                <div class="mypage_menu mt_28px fw_700 m_inflex">
                     <a href="/my/coupon.list.php">
                         <div>
                             포인트
@@ -318,11 +309,9 @@
                             주문조회
                         </div>
                     </a>
-                    <!--
                     <div class="pt_30px mypage_menu_btn">
                         내가 쓴 리뷰
                     </div>
-                    -->
                     <a href="/cons/list.nx?M2_IDX=26065">
                         <div class="pt_30px mypage_menu_btn">
                             1:1 QnA
@@ -338,7 +327,7 @@
 
 
         </div>
-</div>
+    </div>
 
 
 
@@ -357,8 +346,9 @@
                     <ul class="navbar-nav mr-auto">
                     </ul>
                     <ul class="navbar-nav " id="menu">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299" id="navbardrop" data-toggle="dropdown">까리 소개</a>
+                        <li class="nav-item active dropdown">
+                            <a class="nav-link dropdown-toggle" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299" id="navbardrop" data-toggle="dropdown">까리
+                                소개</a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299">서비스 소개</a>
                                 <a class="dropdown-item" href="/board/list.php?M2_IDX=26950">까리박스 리뷰</a>
@@ -378,7 +368,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="/my/cart.list.php?SPO_KIND=C&SC_MODE=A">장바구니</a>
+                            <a class="nav-link " href="/my/cart.list.php">장바구니</a>
                         </li>
 
                         <li class="nav-item ">
@@ -404,13 +394,9 @@
                             </a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="/page/?M2_IDX=26922">반려묘 정보</a>
-                                    <!--
                                     <a class="dropdown-item" href="/page/?M2_IDX=26926">배송/결제방법</a>
-                                    -->
                                     <a class="dropdown-item" href="/my/sett.list.php">주문조회</a>
-                                    <!--
                                     <a class="dropdown-item" href="#">내가 쓴 리뷰</a>
-                                    -->
                                     <a class="dropdown-item" href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a>
                                     <a class="dropdown-item" href="/my/memb.info.php">회원정보변경</a>
                                 </div>
@@ -456,7 +442,7 @@
                     <div class="log_on">
                         <dt class="dt_ham_menu back_no border-0 ham_myinfo ">
                             <span class="point_color user_name"></span> 님 안녕하세요!
-                            <span class="ham_myinfo_right">미구독회원</span>
+                            <span class="ham_myinfo_right">구독중</span>
                         </dt>
                         <dt class="dt_ham_menu back_no border-0 h_44 d-flex" onclick="location.href='/my/coupon.list.php'">
                             <div class="col p-0">포인트</div>
@@ -466,13 +452,13 @@
                         </dt>
                         <dt class="dt_ham_menu back_no border-0 h_44_2 d-flex">
                             <div class="col p-0 point_color">
-                                <a href="/page/?M2_IDX=26922">설문 결과</a>
+                                <a href="">설문 결과</a>
                             </div>
                             <div class="col text-center point_color">
-                                <a href="/page/?M2_IDX=26922">구독 정보</a>
+                                <a href="">구독 정보</a>
                             </div>
                             <div class="col text-right p-0 point_color">
-                                <a href="/my/sett.list.php">주문 조회</a>
+                                <a href="">주문 조회</a>
                             </div>
                         </dt>
                     </div>
@@ -503,7 +489,7 @@
                         </a>
                     </dt>
                     <dt class="dt_ham_menu  back_no">
-                        <a href="/my/cart.list.php?SPO_KIND=C&SC_MODE=A">
+                        <a href="/my/cart.list.php">
                             장바구니
                         </a>
                     </dt>
@@ -527,26 +513,14 @@
                         <dd class="dd_ham_menu ">
                             <ul>
                               <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
-                                <!--
                                 <li class="pb_20px"><a href="">배송/결제방법</a></li>
-                                -->
                                 <li class="pb_20px"><a href="/my/sett.list.php">주문조회</a></li>
-                                <!--
                                 <li class="pb_20px"><a href="">내가 쓴 리뷰</a></li>
-                                -->
                                 <li class="pb_20px"><a href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a></li>
                                 <li><a href="/my/memb.info.php">회원정보변경</a></li>
                             </ul>
                         </dd>
                     </div>
-                    <div class="log_on">
-                        <a href="/lib/logoutProc.php">
-                            <dt class="dt_ham_menu back_no">
-                                로그아웃
-                            </dt>
-                        </a>
-                    </div>
-
                 </div>
             </dl>
         </nav>
@@ -557,8 +531,6 @@ const apikey = "4kzsu2j6xklbn6s8kv5c1kteopqg0por";
 const serverUrl = "https://api.ggaridev.site";
 
 $(() => {
-    //모바일 확인
-    util.checkMobile();
     
     //로그인처리
     if (user.check()) {
@@ -566,8 +538,6 @@ $(() => {
         $('.logged_in').css({ display: 'none' });
         $('.logged_out').css({ display: 'block' });
         $('.username_text').html(user.name);
-    }else{
-        
     }
 
     /*행버거*/
@@ -596,8 +566,6 @@ var user = {
                 isLogin = true;
             } else {
                 console.log('login Nothing!');
-                $('.log_off').removeClass('d-none');
-                $('.log_on').addClass('d-none');           
             }
         }).fail((jqXHR, textStatus, errorThrown) => {
             console.log('login Error!' + textStatus + " : " + errorThrown);
@@ -621,8 +589,10 @@ var user = {
                 $('.log_off').addClass('d-none');
                 $('.log_on').removeClass('d-none');
                 subscribe.init();
-            }else{
-                console.log('Info Error');
+            } else {
+                console.log('login Nothing!');
+                $('.log_off').removeClass('d-none');
+                $('.log_on').addClass('d-none');
             }
         }).fail(function (jqXHR, textStatus, errorThrown) {
             console.log('login Error!' + textStatus + " : " + errorThrown);
@@ -724,12 +694,6 @@ var cat = {
 
 
 var util = {
-    isMobile : false,
-
-    checkMobile : ()=>{
-        util.isMobile = $(window).width() < 576 ? 1 : 0;
-    },
-
     ajaxSetting : {
         get : {
             type : "GET",

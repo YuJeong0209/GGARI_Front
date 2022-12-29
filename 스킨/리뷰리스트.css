@@ -50,10 +50,6 @@
     border-radius: 50px;
 }
 
-.nx-prefix.sub-content .mboard-list-area .btn-write:hover {
-    background: #666
-}
-
 .nx-prefix.sub-content .btn-all-area {
     padding: 20px 0;
     text-align: center

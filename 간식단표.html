@@ -308,7 +308,8 @@
         background-color : #6B6B82;
     }
 
-    @media screen and (max-width: 576px ) {
+
+    @media screen and (max-width: 1200px ) {
 
         #section1 .mw_1152{
             max-width : 100%;
@@ -350,7 +351,6 @@
             margin-top: 20px !important;
         }
 
-        #section4,
         #section5,
         #section6,
         #section7,
@@ -379,6 +379,10 @@
 
         .cat_head.pr_40px {
             padding-right: 0px;
+        }
+
+        .cart_round_box img {
+            display : none;
         }
 
         .py_25px {
@@ -419,6 +423,9 @@
             max-width: 18px;
         }
 
+        .btn_plus_img span,
+    
+
 
         .col-12 {
             padding-right: 0;
@@ -428,6 +435,9 @@
         .col {
             padding-right: 0;
             padding-left: 0;
+        }
+        #cart_boxes > article:not(last-of-type){
+            border-bottom : #EDEDED 2px solid; 
         }
 
         .mw_1152 {
@@ -459,7 +469,6 @@
 
         .cart_box .d-inline-block {
             float: left;
-            padding : 0;
         }
 
         .cart_box .pr_15px {
@@ -480,24 +489,22 @@
 
         .price {
             line-height: 1.5;
-            padding: 0;
-            position: absolute;
-            right : 0px;
+            padding: 60px 0px;
         }
 
         .price2 {
             line-height: 1.5;
-            padding: 35px 0 24px 0;
-            margin-top: 58px;
-            margin-right : 15px;
+            position : absolute;
+            height : 100%;
         }
 
         .itemmm_name {
             display: block;
             padding-left: 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            width : 188px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;            
         }
 
         .cart_quantity {
@@ -584,11 +591,11 @@
         }
 
         .day_box{
-            width : 44px;
-            height : 48px;
+            width : calc(100%/7);
+            height : 46px;
             border-radius: 6px;
-            margin-left : 2px;
-            margin-right : 2px;
+            margin-left : -1px;
+            margin-right : -1px;
             padding : 6px;
         }
 
@@ -618,17 +625,14 @@
         }
 
         .day_box.title.special{
-            width : 96px;
+            width : calc(100%/7*2);
         }
 
         #special_box{
             width : 100%;
             height : 80px;
         }
-        
-        .cart_text_box{
-            width : 220px;
-        }
+
     }
 </style>
 
@@ -787,7 +791,6 @@
                     정기 구독 서비스 <br><span class="m_f2">이용 시</span>
                     <div id="total_discount" class="float-right pr_140px fs_20 fw_700 text-right"></div>
                 </dt>
-                <!-- 깎아주는 값 -->
                 <dd class="dd_snack fs_20 fw_700 point_color">
                     <div>
                         배송비 무료 <span class="float-right">- ￦2,500</span>
@@ -833,7 +836,6 @@
 
 <script>
 
-
     $(()=>{
         calender.init();
     });
@@ -873,15 +875,12 @@
                     console.log("NO CAT HERE! ", err);
                 });
             let pr2 = $.ajax({
-                url: '/api/shop.list.php',
+                url: '/api/shop.all.list.nx',
                 type: "POST",
-                async : false,
                 data: {
                     "KEY": apikey,
                     menu2_id: "26044",
-                    menu2_id : "26044",
-                    use_page : false,
-                     use_limit : false,
+                    mode: 'ALL'
                 },
             }).done((data) => {
                 console.log(data);
@@ -946,44 +945,19 @@
                 },
                 type : 'POST',
             }).done((data)=>{
-                console.log(data);                
+                console.log(data);
             }).fail((jqXHR, textStatus, errorThrown) => {
                 console.log(jqXHR, textStatus, errorThrown)
             });
 
-            const pr2 = calender.postOllyShop("2211ECSJ");
-
-            $.when(pr1, pr2).done(()=>{
+            $.when(pr1).done(()=>{
                 alert('구독해주셔서 감사합니다.');
-                location.href="/my/cart.list.php?SPO_KIND=C";
-            });
+                location.href="/my/cart.list.php";
+            })
         },
 
-        postWithoutSubscribe : ()=>{
-            const pr2 = calender.postOllyShop("2211ECSJ");
-            $.when(pr2).done(()=>{
-                alert('구독해주셔서 감사합니다.');
-//                location.href="/my/cart.list.php";
-            })                
-        },
-
-        postOllyShop : (pid) => {
-            let json = { url : "/api/my.cart.add.php", type : "POST", data : {"KEY" : apikey, product_id : pid }};
-            let optionStr = "";
-            let i = 0;
-            for(let key of Object.keys(calender.ggaribox)){
-                json.data["quantity_"+i] = parseInt(calender.ggaribox[key].amount) + calender.ggaribox[key].amount_user_added;
-                i++;
-                optionStr += calender.itemlist.find(e => e.id == calender.ggaribox[key].id).id_olly_option + "★";
-            }
-            json.data.options = optionStr;
-            console.log(json);
-            var pr = $.ajax(json).done((data)=>{
-                console.log("CARTADD : ", data);
-                if(data.success == false) return new $.Deferred().reject().promise();
-            }).fail((jqXHR, textStatus, errorThrown) => {
-                console.log(jqXHR, textStatus, errorThrown)
-            });
+        postOllyShop : () => {
+            var pr;
 
             return pr;
         },
@@ -1014,27 +988,26 @@
 
         drawPrices : (price) =>{
             calender.totalPrice += price;
-            //할인 금액. 
             let dis = calender.isFirst ? 7500 : 5000;
             calender.finalPrice = calender.totalPrice - dis;
             $('#total_price').html(util.won3Comma(calender.totalPrice));
-            $('#total_discount').html("- "+util.won3Comma(dis));            
+            $('#total_discount').html("- "+util.won3Comma(dis));
             $('#final_price').html(util.won3Comma(calender.finalPrice));
         },
 
         drawCalender : ()=>{            
             let boxCount = 1;
-            let firstDayOfWeek = new Date(calender.date.getFullYear(), calender.date.getMonth()+1, 1).getDay()-1;
-            let lastday = new Date(calender.date.getFullYear(), calender.date.getMonth()+2, -1).getDate();
+            let firstDayOfWeek = new Date(calender.date.getFullYear(), calender.date.getMonth(), 1).getDay();
+            let lastday = new Date(calender.date.getFullYear(), calender.date.getMonth()+1, 0).getDate();
             let $calender = $('#calender');
-            outer : for(let i =0; i < 7; i++){
-                inner : for(let j =0; j < 5; j++){                    
-                    if(boxCount >= firstDayOfWeek+lastday){
+            outer : for(let i = 0; i < 7; i++){
+                inner : for(let j = 0; j < 6; j++){                    
+                    if(boxCount > firstDayOfWeek+lastday){
                         break outer;
                     }
                     let $box = $('<div>').attr('id', 'box'+boxCount).addClass('day_box');
-                    if(firstDayOfWeek <= boxCount){
-                        let $day = $('<div>').addClass('day_text').html(boxCount-firstDayOfWeek+1);
+                    if(firstDayOfWeek < boxCount){
+                        let $day = $('<div>').addClass('day_text').html(boxCount-firstDayOfWeek);
                         $box.append($day);
                         $balls = $('<div>').addClass('balls');               
                         for(key in calender.items){
@@ -1111,6 +1084,7 @@
                 $box.find('.itemmm_name').html( item.product_name);
                 $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
                 $box.find('label').attr({for:'delete'+item.id});
+                $box.find('.price').html(util.won3Comma(item.product_price));                
                 let amount = calender.items[item.id];
                 let ggari = {
                     id : item.id,
@@ -1118,7 +1092,6 @@
                     amount_user_added :0,
                 }
                 calender.ggaribox["item"+item.id] = ggari;
-                $box.find('.price').attr('id', 'price'+item.id).html(util.won3Comma(item.product_price * amount));                
                 calender.totalPrice += parseInt(item.product_price) * amount;
                 $box.find('.cart_quantity').attr('id', 'amount'+item.id).html(amount);
                 $box.find('.btn_plus_img').click(()=>{calender.count(item.id, true)});
@@ -1137,20 +1110,17 @@
         count : (id, isPlus)=>{
             const $quantity = $('#amount'+id);
             let quantity = parseInt($quantity.html());
-            let price = calender.itemlist.find(e=> e.id == id).product_price;
-            let oldPrice = parseInt($('#price'+id).html().replace('￦', '').replace(',', ''));
+            let price = calender.itemlist.find(e=> e.id == id).product_price;            
             if(isPlus){
                 quantity++;
                 calender.ggaribox["item"+id].amount_user_added++;
                 calender.drawPrices(price);
-                $('#price'+id).html(util.won3Comma(oldPrice + price));
             }else{
                 if(quantity != 0){
-                    quantity--;
+                    quantity--;                    
                     calender.totalPrice -= price;
                     calender.ggaribox["item"+id].amount_user_added--;
                     calender.drawPrices(-price);
-                    $('#price'+id).html(util.won3Comma(oldPrice - price));
                 }
             }
             console.log(calender.ggaribox);
@@ -1161,7 +1131,7 @@
     }
 
     $(window).resize(function () {
-        if (window.innerWidth > 480) {  // 다바이스 크기가 480이상일때 
+        if (window.innerWidth > 1200) {  // 다바이스 크기가 480이상일때 
             $(document).ready(function () {
                 changeIMG();
             });
@@ -1227,35 +1197,34 @@
 
 </script>
 
-<div id="origin_inbox" class="row mt_20px d-none">
-    <div class="col">
-        <div class="cart_box">
-            <div class="d-inline-block align-middle pr_15px">
-                <div class="check_custom">
-                    <input type="checkbox" name="select_chk01" id="select_chk01">
-                    <label for="select_chk01">&nbsp;</label>
-                </div>
+<article id="origin_inbox" class="row mt_20px d-none">
+    <div class="cart_box">
+        <div class="d-inline-block align-middle pr_15px">
+            <div class="check_custom">
+                <input type="checkbox" name="select_chk01" id="select_chk01">
+                <label for="select_chk01">&nbsp;</label>
             </div>
-            <div class="d-inline-block align-middle pr_30px cart_round_box">
-                <img src="" alt="" class="img-fluid list_img">
-            </div>
+        </div>
+        <div class="d-inline-block align-middle pr_30px cart_round_box">
+            <img src="" alt="" class="img-fluid list_img">
+        </div>
 
-            <div class="d-inline-block align-middle cart_text_box">
-                <div class="fs_18 fw_700 mb_12px">
-                    <span class="category"></span>
-                    <span class="fw_400 sub_gray_text pl_20px itemmm_name"></span>
-                </div>
-                <button type="button" class="btn btn-outline-success small_btn2 ml_10px btn_minus_img" value="-">
-                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid">
-                </button>
-                <div class="cart_quantity ml_10px"></div>
-                <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img" value="+">
-                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid">
-                </button>
+        <div class="d-inline-block align-middle">
+            <div class="fs_18 fw_700 mb_12px">
+                <span class="category"></span>
+                <span class="fw_400 sub_gray_text pl_20px itemmm_name"></span>
             </div>
-            <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
-                <span class="fs_20 fw_700 point_color price"></div>
-            </div>
+            <button type="button" class="btn btn-outline-success small_btn2 ml_10px btn_minus_img" value="-">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid">
+            </button>
+            <div class="cart_quantity ml_10px"></div>
+            <button type="button" class="btn btn-outline-success small_btn2 btn_plus_img" value="+">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid">
+            </button>
+        </div>
+        <div class="d-inline-block align-middle float-right price2 pr_2rem text-right">
+            <div class="fs_20 fw_700 point_color price"></div>
         </div>
     </div>
 </div>
+

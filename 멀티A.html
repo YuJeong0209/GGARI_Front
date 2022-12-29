@@ -1,326 +1,1591 @@
+ 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <style>
-    .carousel-inner h3,.carousel-inner h1, .carousel-inner p, .carousel-inner a, .m2_bg1 h2, .m2_bg1 p {
-        zoom : 1.2;
-    }
-    
-        .content {
-            padding: 0;		
+        .bg_index {
+            height: 100vh;
+            background: #F7F7F7;
+            border-radius: 0px 0px 0px 500px;
         }
-        .cls_meditor_bg_A{
-            background: #fff;
+
+        .sh {
+            text-shadow: 4px 8px 10px rgba(0, 0, 0, 0.1);
         }
-            
-        .content_wrap2 {
-            max-width: 100%;
+
+        .point_color_dot {
+            width: 10px;
+            height: 10px;
+            background: #6E9357;
+            border-radius: 50px;
+            left: 290px;
         }
-    .m1_bg1{
-        background: url(https://eryun.s3.ap-northeast-2.amazonaws.com/main_top01_bg_big.png) no-repeat center center; height: 600px; background-size: cover; top: 0; overflow: hidden;
-    }
-        .m1_bg2{
-        background: url(https://eryun.s3.ap-northeast-2.amazonaws.com/main_top02_bg_big.png) no-repeat center center; height: 600px; background-size: cover; top: 0; overflow: hidden;
-    }
-            .m1_bg3{
-        background: url(https://eryun.s3.ap-northeast-2.amazonaws.com/main_top03.jpg) no-repeat center center; height: 600px; background-size: cover; top: 0; overflow: hidden;
-    }
-    .m1_bg1 p{
-        margin-bottom: 2em;
-    }
-    .m2_bg1{
-        background-color: #cfcfcf; 
-        height: auto;
-    }
-    .m2_bg2{
-        background: url(https://eryun.s3.ap-northeast-2.amazonaws.com/main_top02_1.png) no-repeat;
-        background-position: right center;
-    }
-    .m3{
-        height: auto; margin: 5% auto;
-    }
-    .m3 h2{
-        padding-top: 1em;
-    }
-    .m4_bg1{
-        background: url(https://eryun.s3.ap-northeast-2.amazonaws.com/main_top04_bg2.png) no-repeat center center;
-        background-size: cover;
-    }
-    .m4_bg1 h1{
-        padding-top: 1em;
-    }
-    
-    .m5_bg1{
-        background: url(https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_1.png) no-repeat center center;
-    }
-    
-    .box1{
-        border: 1px solid #088c98;
-        padding: 0;
-        margin: 0 15px;
-    }
-    .box2{
-        background: #088c98; border-radius: 50%;
-    }
-    .box3{
-         border: 1px solid #fff; color:  #FFFFFF; padding: 0.4em 1.4em;
-    }
-    .box4{
-        border: 1px solid #51628d;
-    }
-    .box5{
-        border: 1px solid #fff; padding: 1px 10px;
-    }
-    .box6{
-        border: 1px solid #fff; padding: 1px 25px;
-    }
-    .btn1{
-        background-color: #088c98; color: #fff; padding: 0.1em 1em;
-    }
-    .btn2 {
-        background-color: #51628d; color: #fff; padding: 0.1em 1em;
-    }
-    
-    .btn1:hover, .btn2:hover {
-        color: #fff;
-    }
-    
-    .line1{
-        border-bottom: 5px solid #3ba8e1; 
-        width: 20px; 
-        padding: 1em 2em; 
-        margin: 0 auto;
-    }
-    .carousel-inner {
-        overflow: visible;
-    }
-    .img1{
-        width: 25%; margin-top: -5em;
-    }
-    .img2{
-        width: 23%; margin-top:5em;
-    }
-    .main3 {
-            padding-left: 7em;
-                }
-    .top15_2 {
-            margin-top: 200px;
+
+        .swiper {
+            width: 100%;
+            height: 100%;
         }
-    @media screen and (max-height:790px) {
-    
-        .m1_bg1{
-        height: 600px; 
-    }	.m1_bg2{
-        height: 600px; 
-    }.m1_bg3{
-        height: 600px; 
-    }
-        .top15 {
-            top:150px;
+
+        .t_200 {
+            top: -200px;
         }
-    }
-    
-    @media screen and (max-width:768px) {
-        .m1_bg1{
-        height: 46vh; 
-    }	.m1_bg2{
-        height: 46vh; 
-    }	.m1_bg3{
-        height: 46vh; 
-    }
-        .top15 {
-            top:12vh;
+
+        .swiper-slide {
+            text-align: left;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
         }
-    .top15_2 {
-            margin-top: 80px;
+
+
+
+        .intro_swiper .swiper-slide img {
+            display: block;
+            width: 88px;
+            height: 88px;
+            min-width: 88px;
         }
-    .main3 {
-            padding-left: 0;
-                }
-        .m2_bg2 {
-        background-position: right top;
-        background-size: 50%;
+
+
+
+
+        .top_bt1 {
+            height: 52px;
+            padding: 4px 22px;
+            top: -350px;
         }
-        .box1 {
-            margin: 0;
-            padding-bottom: 2em;
+
+        .intro_cat_top {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 999;
+        }
+
+        .po_ab_btn {
+            position: fixed;
+            bottom: 0;
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
+            left: 35.7%;
+            box-shadow: 4px -2px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 50px 50px 0px 0px;
+            z-index: 1000;
+        }
+
+        .po_ab_btn img {
+            max-width: 612px;
+            max-height: 94px;
+        }
+
+        .btn_top,
+        .btn_bottom {
+            max-width: 80px;
+            max-height: 80px;
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        .btn_bottom {
+            margin-top: 10px;
+        }
+
+        .btn_wrap {
+            position: fixed;
+            right: 0;
+            bottom: 50px;
+            display: grid;
+            right: calc(50% - 600px);
+            z-index: 1001;
+        }
+
+        .bubble_emoji {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .bubble {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_left.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 180px;
+            padding: 43px 80px;
+        }
+
+        .bubble.right {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_right.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 200px;
+            padding: 52px 100px 62px 62px;
+        }
+
+        #section2 {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/intro_3back.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #section3 {
+            background: linear-gradient(0deg, #F6F6F6 11.96%, rgba(246, 246, 246, 0) 73.34%);
+        }
+
+        .cat_swiper_bubble {
+            max-width: 640px;
+            left: 10px;
+        }
+
+        .cat_head_big {
+            max-width: 100px;
+        }
+
+
+        .stepswiper {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .stepswiper .swiper-slide {
+            display: grid;
+        }
+
+        .stepswiper .swiper-slide img {
+            display: block;
+            max-width: 784px;
+        }
+
+        .stepswiper .swiper-slide-next,
+        .stepswiper .swiper-slide-prev {
+            opacity: .7;
+            filter: blur(10px);
+        }
+
+        .stepswiper .swiper-slide-next .fs_18,
+        .stepswiper .swiper-slide-next .fs_22,
+        .stepswiper .swiper-slide-prev .fs_18,
+        .stepswiper .swiper-slide-prev .fs_22 {
+            display: none;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #6E9357;
+        }
+
+        .stepswiper .swiper-slide-next img,
+        .stepswiper .swiper-slide-prev img {
+            max-width: 584px;
+            padding-top: 150px;
+        }
+
+        .swiper_btn {
+            max-width: 950px;
+            margin: 0 auto;
+            margin-top: -320px;
+        }
+
+        #section4 {
+            padding-top: 414px;
+        }
+
+        .bubble_13000 img {
+            max-width: 228px;
+            margin-left: -160px;
+        }
+
+        .star_1 {
+            max-width: 34.5px;
+            position: absolute;
+            top: -35px;
+        }
+
+        .sec4_greenbox {
+            background: #F7F7F7;
+            border-radius: 10px;
+            width: 100%;
+            padding: 30px;
+            background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_chk_main.png);
+            background-repeat: no-repeat;
+            background-size: 38px;
+            background-position: 30px;
+            padding-left: 90px;
+        }
+
+        #section5 {
+            background: #F7F7F7;
+            border-radius: 0px 1000px 0px 0px;
+            height: 1640px;
+            margin-top: 220px;
+        }
+
+        .main_cat_sec5 {
+            max-width: 270px;
+            margin-top: -150px;
+        }
+
+        .se5_cattxt {
+            padding-top: 120px;
+        }
+
+        .se5_cattxt .fs_32 {
+            text-shadow: 4px 8px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gift {
+            max-width: 70px;
+            margin-right: 30px;
+            max-height: 70px;
+            margin-top: 10px;
+        }
+
+        .gift_box1 {
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 44px 33px;
+            color: #787878;
+            min-height: 180px;
+        }
+
+        .gift_box1.pt62 {
+            padding-top: 62px;
+        }
+
+        .underline {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .modal-content {
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            border: 0;
+        }
+
+        .modal-header {
+            border-bottom: 0;
+            padding: 40px 40px 0 40px;
+        }
+
+        .modal-body {
+            padding: 0 60px 60px 60px;
+        }
+
+        .close {
+            opacity: 1;
+        }
+
+
+        .modal_title {
+            text-align: center;
+        }
+
+        .round_box1 {
+            background: #5BB0FF;
+            border-radius: 50px;
+            padding: 4px 20px;
+            color: #fff;
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        .round_box1.green {
+            background: #6E9357;
+        }
+
+        .round_box1.red {
+            background: #F08080;
+        }
+
+        .col_box {
+            background: #F3FBFF;
+            border-radius: 6px;
+            font-weight: 700;
+            min-height: 80px;
+            max-height: 80px;
+            padding: 28px 23px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .col_box.green {
+            background: #F9FCF7;
+        }
+
+        .col_box.red {
+            background: #FFF8F8;
+            padding: 15px;
+        }
+
+        .modal_last_txt {
+            line-height: 30px;
+        }
+
+        .review_swiper .swiper-slide img {
+            width: 270px;
+            min-width: 270px;
+        }
+
+
+        .color_d0 {
+            padding: 0 5px;
+        }
+
+        .icon_right {
+            top: -2px;
+        }
+
+        #section6 {
+            height: 400px;
+        }
+
+        .bottom_btn {
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 200px;
+            width: 100%;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .main_cat_run {
+            max-width: 184px;
+            top: -200px;
+            position: absolute;
+            right: 20px;
+        }
+
+        .stepswiper .swiper-slide .mobile {
+            display: none !important;
+        }
+
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_right_40.png);
+            background-size: 40px;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+        }
+
+        .swiper-button-prev {
+            background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_left_40.png);
+            background-size: 40px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .swiper-button-next:after,
+        .swiper-rtl .swiper-button-prev:after {
+            content: '';
+        }
+
+        .swiper-button-prev:after,
+        .swiper-rtl .swiper-button-next:after {
+            content: '';
+        }
+
+        @media screen and (max-height:1000px) {
+            .t_200 {
+                top: -100px;
             }
-        .img1 {
-            margin-top: -3em;
-                }
-        .img2 {
-        margin-top: 2em;
-    }
-    }
+
+            .top_bt1 {
+                top: -250px;
+            }
+        }
+
+        @media screen and (max-height:768px) {
+
+            .container-fluid .row .mw_1152 {
+                max-width: 288px;
+                margin: 0 auto;
+            }
+            .container-fluid .row.mw_1152 {
+                max-width: 312px;
+                margin: 0 auto;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .top_bt1 {
+                top: -150px;
+            }
+
+
+            .close img {
+                max-width: 24px;
+            }
+
+
+            .modal-dialog {
+                max-width: 286px;
+                margin: 0 auto;
+            }
+            .intro_swiper .swiper-slide {
+            width: 40px!important;
+        }
+            .intro_swiper .swiper-slide img {
+                display: block;
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+            }
+
+            .t_200 {
+                top: -46px;
+            }
+
+            .intro_cat_top {
+
+                position: absolute;
+                bottom: 98px;
+                right: -36px;
+                z-index: 999;
+                max-width: 256px;
+            }
+
+            .mobile_top_btn {
+                width: 100%;
+                margin-top: -220px;
+            }
+
+            .po_ab_btn img {
+                max-width: 100%;
+                max-height: 60px;
+            }
+
+            .po_ab_btn {
+                left: 0;
+                box-shadow: 4px -10px 20px rgba(0, 0, 0, 0.12);
+                border-radius: 30px 30px 0px 0px;
+            }
+
+            .btn_wrap {
+                bottom: 80px;
+                right: 30px;
+            }
+
+            .btn_top,
+            .btn_bottom {
+                max-width: 70px;
+                max-height: 70px;
+            }
+
+            #section2.pt_90px {
+                padding-top: 0;
+            }
+
+            .bubble {
+                height: auto;
+                padding: 20px 10px;
+                background: #FFFFFF;
+                box-shadow: 2px 2px 25px rgb(0 0 0 / 10%);
+                border-radius: 20px;
+                width: 288px;
+                margin-top: 14px;
+                left: -20px;
+                text-align: center;
+            }
+
+            .bubble.right {
+                background: #FFFFFF;
+                box-shadow: 2px 2px 25px rgb(0 0 0 / 10%);
+                height: auto;
+                padding: 20px 10px;
+                left: 20px;
+            }
+
+            .bubble_emoji {
+                max-width: 40px;
+                left: 20px;
+            }
+
+            .bubble_emoji.left_20 {
+                left: -20px;
+            }
+
+            #section2 .pt_10px {
+                padding-top: 40px;
+            }
+
+            .m_pt_30 {
+                padding-top: 40px;
+            }
+
+            #section2 .pt_70px {
+                padding-top: 0;
+            }
+
+            .cat_swiper_bubble {
+                max-width: 328px;
+                left: -10px;
+            }
+
+            .cat_head_big {
+                max-width: 52px;
+            }
+
+            .m_pt_0 {
+                padding-top: 0;
+            }
+            .stepswiper .swiper-slide img {
+                max-width: 288px;
+                margin: 0 auto;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+            }
+
+            .stepswiper .swiper-slide .pc {
+                display: none !important;
+            }
+
+            .stepswiper .swiper-slide .mobile {
+                display: block !important;
+            }
+
+            .stepswiper .swiper-slide {
+                text-align: center;
+            }
+
+            .swiper_btn {
+                top: -650px;
+                max-width: 312px;
+                margin: 0 auto;
+            }
+
+            #section2 {
+                background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/intro_3back_mobile.png);
+                background-repeat: no-repeat;
+                background-position: top right;
+            }
+
+            #section3 {
+                background: none;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                background-size: 20px;
+                width: 20px;
+                height: 20px;
+            }
+
+            #section4 {
+                padding-top: 0;
+            }
+
+            .sec4_greenbox {
+                padding: 25px 20px;
+                background-size: 20px;
+                background-position: 20px;
+                padding-left: 57px;
+            }
+
+            .mw_700 {
+                max-width: 318px;
+                margin: 0 auto;
+            }
+
+            .bubble_13000 img {
+                max-width: 177px;
+                margin-left: 0;
+            }
+
+            .star_1 {
+                max-width: 27px;
+                position: absolute;
+                top: -21px;
+                right: 66px;
+            }
+
+            #section4 .text-center {
+                text-align: left !important;
+            }
+
+            #section5 {
+                margin-top: 120px;
+            }
+
+            #section5 .m_block {
+                display: block !important;
+            }
+
+            .main_cat_sec5 {
+                max-width: 138px;
+                max-height: 210px;
+                margin-top: 0;
+            }
+
+            .se5_cattxt {
+                padding-top: 40px;
+            }
+
+            .gift {
+                max-width: 40px;
+                margin-right: 20px;
+                max-height: 40px;
+                margin-top: -6px;
+            }
+
+            #section5 {
+                height: 1837px;
+            }
+
+            #section5 .mt_40px {
+                margin-top: 20px;
+            }
+
+            .m_px_0 {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .gift_box1 {
+                padding: 30px;
+                min-height: auto;
+                text-align: left !important;
+            }
+
+            .m_pt_40px {
+                padding-top: 40px;
+            }
+
+            .gift_box1.pt62 {
+                padding-top: 34px;
+            }
+
+            .review_swiper .swiper-slide img {
+                width: 212px;
+                min-width: 212px;
+            }
+
+            .review_swiper .swiper-slide {
+                max-width: 212px;
+            }
+
+            #section5 .pt_100px {
+                padding-top: 50px;
+            }
+
+            .main_cat_run {
+                max-width: 96px;
+                top: -128px;
+                right: 0;
+            }
+
+            #section6 {
+                height: 308px;
+            }
+
+            .bottom_btn {
+                padding: 14px;
+            }
+
+            .col_box {
+                padding: 28px 11px;
+                text-align: left;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .modal-body {
+                padding: 0 30px 0 30px;
+            }
+
+            .modal-header {
+                border-bottom: 0;
+                padding: 30px 30px 0 30px;
+            }
+
+            .modal_title {
+                text-align: left;
+            }
+
+            .round_box1 {
+                padding: 3px 13px;
+            }
+
+            .modal-body {
+                top: -21px;
+            }
+
+            .m_pt_10px {
+                padding-top: 10px;
+            }
+
+        }
     </style>
-    
-    
-    <!--		main1	-->
-        <div id="demo" class="carousel slide" data-ride="carousel">
-                    <!-- The slideshow -->
-                     <div class="carousel-inner ">
-                        <div class="carousel-item active m1_bg1">
-                            <div class="mw1400 text-white top15_2">
-                            <h3 class="f40">문서보안의 시작!</h3>
-                                                <h1 class="f67 w700 py-2">조용하면서 강력한<br>
-    국내에서 가장 오래된<br>50여년 전통 대표브랜드<br>
-                                                    (주)이륜 문서세단기	</h1>
-                                                
-                                </div>
+
+   <div class="container-fluid bg_index" id="section1">
+        <div class="row align-items-end h-100">
+            <div class="col-12 mw_1152 px-0">
+                <div class="point_color_dot pc" data-aos="fade-down"></div>
+                <div class="fs_40 fw_700 sh pc">
+                    우리 고양이에게 <span class="point_color">꼭</span> 필요한<br>
+                    간식은 무엇일까요?
+                </div>
+                <div class="fs_40 fw_700 sh mobile">
+                    우리 고양이에게 <br><span class="point_color">꼭</span> 필요한<br>
+                    간식은 무엇일까요?
+                </div>
+
+                <div class="fs_20 fw_700 pt_40px pc_br_none">
+                    간단한 설문조사로 <br><span class="point_color">고양이의 건강 상태를 체크</span>하고
+                </div>
+                <div class="fs_20 fw_700 pc_br_none">
+                    <span class="point_color">꼭 필요한 간식만 추천</span>받아<br> 매달 편하게, 집앞에서 받아보세요!
+                </div>
+            </div>
+
+            <div class="col-12  px-0">
+                <div class="swiper intro_swiper t_200">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 18.png"
+                                class="img-fluid">
                         </div>
-    
-                        <div class="carousel-item  m1_bg2">
-                            <div class="mw1400 text-white top15_2">
-                            <h3 class="f40">문서보안의 시작!</h3>
-                                                <h1 class="f67 w700 py-2">(주)이륜 문서세단기<br>
-    미국,일본 및 전세계적으로 수출하고 있습니다.</h1>
-                                                
-                                </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 19.png"
+                                class="img-fluid">
                         </div>
-                         
-                         <div class="carousel-item  m1_bg3">
-                            <div class="mw1400 text-white top15_2">
-                            <h3 class="f40">문서보안의 시작!</h3>
-                                                <h1 class="f67 w700 py-2">(주)이륜 문서세단기<br>
-    자체적으로 직접 생산</h1>
-                                                
-                                </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 20.png"
+                                class="img-fluid">
                         </div>
-                         
-                         
-                      </div>
-                    <!-- Left and right controls -->
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span><img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top_arr_l.png" class="img-fluid" alt="" style="width: 70%"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span><img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top_arr_r.png" class="img-fluid" alt="" style="width: 70%"></span>
-                    </a>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 21.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 22.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 24.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 25.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 26.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 27.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 28.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 29.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 18.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 19.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 20.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 21.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 22.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 24.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 25.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 26.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 27.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 28.png"
+                                class="img-fluid">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/Component 29.png"
+                                class="img-fluid">
+                        </div>
+
+                    </div>
                 </div>
-            
-    <!--		main2		-->
-            <div class="container-fluid text-center m2_bg1">
-                <div class="row py-7 m2_bg2">
-                
-                    <div class="col my-auto">
-                        <h2 class="txt1 f43 w700">Welcome to ERYUN</h2>
-                        <div class="line1"></div>
-                        <p class="f25 mt-5 ">
-                            (주)이륜은 문서세단기 전문기업으로 생산 및 판매 기업입니다. <br>
-                            1969년 대한민국 최초로 창업하였으며 여러 지적재산권 및 특허, 각종 인증등을 가지고 있는 우수 조달 기업입니다. <br>
-                            (주)이륜은 독자 기술력으로 시대를 앞서 가겠습니다.
-                        </p>
+
+            </div>
+
+            <div class="col mw_1152 pc">
+                <div class="d-flex">
+                    <button class="btn btn-success px-10 fs_18 fw_700 top_bt1"
+                        onclick="location.href='/page/?M2_IDX=26434';">건강 설문조사 시작하기</button>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/intro_cat_top.png"
+                        class="img-fluid intro_cat_top ">
+                </div>
+            </div>
+
+            <div class="col mw_1152 mobile px-0">
+                <div><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/intro_cat_top_mobile.png"
+                        class="img-fluid intro_cat_top "> </div>
+                <button class="btn btn-success fs_18 fw_700 mobile_top_btn"
+                    onclick="location.href='/page/?M2_IDX=26434';">건강 설문조사 시작하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!--하단 플로팅 버튼 고정-->
+    <div class="container-fluid">
+        <div class="row mw_1152">
+            <div class="col">
+
+                <a href="/page/?M2_IDX=26434" class="po_ab_btn">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/index_pin_bt.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/index_pin_bt_mobile.png"
+                        class="img-fluid mobile">
+                </a>
+
+                <div class="btn_wrap">
+                    <a href="#" id="topBtn"><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_top.png"
+                            class="img-fluid btn_top"></a>
+                    <a href="#" id="bottomBtn"><img
+                            src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_bottom.png"
+                            class="img-fluid btn_bottom"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--말풍선-->
+    <div class="container-fluid pt_90px pb_80px" id="section2">
+        <div class="row align-items-center mw_1152">
+            <div class="col text-center">
+                <div class="fs_32 fw_700 pc">그동안 고민 많았죠?</div>
+
+                <div class="pt_70px">
+                    <div class="d-flex justify-content-center" data-aos="fade" data-aos-delay="300">
+                        <div><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_emoji1.png"
+                                class="img-fluid bubble_emoji"></div>
+
+                        <div class="d-block text-left">
+                            <div class="fw_700 pl_2rem pc_br_none">34세,<br> <span class="point_color">야근이 많은 집사님</span>
+                            </div>
+                            <div class="bubble sub_gray_text">
+                                <p class="pc">일 때문에 바빠서 재주문을 못하고 있어요. <br>
+                                    매달 규칙적으로 먹이는 간식을 <span class="fw_700">대용량으로 구매하기에는<br>
+                                        수납공간이 부족하고 유통기한을 넘기는 경우</span>도 생겨요</p>
+
+                                <p class="mobile">일 때문에 바빠서 재주문을 못하고 있어요. <br>
+                                    매달 규칙적으로 먹이는 간식을 <span class="fw_700">대용량으로<br>구매하기에는
+                                        수납공간이 부족하고 유통기한을<br>넘기는 경우</span>도 생겨요</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt_10px">
+                    <div class="d-flex justify-content-center" data-aos="fade" data-aos-delay="600">
+                        <div class="d-block text-left">
+                            <div class="fw_700 pr_2rem text-right pc_br_none">24세,<br> <span class="point_color">가족과 함께
+                                    거주중인 집사님</span>
+                            </div>
+                            <div class="bubble right sub_gray_text">
+                                아침에 분명 간식을 줬는데, 집에 오니<br>
+                                아빠가 또 간식을 주고 있더라구요. <br>
+                                <span class="fw_700">간식을 하루에 얼마나 먹는지 확인이 어려워요</span>
+                            </div>
+                        </div>
+
+                        <div><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_emoji2.png"
+                                class="img-fluid bubble_emoji left_20"></div>
+                    </div>
+                </div>
+                <div class="m_pt_30">
+                    <div class="d-flex justify-content-center" data-aos="fade" data-aos-delay="900">
+                        <div><img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_emoji3.png"
+                                class="img-fluid bubble_emoji"></div>
+
+                        <div class="d-block text-left">
+                            <div class="fw_700 pl_2rem pc_br_none">28세,<br> <span class="point_color">3마리 고양이를 키우시는
+                                    집사님</span></div>
+                            <div class="bubble sub_gray_text">
+                                좋은 간식 먹이고 싶어 열심히 검색해봤습니다.<br>
+                                근데 우리집 고양이들에게 <span class="fw_700">제일 필요한 간식이 뭔지,<br>
+                                    어떤 간식을 먹여야 할지</span> 매번 고민이에요
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-    <!--	main3		-->
-            <div class="container text-center mw1400 py-7">
-                <div class="row ">
-                    <div class="col m_b_5">
-                        <h2 class="f50 w700">문서세단기 제품소개</h2>
-                        <p class="line_h_1">Our Product</p>
-                    </div>
+        </div>
+    </div>
+
+
+    <!--스와이퍼 있는곳 스텝 스와이퍼-->
+    <div class="container-fluid" id="section3">
+        <div class="row mw_1152">
+            <div class="col pt_40px text-center px-0">
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_swiper_bubble.png"
+                        class="img-fluid cat_swiper_bubble pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_swiper_bubble_mobile.png"
+                        class="img-fluid cat_swiper_bubble mobile">
                 </div>
-                <div class="row main3">
-                    <div class="col-md-3 col-sm-6">
-                        <a href="https://eryun.olly.kr/goods/list.php?M2_IDX=22481">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top03_1.png" alt=""  class="img-fluid">
-                        <div class="txt_3 f35 w700 pd_t_1" style="color:#333;">개인용</div>
-                        <p class="pd_t_05 line_h_12" style="color:#333;">
-                            종이, 신용카드, CD까지<br>
-                            한 번에 세단이 가능합니다.
-                        </p>
-                            </a>
-                    </div>
-                    
-                    
-                    <div class="col-md-3 col-sm-6">
-                        
-                        <a href="https://eryun.olly.kr/goods/list.php?M2_IDX=23111">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top03_3.png" alt=""  class="img-fluid">
-                        <div class="txt_2 f35 w700 pd_t_1 " style="color:#088c98;">소형</div>
-                        <p class="pd_t_05 line_h_12" style="color:#333;">
-                            감각적인 디자인과<br>
-                            편리한 인터페이스를 갖췄습니다.
-                        </p>
-                            </a>
-                    </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        
-                        <a href="https://eryun.olly.kr/goods/list.php?M2_IDX=23112">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top03_4.png" alt=""  class="img-fluid">
-                        <div class=" f35 w700 pd_t_1 " style="color:#333;">중대형</div>
-                        <p class="pd_t_05 line_h_12" style="color:#333;">
-                            튼튼한 내구성을 지닌<br>
-                            <span class="txt_2 w700">국내 최저소음</span> 문서세단기입니다.
-                        </p>
-                            </a>
-                    </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        
-                        <a href="https://eryun.olly.kr/goods/list.php?M2_IDX=23114">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top03_2.png" alt=""  class="img-fluid">
-                        <div class="txt_2 f35 w700 pd_t_1 " style="color:#088c98;">조달제품</div>
-                        <p class="pd_t_05 line_h_12" style="color:#333;">
-                            조용하면서 강력한 세단력을 지닌 <br>
-                            조달청 우수 조달제품입니다.
-                        </p>
-                            </a>
-                    </div>
-                    
+                <div class="pt_30px m_pt_0">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head_big.png"
+                        class="img-fluid cat_head_big">
+                </div>
+                <div class="pt_50px sub_gray_text">
+                    고양이의 생활습관, 유전병, 신체적 특성에 따라<br>
+                    급여해야 하는 간식의 종류, 급여량이 다르다는 거, 알고계신가요?
+                </div>
+
+                <div class="pt_30px fs_22 fw_700">
+                    <p class="pc">판매량 순, 리뷰가 좋은 순, 광고로 상위 노출된 제품 구입은 이제 그만!</p>
+                </div>
+                <div class="fs_22 fw_700 point_color pc_br_none">
+                    영양 진단부터 <br> 꼭 필요한 제품 추천까지 도와드려요
                 </div>
             </div>
-    
-    <!--		main4		-->
-        <a href="https://eryun.co.kr/page/?M2_IDX=22426" class="atag">
-        <div class="container-fluid m4_bg1 text-center">
-                <div class="row">
-                    <div class="col">
-                        <div class="text-white up f40 pd_t_2 w700">Complete  Product Line-up</div>
-                        <p class="text-white p2" >You can ERYUN products at a glance. </p>
-                        <div class="f41 w700" style="color:#222;">전체 상품 라인업</div>
-                        <p style="color:#222;">(주)이륜의 제품을 한 눈에 보실 수 있습니다.</p>
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top04_1.png" alt="" class="img-fluid">
+        </div>
+
+        <div class="swiper stepswiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="fs_18 fw_700 sub_black_30">
+                        STEP. 01
+                    </div>
+                    <div class="fs_22 fw_700 pb_30px">
+                        <span class="point_color">설문조사</span> 진행 후 <span class="point_color">영양 진단</span>
+                    </div>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_01.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_01_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="fs_18 fw_700 sub_black_30">
+                        STEP. 02
+                    </div>
+                    <div class="fs_22 fw_700 pb_30px pc_br_none">
+                        맞춤형으로 우리집 고양이에게<br> 딱 필요한 간식 추천
+                    </div>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_02.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_02_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="fs_18 fw_700 sub_black_30">
+                        STEP. 03
+                    </div>
+                    <div class="fs_22 fw_700 pb_30px pc_br_none">
+                        우리 고양이 권장 급여량에 맞게<br> 급여 주기 추천
+                    </div>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_03.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_03_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="fs_18 fw_700 sub_black_30">
+                        STEP. 04
+                    </div>
+                    <div class="fs_22 fw_700 pb_30px">
+                        한달분의 간식 급여 스케쥴표 생성
+                    </div>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_04.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_04_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="fs_18 fw_700 sub_black_30">
+                        STEP. 05
+                    </div>
+                    <div class="fs_22 fw_700 pb_30px pc_br_none">
+                        매달 원하는 날짜에<br> 구독 제품 정기 배송
+                    </div>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_05.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_05_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="fs_18 fw_700 sub_black_30">
+                        STEP. 06
+                    </div>
+                    <div class="fs_22 fw_700 pb_30px">
+                        구독 간식은 언제든 변경 가능
+                    </div>
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_06.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/swiper_step_06_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+
+            </div>
+        </div>
+        <div class="swiper_btn">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid " id="section4">
+        <div class="row align-items-center mw_700">
+            <div class="col text-center">
+                <div class="bubble_13000" data-aos="fade-down" data-aos-duration="1000">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_13000.png" class="img-fluid pc">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/bubble_13000_mobile.png"
+                        class="img-fluid mobile">
+                </div>
+
+                <div class="fs_32 fw_700 pc_br_none">이런 집사님들에게<br> 추천해요! <img
+                        src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/star_11111.png" class="img-fluid star_1">
+                </div>
+
+
+                <div class="mt_40px text-left">
+                    <div class="sec4_greenbox fs_22 fw_700 mb_40px pc_br_none">
+                        <p data-aos="fade-left" data-aos-delay="300">
+                            우리 고양이에겐<br> <span class="point_color">어떤 간식</span>이 필요한지 궁금해요</p>
+                    </div>
+                    <div class="sec4_greenbox fs_22 fw_700 mb_40px">
+                        <p data-aos="fade-left" data-aos-delay="500">
+                            초보라 <span class="point_color">어떤 간식을 얼마나 급여</span>해야하는지 모르겠어요</p>
+                    </div>
+                    <div class="sec4_greenbox fs_22 fw_700 mb_40px pc_br_none">
+                        <p data-aos="fade-left" data-aos-delay="700">
+                            간식을 권장 급여량보다<br> <span class="point_color">많이 주고 있어 걱정이에요 </span></p>
+                    </div>
+                    <div class="sec4_greenbox fs_22 fw_700 mb_40px">
+                        <p data-aos="fade-left" data-aos-delay="900">
+                            여러 종류를 쟁여두고 있어서 집에 수납 <span class="point_color">공간이 부족</span>해요</p>
+                    </div>
+                    <div class="sec4_greenbox fs_22 fw_700 ">
+                        <p data-aos="fade-left" data-aos-delay="1100">
+                            가족 중 <span class="point_color">누가, 언제 간식을 얼마나 급여했는지</span> 확인이 어려워요</p>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--리뷰슬라이드랑 혜택설명-->
+    <div class="container-fluid" id="section5">
+        <div class="row mw_1152 ">
+            <div class="col px-0">
+                <div class="d-flex m_block">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/main_cat_sec5.png"
+                        class="img-fluid main_cat_sec5">
+
+                    <div class="d-block se5_cattxt">
+                        <div class="fs_32 fw_700">
+                            <div data-aos="fade"><span class="point_color">주인님 건강</span>도 챙기고,</div>
+                            <div data-aos="fade" data-aos-delay="300"><span class="point_color">집사 지갑</span>도 챙기고!</div>
+                        </div>
+                        <div class="fs_18 sub_gray_text pt_20px pc_br_none">
+                            까리박스에서 준비한<br> 여러가지 구독 혜택들을 알아보세요!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row mw_1152 pt_90px">
+            <div class="col-sm-4 m_px_0 ">
+                <div class="d-flex " data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/party_popper.png" class="img-fluid gift">
+                    <div class="fs_28 fw_700 mobile_br_none">
+                        까리박스<br>
+                        <span class="point_color">구독 할인</span> 혜택
+                    </div>
+                </div>
+                <div class="mt_40px">
+                    <div class="gift_box1 fs_18">
+                        건강설문, 구독 신청, 연속 구독 할인 등
+                        <span class="fw_700">최대 40% 할인 혜택을 드립니다</span>
+
+                        <div class="point_color fw_700 underline pt_10px" data-toggle="modal" data-target="#myModal">구독
+                            혜택 자세히 알아보기</div>
                     </div>
                 </div>
             </div>
-        </a>
-    <!--		main5		-->
-            <div class="container-fluid text-center pd_t_8 pd_b_8 m5 bg_blue">
-                <div class="row mw1400">
-                    <div class="col box1 col-sm-6">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_1.png" alt="" class="img-fluid">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_ico1.png" class="img1" alt="">
-                        <div class="pd_t_05 f35 w700">회사소개</div>
-                        <p class="line_h_12 pd_t_05">문서세단기 전문 제조 업체<br>
-                            (주)이륜을 소개합니다.</p>
-                        <a href="https://eryun.olly.kr/page/?M2_IDX=22411" class="btn1 f17 w700 ">MORE &nbsp;&nbsp;&gt;</a>
+
+            <div class="col-sm-4 m_px_0 m_pt_40px">
+                <div class="d-flex" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/wrapped_present.png"
+                        class="img-fluid gift">
+                    <div class="fs_28 fw_700 mobile_br_none">
+                        매달 드리는<br>
+                        <span class="point_color">블라인드 선물</span>
                     </div>
-                    <div class="col box1 col-sm-6">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_1.png" alt="" class="img-fluid">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_ico2.png" class="img1" alt="">
-                        <div class="pd_t_05 f35 w700">인증서</div>
-                        <p class="line_h_12 pd_t_05">(주)이륜이 보유하고있는<br>
-                            핵심기능을 살펴보세요.</p>
-                        <a href="https://eryun.olly.kr/board/list.php?M2_IDX=22791" class="btn2 f17 w700 ">MORE &nbsp;&nbsp;&gt;</a>
+                </div>
+                <div class="mt_40px">
+                    <div class="gift_box1 fs_18 text-center pt62">
+                        까리 굿즈, 이달의 장난감, 이달의 간식 등
+                        <span class="fw_700">매달 깜짝 랜덤 선물을 제공합니다</span>
                     </div>
-                    <div class="col box1 col-sm-6">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_ico3.png" class="img2" alt="">
-                        <div class="pd_t_05 f35 w700 pd_t_05">구매 / AS문의</div>
-                        <span class="line_h_12 pd_t_05">평일 AM 9시– PM 18시 <br>
-                            <span class="txt_2">(주말/공휴일 휴무)</span><br>
-                            FAX. 031-431-9482<br>
-                            <p style="margin-bottom: 0;margin-top: 0.8em;">(전국어디에서나)</p></span>
-                        <p class="f35 txt_2 w700" style="margin-top: -0.2em;"><a href="tel:15999427">1599-9427</a></p>
-                    </div>
-                    <div class="col box1 col-sm-6">
-                        <img src="https://eryun.s3.ap-northeast-2.amazonaws.com/main_top05_ico4.png" class="img2" alt="">
-                        <div class="pd_t_05 f35 w700 pd_t_05">입금계좌안내</div>
-                        <p class="line_h_12 pd_t_05">기업은행 <br>
-                            185-138563-01-019<br>
-                            예금주 (주)이륜</p>
-                    </div>
-                    
                 </div>
             </div>
-            
+
+            <div class="col-sm-4 m_px_0 m_pt_40px">
+                <div class="d-flex" data-aos="fade-up" data-aos-delay="900">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/articulated_lorry.png"
+                        class="img-fluid gift">
+                    <div class="fs_28 fw_700 mobile_br_none">
+                        <span class="point_color">배송비 무료</span><br>
+                        서비스
+                    </div>
+                </div>
+                <div class="mt_40px">
+                    <div class="gift_box1 fs_18 text-center">
+                        필요한 제품을 결제하면 <br>
+                        <span class="fw_700">다음 달 까리박스와 함께 무료로<br>
+                            배송해드립니다</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mw_1152 pt_160px">
+            <div class="fs_32 fw_700 sh">
+                <span data-aos="fade">집사님들의<br></span>
+                <span data-aos="fade" data-aos-delay="300"><span class="point_color">생생한 후기</span>도 확인해보세요</span>
+            </div>
+        </div>
+
+        <div class="row pt_100px">
+            <div class="swiper review_swiper ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review1.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review2.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review3.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review4.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review5.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review6.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review7.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="d-block">
+                            <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_review1.png"
+                                class="img-fluid">
+                            <div class="pt_20px">
+                                저는 사실 무엇을 먹어야하는지 알고있지만 상품을 고르기 귀찮아서 못 사먹고 있었어요! 까리에서 추천해주신 것 중에 먹던거 남은거 빼고 구독! 패키징이 너무
+                                섬세해서 기분이 일단 좋습니다.
+                            </div>
+                            <div class="pt_25px">
+                                <span class="fw_700">오아영</span>
+                                <span class="color_d0"> | </span>
+                                <span class="sub_gray_text fw_700">2개월째 구독중</span>
+                            </div>
+                            <div class="pt_10px color_c0 fs_14">
+                                2022.06.20
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row pt_50px mw_1152">
+            <div class="col text-right px-0">
+                <a href="/board/list.php?M2_IDX=26950" class="point_color fw_700">
+                    리뷰 더 보기 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_right.png"
+                        class="img-fluid icon_right">
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><img
+                            src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/close.png" alt=""
+                            class="img-fluid"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="fs_22 fw_700 point_color">플랜 구독 혜택</div>
+                    <div class="fs_22 fw_700 m_pt_10px pc_br_none">집사님의 소비 습관에<br> 맞게 선택하세요</div>
+                    <div class="fs_16 sub_gray_text pt_20px mobile">구독 제품 할인, 블라인드 선물, <br>
+                        이달의 까리 달력 등 풍성한 혜택을 드립니다</div>
+
+                    <div class="row pt_40px">
+                        <div class="col-sm-4">
+                            <div class="modal_title fs_18 fw_700">
+                                <span class="round_box1 fs_18">Lite</span>
+                                <span class="color_blue">가성비</span> 좋은 간식
+                            </div>
+
+                            <div class="col_box color_blue">
+                                스틱, 캔, 동결/건조, 통살 간식 제공
+                            </div>
+
+                            <div class="text-center modal_last_txt fs_14 pt_30px pc">
+                                <p class="fw_700 color_blue">구독 제품 5% 할인 혜택</p>
+                                <p>까리 블라인드 선물 제공</p>
+                                <p>이달의 까리 달력 제공</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="modal_title fs_18 fw_700">
+                                <span class="round_box1 fs_18 green">Standard</span>
+                                <span class="point_color">인기많은</span> 간식
+                            </div>
+
+                            <div class="col_box point_color green">
+                                스틱, 캔, 동결/건조, 통살, 스낵 간식 제공
+                            </div>
+
+                            <div class="text-center modal_last_txt fs_14 pt_30px pc">
+                                <p class="fw_700 point_color">구독 제품 7% 할인 혜택</p>
+                                <p>까리 블라인드 선물 제공</p>
+                                <p>이달의 까리 달력 및 스티커 제공 </p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="modal_title fs_18 fw_700">
+                                <span class="round_box1 fs_18 red">Premium</span>
+                                <span class="color_red">고품질</span> 간식
+                            </div>
+
+                            <div class="col_box color_red red">
+                                스틱, 캔, 동결/건조, <br>
+                                통살, 스낵, 파우치, 덴탈 간식 제공
+                            </div>
+
+                            <div class="text-center modal_last_txt fs_14 pt_30px pc">
+                                <p class="fw_700 color_red">구독 제품 10% 할인 혜택</p>
+                                <p>까리 블라인드 선물 제공</p>
+                                <p>이달의 까리 달력 및 스티커 제공 </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="text-right pt_40px m_pt_0">
+                        <a href="/board/list.php?M2_IDX=26951" class="fw_700 point_color">자세히 보기 <img
+                                src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/icon_right.png"
+                                class="img-fluid icon_right"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid mt_150px bg_point" id="section6">
+        <div class="row mw_610 align-items-center h-100">
+            <div class="col sub_gray_etc ">
+                <div class="fs_22">
+                    지금 우리 고양이에게 꼭 맞는 간식 추천받고
+                </div>
+                <div class="fs_28 fw_700 pc_br_none">
+                    첫 구독 30%<br> 할인도 받으세요!
+                </div>
+
+
+                <a href="/page/?M2_IDX=26434" class="point_color">
+                    <div class="bottom_btn fs_24 fw_700">
+                        건강 설문조사 시작하기
+                    </div>
+
+                    <div data-aos="fade-left"><img
+                            src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/main_cat_run.png"
+                            class="img-fluid main_cat_run"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        AOS.init();
+
+        $(function () {
+            var ww = $(window).width();
+            if (ww > 586) {
+                var swiper = new Swiper(".intro_swiper", {
+                    slidesPerView: 12,
+                    spaceBetween: 90,
+                    loop: true,
+                    autoplay: {
+                        delay: 500,
+                        disableOnInteraction: false,
+                    },
+                });
+
+                var swiper = new Swiper(".stepswiper", {
+                    slidesPerView: 3,
+                    centeredSlides: true,
+                    spaceBetween: 500,
+                    loop: true,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                });
+
+                var swiper = new Swiper(".review_swiper", {
+                    slidesPerView: 7,
+                    spaceBetween: 90,
+                    loop: true,
+                    autoplay: {
+                        delay: 1500,
+                        disableOnInteraction: false,
+                    },
+                });
+
+
+            } else {
+                var swiper = new Swiper(".intro_swiper", {
+                    slidesPerView: 6,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 500,
+                        disableOnInteraction: false,
+                    },
+                });
+                var swiper = new Swiper(".stepswiper", {
+                    centeredSlides: true,
+                    loop: true,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                });
+                var swiper = new Swiper(".review_swiper", {
+                    slidesPerView: "auto",
+                    centeredSlides: true,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 1500,
+                        disableOnInteraction: false,
+                    },
+                });
+            }
+
+
+
+
+            $('.review_swiper .swiper-slide').on('mouseover', function () {
+                swiper.autoplay.stop();
+            });
+            $('.review_swiper .swiper-slide').on('mouseout', function () {
+                swiper.autoplay.start();
+            });
+
+
+            $('#bottomBtn').click(function () {
+                $('html, body').scrollTop($(document).height());
+            });
+
+            $("#topBtn").click(function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            });
+
+
+
+
+        });
+
+
+
+    </script>
