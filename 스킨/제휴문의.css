@@ -1,0 +1,440 @@
+.content_wrap2{
+    padding-top : 100px !important;
+}
+
+.wm {
+    max-width: 410px;
+}
+.btn2 {
+    height: 48px;
+    line-height: 25px;
+    padding: 10px 14px;
+    color: #6E9357 !important;
+    background: #FFFFFF;
+    border: 2px solid #6E9357;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+#cs_menu_04 a {
+    color: #6E9357;
+}
+
+.mboard-add-area div:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 448px;
+}
+
+.mboard-add-area div:nth-child(4) {
+    position: absolute;
+    top: 24px;
+    left: 448px;
+    width: 100%;
+}
+
+#COV_EMAIL {
+    max-width: 100%;
+}
+
+.ips1 {
+    height: 52px;
+    padding: 14px 20px;
+    font-size: 16px;
+    border: 1px solid #DBDADA;
+    border-radius: 6px !important;
+}
+
+.mboard-add-area div:nth-child(5),
+.mboard-add-area div:nth-child(7),
+.mboard-add-area div:nth-child(9) {
+    padding-top: 20px;
+}
+
+#_COV_POLICY_ {
+    background: #F7F7F7;
+    border-radius: 6px !important;
+    color: #787878;
+    font-size: 14px;
+    line-height: 20px !important;
+    border: 0;
+    padding: 20px;
+    min-height: 180px !important;
+}
+
+.dsIB {
+    float: right;
+}
+
+input[type="radio"].fill+label,
+input[type="checkbox"].fill+label {
+    background: #fff;
+    font-size: 16px;
+}
+
+input[type="checkbox"].fill+label .check {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #DBDADA;
+    border-radius: 4px;
+}
+
+input[type="radio"].fill+label .txt,
+input[type="checkbox"].fill+label .txt {
+    margin-left: 26px;
+    font-size: 16px;
+    top: 4px;
+}
+
+input[type="radio"].fill:checked+label,
+input[type="checkbox"].fill:checked+label {
+    background: #fff;
+}
+
+.ico_check:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/checker-on_2.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.taR {
+    text-align: left !important;
+}
+
+.npbu1w.sub-content .btn-area>a {
+    background: #6E9357 !important;
+    border-radius: 50px !important;
+    width: 318px !important;
+}
+
+.capcha_wrapper {
+    background: #F7F7F7;
+    border-radius: 6px;
+    padding: 10px 40px 30px 40px;
+    margin-top: 20px;
+}
+
+.capcha_wrapper div div:nth-child(2) {
+    float: left !important;
+}
+
+#img_captcha {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+#CC_CORRECT {
+    margin-top: 10px;
+}
+
+
+
+.nx-prefix.sub-content {
+    padding-bottom: 100px;
+    background: #fff;
+    width: 858px;
+    margin: 0 auto;
+    left: 147px;
+    top: 135px;
+}
+
+.nx-prefix.sub-content.bgcolor1 {
+    background: #f3f3f3
+}
+
+.nx-prefix.sub-content .inner-static {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 10px
+}
+
+.nx-prefix.sub-content .inner-static::after {
+    content: '';
+    display: table;
+    clear: both
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border-top: 2px solid #dedede
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr th,
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td {
+    border-bottom: 1px solid #dedede;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr th {
+    padding: 15px 10px 15px 15px;
+    width: 200px;
+    background: #f3f3f3;
+    vertical-align: top
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr th .item {
+    display: block;
+    padding: 10px 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    letter-spacing: -0.03em;
+    color: #333
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr th .ess {
+    color: #6e89eb
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td {
+    padding: 15px 10px;
+    width: calc(100% - 200px)
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-slt1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 5px 35px 5px 20px;
+    height: 45px;
+    background: #fff url([##_cdn:w3phmdh0_##]) no-repeat right 12px center;
+    background-size: 7px auto;
+    border: 1px solid #dedede;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 2px;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    color: #666
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-ips1 {
+    padding: 5px 20px;
+    max-width: 100%;
+    width: 100%;
+    height: 45px;
+    background: #f6f9fb;
+    border: 1px solid #dedede;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 2px;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    color: #666
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-ips1.ips-ws1- {
+    max-width: 260px
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-ips1.ips-ws2- {
+    max-width: 600px
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-txta1 {
+    padding: 14px 20px;
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    background: #f6f9fb;
+    border: 1px solid #dedede;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 2px;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: -0.03em;
+    color: #666;
+    resize: none
+}
+
+.nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-txta1.txta-hs1- {
+    height: 150px
+}
+
+.nx-prefix.sub-content .btn-area {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 80px;
+    text-align: center
+}
+
+.nx-prefix.sub-content .btn-area>a {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 5px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: top;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    width: 200px;
+    height: 56px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-transition: background 0.15s linear;
+    transition: background 0.15s linear
+}
+
+.nx-prefix.sub-content .btn-area .btn-save,
+.nx-prefix.sub-content .btn-area .btn-edit {
+    background: [##_btn_color_edit_##];
+}
+
+.nx-prefix.sub-content .btn-area .btn-save:hover,
+.nx-prefix.sub-content .btn-area .btn-edit:hover {
+    background: [##_btn_color_edit_hover_##];
+}
+
+.nx-prefix.sub-content .btn-area .btn-cancel,
+.nx-prefix.sub-content .btn-area .btn-list {
+    background: #4d5163
+}
+
+.nx-prefix.sub-content .btn-area .btn-cancel:hover,
+.nx-prefix.sub-content .btn-area .btn-list:hover {
+    background: #424658
+}
+
+.nx-prefix.sub-content .btn-area .btn-del {
+    background: #EB5757
+}
+
+.nx-prefix.sub-content .mboard-add-area+.btn-area .btn-del:hover {
+    background: #e84949
+}
+
+@media print,
+screen and (min-width:1200px) {
+    .nx-prefix.sub-content .inner-static {
+        margin: 0 auto
+    }
+}
+
+@media print,
+screen and (max-width:768px) {
+    .nx-prefix.sub-content {
+        width: 100%;
+    }
+
+    .nx-prefix.sub-content {
+        padding: 0 0 50px
+    }
+
+    .nx-prefix.sub-content .inner-static {
+        margin: 0 15px
+    }
+
+    .nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr th {
+        padding: 10px;
+        width: 100px
+    }
+
+    .nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td {
+        padding: 10px;
+        width: calc(100% - 100px)
+    }
+
+    .nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-ips1 {
+        padding: 5px 10px
+    }
+
+    .nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-txta1 {
+        padding: 10px;
+        height: 200px
+    }
+
+    .nx-prefix.sub-content .mboard-add-area .mboard-ts-add tbody tr td .skin-txta1.txta-hs1- {
+        height: 100px
+    }
+
+    .nx-prefix.sub-content .btn-area {
+        margin: 60px 0 0
+    }
+}
+
+
+@media screen and (max-width:576px) {
+    .content_wrap2{
+        padding-top : 0;
+    }
+    .nx-prefix.sub-content {
+        left: 0;
+        padding: 0 22px;
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    .tab_btn li {
+        width: 141px;
+    }
+
+    #tab-cont {
+        padding: 20px;
+        min-height: 376px;
+    }
+
+    .tab_btn.pt_40px {
+        padding-top: 20px;
+    }
+
+    .mboard-add-area div:nth-child(3) {
+        position: relative;
+        top: 20px;
+        left: 0;
+    }
+
+    .mboard-add-area div:nth-child(4) {
+        position: relative;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    #_COV_POLICY_ {
+        font-size: 10px;
+    }
+}

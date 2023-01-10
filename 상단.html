@@ -1,13 +1,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <link id="topSwiperCss" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script id="topSwiperJs" src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
 <script src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sidebar.js"></script>
 
 <link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/common.css">
@@ -143,7 +144,7 @@
             background-color: #EDF2EA;
             color: #231815;
         }
-
+        
         @media screen and (max-width:576px) {
 
             .sidebars_mypage {
@@ -190,9 +191,10 @@
             }
 
             .mycat_namebox {
-
                 text-align: center !important;
                 width: 136px;
+                height: 60px;
+                padding: 12px;                
             }
 
             .mycat_namebox:nth-child(2n+1) {
@@ -260,8 +262,8 @@
                     </div>
                 </div>
 
-                <div class="mypage_menu mt_28px fw_700 m_inflex">
-                    <a href="/my/coupon.list.php">
+                <a href="/my/coupon.list.php">
+                    <div class="mypage_menu mt_28px fw_700 m_inflex">
                         <div>
                             포인트
                             <div class="float-right"><span class="point_color user_point"></span> P</div>
@@ -270,8 +272,8 @@
                             쿠폰
                             <div class="float-right"><span class="point_color user_coupon"></span> 장</div>
                         </div>    
-                    </a>
-                </div>
+                    </div>
+                </a>
 
                 <div class="mt_40px">
                     <div class="row">
@@ -299,19 +301,26 @@
                 </div>
 
                 <div class="mypage_menu mt_20px fw_700">
-                    <!--
-                    <div class="mypage_menu_btn">
-                       배송/결제방법
-                    </div>
-                    -->
+                    <a href="/page/?M2_IDX=26922">
+                        <div class="pt_30px mypage_menu_btn">
+                            반려묘 정보
+                        </div>
+                    </a>
+                    <a href="/my/pay.list.nx">
+                        <div class="pt_30px mypage_menu_btn">
+                            카드지갑
+                        </div>
+                    </a>
                     <a href="/my/sett.list.php">
                         <div class="pt_30px mypage_menu_btn">
                             주문조회
                         </div>
                     </a>
-                    <div class="pt_30px mypage_menu_btn">
-                        내가 쓴 리뷰
-                    </div>
+                    <a href="/cons/list.nx?M2_IDX=28102">
+                        <div class="pt_30px mypage_menu_btn">
+                            내가 쓴 리뷰
+                        </div>
+                    </a>
                     <a href="/cons/list.nx?M2_IDX=26065">
                         <div class="pt_30px mypage_menu_btn">
                             1:1 QnA
@@ -392,14 +401,14 @@
                                 <span class="fw_700"><span class="user_name point_color"></span> 님</span>
                                 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/ico_exit.png" alt="" class="img-fluid ico_exit" onclick="location.href='/lib/logoutProc.php'" >
                             </a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="/page/?M2_IDX=26922">반려묘 정보</a>
-                                    <a class="dropdown-item" href="/page/?M2_IDX=26926">배송/결제방법</a>
-                                    <a class="dropdown-item" href="/my/sett.list.php">주문조회</a>
-                                    <a class="dropdown-item" href="#">내가 쓴 리뷰</a>
-                                    <a class="dropdown-item" href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a>
-                                    <a class="dropdown-item" href="/my/memb.info.php">회원정보변경</a>
-                                </div>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/page/?M2_IDX=26922">반려묘 정보</a>
+                                <a class="dropdown-item" href="/my/pay.list.nx">카드지갑</a>
+                                <a class="dropdown-item" href="/my/sett.list.php">주문조회</a>
+                                <a class="dropdown-item" href="/page/?M2_IDX=28102">내가 쓴 리뷰</a>
+                                <a class="dropdown-item" href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a>
+                                <a class="dropdown-item" href="/my/memb.info.php">회원정보변경</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -439,7 +448,7 @@
 
 
                     <!--로그인했을때 -->
-                    <div class="log_on">
+                    <div class="log_on d-none">
                         <dt class="dt_ham_menu back_no border-0 ham_myinfo ">
                             <span class="point_color user_name"></span> 님 안녕하세요!
                             <span class="ham_myinfo_right">구독중</span>
@@ -506,16 +515,16 @@
                         </ul>
                     </dd>
 
-                    <div class="log_on">
+                    <div class="log_on d-none">
                         <dt class="dt_ham_menu ">
                             마이페이지
                         </dt>
                         <dd class="dd_ham_menu ">
                             <ul>
-                              <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
-                                <li class="pb_20px"><a href="">배송/결제방법</a></li>
+                                <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
+                                <li class="pb_20px"><a href="/my/pay.list.nx">카드지갑</a></li>
                                 <li class="pb_20px"><a href="/my/sett.list.php">주문조회</a></li>
-                                <li class="pb_20px"><a href="">내가 쓴 리뷰</a></li>
+                                <li class="pb_20px"><a href="/page/?M2_IDX=28102">내가 쓴 리뷰</a></li>
                                 <li class="pb_20px"><a href="/cons/list.nx?M2_IDX=26065">1:1 QnA</a></li>
                                 <li><a href="/my/memb.info.php">회원정보변경</a></li>
                             </ul>
@@ -731,6 +740,7 @@ var util = {
             case 5 : str = '스낵형'; break;
             case 6 : str = '파우치형'; break;
             case 7 : str = '덴탈 간식'; break;
+            case 8 : str = '기타'; break;
         }    
         return str;
     },
@@ -768,6 +778,10 @@ var util = {
             str = str.toString();
         }
         return "￦"+(str.replace(/\B(?=(\d{3})+(?!\d))/g, ','));        
+    },
+
+    checkMobile : () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
 };
 

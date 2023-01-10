@@ -1,3 +1,5 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"></script>
 <!--
 <link rel="stylesheet" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/survey.css">
 -->
@@ -156,6 +158,11 @@
         background-color: #6E9357;
         border-radius: 10px;
         color: #fff;
+    }
+
+    .underAnimeline{
+        width : 96%;
+        margin : 0 auto;
     }
 
     .prev_btn {
@@ -422,7 +429,7 @@
 
 
     .pop_loading_box {
-        display: inline-block;
+        display: block;
         position: relative;
         /* margin: 0 -4px -5px -2px; */
         /* transition: all .2s ease; */
@@ -465,7 +472,7 @@
 
     .pop_loader {
         position: relative;
-        width: 1004px;
+        width: 100%;
         height: 12px;
         background-color: #D9D9D9;
         border-radius: 50px;
@@ -554,13 +561,14 @@
     }
 
     .answers input[type=radio]+label {
-        padding: 26px;
+        padding: 10px;
         width: 180px;
-        display: inline-block;
+        height : 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         font-size: 16px;
-        /* border: 2px solid #6E9357; */
-        /* color: #6E9357; */
         background: #F7F7F7;
         border-radius: 10px;
         margin-bottom: 15px;
@@ -680,7 +688,7 @@
             margin-right : 14px;
     }
 
-    @media screen and (max-width:576px) {
+    @media screen and (max-width:780px) {
         #bg_screen{
             padding : 0;
         }
@@ -762,7 +770,7 @@
         }
 
         .pop_loader {
-            width : calc(100vw - 60px);
+            width : 100%;
             height: 8px;
         }
         #pop_loader_bar {            
@@ -1000,23 +1008,26 @@
         }
 
         .answers input[type=radio]+label {
-            padding: 20px 27px;
+            padding: 10px;
             font-size: 14px;
-            width: 136px;
-            margin-bottom: 16px;
-            text-align: center;
+            width: 48%;
+            min-height: 60px;
         }
 
         .answers.have_radio {
-            display: block;
+            flex-wrap : wrap;
+            gap : 10px;
         }
 
+        .mr-3{
+            margin-right : 0 !important;
+        }
         .mr_3_m2 {
-            margin-right: 12px !important;
+            margin-right: 0;
         }
 
         .mr_3_m {
-            margin-right: 0 !important;
+            margin-right: 0;
         }
 
         .letter00 {
@@ -1156,7 +1167,7 @@
     }
 
 
-    @media screen and (max-height: 670px) {
+    @media screen and (max-height: 576px) {
         .pt_180 {
             padding-top: 50px;
         }
@@ -1175,7 +1186,7 @@
         }
     }
 
-    @media screen and (max-height: 570px) {
+    @media screen and (max-height: 576px) {
 
         .pt_180 {
             padding-top: 10px;
@@ -1302,7 +1313,7 @@
                                 기타</div>
                         </div>
                     </div>
-                    <div class="col-12 px-0 point_color_alpha h_2 mt-3">
+                    <div class="underAnimeline col-12 px-0 point_color_alpha h_2 mt-3">
                     </div>
                 </div>
             </div>
@@ -1757,7 +1768,7 @@
                     },
                 }
         
-                if($(window).width() < 576){
+                if($('body').width() < 1200){
                     swiperOptions.slidesPerView = 2;
                     swiperOptions.spaceBetween = 11;
                 }else{
@@ -1775,13 +1786,19 @@
             oneCategoryWidth : [250, 90]
         },
 
+        getBarOffset: (period) => {
+            let isMobile = $('body').width() > 1200 ? 0 : 1;
+            return survey.barOffset[period][isMobile];
+        },
+
 
         movePage: (idTarget) => {
+            window.scrollTo(0, 0);
             //진행바 제어
             if (idTarget == '#opening' || idTarget == "#ending") $('#progress_box').addClass('d-none');
             else $('#progress_box').removeClass('d-none');
 
-            const heightText = $(window).width() < 576 ? "calc(100vh - 484px)" : "calc(100vh-464px)" 
+            const heightText = $('body').width() < 1200 ? "calc(100vh - 484px)" : "calc(100vh-464px)" 
             $("#bg_screen").css({ minHeight: heightText });
 
             //화면길게하기
@@ -1814,13 +1831,13 @@
                 case '#selecting':
                     survey.drawCatCards();
                     survey.drawSpeciesList();
-                    survey.animateBar(survey.barOffset.selecting[util.isMobile]);
+                    survey.animateBar(survey.getBarOffset('selecting'));
                     break;
                 case "#creating":
-                    survey.animateBar(survey.barOffset.creating[util.isMobile]);
+                    survey.animateBar(survey.getBarOffset('creating'));
                     break;
                 case "#questing":
-                    survey.animateBar(survey.barOffset.questing[util.isMobile]);
+                    survey.animateBar(survey.getBarOffset('questing'));
                     break;
                 case "#ending":
                     bar.animate(1);
@@ -1854,6 +1871,7 @@
 
 
         moveQuestion: (isNext) => {
+            window.scrollTo(0, 0);
             $('#questing .next_btn').removeClass('active').off('click');
 
             //앞막음
@@ -1878,7 +1896,7 @@
             let thisCategories = survey.questions.filter(e => e.category == survey.questions[survey.progress - 1].category);
             let thisQuestionIndex = thisCategories.indexOf(survey.questions[survey.progress - 1]);
 
-            let bar = survey.barOffset.questing[util.isMobile] + ((survey.questions[survey.progress - 1].category - 1) * survey.barOffset.oneCategoryWidth[util.isMobile]) + ((survey.barOffset.oneCategoryWidth[util.isMobile] / thisCategories.length) * thisQuestionIndex);
+            let bar = survey.getBarOffset('questing') + ((survey.questions[survey.progress - 1].category - 1) * survey.getBarOffset('oneCategoryWidth')) + ((survey.getBarOffset('oneCategoryWidth') / thisCategories.length) * thisQuestionIndex);
             if (bar > $('.pop_loader').width()) bar = $('.pop_loader').width();
 
             survey.animateBar(bar);

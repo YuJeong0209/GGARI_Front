@@ -34,68 +34,73 @@
 </footer>
 
 <script type="text/javascript">
-    $(() => {    
+    $(() => {
         let url = location.href;        
+
         //PC일떄
-        if(screen.width > 1200){
+        if($('body').width() > 576){
 
             //각종보드 상단간격
             if (url.includes('page') ||
                 url.includes('cons') ||
                 url.includes('board') ||
-                url.includes('cart') ||
                 url.includes('coupon') ||
+                url.includes('my/pay') ||
                 url.includes('shop') 
             )
             {
                 $('.content_wrap1').css('padding-top', '100px');
             }
-        }  
 
+            //각종 마이페이지 좌우좁힘
+            if(/coupon|point|sett|regular|memb|pw|cons|pay|coun.list|order.temp|order.add/i.test(url)){
+                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : '100vh'});
+            }
 
-        //각종 마이페이지 좌우좁힘
-        if(
-            url.includes('coupon') ||
-            url.includes('point') ||
-            url.includes('sett') ||
-            url.includes('memb') ||
-            url.includes('my/cons') ||
-            url.includes('my/coun.list')||
-            url.includes('my/order.temp') ||
-            url.includes('my/order.add')
-        )
-        {
-            $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : '100vh'});
+            //마이페이지 사이드바 대책
+            if(/memb|sett|coun.list|pay|order|coupon|point/i.test(url) )
+            {
+                $('.content_wrap1').css({paddingLeft : 300, paddingTop : 375});
+            }
 
+            //마이페이지 목록 색칠
+            if(url.includes('26922')){
+                $('.mypage_menu > a').eq(0).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('pay.list')){
+                $('.mypage_menu > a').eq(1).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('sett')){
+                $('.mypage_menu > a').eq(2).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('28102')){
+                $('.mypage_menu > a').eq(3).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('26065')){
+                $('.mypage_menu > a').eq(4).find('div').css({color : '#6E9357'})                
+            }
+            if(url.includes('memb.info')){
+                $('.mypage_menu > a').eq(5).find('div').css({color : '#6E9357'})                
+                //높이맞추기
+                $('.content_wrap1').css({paddingTop : 338});
+            }
+
+        //모바일일 떄            
+        }else{
+            if (/26434|coupon|point/i.test(url)){
+                $('.content_wrap1').css('padding-top', '80px');
+            }            
         }
+
+
 
         if(url.includes('my/')){
-            $('.my-tab-wrap td')[0].remove();
+            let td = $('.my-tab-wrap td');
+            if(td != undefined){
+                td.remove();
+            }  
         }
 
-        //PC판 마이페이지 사이드바 대책
-        if($(window).width() > 578 && 
-            (   url.includes('sett') || 
-                url.includes('my/coun.list') ||
-                url.includes('my/cons') ||
-                url.includes('coupon') ||
-                url.includes('point')
-            )
-        )
-        {
-            $('.content_wrap1').css({paddingLeft : 300, paddingTop : 250});
-        }
-
-        //모바일판 높이조정
-        if ($(window).width() < 1200) {
-            if (url.includes('26434') ||
-                url.includes('coupon') ||
-                url.includes('point') 
-            ) 
-            {
-                $('.content_wrap1').css('padding-top', '80px')
-            }
-        }
 
         //쇼핑몰 마개조
         if(url.includes('shop/list')){
@@ -108,21 +113,27 @@
 
             //장바구니 마개조
             if(url.includes('cart')){
-            $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');            
+            $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');
+        }
+
+        //마이페이지들 버튼색 변경
+        if(url.includes('my')){
+            $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-my.css">');
         }
 
         //설문조사~식단표까지 강제모바일화
-        if(url.includes('26434') || 
-        url.includes('26057')){
-            forcedWidth360();    
+        if(/26434|26046|26057/i.test(url)) {
+//            forcedWidth360();    
         }
+
     });
     
 
 const forcedWidth360 = ()=>{
     let htmlWidth = $('html').width();
-    if(htmlWidth < 1200 ){                
+    if(htmlWidth < 1200 ){
         $('body').height($('.bg_img').height());
+
         //스케일 계산
         let scale= htmlWidth / 360;
 

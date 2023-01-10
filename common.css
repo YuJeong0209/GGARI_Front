@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 
+body{
+    min-width: 1200px;
+    overflow: auto;    
+}
+
 #section1 .container-fluid,
 #section2 .container-fluid,
 #section3 .container-fluid,
@@ -1448,18 +1453,22 @@ font-size: 12px;
     }
 }
 
-@media screen and (min-width:1200px) {
-    .hamburger-button {
-        display: none;
-    }
-}
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:576px) {
+    body{
+        min-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;   
+    }
+
     .brand {
         padding: 0.5rem !important;
     }
 
     .navbar-nav {
+        display: none;
+    }
+    .hamburger-button {
         display: none;
     }
 }
@@ -1717,7 +1726,7 @@ input:-internal-autofill-selected {
     border: 2px solid #6E9357;
 }
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:576px) {
     .h_100 {
         min-height: calc(100vh - 464px);
     }

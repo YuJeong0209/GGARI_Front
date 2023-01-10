@@ -23,7 +23,7 @@
 }
 
 .btn7 {
-    background-color: #6E9357 !important;
+    /* background-color: #6E9357 !important; */
 }
 
 .btn8 {
@@ -34,3 +34,10 @@
     background-color: #6E9357 !important;
 }
 
+.sch_btn{
+    background-color: #6E9357 !important;
+}
+
+.add_file .fl1[type=file]{    
+    height:30px !important; 
+}

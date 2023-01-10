@@ -18,7 +18,7 @@ var sidebar = {
         ["27038"],
         ["cart"],
         ["26802", "26801", "26803", "26800"],
-        ["26922", "26926", 'sett', "26922", "26065", 'coupon', 'point'],
+        ["26922", "/my/pay.list.nx", 'sett', 'regular', "26922", "28102", "26065", "my/memb.info.php", "coupon.list", "point.list"],
     ],
 
     showSidebar : () => {

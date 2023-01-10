@@ -57,6 +57,7 @@
 
     .cart_box {
         padding: 30px 0;
+        width : 100%;
     }
 
     .cart_wrap:nth-child(1) {
@@ -309,7 +310,7 @@
     }
 
 
-    @media screen and (max-width: 1200px ) {
+    @media screen and (max-width: 567px ) {
 
         #section1 .mw_1152{
             max-width : 100%;
@@ -496,6 +497,7 @@
             line-height: 1.5;
             position : absolute;
             height : 100%;
+            right : -26px;
         }
 
         .itemmm_name {
@@ -633,6 +635,14 @@
             height : 80px;
         }
 
+        .border_rd{
+            border-radius: 10px;
+        }
+
+        .bg_sub_gray_etc{
+            background : none;
+        }
+
     }
 </style>
 
@@ -742,7 +752,7 @@
         </div>
     </div>
 
-    <div class="row mw_1152 point_color_alpha mt_30px">
+    <div class="row mw_1152 point_color_alpha mt_30px border_rd">
         <div class="col py_25px pl_50px">
             <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/cat_head.png" alt=""
                 class="img-fluid pr_40px cat_head">
@@ -875,12 +885,13 @@
                     console.log("NO CAT HERE! ", err);
                 });
             let pr2 = $.ajax({
-                url: '/api/shop.all.list.nx',
+                url: '/api/shop.list.php',
                 type: "POST",
                 data: {
                     "KEY": apikey,
                     menu2_id: "26044",
-                    mode: 'ALL'
+                    use_page : false,
+                    use_limit : false
                 },
             }).done((data) => {
                 console.log(data);
@@ -952,7 +963,7 @@
 
             $.when(pr1).done(()=>{
                 alert('구독해주셔서 감사합니다.');
-                location.href="/my/cart.list.php";
+                location.href="/my/cart.list.php?SPO_KIND=C";
             })
         },
 
@@ -995,7 +1006,7 @@
             $('#final_price').html(util.won3Comma(calender.finalPrice));
         },
 
-        drawCalender : ()=>{            
+        drawCalender : ()=>{             
             let boxCount = 1;
             let firstDayOfWeek = new Date(calender.date.getFullYear(), calender.date.getMonth(), 1).getDay();
             let lastday = new Date(calender.date.getFullYear(), calender.date.getMonth()+1, 0).getDate();
@@ -1023,7 +1034,7 @@
                             }
                             if(isEat){
                                 let product = calender.itemlist.find(e=> e.id == key);
-                                let $ball = $('<div>').addClass('ball cate'+product.category);                                
+                                let $ball = $('<div>').addClass('ball cate'+product.category);
                                 $balls.append($ball);
                             }
                         };

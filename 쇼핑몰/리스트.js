@@ -1,3 +1,9 @@
+shop.callback = function() {
+	if ($('#SC_SC2_IDX').val() == '') {
+		$('.js-all').addClass('selected');
+	}
+};
+
 $(()=>{
     $.ajax({
         url : '/api/shop.list.php',
@@ -12,7 +18,7 @@ $(()=>{
         async : false,
     }).done((data)=> {
         console.log(data);
-        $('#all_product').html(data.items.length); 
+        $('#all_amount').html(data.items.length); 
     }).fail((jqXHR, textStatus, errorThrown) => {console.log(errorThrown)});
 
 

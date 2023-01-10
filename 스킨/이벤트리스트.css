@@ -1037,8 +1037,7 @@
         }
     }
 
-    @media print,
-    screen and (max-width:455px) {
+    @media screen and (max-width:576px) {
         .nx-prefix.sub-content {
             width: 100%;
             left: 0px;

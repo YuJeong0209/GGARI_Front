@@ -204,13 +204,13 @@
     .dd_snack {
         padding-top: 40px;
         padding-bottom: 20px;
+        background-color: #F3FBFF;
+        display: none;
+        /* min-height : 690px;  */
     }
 
     .dt_snack {
         padding: 10px 0 0 44px;
-    }
-
-    .dt_snack {
         height: 104px;
         /* display: flex;*/
         line-height: 80px;
@@ -249,10 +249,6 @@
         border-bottom: 2px solid #5BB0FF;
     }
 
-    .dd_snack {
-        background-color: #F3FBFF;
-        display: none;
-    }
 
     .dl_snack02 {
         border-top: 2px solid #6E9357;
@@ -491,7 +487,7 @@
         background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn_on.png');
     }
 
-    @media screen and (max-width:576px) {
+    @media screen and (max-width:1200px) {
         .grid_1 img {
             max-width: 40px;
         }
@@ -600,7 +596,7 @@
             background: #FFFFFF;
             box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.05);
             border-radius: 10px;
-            min-width: calc(100vw - 77px);
+            min-width: calc(100% - 77px);
         }
 
         .share img {
@@ -861,7 +857,7 @@
                         <span id="cat_sex" class="point_color"></span>
                         <div id="cat_sex_icon" class="icon_sex d-inline-block"></div>
                     </div>
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-6" style="line-height:30px">
                         나이&emsp;
                         <span id="cat_age" class="point_color"></span>
                     </div>
@@ -1944,7 +1940,7 @@
             let $origin = $('#origin_snack').clone().removeClass('d-none');
             $('#origin_snack').remove();
             //스와이퍼 세팅
-            var ww = $(window).width();
+            var ww = $('body').width();
             var swiperOptions = {
                 //            loop: true,
                 //            loopFillGroupWithBlank: true,
@@ -2033,7 +2029,6 @@
             }
         },
 
-
     }
 
 
@@ -2046,13 +2041,13 @@
             $target.on('click', function () {
                 var $this = $(this);
                 if ($this.next($(".dd_snack")).css('display') == 'none') {
-                    $(".dd_snack").slideUp();
+                    $(".dd_snack").slideUp(300, 'linear');
                     _self.onremove($target);
 
                     $this.addClass('on');
-                    $this.next().slideDown();
+                    $this.next().slideDown(300, 'linear');
                 } else {
-                    $(".dd_snack").slideUp();
+                    $(".dd_snack").slideUp(300, 'linear');
                     _self.onremove($target);
                 }
             });

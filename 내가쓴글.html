@@ -1,0 +1,330 @@
+<style>
+
+.content_wrap2{
+    width : 1152px;
+    margin : 0 auto;
+    min-height : 100vh;
+    padding-left : 300px;
+    padding-top : 205px;
+}
+
+#myArticle {
+}
+
+#totalCounter{
+    padding-top : 20px;
+    padding-bottom : 20px;
+    font-size : 20px;
+    font-weight: 700;    
+}
+
+
+
+#articleCount{
+    color : #6E9357;
+
+}
+
+#articleWrapper{
+    border-top : #6E9357 2px solid;
+    border-bottom : #6E9357 2px solid;
+}
+
+.articleBox{
+    position: relative;
+    width : 100%;
+    padding : 20px;
+    border-bottom : #EDF2EA 1px solid;
+    font-size : 16px;
+}
+
+.productImage {
+    width : 60px;
+    height : 60px;
+    margin-right : 25px;
+    margin-bottom : 35px;  
+    float:left;
+    border : #787878 1px;
+    border-radius : 6px;
+}
+
+.title{    
+    height : 60px;
+    line-height: 60px;
+    font-weight: 500;
+    color : #6E9357;
+}
+
+.articleContent{
+    width : 100%;
+    height : 48px;
+    color : #787878;
+    margin-bottom : 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.dateBox{
+    width : 100%;
+    height : 16px;
+    text-align: right;
+}
+
+.date {
+    color : #787878;
+    float : right;
+    margin-left : 25px;
+}
+
+.star_rate .star_ico.on .ico_star_full, .star_rate .star_ico.on ~ .star_ico .ico_star_full {
+    color:#F8B62D !important;
+}
+
+.ico_star_half:before {
+    content: '\e817';
+}
+
+[class^="ico_"]:before, [class*=" ico_"]:before {
+    font-family: "ico";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.star_rate_wrap.avr_wrap .star_rate span[class^="ico_star"] {
+    font-size: 50px;
+}
+
+.star_rate span[class^="ico_star"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+.star_rate .ico_star_half {
+    display: block;
+    color: transparent;
+}
+
+@media screen and (max-width : 1200px){
+    .content_wrap2{
+        width : 360px;
+        padding: 80px 36px;
+           
+    }
+
+    .articleBox{
+        padding : 20px 0px;
+    }
+
+    .productImage{
+        width: 86px;
+        height: 104px;
+        position: absolute;
+        right: -24px;
+    }
+
+    .title{
+        width : 175px;
+        height : 16px;
+        line-height :16px;
+        margin-bottom : 10px;
+        font-size : 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .articleContent{
+        width : 175px;
+        font-size : 12px;
+        height : 52px;
+
+    }
+
+    .dateBox{
+        padding-right: 94px;
+    }
+
+    .date {
+        font-size : 12px;
+        margin-left : 10px;
+    }
+
+    .score{
+        font-size : 12px;
+    }
+
+    .star_rate > .star_ico{
+        width : 14px;
+        height : 14px;
+        line-height: 14px;
+    }
+
+    
+}
+</style>
+<section id="myArcticle">
+    <div id="totalCounter">
+        총 <span id="articleCount"></span> 건
+    </div>
+    <div id="articleWrapper">        
+    </div>
+</section>
+
+<script>
+$(()=>{
+    myWrote.init();
+});
+var myWrote = {
+    articles : [],
+
+    init : () => {  
+        myWrote.drawMyArticles();
+    },
+
+    drawMyArticles : ()=>{
+        let pr1 = $.ajax({
+            url : '/api/board.list.php',
+            type: "POST",
+            async: false,
+            data: { KEY: apikey, 
+                SESS_ID: util.getSessionId(), 
+                MODE : 'MBOARD',
+                menu2_id : 26950,
+                author_id : user.id,
+            }
+        }
+        ).done(r=>{
+            console.log(r);
+            if(r.hasOwnProperty('items')){
+                for(item of r.items){
+                    let article = {};
+                    article.content = item.content;
+                    article.title = item.title;
+                    article.image = item.image;
+                    article.date = item.write_date;
+                    article.link = item.link;
+                    article.score = null;
+                    myWrote.articles.push(article);
+                }
+            }
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('MBOARD ERROR' + textStatus + " : " + errorThrown);
+        });
+
+        let pr2 = $.ajax({
+            url : '/api/shop.review.my.list.nx',
+            type: "POST",
+            async: false,
+            data: { 
+                KEY: apikey, 
+                SESS_ID: util.getSessionId(), 
+                pa : 0,
+                product_img_size : '60x60',
+            }
+        }).done(r=>{
+            console.log(r);
+            if(r.hasOwnProperty('items')){
+                for(item of r.items){
+                    let article = {};
+                    article.content = item.content;
+                    article.title = item.product_name;
+                    article.image = item.product_image;
+                    article.date = item.write_date.substr(0, 10);
+                    article.link = item.product_link;
+                    article.score = item.score;
+                    myWrote.articles.push(article);
+                }
+            }
+        }).fail((jqXHR, textStatus, errorThrown)=>{
+            console.log('REVIEW ERROR' + textStatus + " : " + errorThrown);
+        });
+
+        $.when(pr1, pr2).done(()=>{
+            $('#articleCount').html(myWrote.articles.length);
+            $origin = $('#originArticle');
+            for(article of myWrote.articles){
+                $article = $origin.clone();
+                $article.find('a').attr('href', article.link);
+                $article.attr('id', '').css({display:'block'});
+                $article.find('.title').html(article.title);
+                $article.find('.articleContent').html(article.content);
+                $article.find('.date').html(article.date);
+/*
+                $article.find('.score').attr({
+                    'data-point' : article.score,
+                    'data-star_size' : 20,
+                    'data-fg_color' : '#F8B62D',
+                    'data-bg_color' : 'grey',
+                    'data-input_name' : 'x-point'
+                });
+*/                  
+                if(article.score != null){
+                    let score = parseFloat(article.score);             
+                    for(i=0 ; i < 5; i++){
+                        if(score != 0){
+                            let $star = $('<span>').addClass('star_ico on');
+                            let $starFull = $('<span>').addClass('ico_star_full');
+                            let $starHalf = $('<span>').addClass('ico_star_half');
+                            $star.append($starFull, $starHalf);
+                            $article.find('.star_rate').prepend($star);
+                            score--;
+                        }else if(score == 0.5){
+                            let $star = $('<span>').addClass('star_ico on half');
+                            let $starFull = $('<span>').addClass('ico_star_full');
+                            let $starHalf = $('<span>').addClass('ico_star_half');
+                            $star.append($starFull, $starHalf);
+                            $article.find('.star_rate').prepend($star);
+                            score = 0;
+                        }else{
+                            let $star = $('<span>').addClass('star_ico');
+                            let $starFull = $('<span>').addClass('ico_star_full');
+                            let $starHalf = $('<span>').addClass('ico_star_half');
+                            $star.append($starFull, $starHalf);
+                            $article.find('.star_rate').prepend($star);
+                        }
+                    } 
+                    $article.find('.score').append("("+article.score+")");
+                }
+
+                if(article.image != ''){
+                    $article.find('.productImage').css({backgroundImage : 'url('+article.image+')'});
+                }else{
+                    $article.find('.productImage').remove();
+                    $article.find('.dateBox').css({paddingRight : 0});
+                }
+                $('#articleWrapper').append($article);
+            }
+            $origin.remove();
+        })
+    }
+
+}
+
+</script>
+
+
+<acticles id="originArticle" class="articleBox" style="display:none;">
+    <a href="">
+        <div class="productImage"></div>
+        <div class="title"></div>
+        <div class="articleContent"></div>
+        <div class="dateBox">
+            <div class="date"></div>
+            <div class="score">
+                <div class="star_rate"></div>
+            </div>    
+        </div>
+    </a>
+</acticles>
+

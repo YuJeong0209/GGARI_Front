@@ -47,17 +47,12 @@
             align-items: center;
         }
 
-
-
         .intro_swiper .swiper-slide img {
             display: block;
             width: 88px;
             height: 88px;
             min-width: 88px;
         }
-
-
-
 
         .top_bt1 {
             height: 52px;
@@ -398,7 +393,7 @@
             content: '';
         }
 
-        @media screen and (max-height:1000px) {
+        @media screen and (max-height:1000px) { 
             .t_200 {
                 top: -100px;
             }
@@ -408,7 +403,7 @@
             }
         }
 
-        @media screen and (max-height:768px) {
+        @media screen and (max-height:768px) { 
 
             .container-fluid .row .mw_1152 {
                 max-width: 288px;
@@ -1489,7 +1484,7 @@
         AOS.init();
 
         $(function () {
-            var ww = $(window).width();
+            var ww = $('body').width();
             if (ww > 586) {
                 var swiper = new Swiper(".intro_swiper", {
                     slidesPerView: 12,

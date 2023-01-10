@@ -1,0 +1,420 @@
+<div class="container-fluid banner_bg" id="section1">
+    <div class="row mw_1152 ">
+        <div class="col">
+            <div class="cat_wrap">
+                <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/calendar_top_cat.png" alt=""
+                    class="img-fluid top_cat">
+                <div class="img_wrap_txt">
+                    <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sub_tag.png" alt=""
+                        class="img-fluid sub_tag">
+                    <div class="fs_36 color_fff">까리박스
+                        <span class="fw_700">첫 구독배송 쿠폰 증정</span>
+                    </div>
+                    <div class="fs_16 color_fff pc_br_none pt_10px">저렴한 가격으로<br> 맞춤형 간식을 구독하세요!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 서브 콘텐츠 : 쇼핑몰 start -->
+<div class="nx-prefix sub-content">
+
+    <!-- 서브 콘텐츠 내용 start -->
+    <div class="content-container">
+        <div class="inner-static">
+
+            <!-- 쇼핑몰 세부페이지 내용 영역 start -->
+            <div class="shop-view-area">
+
+                <!-- 상품 요약 정보 start -->
+                <s_form>
+                    <input type="hidden" id="url" name="url" value="">
+                    <input type="hidden" id="SC_MODE" name="SC_MODE" value="[##_sc_mode_##]" />
+                    <input type="hidden" id="SP_IDX" name="SP_IDX" value="[##_product_idx_##]">
+                    <input type="hidden" id="arr_OPT" name="arr_OPT" value="[##_arr_OPT_##]">
+                    <div class="prd-summary">
+
+                        <!-- 상품 이미지 영역 start -->
+                        <div class="prd-view-image">
+
+                            <!-- 상품 큰 이미지 영역 start -->
+                            <s_img1>
+                                <ul id="sync1" class="owl-carousel prd-view-fullsize">
+                                    <s_img1_rep>
+                                        <li>
+                                            <img src="[##_s_img1_rep_lazysrc_##]"
+                                                onerror="this.src='[##_s_img1_rep_errsrc_##]';this.onerror=null"
+                                                alt="[##_s_img1_rep_FL_ORINAME_##]">
+                                        </li>
+                                    </s_img1_rep>
+                                </ul>
+                            </s_img1>
+                            <!-- 상품 큰 이미지 영역 end -->
+
+                            <!-- 상품 썸네일 영역 start -->
+                            <div class="prd-view-thumb">
+                                <s_img2>
+                                    <ul id="sync2" class="owl-carousel lst-prd-thumb">
+                                        <s_img2_rep>
+                                            <li class="item">
+                                                <img src="[##_s_img2_rep_lazysrc_##]"
+                                                    alt="[##_s_img2_rep_FL_ORINAME_##]"
+                                                    onerror="this.src='[##_s_img2_rep_errsrc_##]';this.onerror=null">
+                                            </li>
+                                        </s_img2_rep>
+                                    </ul>
+                                </s_img2>
+                            </div>
+                            <!-- 상품 썸네일 영역 end -->
+
+                        </div>
+                        <!-- 상품 이미지 영역 end -->
+
+                        <!-- 상품 정보 영역 start -->
+                        <div class="prd-view-info">
+
+                            <!-- 상품 기본정보 start -->
+                            <ul class="lst-base-info">
+                                <li class="code">상품코드</li>
+                                <li class="name">[##_product_name_##]</li>
+                                <li class="sumup">
+                                    <p class="cnt">[##_product_explain_##]</p>
+                                    <!--<a href="javascript:void(0);" data-shop-heart onclick="add_FAV(this);"
+                                        class="btn-like">찜하기</a>-->
+                                </li>
+
+                                <li>
+                                    <div class="sw_snack_ico mt_30px">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_01.png"
+                                            alt="" class="img-fluid snack_ico01">
+                                        <span class="snack_ico_text">관절</span>
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_02.png"
+                                            alt="" class="img-fluid snack_ico01">
+                                        <span class="snack_ico_text">스트레스</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 상품 기본정보 end -->
+
+                            <!-- 상품 상세정보 start -->
+                            <ul class="lst-detail-info">
+                                <!--<s_maker_native>
+                                    <li class="maker">
+                                        <strong class="item">[##_s_maker_native_title_##]</strong>
+                                        <p class="cnt">[##_s_maker_native_text_##]</p>
+                                    </li>
+                                </s_maker_native>-->
+                                <li class="price">
+                                    <strong class="item">일반 구매가</strong>
+                                    <p class="cnt">
+                                        <s_price2><span class="regular">[##_s_price2_text_##]</span></s_price2>
+                                        <s_price1><span class="value">[##_s_price1_text_##]</span></s_price1>
+                                    </p>
+                                </li>
+                                <li class="price2 point_color">
+                                    <strong class="item">정기 구독 구매가</strong>
+                                    <a class="sub_btn pc" href="/page/?M2_IDX=26434">설문조사 하러가기</a>
+                                    <p class="cnt">
+                                        <span class="regular">￦0,000</span>
+                                    </p>
+                                </li>
+
+                                <a class="sub_btn mobile" href="/page/?M2_IDX=26434">설문조사 하러가기</a>
+                                <s_point>
+                                    <li class="point">
+                                        <strong class="item">포인트</strong>
+                                        <p class="cnt">[##_s_point_text_##]</p>
+                                    </li>
+                                </s_point>
+
+                                <div class="bottom_line"></div>
+                                <li class="delivery">
+                                    <strong class="item">배송비<br>
+                                        <span class="fw_400 del_text"><span class="point_color">30,000원</span> 이상 혹은
+                                            <span class="point_color">구독서비스</span> 이용시 무료배송</span>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <!-- 상품 상세정보 end -->
+
+                            <s_pay>
+                                 <!--<div class="fixed-btn-area active"> -->
+                                    <div class="active">
+
+                                    <!-- 모바일용 하단 고정 옵션 열기 버튼 start -->
+                                    <a href="javascript:void(0);" onclick="$(this).parent().toggleClass('active');"
+                                        class="md btn-open">옵션 열기</a>
+                                    <!-- 모바일용 하단 고정 옵션 열기 버튼 end -->
+
+                                    <!-- 상품선택 start -->
+                                    <div class="select-option">
+                                        <s_pay_choice>
+                                            <p class="item">[##_s_pay_choice_title_##]</p>
+                                            <div class="option-box">
+                                                <select id="SPO_IDX" name="SPO_IDX" onchange="onch_SPO_IDX();"
+                                                    onfocus="onfo_SPO_IDX();" onblur="onbl_SPO_IDX();"
+                                                    class="select-label3">
+                                                    <option value="">[##_s_pay_choice_option_##]</option>
+                                                    <s_pay_choice_rep>
+                                                        <option value="[##_s_pay_choice_rep_value_##]"
+                                                            style="color:#5fa0e6;">[##_s_pay_choice_rep_text_##]
+                                                        </option>
+                                                    </s_pay_choice_rep>
+                                                </select>
+                                            </div>
+                                        </s_pay_choice>
+                                        <ul id="ul_CART" class="lst-prd-selected cart_item">
+                                            
+                                        </ul>
+                                    </div>
+                                    <!-- 상품선택 end -->
+
+                                    <!-- 총 상품금액 start -->
+                                    <dl class="total-price">
+                                        <dt>[##_s_pay_total_amount_title_##]</dt>
+                                        <dd>
+                                            <strong id="span_PRICE" class="value">[##_s_pay_total_amount_text_##]</strong>
+                                        </dd>
+                                    </dl>
+                                    <!-- 총 상품금액 end -->
+
+                                    <!-- 모바일용 버튼 영역 start -->
+                                    <div class="btn-box">
+                                        <a href="javascript:oncl_CART('B');" class="btn-order">바로구매</a>
+                                        <a href="javascript:oncl_CART('A');" class="btn-cart">장바구니</a>
+                                    </div>
+                                    <!-- 모바일용 버튼 영역 end -->
+
+                                </div>
+                            </s_pay>
+                        </div>
+                        <!-- 상품 정보 영역 end -->
+
+                    </div>
+                </s_form>
+                <!-- 상품 요약 정보 end -->
+
+                <!-- 상품 상세 정보 start -->
+                <div class="prd-detail">
+
+                    <!-- 텝메뉴 strat -->
+                    <nav class="nav-tnb2">
+                        <ul>
+                            <li>
+                                <a href="javascript:onclTab(0);" data-tnb-id="0" class="active">상세 정보</a>
+                            </li>
+                            <!--
+                        <li>
+                            <a href="javascript:onclTab(1);" data-tnb-id="1">제품정보고시</a>
+                        </li>
+                        -->
+                            <li>
+                                <a href="javascript:onclTab(2);" data-tnb-id="2">리뷰
+                                    <!-- 2021-07-14 <span class="count">(50)</span> -->
+                                </a>
+                            </li>
+                            <!--
+                        <li>
+                            <a href="javascript:onclTab(3);" data-tnb-id="3">주의사항</a>
+                        </li>
+                        -->
+                        </ul>
+                    </nav>
+                    <!-- 텝메뉴 end -->
+
+                    <!-- 상세 정보 내용 start -->
+                    <div class="prd-detail-cnt">
+
+                        <!-- 제품정보 -->
+                        <div class="tab-item" data-tab="0" style="display: block;">
+                            <s_content>
+                                <s_content_a_img_rep>
+                                    <img src="[##_s_content_a_img_rep_lazysrc_##]"
+                                        onerror=" this.src = '[##_s_content_a_img_rep_errsrc_##]' "
+                                        alt="[##_s_content_a_img_rep_FL_ORINAME_##]">
+                                </s_content_a_img_rep>
+                                <s_content_a_video_rep>
+                                    <iframe id="[##_s_content_a_video_rep_id_##]" src="[##_s_content_a_video_rep_link_##]" frameborder="0"></iframe>
+                                </s_content_a_video_rep>
+                                <s_content_txt></s_content_txt>
+                            </s_content>
+                            <s_etc>
+                                <s_etc_1>[##_s_etc_1_text_##]</s_etc_1>
+                            </s_etc>
+                        </div>
+
+                        <!-- 제품정보고시 -->
+                        <div class="tab-item" data-tab="1" style="display: none;"></div>
+
+                        <!-- 고객후기 -->
+                        <div class="tab-item" data-tab="2" style="display: none;">
+                            <s_shop_memo>
+                                <iframe id="if_shop_memo" src="[##_s_shop_memo_link_##]"></iframe>
+                            </s_shop_memo>
+                            <s_cmt>
+                                <iframe src="[##_s_cmt_link_##]"></iframe>
+                            </s_cmt>
+                        </div>
+
+                        <!-- 주의사항 -->
+                        <div class="tab-item" data-tab="3" style="display: none;"></div>
+
+                    </div>
+                    <!-- 상세 정보 내용 end -->
+
+                    <!-- 추천 상품 start -->
+                    <div class="prd-recommend" style="display: none;">
+                        <div class="list-h-group">
+                            <h5 class="tit">추천상품</h5>
+                            <a href="" class="link">더보기</a>
+                        </div>
+
+                        <ul class="lst-image-card">
+                            <li>
+                                <a href="">
+                                    <div class="thumb">
+                                        <img src="https://cdn.nxcloud.biz/site/nextbiz1/imgs/mboard/mboard_img1.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="cnt">
+                                        <dl class="desc">
+                                            <dt class="tit"><strong class="new">리스트 제목입니다. 제목이 길어지면 이렇게
+                                                    나옵니다.</strong><i class="ico-new">NEW</i></dt>
+                                            <dd>
+                                                <ul class="prd-info">
+                                                    <li class="prd-price">
+                                                        <div class="wrap-price">
+                                                            <strong class="price">
+                                                                <span class="unit">￦</span><span
+                                                                    class="value">30,000</span>
+                                                            </strong>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="thumb">
+                                        <img src="https://cdn.nxcloud.biz/site/nextbiz1/imgs/mboard/mboard_img1.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="cnt">
+                                        <dl class="desc">
+                                            <dt class="tit"><strong class="new">리스트 제목입니다. 제목이 길어지면 이렇게
+                                                    나옵니다.</strong><i class="ico-new">NEW</i></dt>
+                                            <dd>
+                                                <ul class="prd-info">
+                                                    <li class="prd-price">
+                                                        <div class="wrap-price">
+                                                            <strong class="price">
+                                                                <span class="unit">￦</span><span
+                                                                    class="value">30,000</span>
+                                                            </strong>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="thumb">
+                                        <img src="https://cdn.nxcloud.biz/site/nextbiz1/imgs/mboard/mboard_img1.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="cnt">
+                                        <dl class="desc">
+                                            <dt class="tit"><strong>리스트 제목입니다.</strong></dt>
+                                            <dd>
+                                                <ul class="prd-info">
+                                                    <li class="prd-price">
+                                                        <div class="wrap-price">
+                                                            <strong class="price">
+                                                                <span class="unit">￦</span><span
+                                                                    class="value">30,000</span>
+                                                            </strong>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <div class="thumb">
+                                        <img src="https://cdn.nxcloud.biz/site/nextbiz1/imgs/mboard/mboard_img1.jpg"
+                                            alt="">
+                                    </div>
+                                    <div class="cnt">
+                                        <dl class="desc">
+                                            <dt class="tit"><strong>리스트 제목입니다.</strong></dt>
+                                            <dd>
+                                                <ul class="prd-info">
+                                                    <li class="prd-price">
+                                                        <div class="wrap-price">
+                                                            <strong class="price">
+                                                                <span class="unit">￦</span><span
+                                                                    class="value">30,000</span>
+                                                            </strong>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 추천 상품 end -->
+
+                </div>
+                <!-- 상품 상세 정보 end -->
+
+            </div>
+            <!-- 쇼핑몰 세부페이지 내용 영역 end -->
+
+
+        </div>
+    </div>
+    <!-- 서브 콘텐츠 내용 end -->
+
+</div>
+<!-- 서브 콘텐츠 : 쇼핑몰 end -->
+
+<script>
+    function onclTab($num) {
+        if (typeof $num == "undefined") return false;
+
+        let tab = document.querySelectorAll(".tab-item");
+        let nav = document.querySelectorAll(".nav-tnb2 ul li a");
+
+        for ($i = 0; $i < tab.length; $i++) {
+            //console.log(tab[$i]);
+            tab[$i].style.display = "none";
+        }
+
+        for ($i = 0; $i < nav.length; $i++) {
+            //console.log(nav[$i]);
+            nav[$i].setAttribute('class', '');
+        }
+
+        document.querySelector(".tab-item[data-tab='" + $num + "']").style.display = "block";
+        document.querySelector(".nav-tnb2 ul li a[data-tnb-id='" + $num + "']").classList.add('active');
+    }
+
+
+    $(()=>{
+        $('.total-price').before($('.delivery'));
+    })
+</script>

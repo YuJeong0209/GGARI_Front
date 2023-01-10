@@ -56,8 +56,19 @@
                 <s_category_02>
                     <div class="wrap-category-d2">
                         <ul class="category-d2">
+                            <!--
+                            <li>
+                                <a href="javascript: void(0);" onclick=" shop.cate(1, $('#SC_SC1_IDX').val()) " class="js-all">
+                                    <strong>전체</strong>
+                                </a>
+                            </li>
+                            -->
+                            <li>
+                                <a onclick="shop.opt_kind('C')" class="js-all">
+                                    <strong>구독</strong>
+                                </a>
+                            </li>
                             <s_category_rep_02>
-
                                 <li>
                                     <a href="javascript: void(0);" onclick=" shop.cate(2, '[##_cate2_value_##]') "
                                         class="[##_cate2_selected_##]">
@@ -89,6 +100,11 @@
                                     <strong class="tit">[##_cate1_name_##]</strong>
                                 </a>
                                 <ul class="ins-lst-d2">
+                                    <li>
+                                        <a href="javascript: void(0);" onclick=" shop.cate(1, $('#SC_SC1_IDX').val()) " class="js-all">
+                                            <strong>전체</strong>
+                                        </a>
+                                    </li>
                                     <s_category_01m_rep_01_02_rep>
                                         <li>
                                             <a href="javascript: void(0);"
@@ -109,7 +125,7 @@
 
                 <!-- 리스트 필터/정렬 start -->
                 <div class="list-filter">
-                    <div class="float-left fs_20 fw_700">총 <span id="all_product" class="point_color">500</span> 상품</div>
+                    <div class="float-left fs_20 fw_700">총 <span class="point_color"><span id='all_amount'>500</span>개</span> 상품</div>
                     <div class="select-sort">
                         <s_order>
                             <div class="select-box">
