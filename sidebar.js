@@ -18,7 +18,7 @@ var sidebar = {
         ["27038"],
         ["cart"],
         ["26802", "26801", "26803", "26800"],
-        ["26922", "/my/pay.list.nx", 'sett', 'regular', "26922", "28102", "26065", "my/memb.info.php", "coupon.list", "point.list"],
+        ["26922", "/my/pay.list.nx", 'sett', 'regular', "26922", "28102", "26065", "my/memb", "coupon.list", "point.list", 'order'],
     ],
 
     showSidebar : () => {
@@ -33,7 +33,7 @@ var sidebar = {
                     //모바일이면서 마이페이지 외엔 사이드바 제외
                     if(i==6 && $(window).width() < 576 && !location.href.includes('26922'))
                         break outer;
-                    if(i==6) sidebar.getPointCoupon();                   
+                    if(i==6) sidebar.getPointCoupon();
                     $('#sidebar'+i).removeClass('d-none');
                     break outer; 
                 }

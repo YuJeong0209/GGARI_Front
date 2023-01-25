@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-
-body{
-    min-width: 1200px;
-    overflow: auto;    
-}
-
 #section1 .container-fluid,
 #section2 .container-fluid,
 #section3 .container-fluid,
@@ -180,9 +174,10 @@ body {
     font-weight: 400;
     word-break: keep-all;
     letter-spacing: -0.02em;
-    overflow-x: hidden;
     -ms-overflow-style: none;
     color: #231815;
+    min-width: 1200px;
+    overflow-x: scroll;    
 }
 
 .container-fluid {
@@ -1208,7 +1203,7 @@ button:focus {
 }
 
 .navbar .nav-item:hover .dropdown-menu {
-    max-height: 320px;
+    max-height: 380px;
     opacity: 1;
 }
 
@@ -1269,11 +1264,11 @@ button:focus {
 
 
 .hamburger-button {
+    display: none;
     position: fixed;
     transition: .3s ease-in-out;
     width: 16px;
     height: 14px;
-    display: block;
     top: 34px;
     right: 1rem;
     z-index: 1053;
@@ -1455,22 +1450,7 @@ font-size: 12px;
 
 
 @media screen and (max-width:576px) {
-    body{
-        min-width: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;   
-    }
 
-    .brand {
-        padding: 0.5rem !important;
-    }
-
-    .navbar-nav {
-        display: none;
-    }
-    .hamburger-button {
-        display: none;
-    }
 }
 
 
@@ -1726,7 +1706,8 @@ input:-internal-autofill-selected {
     border: 2px solid #6E9357;
 }
 
-@media screen and (max-width:576px) {
+/* @media screen and (max-width:768px) { */
+@media screen and (max-width:568px) {
     .h_100 {
         min-height: calc(100vh - 464px);
     }
@@ -1737,8 +1718,11 @@ input:-internal-autofill-selected {
 
     body {
         font-size: 12px;
+        min-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;   
     }
-
+    
     .mobile_br_none br {
         display: none !important;
     }
@@ -1748,6 +1732,16 @@ input:-internal-autofill-selected {
         height: 80px;
     }
 
+    .brand {
+        padding: 0.5rem !important;
+    }
+
+    .navbar-nav {
+        display: none;
+    }
+    .hamburger-button {
+        display: block;
+    }
     .fixed-top {
         height: 80px;
     }

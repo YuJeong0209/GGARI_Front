@@ -22,4 +22,15 @@ $(()=>{
     }).fail((jqXHR, textStatus, errorThrown) => {console.log(errorThrown)});
 
 
+    setTimeout(()=>{
+        $('dqr').each((i, item)=>{
+            let $item = $(item); 
+            let tags = $(item).attr('data').split(',');
+            for(tag of tags){
+                
+            }
+            console.log(tags);
+
+        })    
+    }, 3000)
 });

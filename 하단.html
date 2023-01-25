@@ -52,13 +52,31 @@
                 $('.content_wrap1').css('padding-top', '100px');
             }
 
+            let $navs = $('#menu').children()
+            //gnb칠하기
+            if(/63299|26950|26059|26060|26061/i.test(url)){
+                $navs.eq(0).addClass('active');
+            }
+            if(url.includes('26434')){
+                $navs.eq(1).addClass('active');
+            };
+            if(url.includes('27038')){
+                $navs.eq(2).addClass('active');
+            }
+            if(url.includes('cart')){
+                $navs.eq(3).addClass('active');
+            }
+            if(/26802|26801|26803|26800/i.test(url)){
+                $navs.eq(4).addClass('active');
+            }
+
             //각종 마이페이지 좌우좁힘
             if(/coupon|point|sett|regular|memb|pw|cons|pay|coun.list|order.temp|order.add/i.test(url)){
-                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : '100vh'});
+                $('.content_wrap1').css({width : '1152px', margin : "0 auto", minHeight : 'calc(194px + 100vh)' });
             }
 
             //마이페이지 사이드바 대책
-            if(/memb|sett|coun.list|pay|order|coupon|point/i.test(url) )
+            if(/memb|sett|coun.list|order|pay|coupon|regular|point/i.test(url) )
             {
                 $('.content_wrap1').css({paddingLeft : 300, paddingTop : 375});
             }
@@ -85,14 +103,12 @@
                 $('.content_wrap1').css({paddingTop : 338});
             }
 
-        //모바일일 떄            
+        //모바일일 떄
         }else{
-            if (/26434|coupon|point/i.test(url)){
-                $('.content_wrap1').css('padding-top', '80px');
-            }            
+            if (/coupon|sett|regular|point|pay/i.test(url)){
+                $('.content_wrap1').css({paddingTop : 80, paddingLeft : 14, paddingRight : 14});                
+            }
         }
-
-
 
         if(url.includes('my/')){
             let td = $('.my-tab-wrap td');
@@ -100,7 +116,6 @@
                 td.remove();
             }  
         }
-
 
         //쇼핑몰 마개조
         if(url.includes('shop/list')){
@@ -111,9 +126,31 @@
             $('.category-d2>li').css({width : 128});
         }
 
-            //장바구니 마개조
-            if(url.includes('cart')){
+        //장바구니 마개조
+        if(url.includes('cart')){
             $('footer').append('<link rel="stylesheet" type="text/css" href="https://ggaribox.s3.ap-northeast-2.amazonaws.com/override-cart.css">');
+/*            
+            let $groups = $('.option-group');
+            $groups.hide();
+            $groups.last().show();
+            $lastOptions = $groups.last().find('option');
+            
+            $lastOptions.each((i, option)=>{
+                option.click(()=>{
+                val = $(this).val();
+                $selects = $('select');
+                $selects.each((i, select)=>{
+                    select.val(val);
+                });
+            });
+*/
+            
+        }
+
+        //주문 마개조
+        if(url.includes('order')){
+            $('.my-tab-wrap').remove();
+            $('.popup_wrap2').find('img').css({minWidth :13})
         }
 
         //마이페이지들 버튼색 변경

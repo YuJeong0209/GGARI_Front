@@ -64,8 +64,8 @@
 
     .info_wrap {
         max-width: 800px;
-        /* margin: 0 auto; */
         padding-left: 60px;
+        line-height : 30px;
     }
 
     .info_wrap .col-6 {
@@ -338,6 +338,7 @@
     .sw_img {
         display: flex;
         width: 100%;
+        left: 10px;
         position: relative;
         border-radius: 10px;
     }
@@ -350,7 +351,8 @@
 
     .square {
         position: absolute;
-        background-size: contain;
+        background-size: 100% 100%;
+        background-position : center center;
         width: 100%;
         height: 100%;
     }
@@ -478,7 +480,7 @@
     .snack_select_btn {
         width: 560px;
         height: 80px;
-        background-size: cover;
+        background-size: 100% 100%;
         background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn.png');
         margin: 0 auto;
     }
@@ -487,7 +489,7 @@
         background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn_on.png');
     }
 
-    @media screen and (max-width:1200px) {
+    @media screen and (max-width:576px) {
         .grid_1 img {
             max-width: 40px;
         }
@@ -542,7 +544,7 @@
         .info_wrap .col-6 {
             padding: 15px 15px;
             width: 128px;
-            max-width: 128px;
+            max-width: 148px;
         }
 
         .info_wrap .col-6:nth-child(n+3) {
@@ -681,9 +683,8 @@
             height: 40px;
             text-align: center;
             padding-left: 0;
-            display: table-cell;
             vertical-align: middle;
-            width: 100%;
+            width: 33.3;
         }
 
         #tab-menu {
@@ -758,21 +759,31 @@
             max-width: 140px;
         }
 
-        .sw_img {
-            float: left;
+        .sw_num {
+            width : 44px;
+            height : 44px;
+            line-height: 44px;
         }
 
-        .sw_img img {
+        .sw_img {
+            float: left;
             border: 1px solid #DBDADA;
             width: 112px;
             height: 166px;
             border-radius: 10px;
+            margin-right: 16px;
         }
 
         .sw_snack_ico {
             display: block;
             position: relative;
-            left: 10px
+            left: 10px;
+            line-height: 24px;
+            margin-bottom : 20px;
+        }
+
+        .sw_snack_ico img{
+            margin-right : 4px;    
         }
 
         .snack_ico01 {
@@ -784,13 +795,15 @@
         }
 
         .snack_ico_text:nth-last-child(1) {
-            top: 38px;
-            position: relative;
-            margin-left: -24px;
+            top: 36px;
+            left: 158px;
+            width: 98px;
+            text-align: left;
+            position: absolute;
         }
 
         .sw_snack_ico img:nth-last-child(2) {
-            margin-left: -33px;
+            margin-left: -28px;
             display: inline-block;
             top: 35px;
         }
@@ -814,7 +827,7 @@
         }
 
         .snack_select_btn {
-            width: 300px;
+            width: 288px;
             height: 46px;
             background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn_m.png');
         }
@@ -822,16 +835,9 @@
         .snack_select_btn.active {
             background-image: url('https://ggaribox.s3.ap-northeast-2.amazonaws.com/snack_select_btn_on_m.png');
         }
-    }
-
-    @media screen and (max-width:350px) {
-        .snack_ico_text:nth-last-child(1) {
-            top: 19px;
-            padding-left: 25px;
-        }
-
         .sw_snack_info {
-            top: 16px;
+            top: 10px;
+            min-height : 140px;
         }
 
         .sw_select_btn {
@@ -842,6 +848,8 @@
             padding: 5px 16px;
         }
     }
+
+
 </style>
 
 <div class="container-fluid pt_120px" id="section1">
@@ -857,7 +865,7 @@
                         <span id="cat_sex" class="point_color"></span>
                         <div id="cat_sex_icon" class="icon_sex d-inline-block"></div>
                     </div>
-                    <div class="col-lg-3 col-6" style="line-height:30px">
+                    <div class="col-lg-3 col-6">
                         나이&emsp;
                         <span id="cat_age" class="point_color"></span>
                     </div>

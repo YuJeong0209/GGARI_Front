@@ -40,6 +40,11 @@
         max-width: 90px;
     }
 
+    .list_img {
+        width : 90px;
+        height : 90px;
+    }
+
     .btn_plus_img img,
     .btn_minus_img img {
         max-width: 20px;
@@ -51,7 +56,7 @@
     .cart_wrap {
         background: #FFFFFF;
         border-radius: 0;
-        padding: 0 40px;
+        padding: 0 50px;
         border-bottom: 2px solid #EDEDED;
     }
 
@@ -103,13 +108,13 @@
 
     .cart_wrap3 {
         background: #FFFFFF;
-        padding: 35px 94px;
+        padding: 35px 80px;
         border-radius: 10px;
     }
 
     .cart_wrap4 {
         background: #FFFFFF;
-        padding: 32px 94px;
+        padding: 32px 65px;
         border-radius: 10px;
         border: 2px solid #6E9357;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -131,11 +136,8 @@
     }
 
     .dt_snack {
-        padding: 10px 0 0 110px;
+        padding : 10px 80px;
         color: #fff;
-    }
-
-    .dt_snack {
         height: 104px;
         /* display: flex;*/
         line-height: 80px;
@@ -164,7 +166,7 @@
     }
 
     .pr_2rem {
-        padding-right: 40px;
+        padding-right: 25px;
     }
 
     #calender_area{
@@ -491,6 +493,7 @@
         .price {
             line-height: 1.5;
             padding: 60px 0px;
+            margin-right : 14px;
         }
 
         .price2 {
@@ -575,9 +578,6 @@
             background-size: 20px;
             background-position-y: 50%;
             background-position-x: calc(100% - 26px);
-        }
-
-        .dt_snack {
             padding: 17px 0 0 26px;
         }
         .dd_snack div {
@@ -745,7 +745,7 @@
                 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_plus_ico.png" alt="" class="img-fluid mr-2">
                 <span>제품 추가하기</span>
             </button>
-            <button type="button" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt" onclick="calender.deleteItem()">
+            <button type="button" id="deleteItemBtn" class="btn btn-outline-success fw_700 float-right btn_minus_img btn_minus_txt" onclick="calender.deleteItem()">
                 <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png" alt="" class="img-fluid mr-2">
                 <span>제품 삭제하기</span>
             </button>
@@ -799,7 +799,7 @@
             <dl class="dl_snack">
                 <dt class="dt_snack fs_22 fw_700 pc_br_none">
                     정기 구독 서비스 <br><span class="m_f2">이용 시</span>
-                    <div id="total_discount" class="float-right pr_140px fs_20 fw_700 text-right"></div>
+                    <div id="total_discount" class="float-right pr_50px fs_20 fw_700 text-right"></div>
                 </dt>
                 <dd class="dd_snack fs_20 fw_700 point_color">
                     <div>
@@ -1029,7 +1029,7 @@
                                 case 10 : isEat = boxCount % 3 == 0; break;
                                 default :
                                     if(!calender.isSpecialDrawn.includes(key))
-                                        calender.drawSpecialList(key, calender.items[key]);
+                                        calender.drawSpecialList(key, parseInt(calender.items[key]));
                                     break;
                             }
                             if(isEat){
@@ -1049,10 +1049,19 @@
         },
 
         drawSpecialList : (id, iterate)=>{
-            for(let i=1; i <5; i++){
-                let product = calender.itemlist.find(e=> e.id == id);
-                let $ball = $('<div>').addClass('ball cate'+product.category);
-                $('#special'+i).find('.balls').append($ball);
+            let isFeedWeeks = [];
+            switch (iterate){
+                case 2 : isFeedWeeks = [1,3,5];  break;
+                case 1 : isFeedWeeks = [3];  break;
+                case 4 : isFeedWeeks = [1,2,3,4,5,6];  break;
+            }
+            let product = calender.itemlist.find(e=> e.id == id);
+
+            for(let i=1; i <6; i++){
+                if(isFeedWeeks.includes(i)){
+                    let $ball = $('<div>').addClass('ball cate'+product.category);
+                    $('#special'+i).find('.balls').append($ball);
+                }
             }
             calender.isSpecialDrawn.push(id);
         },
@@ -1171,18 +1180,18 @@
                 $(".btn_minus_txt img").removeClass("mr-2");
                 $(".btn_plus_txt img").removeClass("mr-2");
                 $(".btn_plus_txt").css("padding", "10px 11px");
-                $(".btn_minus_txt").css("padding", "10px 11px");
+                $(".btn_minus_txt").css({padding : "10px 11px", marginTop : 3});
                 $(".list_img").addClass("d-none");
                 $(".subscription_button img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/subscription_button_m.png");
                 $(".cal_ico02").css("max-width", "11px");
                 $(".cal_ico05").css("max-width", "15px");
                 $(".cal_ico06").css("max-width", "18px");
+                $('#total_discount').css({lineHeight : 0, paddingRight : 50});
             }
         }
     }).resize();
 
     var acodian = {
-
         click: function (target) {
             var _self = this,
                 $target = $(target);
@@ -1191,7 +1200,6 @@
                 if ($this.next($(".dd_snack")).css('display') == 'none') {
                     $(".dd_snack").slideUp();
                     _self.onremove($target);
-
                     $this.addClass('on');
                     $this.next().slideDown();
                 } else {

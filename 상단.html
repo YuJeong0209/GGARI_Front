@@ -149,10 +149,15 @@
 
             .sidebars_mypage {
                 width: 288px;
-                top: 135px;
+                top: 150px;
                 padding-left: 0;
+                left : -388px;
                 background-color: #fff;    
                 height: 900px;
+            }
+            .sidebars_mypage .row {
+                margin-right : 0;
+                margin-left : 0;
             }
 
             .sidebar6 .pr-0 {
@@ -281,7 +286,7 @@
                             반려묘 정보
                         </div>
                         <div class="col text-right pr-0 point_color">
-                            <a href="/page/?M2_IDX=26058">
+                            <a href="/page/?M2_IDX=26434">
                                 <span class="cat_add fs_14 fw_700">추가하기</span>
                             </a>
                         </div>
@@ -316,7 +321,7 @@
                             주문조회
                         </div>
                     </a>
-                    <a href="/cons/list.nx?M2_IDX=28102">
+                    <a href="/page/?M2_IDX=28102">
                         <div class="pt_30px mypage_menu_btn">
                             내가 쓴 리뷰
                         </div>
@@ -355,7 +360,7 @@
                     <ul class="navbar-nav mr-auto">
                     </ul>
                     <ul class="navbar-nav " id="menu">
-                        <li class="nav-item active dropdown">
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="/board/read.php?M2_IDX=27070&PAGE=1&B_IDX=63299" id="navbardrop" data-toggle="dropdown">까리
                                 소개</a>
                             <div class="dropdown-menu">
@@ -456,18 +461,18 @@
                         <dt class="dt_ham_menu back_no border-0 h_44 d-flex" onclick="location.href='/my/coupon.list.php'">
                             <div class="col p-0">포인트</div>
                             <div class="col-4 text-right p-0 "><span class="point_color">3,000</span> P</div>
-                            <div class="col ">쿠폰</div>
+                            <div class="col">쿠폰</div>
                             <div class="col text-right p-0"><span class="point_color">2</span> 장</div>    
                         </dt>
                         <dt class="dt_ham_menu back_no border-0 h_44_2 d-flex">
                             <div class="col p-0 point_color">
-                                <a href="">설문 결과</a>
+                                <a href="/page/?M2_IDX=26922">설문 결과</a>
                             </div>
                             <div class="col text-center point_color">
-                                <a href="">구독 정보</a>
+                                <a href="/page/?M2_IDX=26922&mode=2">구독 정보</a>
                             </div>
                             <div class="col text-right p-0 point_color">
-                                <a href="">주문 조회</a>
+                                <a href="/my/sett.list.php">주문 조회</a>
                             </div>
                         </dt>
                     </div>
@@ -516,10 +521,10 @@
                     </dd>
 
                     <div class="log_on d-none">
-                        <dt class="dt_ham_menu ">
+                        <dt class="dt_ham_menu">
                             마이페이지
                         </dt>
-                        <dd class="dd_ham_menu ">
+                        <dd class="dd_ham_menu">
                             <ul>
                                 <li class="pb_20px"><a href="/page/?M2_IDX=26922">반려묘 정보</a></li>
                                 <li class="pb_20px"><a href="/my/pay.list.nx">카드지갑</a></li>
@@ -530,6 +535,11 @@
                             </ul>
                         </dd>
                     </div>
+                    <a href="/lib/logoutProc.php">
+                        <dt class="dt_ham_menu back_no">
+                            로그아웃
+                        </dt>
+                    </a>
                 </div>
             </dl>
         </nav>
@@ -716,6 +726,7 @@ var util = {
         }
     },
 
+    //질병코드마다 표시될 글자.
     getDisStr : (id) =>{
         let str;
         switch(id){
@@ -730,6 +741,7 @@ var util = {
         return str;
     },
 
+    //상품 카테고리마다 표시될 글자.
     getCategoryStr : (id) =>{
         let str;
         switch(id){
@@ -760,6 +772,7 @@ var util = {
         return param;
     },
 
+    //빈 값인지 확인하기
     isEmpty : (str) => {
     if(typeof str === "undefined" || str === null || str === "")
         return true;
@@ -773,6 +786,7 @@ var util = {
     return window.pageYOffset || document.documentElement.scrollTop;
     },
 
+    //원마크랑 3자리,마다 콤,마 추가
     won3Comma : (str) => {
         if(Number.isInteger(str)){
             str = str.toString();
@@ -780,6 +794,7 @@ var util = {
         return "￦"+(str.replace(/\B(?=(\d{3})+(?!\d))/g, ','));        
     },
 
+    //모바일 구분자 체크
     checkMobile : () => {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }

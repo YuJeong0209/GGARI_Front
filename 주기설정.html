@@ -154,7 +154,7 @@
     }
 
     .select .select_expand:checked+.select_closeLabel+.select_options {
-        height: 180px;
+        max-height: 180px;
         overflow-y: scroll;
         background-color: #fff;
         border-radius: 0 0 10px 10px;
@@ -385,7 +385,7 @@
         }
 
         .btn-outline-success,
-        .btn-secondary {
+        .btn-success {
             width: 100%;
             font-size: 12px;
             padding: 13px 22px;
@@ -458,7 +458,7 @@
             <button type="button" class="btn btn-outline-success fw_700 mr-3 order_last" onclick="location.href='/page/?M2_IDX=26046&id='+calory.cat.id">
                 간식 다시 선택하기
             </button>
-            <button type="button" class="btn btn-secondary active fw_700 order_1" onclick="calory.goToCalander()">
+            <button type="button" class="btn btn-success active fw_700 order_1" onclick="calory.goToCalander()">
                 간식단표 보러가기
             </button>
         </div>
@@ -477,6 +477,7 @@
         rank: null,
         productIds: [],
         itemlist: [],
+        //각죵 문구들
         rankStr: [null, 'Lite', 'Standard', 'Premium'],
         categoryStr : [ null, '스틱형', '캔형', '동결/건조형', '통살형', '스낵형', '파우치형', '덴탈 간식', '기타'],
         cycleStr : { "90": '1일에 3개', "60" : '1일에 2개', "30" : '1일에 1개', "15" : '2일에 1개', "10" : '3일에 1개', "4" : '1주일에 1개', "2" : '보름에 1개', "1" : "1달에 1개"},
@@ -485,6 +486,10 @@
         init: () => {
             let search = location.search.substring(1);
             let query = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+            if(query.items == undefined){
+                alert('잘못된 접근입니다.');
+                return;
+            }
             calory.productIds = JSON.parse(query.items);
             calory.rank = query.rank;
             calory.getItems();
@@ -533,7 +538,7 @@
                     menu2_id: "26044",
                     menu2_id : "26044",
                     use_page : false,
-                     use_limit : false,
+                    use_limit : false,
                 },
             }).done((data) => {
                 shop = data.items;
@@ -541,7 +546,7 @@
             }).fail((jqXHR, textStatus, errorThrown) => {
                 console.log(errorThrown)
             });
-7
+
             $.when(pr0, pr1, pr2).done(()=>{
                 $.each(calory.itemlist, (i, item)=>{
                     //선가공
@@ -554,18 +559,16 @@
         },
 
         selectCycle : (id, cycle) =>{
-            calory.selected[id] = cycle;
+            if(cycle == 0){
+                delete calory.selected[id];
+            }else{
+                calory.selected[id] = cycle;                
+            }
             console.log(calory.selected);
             calory.DrawKcalCounter();
-            if(calory.itemlist.length == calory.selected.length){
-            }
         },
 
-        recommendCycle : () => {
-            calory.DrawKcalCounter();
-        },
-
-        goToCalander : ()=>{
+        goToCalander : ()=>{            
             if(JSON.stringify(calory.selected).length == 2){
                 alert = "주기를 선택해주세요.";
                 return false;
@@ -583,26 +586,36 @@
                 let feeds = item.feedcycle.replace(/\[|\]|\'|\"|\ /g, '').split(',').reverse();
                 $.each(feeds, (i, feed)=>{
                     let kcal = item.kcal*parseInt(feed);
-                    if(kcal < treatcap) data['id'+item.id].push({data : item.id, kcal : item.kcal*parseInt(feed), feed : feed});
+                    if(kcal < treatcap) data['id'+item.id].push({id : item.id, kcal : item.kcal*parseInt(feed), feed : feed});
                 });
             });
-            console.log(data);
+            console.log("data :", data);
             let reckcal = 0;
             let result =[]
             let spilloverPos = 0;
+            
             outer: do{
                 inner : for(let key in data){
                     if(data[key][spilloverPos] == undefined) break outer;
+                    if(reckcal + data[key][spilloverPos]?.kcal > treatcap) break outer;
                     reckcal += data[key][spilloverPos]?.kcal;
                 }
                 spilloverPos++;
             }while(reckcal < treatcap)
             console.log("Spillover Position : ", spilloverPos);
+            //현재칼로리 초기화
+            reckcal = 0;
+            for(const [key, item] of Object.entries(data)){
+                if(treatcap < reckcal+item[spilloverPos].kcal) break;
+                reckcal += item[spilloverPos].kcal;                
+                $('label[for=feed_'+item[spilloverPos].id+"_"+item[spilloverPos].feed+']').trigger('click');
+            };
+/*
             $('ul.select_options').each((i, lis)=>{
                 if($(lis).children().length == 0 ) return true;
                 $(lis).children().eq(spilloverPos-1).find('label').trigger('click');
             });
-
+*/
         },
 
         DrawKcalCounter: () => {
@@ -649,8 +662,8 @@
                     $box.find('img').attr('src', item.img);
                     $box.find('.kcal').html(item.kcal);
                     let feeds = item.feedcycle.replace(/\[|\]|\'|\"|\ /g, '').split(',');
+                    $box.find('.select_closeLabel').click(()=>{calory.selectCycle(item.id, 0)})
                     $.each(feeds, (i, feed)=>{
-                        console.log(feed);
                         let $li = $('<li>').addClass('select_option')
                         let $input = $('<input>').addClass('select_input').attr({type:'radio', name : "feed_"+item.id, id : "feed_"+item.id+"_"+feed});
                         let $label = $('<label>').addClass('select_label').attr({for: "feed_"+item.id+"_"+feed}).html(calory.cycleStr[feed]).click(()=>{calory.selectCycle(item.id, feed)});
@@ -660,7 +673,7 @@
                     $box.find('.select_close').attr({name:"feed_"+item.id, id : "feed_"+item.id+"-close"});
                     $box.find('.select_expand').attr({name:"feed_"+item.id, id : "feed_"+item.id+"-opener"});
                     $box.find('.select_closeLabel').attr({for:"feed_"+item.id+"-close"});
-                    $box.find('.select_expandLabel').attr({for: "feed_"+item.id+"-opener"});                    
+                    $box.find('.select_expandLabel').attr({for: "feed_"+item.id+"-opener"}).click(()=>{calory.selectCycle(item.id, 0)});                    
                     $boxs.append($box);
                 }else if(loop > i && calory.productIds[calory.rank]["s"+i] == null){
                     let $box = $('#origin_box_not').clone().removeClass('d-none');

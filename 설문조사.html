@@ -688,9 +688,11 @@
             margin-right : 14px;
     }
 
-    @media screen and (max-width:780px) {
+    /* @media screen and (max-width:780px) { */
+    @media screen and (max-width:586px) {
         #bg_screen{
             padding : 0;
+            padding-top : 90px;
         }
 
         #creating .col-4{
@@ -1109,7 +1111,7 @@
             background-position-x: 75%;
             background-position-y: 50%;
 
-    }
+        }
 
         .toggle2 {
             background: url(https://ggaribox.s3.ap-northeast-2.amazonaws.com/next_btn_mobile.png);
@@ -1167,7 +1169,7 @@
     }
 
 
-    @media screen and (max-height: 576px) {
+    /* @media screen and (max-width: 575px) {
         .pt_180 {
             padding-top: 50px;
         }
@@ -1184,14 +1186,15 @@
         .swiper-button-prev {
             top: 63.5%;
         }
-    }
+    } */
 
-    @media screen and (max-height: 576px) {
+    @media screen and (max-width: 574px) {
 
         .pt_180 {
-            padding-top: 10px;
+            padding-top: 45px;
         }
 
+/*        
         #opening .pt-9 {
             padding-top: 2rem !important;
         }
@@ -1221,7 +1224,6 @@
         .pop_loader {
             width: 350px;
         }
-
         #selecting .pt-5_1 {
             padding-top: 2rem !important;
         }
@@ -1238,15 +1240,10 @@
             background-size: 38px;
         }
 
-        .answers input[type=radio]+label {
-            padding: 20px 17px;
-            width: 115px;
-        }
-
         .next_btn {
             margin-top: 14px;
         }
-
+*/
     }
 </style>
 
@@ -1707,7 +1704,7 @@
 
 
 
-<script>
+    <script>
 
     $(() => {
         survey.init();
@@ -1738,7 +1735,7 @@
 
             survey.progress = 0;
             survey.selectedCat = -1,
-                survey.survey_pages = $('.survey_pages');
+            survey.survey_pages = $('.survey_pages');
             survey.guageWidth = $('.pop_loader').width();
 
             $.ajax({
@@ -1763,8 +1760,8 @@
 
                 var swiperOptions = {
                     navigation: {
-                            nextEl: '#fatty_swipper_next',
-                            prevEl: '#fatty_swipper_prev',
+                            nextEl: '#fatty_swiper_next',
+                            prevEl: '#fatty_swiper_prev',
                     },
                 }
         
@@ -1944,8 +1941,6 @@
             }
         },
 
-
-
         initCreating: () => {
             let $title = $('#creating_title');
             if (survey.selectedCat > 0) {
@@ -1960,6 +1955,7 @@
                 survey.catData['fatty'] = originCat.fatty;
                 $('#cat_name').val(originCat.name);
                 $('#cat_kg').val(parseFloat(originCat.kgx10 / 10));
+                                
                 $('#cat_age_' + originCat.age).trigger('click');
                 $('#is_male_' + (+originCat.is_male).toString()).trigger('click');
                 $('#is_neutering_' + (+originCat.is_neutering).toString()).trigger('click');
@@ -1993,7 +1989,6 @@
                     $('#cat_kg').val('');
                 }
                 survey.catData['kg'] = kgStr;
-
             } else {
                 survey.catData[key] = val;
             }
@@ -2010,7 +2005,6 @@
                 util.isEmpty(survey.catData['is_male']) ||
                 util.isEmpty(survey.catData['is_neutering']) ||
                 util.isEmpty(survey.catData['id_species'])
-
             ) {
                 $("#creating .next_btn").removeClass('active');
                 return false;
@@ -2217,7 +2211,7 @@
         strokeWidth: 6,
         trailWidth: 6,
         easing: 'easeInOut',
-        duration: 7500,
+        duration: 5500,
         text: {
             autoStyleContainer: false
         },

@@ -46,6 +46,7 @@
     float:left;
     border : #787878 1px;
     border-radius : 6px;
+    background-size: 100% 100%;
 }
 
 .title{    
@@ -213,7 +214,7 @@ var myWrote = {
                     article.title = item.title;
                     article.image = item.image;
                     article.date = item.write_date;
-                    article.link = item.link;
+                    article.link = item.link+"&from=my";
                     article.score = null;
                     myWrote.articles.push(article);
                 }
@@ -241,7 +242,7 @@ var myWrote = {
                     article.title = item.product_name;
                     article.image = item.product_image;
                     article.date = item.write_date.substr(0, 10);
-                    article.link = item.product_link;
+                    article.link = item.product_link+"&from=my";
                     article.score = item.score;
                     myWrote.articles.push(article);
                 }

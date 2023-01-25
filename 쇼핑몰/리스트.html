@@ -56,16 +56,9 @@
                 <s_category_02>
                     <div class="wrap-category-d2">
                         <ul class="category-d2">
-                            <!--
                             <li>
                                 <a href="javascript: void(0);" onclick=" shop.cate(1, $('#SC_SC1_IDX').val()) " class="js-all">
                                     <strong>전체</strong>
-                                </a>
-                            </li>
-                            -->
-                            <li>
-                                <a onclick="shop.opt_kind('C')" class="js-all">
-                                    <strong>구독</strong>
                                 </a>
                             </li>
                             <s_category_rep_02>
@@ -125,7 +118,8 @@
 
                 <!-- 리스트 필터/정렬 start -->
                 <div class="list-filter">
-                    <div class="float-left fs_20 fw_700">총 <span class="point_color"><span id='all_amount'>500</span>개</span> 상품</div>
+
+                    <!-- <div class="float-left fs_20 fw_700">총 <span class="point_color"><span id='all_amount'>500</span>개</span> 상품</div> -->
                     <div class="select-sort">
                         <s_order>
                             <div class="select-box">
@@ -145,7 +139,7 @@
 
                     <div class="float-right fs_16 m_pt">
                         <div class="check_custom mr-3 mt_10px">
-                            <input type="checkbox" name="agree_chk1" id="agree_chk_1" class="agree_chk">
+                            <input type="checkbox" name="agree_chk1" id="agree_chk_1" class="agree_chk" onclick="shop.opt_kind('C')">
                             <label for="agree_chk_1" class="fs_16">
                                 구독 상품만 표시
                             </label>
@@ -175,12 +169,17 @@
                                                         </p>
                                                     </dt>
                                                     <div class="sw_snack_ico mt_20px">
-                                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_01.png"
+                                                        <s_list_tag>
+                                                            <dqr data="[##_item_tag_##]"></dqr>
+                                                        </s_list_tag>
+                                                        <!--
+                                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_01.svg"
                                                             alt="" class="img-fluid snack_ico01">
-                                                        <span class="snack_ico_text">관절</span>
-                                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_02.png"
+                                                        <span class="snack_ico_text">[##_item_tags_##]관절</span>
+                                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_02.svg"
                                                             alt="" class="img-fluid snack_ico01">
                                                         <span class="snack_ico_text">스트레스</span>
+                                                        -->
                                                     </div>
                                                 </s_list_name>
 

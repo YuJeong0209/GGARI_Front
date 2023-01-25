@@ -72,7 +72,7 @@
     }
 
     .btn_survey {
-        min-width: 270px;
+        min-width: 100%;
     }
 
     .small_btn {
@@ -84,7 +84,7 @@
         border-top: 2px solid #6E9357;
         margin-left: 0;
         margin-right: 0;
-        border-bottom: 2px solid #6E9357;
+        /* border-bottom: 2px solid #6E9357; */
     }
 
     .cart_box {
@@ -100,9 +100,10 @@
         border-bottom: 2px solid #6E9357;
     }
 
-    .cart_box img {
+    .list_img {
         max-width: 90px;
         width: 90px;
+        height : 90px;
     }
 
     .price {
@@ -164,7 +165,7 @@
         #mypage_slider{
             z-index: 200;
             position: absolute;
-            top: 110px;
+            top: 220px;
             width: 288px;
             left: calc((100vw - 288px)/2 );
         }
@@ -172,7 +173,7 @@
         #section1 {
             left: 0;
             padding: 0 22px;
-            padding-top: 100px;
+            padding-top: 150px;
             min-height : calc(100vh - 460px);
         }
 
@@ -187,6 +188,10 @@
 
         .tab_btn.pt_40px {
             padding-top: 20px;
+        }
+
+        .tab_btn_area{
+            margin-top : 80px;
         }
 
         .tab_btn_area li {
@@ -246,6 +251,10 @@
 
         .cart_box {
             padding: 20px 0;
+        }
+
+        .list_img {
+            display: none;
         }
 
         .price {
@@ -336,9 +345,9 @@
 
 
 <div class="container-fluid" id="section1">
-    <div class="row mw_1152 ">
+    <div class="row mw_1152">
         <div class="col">
-            <div class="fs_28 fw_700 "><span class="point_color cat_name"></span> 반려묘 정보</div>
+            <div class="fs_28 fw_700 "><span class="point_color cat_name"></span> 반려묘 정보</div>            
             <div class="tab_btn_area pt_40px">
                 <ul>
                     <li id="tab_btn1" class="tab_btns active fs_18 fw_700" onclick="catPage.tabButton(1)">
@@ -430,7 +439,7 @@
 <script>
 $(()=>{    
     $(window).resize(()=> {
-        if (window.innerWidth > 480) {  // 다바이스 크기가 480이상일때 
+        if (util.checkMobile()) {  // 다바이스가 모바일일 때 
             $(document).ready(() => { changeIMG(); });
             function changeIMG() {
                 $(".btn_minus_txt img").attr("src", "https://ggaribox.s3.ap-northeast-2.amazonaws.com/btn_minus_ico.png");
@@ -483,13 +492,20 @@ var catPage = {
                 catPage.id = cat.cats[0].id;
                 catPage.getMySurveys();
                 catPage.getMySubscribes();
-            })
+            });
         }else{
             if(util.checkMobile()) catPage.slideSidebar();
             catPage.getMySurveys();
             catPage.getMySubscribes();
         }
         catPage.tabButton(1);
+        if(util.checkMobile()){
+            catPage.slideSidebar();
+        }
+
+        if(util.getParamFromUrl('mode') == 2){
+            catPage.tabButton(2);
+        }
     },
     
     getMySurveys : ()=>{
@@ -582,7 +598,7 @@ var catPage = {
                 quantity--;
                 catPage.edits[id]--;
                 catPage.totalPrice -= price;
-                $('#price'+id).html(util.won3Comma(oldPrice + price));
+                $('#price'+id).html(util.won3Comma(oldPrice - price));
             }
         }
         console.log(catPage.edits);
@@ -591,6 +607,8 @@ var catPage = {
     },
 
     drawCatPage : ()=>{
+        $('.cat_name').html(cat.cats.find(e=> e.id == catPage.id).name+" ");
+
         $('.mycat_namebox[data-id='+catPage.id+']').addClass('active');
         let $exist = $('#survey_exist');
         let $origin = $('#origin_survey_box');
@@ -627,7 +645,7 @@ var catPage = {
             let $originbox = $('#origin_inbox');
             $.each(catPage.products, (i, item)=>{
                 let $box = $originbox.clone().removeClass('d-none').attr('id', 'cart'+item.id);
-                $box.find('.list_img').attr('src', item.img);                
+                $box.find('.list_img').attr('src', item.img).removeClass('d-none');                
                 $box.find('.category').html(item.category2_name);
                 $box.find('.itemmm_name').html( item.product_name);
                 $box.find('input').attr({name:'delete'+item.id, id:'delete'+item.id});
@@ -708,13 +726,11 @@ var catPage = {
         if(catPage.isSideOn){
             catPage.isSideOn = false;
             xPos = $('#sidebar6').width()+100;
-            $('#mobile_return_text').html('마이페이지');
         }else{
             catPage.isSideOn = true;
             xPos = 0;
-            $('#mobile_return_text').html('돌아가기');
         }
-        $('#sidebar6').animate({left : -xPos}, 1000);            
+        $('#sidebar6').animate({left : -xPos}, 0);            
     },
 
 }
