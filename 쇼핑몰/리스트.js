@@ -26,11 +26,15 @@ $(()=>{
         $('dqr').each((i, item)=>{
             let $item = $(item); 
             let tags = $(item).attr('data').split(',');
-            for(tag of tags){
-                
+            if(tags.length != 1){
+                for(tag of tags){
+                    let tag00 = ('00' + tag).slice(-2);
+                    let $img = $('<img>').attr({src : "https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_"+tag00+".svg"}).addClass('img-fluid snack_ico'+tag00);
+                    let $span = $('<span>').addClass('snack_ico_text').html(util.getDisStr(parseInt(tag)));
+                    $item.after($img, $span);
+                }
             }
-            console.log(tags);
-
+            $item.remove();
         })    
-    }, 3000)
+    }, 200);
 });

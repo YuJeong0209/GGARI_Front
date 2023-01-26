@@ -31,6 +31,7 @@
 .sw_snack_ico {
     display: flex;
     color: #787878;
+    align-items: center;
 }
 
 .sw_snack_ico img {
@@ -54,12 +55,17 @@
     float: left;
 }
 
-.snack_ico_text:nth-last-child(1) {
+.tit{
+    min-height : 3rem;
+}
+
+/*
+.snack_ico_text:nth-last-child(1) {    
     top: 2px;
     position: relative;
     margin-left: 0px;
 }
-
+*/
 
 @media screen and (max-width:576px) {
     .mobile {
@@ -987,8 +993,8 @@ screen and (min-width:1200px) {
     }
 }
 
-@media print,
-screen and (max-width:768px) {
+/* @media print, screen and (max-width:768px) { */
+@media print, screen and (max-width:568px) {
     .nx-prefix.sub-content {
         padding: 0 0 50px
     }
@@ -1234,7 +1240,7 @@ screen and (max-width:768px) {
     }
 }
 
-@media print, screen and (max-width:430px) {
+@media screen and (max-width:430px) {
 
     .nx-prefix.sub-content .shop-list-area .shop-list .lst-image-card>li .thumb img {
         min-width: 103px;

@@ -54,7 +54,7 @@
 }
 
 .snack_ico_text:nth-last-child(1) {
-    top: 2px;
+    /* top: 2px; */
     position: relative;
     margin-left: 0px;
 }

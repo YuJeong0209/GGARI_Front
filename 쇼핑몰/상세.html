@@ -87,12 +87,17 @@
 
                                 <li>
                                     <div class="sw_snack_ico mt_30px">
-                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_01.png"
-                                            alt="" class="img-fluid snack_ico01">
+                                        <s_tag>
+                                            <s_tag_rep>
+                                                <dqr data="[##_s_tag_rep_value_##]"></dqr>
+                                            </s_tag_rep>
+                                        </s_tag>
+                                        <!-- 
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_01.png" alt="" class="img-fluid snack_ico01">
                                         <span class="snack_ico_text">관절</span>
-                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_02.png"
-                                            alt="" class="img-fluid snack_ico01">
+                                        <img src="https://ggaribox.s3.ap-northeast-2.amazonaws.com/sw_snack_ico_02.png" alt="" class="img-fluid snack_ico01">
                                         <span class="snack_ico_text">스트레스</span>
+                                       -->
                                     </div>
                                 </li>
                             </ul>
@@ -236,8 +241,7 @@
                                         alt="[##_s_content_a_img_rep_FL_ORINAME_##]">
                                 </s_content_a_img_rep>
                                 <s_content_a_video_rep>
-                                    <iframe id="[##_s_content_a_video_rep_id_##]"
-                                        src="[##_s_content_a_video_rep_link_##]" frameborder="0"></iframe>
+                                    <iframe id="[##_s_content_a_video_rep_id_##]" src="[##_s_content_a_video_rep_link_##]" frameborder="0"></iframe>
                                 </s_content_a_video_rep>
                                 <s_content_txt></s_content_txt>
                             </s_content>
@@ -252,7 +256,7 @@
                         <!-- 고객후기 -->
                         <div class="tab-item" data-tab="2" style="display: none;">
                             <s_shop_memo>
-                                <iframe src="[##_s_shop_memo_link_##]"></iframe>
+                                <iframe id="if_shop_memo" src="[##_s_shop_memo_link_##]"></iframe>
                             </s_shop_memo>
                             <s_cmt>
                                 <iframe src="[##_s_cmt_link_##]"></iframe>
@@ -392,30 +396,3 @@
 
 </div>
 <!-- 서브 콘텐츠 : 쇼핑몰 end -->
-
-<script>
-    function onclTab($num) {
-        if (typeof $num == "undefined") return false;
-
-        let tab = document.querySelectorAll(".tab-item");
-        let nav = document.querySelectorAll(".nav-tnb2 ul li a");
-
-        for ($i = 0; $i < tab.length; $i++) {
-            //console.log(tab[$i]);
-            tab[$i].style.display = "none";
-        }
-
-        for ($i = 0; $i < nav.length; $i++) {
-            //console.log(nav[$i]);
-            nav[$i].setAttribute('class', '');
-        }
-
-        document.querySelector(".tab-item[data-tab='" + $num + "']").style.display = "block";
-        document.querySelector(".nav-tnb2 ul li a[data-tnb-id='" + $num + "']").classList.add('active');
-    }
-
-
-    $(()=>{
-        $('.total-price').before($('.delivery'));
-    })
-</script>
