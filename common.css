@@ -177,7 +177,7 @@ body {
     -ms-overflow-style: none;
     color: #231815;
     min-width: 1200px;
-    overflow-x: scroll;    
+    overflow-x: auto;    
 }
 
 .container-fluid {
